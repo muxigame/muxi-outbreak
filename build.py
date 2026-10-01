@@ -91,7 +91,7 @@ def build(server: Path, java_home: Path | None = None) -> Path:
     meta = json.loads((ROOT / "mod.json").read_text(encoding="utf-8"))
     javac, _ = java_tools(java_home)
     jars = server_classpath(server, meta["neoforge"])
-    framework = ROOT.parent / "muxi-minigames/build/libs/muxi-minigames-0.1.0.jar"
+    framework = ROOT.parent / "muxi-minigames/build/libs/muxi-minigames-0.1.1.jar"
     if not framework.is_file():
         raise ValueError("Build muxi-minigames first")
     jars.append(framework)

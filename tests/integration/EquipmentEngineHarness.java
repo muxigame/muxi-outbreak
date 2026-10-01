@@ -50,6 +50,7 @@ public final class EquipmentEngineHarness {
             if(packet instanceof net.minecraft.network.protocol.game.ClientboundPlayerPositionPacket position)pendingTeleport=position.getId();
         }
         @Override public void send(net.minecraft.network.protocol.Packet<?> packet,net.minecraft.network.PacketSendListener listener){send(packet);}
+        @Override public java.net.SocketAddress getRemoteAddress(){return new java.net.InetSocketAddress("127.0.0.1",23457);}
         void acknowledgeTeleport(){
             if(pendingTeleport!=null){int id=pendingTeleport;pendingTeleport=null;handleAcceptTeleportPacket(new net.minecraft.network.protocol.game.ServerboundAcceptTeleportationPacket(id));}
         }
@@ -156,6 +157,8 @@ public final class EquipmentEngineHarness {
         catch(Exception e){cleanup();throw new IllegalStateException(e);}
         running=true;waitUntil=server.getTickCount();
         step("create room",1,()->{
+            check("local_connection_without_platform_binding",net.muxigame.minigames.GameRuntime.get(server).snapshot(a,"").get("allowed").getAsBoolean(),"fresh isolated config");
+            try{net.muxigame.minigames.TrustedAccounts.uid(a);throw new AssertionError("Local name became platform UID");}catch(IllegalArgumentException expected){check("local_name_not_platform_uid",true,"unbound");}
             game.start(a,"lostschool",null,1);session=observeSession();game.join(b,session.shortId());game.director(a,"disable");
             check("two_server_players_joined",session.players.size()==2,session.phase);
         });
@@ -312,6 +315,7 @@ public final class EquipmentEngineHarness {
             });
         }
         step("victory and restore",5,()->{
+            check("untrusted_campaign_no_platform_points",net.muxigame.minigames.GamePlatform.pendingCount(a)==0&&net.muxigame.minigames.GamePlatform.pendingCount(b)==0,"no platform outbox");
             check("natural_campaign_victory",observeSession()==null&&session.section==2&&session.finaleTankSpawned,session.phase);
             check("original_inventory_restored",a.getInventory().countItem(Items.DIAMOND)==3&&b.getInventory().countItem(Items.DIAMOND)==3&&CampaignInventory.gunId(a.getInventory().getItem(0)).isEmpty(),a.getInventory().items);
             check("original_location_and_mode_restored",a.level().dimension().equals(net.minecraft.world.level.Level.OVERWORLD)&&a.gameMode.getGameModeForPlayer()==GameType.SURVIVAL,a.position());

@@ -38,6 +38,6 @@ side="BOTH"
 [[dependencies.muxi_outbreak]]
 modId="muxi_minigames"
 type="required"
-versionRange="[0.1.0,0.2)"
+versionRange="[0.1.1,0.2)"
 ordering="AFTER"
 side="BOTH"

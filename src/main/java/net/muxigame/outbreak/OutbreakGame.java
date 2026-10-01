@@ -637,7 +637,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
         session.returnPoints.putIfAbsent(player.getUUID(), new OutbreakSession.ReturnPoint(
             player.level().dimension(), player.position(), player.getYRot(), player.getXRot()
         ));
-        runtime().platform.requireAllowed(player);
+        runtime().requireParticipation(player);
         PlayerSnapshot.capture(player);
         session.prepared.add(player.getUUID());
         PlayerSnapshot.kit(player);
