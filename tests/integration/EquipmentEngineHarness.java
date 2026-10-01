@@ -92,6 +92,12 @@ public final class EquipmentEngineHarness {
         System.out.println("OUTBREAK_QA_ASSERT "+row);
         if(!condition)throw new AssertionError(name+": "+details);
     }
+    private void terminal(ServerPlayer player,String action,String value){
+        String request=UUID.randomUUID().toString();var runtime=net.muxigame.minigames.GameRuntime.get(server);runtime.terminalRequest(player,request,"outbreak",action,value);
+        var receipt=runtime.snapshot(player,"").getAsJsonObject("operation");
+        check("terminal_"+action,receipt.get("request").getAsString().equals(request)&&receipt.get("status").getAsString().equals("completed"),receipt);
+        runtime.terminalRequest(player,request,"outbreak",action,value);check("terminal_replay_"+action,runtime.snapshot(player,"").getAsJsonObject("operation").equals(receipt),"cached receipt");
+    }
     private void step(String label,int wait,Runnable action){steps.add(new Step(label,wait,action));}
     @SuppressWarnings("unchecked") private List<ServerPlayer> players() throws Exception{
         Field field=PlayerList.class.getDeclaredField("players");field.setAccessible(true);return (List<ServerPlayer>)field.get(server.getPlayerList());
@@ -159,9 +165,12 @@ public final class EquipmentEngineHarness {
         step("create room",1,()->{
             check("local_connection_without_platform_binding",net.muxigame.minigames.GameRuntime.get(server).snapshot(a,"").get("allowed").getAsBoolean(),"fresh isolated config");
             try{net.muxigame.minigames.TrustedAccounts.uid(a);throw new AssertionError("Local name became platform UID");}catch(IllegalArgumentException expected){check("local_name_not_platform_uid",true,"unbound");}
-            game.start(a,"lostschool",null,1);session=observeSession();game.join(b,session.shortId());game.director(a,"disable");
-            check("two_server_players_joined",session.players.size()==2,session.phase);
+            terminal(a,"createConfigured","{\"map\":\"lostschool\",\"difficulty\":\"1\",\"mode\":\"CAMPAIGN\"}");session=observeSession();game.director(a,"disable");
+            check("terminal_single_player_room",session.players.size()==1&&session.lobbyWaiting,session.phase);
         });
+        step("invite teammate",5,()->terminal(a,"invite",b.getUUID().toString()));
+        step("join teammate",5,()->{terminal(b,"join",session.shortId());check("two_server_players_joined",session.players.size()==2,session.phase);});
+        step("terminal lobby waits for host",230,()->{check("does_not_autostart_before_invites",session.lobbyWaiting&&session.phase==OutbreakSession.Phase.COUNTDOWN,session.phase);terminal(a,"start","");});
         step("native loadout",230,()->{
             check("countdown_completed",session.phase==OutbreakSession.Phase.RUNNING,session.phase);
             check("actual_spawn_coordinates",a.position().distanceTo(session.map.start().getBottomCenter())<2,a.position());

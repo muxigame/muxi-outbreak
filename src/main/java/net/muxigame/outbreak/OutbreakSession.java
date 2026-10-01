@@ -31,6 +31,7 @@ public final class OutbreakSession {
     public final Map<UUID, ReturnPoint> returnPoints = new HashMap<>();
     public final Map<UUID, Double> recentDamage = new HashMap<>();
     public Phase phase = Phase.COUNTDOWN;
+    public boolean lobbyWaiting;
     public int section;
     public int timer;
     public int seconds;
