@@ -36,8 +36,8 @@ ordering="AFTER"
 side="BOTH"
 
 [[dependencies.muxi_outbreak]]
-modId="muxi_game_core"
-type="optional"
-versionRange="[0,)"
+modId="muxi_minigames"
+type="required"
+versionRange="[0.1.0,0.2)"
 ordering="AFTER"
-side="SERVER"
+side="BOTH"

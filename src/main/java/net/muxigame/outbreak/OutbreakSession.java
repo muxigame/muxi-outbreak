@@ -13,13 +13,14 @@ import java.util.*;
 public final class OutbreakSession {
     public enum Phase { PREPARING, COUNTDOWN, RUNNING, SAFE_ROOM, FINISHED }
 
-    public final UUID id = UUID.randomUUID();
+    public final net.muxigame.minigames.RoomTeam team;
+    public final UUID id;
     public final UUID host;
     public final OutbreakMap map;
     public final OutbreakMap.Mode mode;
     public final Director director = new Director();
-    public final LinkedHashSet<UUID> players = new LinkedHashSet<>();
-    public final LinkedHashSet<UUID> alive = new LinkedHashSet<>();
+    public final LinkedHashSet<UUID> players;
+    public final LinkedHashSet<UUID> alive;
     public final Set<UUID> infected = new HashSet<>();
     public final Map<UUID, InfectedKind> infectedKinds = new HashMap<>();
     public final Set<UUID> downed = new HashSet<>();
@@ -57,14 +58,14 @@ public final class OutbreakSession {
 
     public OutbreakSession(UUID host, OutbreakMap map, OutbreakMap.Mode mode, int difficulty, int now) {
         this.host = host;
+        team = new net.muxigame.minigames.RoomTeam(host);id=team.session;players=team.members;alive=team.alive;
         this.map = map;
         this.supplies=new net.muxigame.outbreak.equipment.CampaignSupplies(this);
         this.throwables=new net.muxigame.outbreak.equipment.CampaignThrowables(this);
         this.mode = mode;
         this.difficulty = Math.max(0, Math.min(3, difficulty));
         this.timer = now + 200;
-        players.add(host);
-        alive.add(host);
+
     }
 
     public String shortId() { return id.toString().substring(0, 8); }

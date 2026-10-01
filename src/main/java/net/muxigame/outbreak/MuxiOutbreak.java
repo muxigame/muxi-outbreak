@@ -14,6 +14,7 @@ public final class MuxiOutbreak {
 
     public MuxiOutbreak(IEventBus modBus) {
         net.muxigame.outbreak.equipment.CampaignItems.register(modBus);
+        net.muxigame.minigames.GameAreas.register(MOD_ID,net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.DIMENSION,net.minecraft.resources.ResourceLocation.parse("muxi_outbreak:campaign")));
         OutbreakGame game = new OutbreakGame();
         game.register(NeoForge.EVENT_BUS);
         LOG.info("muxi Outbreak loaded");

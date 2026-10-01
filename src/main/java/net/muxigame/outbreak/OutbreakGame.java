@@ -54,7 +54,7 @@ import net.neoforged.neoforge.event.tick.ServerTickEvent;
 
 import java.util.*;
 
-public final class OutbreakGame {
+public final class OutbreakGame implements net.muxigame.minigames.GameModule {
     private static final Map<MinecraftServer,OutbreakGame> ACTIVE=new WeakHashMap<>();
     public static OutbreakGame active(ServerPlayer player){return ACTIVE.get(player.server);}
     private MinecraftServer server;
@@ -64,6 +64,18 @@ public final class OutbreakGame {
     private int ticks;
     private GeometryInstaller geometry;
 
+    public String gameId(){return "outbreak";}
+    public String title(){return "求援之路";}
+    private net.muxigame.minigames.GameRuntime runtime(){return net.muxigame.minigames.GameRuntime.get(server);}
+    public com.google.gson.JsonObject snapshot(ServerPlayer p){
+        var data=new com.google.gson.JsonObject();var catalog=new com.google.gson.JsonArray();
+        for(var map:maps.values()){var row=new com.google.gson.JsonObject();row.addProperty("id",map.id());row.addProperty("title",map.title());catalog.add(row);}data.add("maps",catalog);data.addProperty("recovering",p.getPersistentData().contains(net.muxigame.minigames.PlayerReturns.OUTBREAK,net.minecraft.nbt.Tag.TAG_COMPOUND));
+        var rooms=new com.google.gson.JsonArray();for(var session:sessions){var row=new com.google.gson.JsonObject();row.addProperty("id",session.shortId());row.addProperty("host",session.host.toString());row.addProperty("mine",session.contains(p.getUUID()));row.addProperty("title",session.map.title());row.addProperty("phase",session.phase.name());row.addProperty("count",session.players.size());row.addProperty("section",session.section);row.addProperty("seconds",session.seconds);var members=new com.google.gson.JsonArray();for(var id:session.players){var member=server.getPlayerList().getPlayer(id);if(member!=null)members.add(member.getDisplayName().getString());}row.add("members",members);rooms.add(row);}data.add("rooms",rooms);return data;
+    }
+    public com.google.gson.JsonObject terminalUi(ServerPlayer p,com.google.gson.JsonObject snapshot){return OutbreakTerminalUi.describe(snapshot);}
+    public void action(ServerPlayer p,String action,String value){
+        switch(action){case "create"->start(p,value,null,1);case "createConfigured"->{var choice=com.google.gson.JsonParser.parseString(value).getAsJsonObject();require(choice.keySet().equals(java.util.Set.of("map","difficulty")),"无效创建参数");String level=choice.get("difficulty").getAsString();require(level.matches("[0-3]"),"无效难度");int difficulty=Integer.parseInt(level);start(p,choice.get("map").getAsString(),null,difficulty);}case "join"->join(p,value);case "leave"->{var session=session(p.getUUID());if(session==null){PlayerSnapshot.restore(p);return;}if(session.host.equals(p.getUUID()))finish(session,false,"房主退出");else leavePlayer(session,p);}default->throw new IllegalArgumentException("未知小游戏操作");}
+    }
     public void register(IEventBus bus) {
         bus.addListener(this::started);
         bus.addListener(this::stopping);
@@ -127,7 +139,7 @@ public final class OutbreakGame {
 
     private void started(ServerStartedEvent event) {
         server = event.getServer();
-        ACTIVE.put(server,this);
+        ACTIVE.put(server,this);runtime().register(this);
         maps = OutbreakMapLoader.load(server);
         geometry = new GeometryInstaller(server);
         MuxiOutbreak.LOG.info("Loaded {} outbreak maps: {}", maps.size(), maps.keySet());
@@ -241,6 +253,7 @@ public final class OutbreakGame {
         OutbreakSession session = new OutbreakSession(
             host.getUUID(), map, overrideMode == null ? map.mode() : overrideMode, difficulty, server.getTickCount()
         );
+        runtime().join(gameId(),session.team,host,4);session.alive.add(host.getUUID());
         sessions.add(session);
         try {
             geometry.request(map);
@@ -263,9 +276,10 @@ public final class OutbreakGame {
         require(session.phase == OutbreakSession.Phase.COUNTDOWN || session.phase == OutbreakSession.Phase.PREPARING, "游戏已经开始");
         require(session.players.size() < 4, "房间已满");
         require(player.gameMode.getGameModeForPlayer() == GameType.SURVIVAL, "请先切换到生存模式");
-        session.players.add(player.getUUID());
+        runtime().join(gameId(),session.team,player,4);
         session.alive.add(player.getUUID());
-        if (session.phase != OutbreakSession.Phase.PREPARING) preparePlayer(session, player);
+        try {if (session.phase != OutbreakSession.Phase.PREPARING) preparePlayer(session, player);}
+        catch(RuntimeException failure){PlayerSnapshot.restore(player);runtime().memberships.leave(session.team,player.getUUID());throw failure;}
         notice(session, player.getDisplayName().getString() + " 加入了房间");
     }
 
@@ -623,6 +637,7 @@ public final class OutbreakGame {
         session.returnPoints.putIfAbsent(player.getUUID(), new OutbreakSession.ReturnPoint(
             player.level().dimension(), player.position(), player.getYRot(), player.getXRot()
         ));
+        runtime().platform.requireAllowed(player);
         PlayerSnapshot.capture(player);
         session.prepared.add(player.getUUID());
         PlayerSnapshot.kit(player);
@@ -777,8 +792,9 @@ public final class OutbreakGame {
     }
 
     private void leavePlayer(OutbreakSession session,ServerPlayer player) {
+        runtime().complete(gameId(),session.team,player,false,0,session.difficulty,session.seconds);
         PlayerSnapshot.restore(player);
-        session.players.remove(player.getUUID());session.alive.remove(player.getUUID());
+        runtime().memberships.leave(session.team,player.getUUID());
         session.downed.remove(player.getUUID());session.downedSince.remove(player.getUUID());session.reviveProgress.remove(player.getUUID());
         notice(session,player.getScoreboardName()+" 离开了房间");
     }
@@ -838,6 +854,7 @@ public final class OutbreakGame {
 
     private void finish(OutbreakSession session, boolean win, String reason) {
         if (session.phase == OutbreakSession.Phase.FINISHED) return;
+        for(UUID id:session.players){var p=server.getPlayerList().getPlayer(id);if(p!=null)runtime().complete(gameId(),session.team,p,win,0,session.difficulty,session.seconds);}
         session.phase = OutbreakSession.Phase.FINISHED;
         session.supplies.cleanup();session.throwables.cleanup();
         MuxiOutbreak.LOG.info("OUTBREAK_RESULT map={} session={} win={} section={} seconds={} reason={}",session.map.id(),session.shortId(),win,session.section,session.seconds,reason);
@@ -865,6 +882,7 @@ public final class OutbreakGame {
             }
             tell(player, (win ? "胜利 · " : "结束 · ") + reason + " · 生存 " + session.seconds + " 秒");
         }
+        runtime().memberships.close(session.team);
         sessions.remove(session);
     }
 
