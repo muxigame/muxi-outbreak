@@ -339,6 +339,10 @@ public final class EquipmentEngineHarness {
             if(b!=null&&!b.isRemoved()){((NoSocketListener)b.connection).acknowledgeTeleport();b.doTick();}
             if(server.getTickCount()<waitUntil)return;
             if(steps.isEmpty()){passed=true;running=false;persist();cleanup();return;}
+            if(steps.peekFirst().label().equals("terminal lobby waits for host")&&session.phase==OutbreakSession.Phase.PREPARING){
+                if(server.getTickCount()-startedAt>6000)throw new AssertionError("fresh campaign preparation timed out before host start");
+                return;
+            }
             // A fresh fixture world has no cached campaign geometry. Observe the real
             // preparation/countdown instead of assuming a warmed world's 230 ticks.
             if(steps.peekFirst().label().equals("native loadout")&&(session.phase==OutbreakSession.Phase.PREPARING||session.phase==OutbreakSession.Phase.COUNTDOWN)){
