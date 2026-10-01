@@ -1,0 +1,1391 @@
+{
+  "id": "l2m_example_local",
+  "title": "L2M Example Local",
+  "mode": "campaign",
+  "dimension": "muxi_game_core:adventure",
+  "start": [
+    -30,
+    10,
+    -6
+  ],
+  "finish": [
+    -45,
+    8,
+    -96
+  ],
+  "safeRooms": [],
+  "commonSpawns": [
+    {
+      "section": 0,
+      "pos": [
+        -57,
+        9,
+        -84
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -55,
+        9,
+        -81
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -55,
+        13,
+        -84
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -51,
+        13,
+        -84
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -58,
+        13,
+        -82
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -36,
+        9,
+        -88
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -35,
+        9,
+        -86
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -48,
+        9,
+        -84
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -44,
+        9,
+        -83
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -39,
+        9,
+        -82
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -36,
+        9,
+        -82
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -42,
+        9,
+        -81
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -48,
+        13,
+        -84
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -44,
+        13,
+        -84
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -31,
+        9,
+        -84
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -52,
+        9,
+        -79
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -57,
+        9,
+        -78
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -54,
+        9,
+        -76
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -53,
+        9,
+        -73
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -57,
+        9,
+        -71
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -56,
+        9,
+        -68
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -53,
+        9,
+        -68
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -57,
+        9,
+        -65
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -58,
+        13,
+        -79
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -58,
+        13,
+        -74
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -58,
+        13,
+        -70
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -58,
+        13,
+        -66
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -48,
+        9,
+        -80
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -44,
+        9,
+        -80
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -38,
+        9,
+        -79
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -40,
+        9,
+        -75
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -38,
+        9,
+        -72
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -39,
+        9,
+        -68
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -36,
+        9,
+        -65
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -35,
+        13,
+        -76
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -35,
+        13,
+        -72
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -35,
+        13,
+        -69
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -35,
+        13,
+        -65
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -52,
+        9,
+        -64
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -55,
+        9,
+        -62
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -50,
+        9,
+        -62
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -60,
+        9,
+        -61
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -56,
+        9,
+        -61
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -52,
+        9,
+        -61
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -49,
+        9,
+        -60
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -58,
+        9,
+        -58
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -57,
+        9,
+        -56
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -58,
+        9,
+        -53
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -57,
+        9,
+        -51
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -50,
+        9,
+        -50
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -58,
+        9,
+        -49
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -60,
+        13,
+        -60
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -54,
+        13,
+        -60
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -49,
+        13,
+        -60
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -48,
+        9,
+        -64
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -40,
+        9,
+        -64
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -41,
+        9,
+        -62
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -38,
+        9,
+        -62
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -45,
+        9,
+        -61
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -43,
+        9,
+        -60
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -48,
+        9,
+        -52
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -40,
+        9,
+        -52
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -44,
+        9,
+        -51
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -48,
+        9,
+        -49
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -36,
+        10,
+        -51
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -33,
+        10,
+        -51
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -38,
+        10,
+        -49
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -35,
+        13,
+        -61
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -45,
+        13,
+        -60
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -41,
+        13,
+        -60
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -37,
+        13,
+        -60
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -30,
+        10,
+        -50
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -26,
+        10,
+        -50
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -32,
+        10,
+        -49
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -54,
+        9,
+        -48
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -56,
+        9,
+        -47
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -50,
+        9,
+        -47
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -50,
+        9,
+        -44
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -54,
+        9,
+        -36
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -51,
+        9,
+        -35
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -42,
+        9,
+        -48
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -47,
+        9,
+        -46
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -34,
+        10,
+        -48
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -38,
+        10,
+        -46
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -36,
+        10,
+        -45
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -38,
+        10,
+        -42
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -41,
+        10,
+        -41
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -34,
+        10,
+        -41
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -38,
+        10,
+        -39
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -33,
+        10,
+        -39
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -35,
+        10,
+        -38
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -37,
+        10,
+        -36
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -34,
+        10,
+        -35
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -47,
+        10,
+        -34
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -42,
+        10,
+        -34
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -39,
+        10,
+        -33
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -29,
+        10,
+        -48
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -26,
+        10,
+        -47
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -28,
+        10,
+        -45
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -31,
+        10,
+        -43
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -31,
+        10,
+        -40
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -29,
+        10,
+        -38
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -31,
+        10,
+        -36
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -25,
+        11,
+        -35
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -21,
+        11,
+        -35
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -28,
+        11,
+        -33
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -24,
+        11,
+        -33
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -18,
+        11,
+        -33
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -16,
+        11,
+        -36
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -14,
+        11,
+        -36
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -15,
+        11,
+        -33
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -53,
+        9,
+        -31
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -49,
+        9,
+        -29
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -52,
+        9,
+        -27
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -48,
+        10,
+        -32
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -45,
+        10,
+        -32
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -33,
+        11,
+        -29
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -36,
+        11,
+        -26
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -35,
+        11,
+        -24
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -37,
+        11,
+        -21
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -33,
+        11,
+        -21
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -35,
+        11,
+        -18
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -22,
+        11,
+        -32
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -28,
+        11,
+        -28
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -31,
+        11,
+        -26
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -28,
+        11,
+        -21
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -31,
+        11,
+        -18
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -26,
+        11,
+        -18
+      ]
+    }
+  ],
+  "hordeSpawns": [
+    {
+      "section": 0,
+      "pos": [
+        -62,
+        14,
+        -74
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -56,
+        18,
+        -65
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -52,
+        21,
+        -72
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -37,
+        19,
+        -66
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -45,
+        21,
+        -79
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -42,
+        21,
+        -76
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -48,
+        21,
+        -75
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -45,
+        21,
+        -72
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -48,
+        21,
+        -69
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -31,
+        14,
+        -70
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -51,
+        15,
+        -56
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -41,
+        19,
+        -62
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -26,
+        15,
+        -56
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -49,
+        9,
+        -45
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -43,
+        18,
+        -39
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -15,
+        11,
+        -34
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -51,
+        9,
+        -28
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        -42,
+        18,
+        -29
+      ]
+    }
+  ],
+  "bossSpawns": [
+    {
+      "section": 0,
+      "pos": [
+        -38,
+        9,
+        -81
+      ]
+    }
+  ],
+  "itemSpawns": [
+    {
+      "section": 0,
+      "pos": [
+        -35,
+        9,
+        -89
+      ],
+      "preset": "legacy:left2mine:firstaid"
+    },
+    {
+      "section": 0,
+      "pos": [
+        -34,
+        9,
+        -89
+      ],
+      "preset": "legacy:left2mine:pipebomb"
+    },
+    {
+      "section": 0,
+      "pos": [
+        -33,
+        9,
+        -89
+      ],
+      "preset": "legacy:left2mine:ak47"
+    },
+    {
+      "section": 0,
+      "pos": [
+        -33,
+        9,
+        -82
+      ],
+      "preset": "legacy:left2mine:molotov"
+    },
+    {
+      "section": 0,
+      "pos": [
+        -37,
+        9,
+        -89
+      ],
+      "preset": "ammo"
+    },
+    {
+      "section": 0,
+      "pos": [
+        -30,
+        9,
+        -82
+      ],
+      "preset": "legacy:left2mine:m16rifle"
+    },
+    {
+      "section": 0,
+      "pos": [
+        -25,
+        11,
+        -3
+      ],
+      "preset": "legacy:left2mine:pills"
+    },
+    {
+      "section": 0,
+      "pos": [
+        -30,
+        11,
+        -1
+      ],
+      "preset": "legacy:left2mine:chromeshotgun"
+    },
+    {
+      "section": 0,
+      "pos": [
+        -27,
+        11,
+        -1
+      ],
+      "preset": "legacy:left2mine:silencedsubmachinegun"
+    }
+  ],
+  "legacy": {
+    "format": "left2mine-1.12.2",
+    "sourceWorld": "Left 2 Mine Example",
+    "parents": [
+      {
+        "kind": "left2mine:playerspawn",
+        "pos": [
+          -30,
+          9,
+          -6
+        ],
+        "section": 0,
+        "colour": {
+          "r": 0.06351524591445923,
+          "g": 0.4132285714149475,
+          "b": 0.36960554122924805
+        }
+      }
+    ],
+    "commands": [
+      {
+        "pos": [
+          -45,
+          8,
+          -96
+        ],
+        "command": "left2mine win"
+      },
+      {
+        "pos": [
+          -25,
+          9,
+          -82
+        ],
+        "command": "/left2mine panicstop"
+      },
+      {
+        "pos": [
+          -23,
+          9,
+          -90
+        ],
+        "command": "left2mine director enable"
+      },
+      {
+        "pos": [
+          -24,
+          9,
+          -90
+        ],
+        "command": "/left2mine tipremove -30 9.5 -89"
+      },
+      {
+        "pos": [
+          -26,
+          9,
+          -90
+        ],
+        "command": "left2mine panicstart -1 40"
+      },
+      {
+        "pos": [
+          -66,
+          8,
+          -55
+        ],
+        "command": "/left2mine tipcreate -30 9.5 -89 -1 Push the button to open the gates;;Be ready to fight the horde!"
+      },
+      {
+        "pos": [
+          -65,
+          9,
+          -55
+        ],
+        "command": "left2mine director spawn boomer"
+      },
+      {
+        "pos": [
+          -66,
+          9,
+          -55
+        ],
+        "command": "left2mine director disable"
+      },
+      {
+        "pos": [
+          -51,
+          7,
+          13
+        ],
+        "command": "left2mine start normal"
+      }
+    ],
+    "markerCounts": {
+      "left2mine:ammopile": 1,
+      "left2mine:bossspawn": 1,
+      "left2mine:gamedoorsaferoom": 4,
+      "left2mine:hordespawn": 18,
+      "left2mine:itemspawn": 8,
+      "left2mine:playerspawn": 1,
+      "left2mine:proximitysensor": 20,
+      "left2mine:zombiespawn": 128
+    },
+    "notes": [
+      "Geometry must be upgraded separately; this file preserves Left 2 Mine gameplay semantics.",
+      "Safe-room bounds are estimated around saferoom-node anchors and should be audited before publishing.",
+      "Section links use node parent coordinates and saferoom-door proximity, with distance fallback."
+    ]
+  }
+}
