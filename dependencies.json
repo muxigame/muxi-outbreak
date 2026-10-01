@@ -5,5 +5,29 @@
     "tacz-neoforge-1.21.1-1.1.8-hotfix-r6.jar",
     "[冠军强敌再续]champions-neoforge-21.1.1.7.jar"
   ],
-  "compileOnlyNote": "Optional integrations are detected at runtime. Third-party jars are never bundled."
+  "compileOnlyNote": "Optional integrations are detected at runtime. Third-party jars are never bundled.",
+  "runtimeRequired": {
+    "tacz": "1.1.8-hotfix-r6",
+    "lrtactical": "0.4.3"
+  },
+  "externalDownloads": [
+    {
+      "project": "zSKr1DYY",
+      "version": "0.4.3",
+      "file": {
+        "id": "geqGXvrC",
+        "hashes": {
+          "sha1": "d4e5b0a5a2d03092cac11dd2b7b3a60dc4f5ddfd",
+          "sha512": "9035e28d8f38d324cdb912506f2874dd171fefa80c253fe448ec35d2257b30aef8287c75eb60729daa9ca361b27218472c11f9dded2cd0348e92e80791b6dec4"
+        },
+        "url": "https://cdn.modrinth.com/data/zSKr1DYY/versions/fcwJFQFG/LesRaisins-Tactical-Equipements-1.21.1-0.4.3.jar",
+        "filename": "LesRaisins-Tactical-Equipements-1.21.1-0.4.3.jar",
+        "primary": true,
+        "size": 6612829,
+        "file_type": null
+      },
+      "sha256": "b492f2d37a993d76a8ffd6b79bea89a64de91d4710b1b4841f63d65982f610ac",
+      "dependencies": []
+    }
+  ]
 }

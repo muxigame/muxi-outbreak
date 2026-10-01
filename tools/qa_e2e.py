@@ -1,4 +1,6 @@
-"""Scripted two-player integration acceptance against the real isolated NeoForge server.
+"""LEGACY 0.2.0 ONLY: scripted vanilla protocol players. TaCZ/LR 0.3 requires modded channels.
+
+Scripted two-player integration acceptance against the real isolated NeoForge server.
 
 The harness uses admin teleports between validated route points to test triggers;
 it is not a claim that a graphical client/human has walked every room or fought

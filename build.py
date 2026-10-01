@@ -64,6 +64,13 @@ def server_classpath(server: Path, neo_version: str) -> list[Path]:
     result = [neo_server, mapped[0]]
     result.extend(p for p in all_jars if p not in result and "/net/minecraft/" not in p.as_posix())
     result.append(neo_universal)
+    for pattern in ('tacz-neoforge-*.jar', 'LesRaisins-Tactical-Equipements-*.jar'):
+        candidates = sorted((server / 'mods').glob(pattern))
+        if not candidates:
+            candidates = sorted((ROOT / 'build/equipment-research').glob(pattern))
+        if len(candidates) != 1:
+            raise ValueError(f'Exactly one integration dependency required: {pattern}; found {len(candidates)}')
+        result.append(candidates[0])
     return result
 
 
@@ -141,6 +148,9 @@ def main() -> None:
                 compile_java(javac, [ROOT / "src/main/java/net/muxigame/outbreak/director/Director.java",
                                     ROOT / "tests/java/DirectorTest.java"], test_dir, str(test_dir), test_dir / "test.args")
                 subprocess.run([str(java), "-ea", "-cp", str(test_dir), "DirectorTest"], check=True)
+                compile_java(javac, [ROOT / "src/main/java/net/muxigame/outbreak/equipment/SupplyRules.java",
+                                    ROOT / "tests/java/SupplyRulesTest.java"], test_dir, str(test_dir), test_dir / "supplies.args")
+                subprocess.run([str(java), "-ea", "-cp", str(test_dir), "SupplyRulesTest"], check=True)
         build(args.server.resolve(), args.java_home)
     except (OSError, ValueError, subprocess.SubprocessError) as error:
         raise SystemExit(str(error)) from None

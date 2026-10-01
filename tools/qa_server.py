@@ -22,6 +22,7 @@ def main():
     parser.add_argument('--heap',type=int,default=1024)
     parser.add_argument('--full',action='store_true',help='load the current complete Better MC server mod set in the isolated fixture')
     parser.add_argument('--view-distance',type=int,default=2)
+    parser.add_argument('--engine-tests',action='store_true',help='include the isolated server-engine test addon; never deploy this addon')
     args=parser.parse_args()
     home=ROOT/'build/qa-server'
     home.mkdir(parents=True,exist_ok=True)
@@ -65,8 +66,13 @@ def main():
                 data.pop('validator',None)
                 target.write_text(json.dumps(data),encoding='utf-8')
         (home/'full-pack-manifest.json').write_text(json.dumps(pack,ensure_ascii=False,indent=2),encoding='utf-8')
-    jar=ROOT/'build/libs/muxi-outbreak-0.2.0.jar'
+    from qa_dependencies import install
+    integration_files=install(home)
+    jar=ROOT/'build/libs'/json.loads((ROOT/'build/release.json').read_text(encoding='utf-8'))['artifact']
     shutil.copy2(jar,home/'mods'/jar.name)
+    if args.engine_tests:
+        from build_engine_harness import build_harness
+        build_harness(home)
     # Test instance, no real player data, no real login credentials, no public socket.
     password=secrets.token_urlsafe(24)
     properties={
@@ -85,13 +91,14 @@ def main():
     command=[str(java),'-Xms256M',f'-Xmx{args.heap}M','-XX:ActiveProcessorCount=2',
              '-Dfile.encoding=UTF-8','-Dstdout.encoding=UTF-8','-Dstderr.encoding=UTF-8',
              '-Djava.awt.headless=true','@libraries/net/neoforged/neoforge/21.1.250/win_args.txt','nogui']
+    if args.engine_tests:command.insert(1,'-Dmuxi.outbreak.qa=true')
     log=home/'console.log'
     with log.open('w',encoding='utf-8',buffering=1) as out:
         process=subprocess.Popen(command,cwd=home,stdin=subprocess.PIPE,stdout=out,stderr=subprocess.STDOUT,
                                  text=True,encoding='utf-8',creationflags=getattr(subprocess,'BELOW_NORMAL_PRIORITY_CLASS',0))
         (home/'run.json').write_text(json.dumps({'pid':process.pid,'host':'127.0.0.1','port':25683,'rconPort':25684,
             'rconPassword':password,'jarSha256':hashlib.sha256(jar.read_bytes()).hexdigest(),'heapMB':args.heap,
-            'fullPack':args.full,'copiedServerMods':len(pack)},indent=2),encoding='utf-8')
+            'fullPack':args.full,'copiedServerMods':len(pack),'integrationDependencies':integration_files},indent=2),encoding='utf-8')
         print(f'QA_PROCESS pid={process.pid} port=25683 heapMB={args.heap} log={log}',flush=True)
         # Parent retains stdin; E2E harness uses RCON. A stop file is a fallback for failed boot/RCON.
         stop=home/'stop.request'

@@ -23,10 +23,17 @@ side="SERVER"
 
 [[dependencies.muxi_outbreak]]
 modId="tacz"
-type="optional"
+type="required"
 versionRange="[1.1.8,)"
 ordering="AFTER"
-side="SERVER"
+side="BOTH"
+
+[[dependencies.muxi_outbreak]]
+modId="lrtactical"
+type="required"
+versionRange="[0.4.3,)"
+ordering="AFTER"
+side="BOTH"
 
 [[dependencies.muxi_outbreak]]
 modId="muxi_game_core"

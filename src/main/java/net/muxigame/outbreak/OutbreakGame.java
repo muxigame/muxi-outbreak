@@ -13,6 +13,18 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
+import net.muxigame.outbreak.equipment.*;
+import net.neoforged.neoforge.event.entity.ProjectileImpactEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.neoforge.event.entity.player.ItemEntityPickupEvent;
+import net.neoforged.neoforge.event.entity.living.LivingHealEvent;
+import net.neoforged.neoforge.common.util.TriState;
+import com.tacz.guns.entity.EntityKineticBullet;
 import net.muxigame.outbreak.compat.Left2MineCompatCommands;
 import net.muxigame.outbreak.director.Director;
 import net.muxigame.outbreak.infected.InfectedFactory;
@@ -43,6 +55,8 @@ import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import java.util.*;
 
 public final class OutbreakGame {
+    private static final Map<MinecraftServer,OutbreakGame> ACTIVE=new WeakHashMap<>();
+    public static OutbreakGame active(ServerPlayer player){return ACTIVE.get(player.server);}
     private MinecraftServer server;
     private Map<String, OutbreakMap> maps = Map.of();
     private final List<OutbreakSession> sessions = new ArrayList<>();
@@ -63,6 +77,35 @@ public final class OutbreakGame {
         bus.addListener(this::logout);
         bus.addListener(this::login);
         bus.addListener(this::entityJoin);
+        bus.addListener((PlayerInteractEvent.EntityInteract event)->{
+            if(event.getEntity() instanceof ServerPlayer p&&interactSupply(p,event.getTarget())){
+                event.setCanceled(true);event.setCancellationResult(InteractionResult.SUCCESS);
+            }
+        });
+        bus.addListener((PlayerInteractEvent.EntityInteractSpecific event)->{
+            if(event.getEntity() instanceof ServerPlayer p&&interactSupply(p,event.getTarget())){
+                event.setCanceled(true);event.setCancellationResult(InteractionResult.SUCCESS);
+            }
+        });
+        bus.addListener((ItemEntityPickupEvent.Pre event)->{
+            if(event.getPlayer() instanceof ServerPlayer p&&inCampaign(p))event.setCanPickup(TriState.FALSE);
+        });
+        bus.addListener((LivingHealEvent event)->{
+            if(event.getEntity() instanceof ServerPlayer p&&inCampaign(p))event.setCanceled(true);
+        });
+        bus.addListener((ProjectileImpactEvent event)->{
+            if(event.getProjectile().level().isClientSide())return;
+            for(var session:sessions)if(session.throwables.impact(event.getProjectile().getUUID(),event.getRayTraceResult(),server.getTickCount())){
+                event.setCanceled(true);break;
+            }
+        });
+        bus.addListener((com.tacz.guns.api.event.common.EntityHurtByGunEvent.Post event)->{
+            if(event.getLogicalSide()==net.neoforged.fml.LogicalSide.SERVER)explosiveImpact(event.getBullet(),event.getHurtEntity().position());
+        });
+        bus.addListener((com.tacz.guns.api.event.common.EntityKillByGunEvent event)->{
+            if(event.getLogicalSide()==net.neoforged.fml.LogicalSide.SERVER)explosiveImpact(event.getBullet(),event.getKilledEntity().position());
+        });
+        bus.addListener((com.tacz.guns.api.event.server.AmmoHitBlockEvent event)->explosiveImpact(event.getAmmo(),event.getHitResult().getLocation()));
         bus.addListener(EventPriority.HIGHEST, (ItemTossEvent event) -> {
             if (!(event.getPlayer() instanceof ServerPlayer player)) return;
             OutbreakSession session=session(player.getUUID());
@@ -76,13 +119,15 @@ public final class OutbreakGame {
         bus.addListener((BlockEvent.BreakEvent event) -> {
             if (event.getPlayer().level().dimension().location().toString().equals("muxi_outbreak:campaign")) event.setCanceled(true);
         });
-        bus.addListener((ExplosionEvent.Start event) -> {
-            if (event.getLevel().dimension().location().toString().equals("muxi_outbreak:campaign")) event.setCanceled(true);
+        bus.addListener(EventPriority.LOWEST,(ExplosionEvent.Detonate event) -> {
+            // Preserve damage/knockback from native TaCZ and LR explosives. Only terrain is protected.
+            if (event.getLevel().dimension().location().toString().equals("muxi_outbreak:campaign")) event.getAffectedBlocks().clear();
         });
     }
 
     private void started(ServerStartedEvent event) {
         server = event.getServer();
+        ACTIVE.put(server,this);
         maps = OutbreakMapLoader.load(server);
         geometry = new GeometryInstaller(server);
         MuxiOutbreak.LOG.info("Loaded {} outbreak maps: {}", maps.size(), maps.keySet());
@@ -93,7 +138,7 @@ public final class OutbreakGame {
         for (OutbreakSession session : List.copyOf(sessions)) finish(session, false, "服务器停止，本局已安全结束");
         sessions.clear();
         maps = Map.of();
-        server = null;
+        ACTIVE.remove(server);server = null;
         geometry = null;
     }
 
@@ -140,6 +185,16 @@ public final class OutbreakGame {
                 else leavePlayer(session,player);
                 return 1;
             }))
+            .then(Commands.literal("supplies").executes(context->{
+                ServerPlayer p=context.getSource().getPlayerOrException();
+                var rows=requireSession(p).supplies.inspect();
+                for(var row:rows)context.getSource().sendSuccess(()->Component.literal(row.toString()),false);
+                return rows.size();
+            }))
+            .then(Commands.literal("supply").then(Commands.argument("id",StringArgumentType.word()).executes(context->{
+                ServerPlayer p=context.getSource().getPlayerOrException();
+                tell(p,requireSession(p).supplies.take(p,StringArgumentType.getString(context,"id"),p.isCrouching()));return 1;
+            })))
             .then(Commands.literal("status").executes(context -> {
                 ServerPlayer player = context.getSource().getPlayerOrException();
                 status(player);
@@ -177,6 +232,7 @@ public final class OutbreakGame {
     public void start(ServerPlayer host, String mapId, OutbreakMap.Mode overrideMode, int difficulty) {
         require(server != null, "服务器尚未准备好");
         require(session(host.getUUID()) == null, "你已经在一局游戏中");
+        PlayerSnapshot.checkEligible(host);
         OutbreakMap map = maps.get(mapId);
         require(map != null, "不存在地图：" + mapId);
         require(sessions.stream().noneMatch(s -> s.map.id().equals(mapId)), "这张地图已有队伍进行中，请加入该房间");
@@ -199,6 +255,8 @@ public final class OutbreakGame {
 
     public void join(ServerPlayer player, String shortId) {
         require(session(player.getUUID()) == null, "你已经在一局游戏中");
+        PlayerSnapshot.checkEligible(player);
+        CampaignInventory.validate(player);
         OutbreakSession session = sessions.stream()
             .filter(s -> s.shortId().equalsIgnoreCase(shortId))
             .findFirst().orElseThrow(() -> new IllegalArgumentException("房间不存在"));
@@ -350,6 +408,22 @@ public final class OutbreakGame {
             finish(session,false,"玩家离开战役维度，已恢复原有状态");
             return;
         }
+        for(UUID id:session.prepared){
+            ServerPlayer p=server.getPlayerList().getPlayer(id);if(p==null)continue;
+            if(p.containerMenu!=p.inventoryMenu)p.closeContainer();
+            CampaignInventory.normalize(p,stack->session.supplies.drop(p,stack));
+            session.explosiveRounds.put(id,CampaignInventory.explosiveRounds(p.getInventory().getItem(0)));
+            p.getFoodData().setFoodLevel(20);p.getFoodData().setSaturation(0);
+            float temporary=session.temporaryHealth.getOrDefault(id,0f);
+            if(temporary>0&&!session.downed.contains(id)&&session.alive.contains(id)){
+                float loss=Math.min(temporary,Math.max(0,p.getHealth()-1));
+                loss=Math.min(loss,p.getMaxHealth()*.0027f/20f);
+                p.setHealth(p.getHealth()-loss);session.temporaryHealth.put(id,Math.max(0,temporary-loss));
+            }
+        }
+        session.supplies.tick(level,alivePlayers(session),now);
+        session.throwables.tick(level,now);
+        if(now%20==0)session.equipmentEntities.removeIf(id->level.getEntity(id)==null||level.getEntity(id).isRemoved());
         if (session.phase == OutbreakSession.Phase.COUNTDOWN) {
             if (now >= session.timer) {
                 session.phase = OutbreakSession.Phase.RUNNING;
@@ -363,15 +437,19 @@ public final class OutbreakGame {
                 for (UUID id : session.players) {
                     ServerPlayer player=server.getPlayerList().getPlayer(id);
                     if (player==null) continue;
+                    boolean wasDead=!session.alive.contains(id);
                     session.alive.add(id);
                     player.setGameMode(GameType.ADVENTURE);
                     player.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
                     player.removeEffect(MobEffects.WEAKNESS);
-                    player.setHealth(player.getMaxHealth());
+                    if(wasDead){
+                        player.setHealth(player.getMaxHealth()*.5f);session.temporaryHealth.remove(id);
+                        session.incapCount.remove(id);session.eliminatedAt.remove(id);
+                    }
                     player.getFoodData().setFoodLevel(20);
                     teleportToSection(session,player);
                 }
-                session.downed.clear();session.downedSince.clear();session.reviveProgress.clear();session.incapCount.clear();
+                session.downed.clear();session.downedSince.clear();session.reviveProgress.clear();
                 session.phase = OutbreakSession.Phase.RUNNING;
                 notice(session, "安全屋开启，继续推进");
             }
@@ -393,6 +471,8 @@ public final class OutbreakGame {
                 session.timer = now + 160;
                 session.panicWaves=0;session.panicDelay=0;session.director.forcePanic(false);
                 discardInfected(session, level);
+                session.throwables.cleanup();
+                discardEquipment(session,level);
                 notice(session, "全员进入安全屋 · 8 秒后继续");
                 return;
             }
@@ -444,9 +524,23 @@ public final class OutbreakGame {
             maxDistance = Math.max(maxDistance, Math.sqrt(players.get(i).distanceToSqr(players.get(j))));
         }
         double separation = Math.min(1.0, maxDistance / 32.0);
+        double sectionProgress=0;
+        if(session.section<session.map.chapters().size()){
+            var route=session.map.chapters().get(session.section).route();
+            if(route.size()>1&&!players.isEmpty()){
+                double sum=0;
+                for(var player:players){
+                    int closest=0;double distance=Double.MAX_VALUE;
+                    for(int i=0;i<route.size();i++){
+                        double d=player.distanceToSqr(route.get(i).getCenter());if(d<distance){distance=d;closest=i;}
+                    }
+                    sum+=closest/(double)(route.size()-1);
+                }sectionProgress=sum/players.size();
+            }
+        }
         double progress = session.mode == OutbreakMap.Mode.SURVIVAL
             ? Math.min(1.0, session.seconds / 600.0)
-            : Math.min(1.0, session.section / (double)Math.max(1, session.map.safeRooms().size() + 1));
+            : Math.min(1.0, (session.section+sectionProgress) / Math.max(1,session.map.safeRooms().size()+1));
         return new Director.Sample(
             players.size(), avgHealth, damage, separation, progress, session.infected.size(), session.downed.size()
         );
@@ -493,6 +587,7 @@ public final class OutbreakGame {
             Entity entity = level.getEntity(id);
             if (!(entity instanceof Mob mob) || !mob.isAlive()) continue;
             InfectedKind kind = session.infectedKinds.getOrDefault(id, InfectedKind.COMMON);
+            if(kind==InfectedKind.COMMON&&session.throwables.isDistracted(mob,now))continue;
             ServerPlayer target = nearest(session, mob.position());
             if (target != null) mob.setTarget(target);
             if (SpecialInfectedController.tick(mob, kind, target, now)) {
@@ -523,6 +618,7 @@ public final class OutbreakGame {
 
     private void preparePlayer(OutbreakSession session, ServerPlayer player) {
         if (session.prepared.contains(player.getUUID())) return;
+        CampaignInventory.validate(player);
         session.originalModes.putIfAbsent(player.getUUID(), player.gameMode.getGameModeForPlayer());
         session.returnPoints.putIfAbsent(player.getUUID(), new OutbreakSession.ReturnPoint(
             player.level().dimension(), player.position(), player.getYRot(), player.getXRot()
@@ -550,18 +646,6 @@ public final class OutbreakGame {
             if (alivePlayers(session).stream().noneMatch(p->p.distanceToSqr(event.pos().getCenter())<36)) continue;
             session.triggeredPanics.add(i);session.panicWaves=event.waves();session.director.forcePanic(true);
             notice(session,"尸潮事件触发：守住路线，继续向安全屋推进");
-        }
-        for (int i=0;i<session.map.itemSpawns().size();i++) {
-            var item=session.map.itemSpawns().get(i);
-            if (item.section()!=session.section) continue;
-            for (ServerPlayer player:alivePlayers(session)) {
-                String key=player.getUUID()+":"+i;
-                if (player.distanceToSqr(item.pos().getCenter())>9 || !session.claimedSupplies.add(key)) continue;
-                player.getInventory().add(new ItemStack(Items.ARROW,32));
-                player.getInventory().add(new ItemStack(Items.GOLDEN_APPLE));
-                player.getInventory().add(new ItemStack(Items.COOKED_BEEF,4));
-                tell(player,"已领取本处弹药和医疗补给");
-            }
         }
     }
 
@@ -608,16 +692,18 @@ public final class OutbreakGame {
                 continue;
             }
             int progress = session.reviveProgress.merge(downedId, 1, Integer::sum);
+            int needed=session.adrenalineUntil.getOrDefault(reviver.getUUID(),0)>now?60:100;
             if (progress % 20 == 0) {
-                reviver.displayClientMessage(Component.literal("救援 " + (progress / 20) + "/3"), true);
+                reviver.displayClientMessage(Component.literal("救援 " + (progress / 20) + "/"+needed/20), true);
             }
-            if (progress >= 60) {
+            if (progress >= needed) {
                 session.downed.remove(downedId);
                 session.downedSince.remove(downedId);
                 session.reviveProgress.remove(downedId);
                 downed.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
                 downed.removeEffect(MobEffects.WEAKNESS);
-                downed.setHealth(Math.max(6, downed.getMaxHealth() * 0.35f));
+                float health=Math.max(1,downed.getMaxHealth()*.3f);
+                downed.setHealth(health);session.temporaryHealth.put(downedId,Math.max(0,health-1));
                 notice(session, reviver.getDisplayName().getString() + " 救起了 " + downed.getDisplayName().getString());
             }
         }
@@ -634,12 +720,13 @@ public final class OutbreakGame {
             return;
         }
         session.incapCount.merge(player.getUUID(), 1, Integer::sum);
+        session.temporaryHealth.remove(player.getUUID());
         session.downed.add(player.getUUID());
         session.downedSince.put(player.getUUID(), server.getTickCount());
         session.reviveProgress.put(player.getUUID(), 0);
         player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20 * 40, 9));
         player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 20 * 40, 4));
-        notice(session, player.getDisplayName().getString() + " 倒地；队友蹲下靠近 3 秒可救援");
+        notice(session, player.getDisplayName().getString() + " 倒地；队友蹲下靠近 5 秒可救援，肾上腺素加速至3秒");
     }
 
     private void incomingDamage(LivingIncomingDamageEvent event) {
@@ -654,7 +741,7 @@ public final class OutbreakGame {
         String victimSession = event.getEntity().getPersistentData().getString(InfectedFactory.TAG_SESSION);
         if (!victimSession.isBlank() && event.getSource().getEntity() instanceof Entity attacker) {
             String attackerSession = attacker.getPersistentData().getString(InfectedFactory.TAG_SESSION);
-            if (victimSession.equals(attackerSession)) event.setCanceled(true);
+            if (victimSession.equals(attackerSession) && !(attacker instanceof Mob mob&&sessions.stream().anyMatch(s->s.throwables.isDistracted(mob,server.getTickCount())))) event.setCanceled(true);
         }
     }
 
@@ -663,6 +750,9 @@ public final class OutbreakGame {
         OutbreakSession session = session(player.getUUID());
         if (session == null) return;
         session.recentDamage.merge(player.getUUID(), (double)Math.max(0, event.getNewDamage()), Double::sum);
+        float remaining=Math.max(0,session.temporaryHealth.getOrDefault(player.getUUID(),0f)-event.getNewDamage());
+        session.temporaryHealth.put(player.getUUID(),Math.min(remaining,Math.max(0,player.getHealth()-1)));
+        if(player.isUsingItem()&&player.getUseItem().getItem() instanceof CampaignItems.MedicalItem)player.stopUsingItem();
     }
 
     private void drops(LivingDropsEvent event) {
@@ -695,6 +785,36 @@ public final class OutbreakGame {
 
     private void entityJoin(EntityJoinLevelEvent event) {
         if (!(event.getLevel() instanceof ServerLevel)) return;
+        Entity entity=event.getEntity();
+        String supplySession=entity.getPersistentData().getString(CampaignSupplies.SESSION);
+        String throwSession=entity.getPersistentData().getString(CampaignThrowables.TAG);
+        String equipmentSession=entity.getPersistentData().getString("muxi_outbreak_equipment_session");
+        if((!supplySession.isBlank()&&sessions.stream().noneMatch(s->s.id.toString().equals(supplySession)))||
+            (!equipmentSession.isBlank()&&sessions.stream().noneMatch(s->s.id.toString().equals(equipmentSession)))||
+            (!throwSession.isBlank()&&sessions.stream().noneMatch(s->s.id.toString().equals(throwSession)))){
+            event.setCanceled(true);entity.discard();return;
+        }
+        if(entity instanceof EntityKineticBullet bullet&&bullet.getOwner() instanceof ServerPlayer p){
+            OutbreakSession s=session(p.getUUID());
+            if(s!=null&&s.alive.contains(p.getUUID())&&!s.downed.contains(p.getUUID())&&
+                CampaignInventory.gunId(p.getInventory().getItem(0)).equals(bullet.getGunId().toString())){
+                int now=server.getTickCount();
+                ItemStack weapon=p.getInventory().getItem(0);int rounds=CampaignInventory.explosiveRounds(weapon);
+                if(rounds>0&&s.explosiveShotTick.getOrDefault(p.getUUID(),-1)!=now){
+                    CampaignInventory.explosiveRounds(weapon,rounds-1);s.explosiveRounds.put(p.getUUID(),rounds-1);s.explosiveShotTick.put(p.getUUID(),now);
+                }
+                if(s.explosiveShotTick.getOrDefault(p.getUUID(),-1)==now)bullet.getPersistentData().putBoolean("muxi_outbreak_explosive",true);
+            }
+        }
+        if(entity instanceof me.xjqsh.lrtactical.entity.GrenadeEntity grenade&&entity.level().dimension().location().toString().equals("muxi_outbreak:campaign"))grenade.setDestroyBlocks(false);
+        Entity owner=entity instanceof net.minecraft.world.entity.projectile.Projectile projectile?projectile.getOwner():
+            entity instanceof net.minecraft.world.entity.AreaEffectCloud cloud?cloud.getOwner():null;
+        if(owner instanceof ServerPlayer p){
+            OutbreakSession s=session(p.getUUID());
+            if(s!=null&&entity.level().dimension().equals(s.map.dimension())){
+                entity.getPersistentData().putString("muxi_outbreak_equipment_session",s.id.toString());s.equipmentEntities.add(entity.getUUID());
+            }
+        }
         String tag=event.getEntity().getPersistentData().getString(InfectedFactory.TAG_SESSION);
         if (!tag.isBlank() && sessions.stream().noneMatch(s->s.id.toString().equals(tag))) {
             event.setCanceled(true);event.getEntity().discard();
@@ -705,6 +825,7 @@ public final class OutbreakGame {
     }
 
     private void eliminate(OutbreakSession session, ServerPlayer player, String reason) {
+        session.eliminatedAt.put(player.getUUID(),player.position());
         session.alive.remove(player.getUUID());
         session.downed.remove(player.getUUID());
         session.downedSince.remove(player.getUUID());
@@ -718,9 +839,11 @@ public final class OutbreakGame {
     private void finish(OutbreakSession session, boolean win, String reason) {
         if (session.phase == OutbreakSession.Phase.FINISHED) return;
         session.phase = OutbreakSession.Phase.FINISHED;
+        session.supplies.cleanup();session.throwables.cleanup();
         MuxiOutbreak.LOG.info("OUTBREAK_RESULT map={} session={} win={} section={} seconds={} reason={}",session.map.id(),session.shortId(),win,session.section,session.seconds,reason);
         ServerLevel mapLevel = server == null ? null : server.getLevel(session.map.dimension());
         if (mapLevel != null) discardInfected(session, mapLevel);
+        if (mapLevel != null) discardEquipment(session,mapLevel);
         if (server != null) for (UUID id : session.players) {
             ServerPlayer player = server.getPlayerList().getPlayer(id);
             if (player == null) continue;
@@ -755,6 +878,10 @@ public final class OutbreakGame {
             + " · " + session.phase + " · Section " + session.section
             + " · 感染者 " + session.infected.size()
             + " · Director " + session.director.pace());
+    }
+    private void discardEquipment(OutbreakSession session,ServerLevel level){
+        for(UUID id:session.equipmentEntities){Entity entity=level.getEntity(id);if(entity!=null)entity.discard();}
+        session.equipmentEntities.clear();
     }
 
     private boolean allAliveInside(OutbreakSession session, OutbreakMap.SafeRoom room) {
@@ -801,6 +928,97 @@ public final class OutbreakGame {
         OutbreakSession session = session(player.getUUID());
         if (session == null) throw new IllegalArgumentException("你当前不在 Outbreak 游戏中");
         return session;
+    }
+
+    private boolean inCampaign(ServerPlayer player){
+        OutbreakSession s=session(player.getUUID());
+        return s!=null&&s.prepared.contains(player.getUUID())&&s.phase!=OutbreakSession.Phase.FINISHED;
+    }
+
+    private boolean interactSupply(ServerPlayer player,Entity target){
+        String id=target.getPersistentData().getString(CampaignSupplies.TAG);
+        if(id.isBlank())return false;
+        OutbreakSession s=session(player.getUUID());
+        if(s==null||!s.id.toString().equals(target.getPersistentData().getString(CampaignSupplies.SESSION)))return true;
+        String message=s.supplies.take(player,id,player.isCrouching());
+        if(!message.isBlank())tell(player,message);return true;
+    }
+
+    private ServerPlayer medicalTarget(OutbreakSession s,ServerPlayer user,String kind){
+        if(kind.equals("defib"))return s.eliminatedAt.entrySet().stream()
+            .filter(e->user.position().distanceToSqr(e.getValue())<=16&&visible(user,e.getValue().add(0,.4,0)))
+            .map(e->server.getPlayerList().getPlayer(e.getKey())).filter(Objects::nonNull).findFirst().orElse(null);
+        if(kind.equals("medkit")&&user.isCrouching())return alivePlayers(s).stream()
+            .filter(p->p!=user&&!s.downed.contains(p.getUUID())&&p.distanceToSqr(user)<=16&&user.hasLineOfSight(p))
+            .min(Comparator.comparingDouble(user::distanceToSqr)).orElse(user);
+        return user;
+    }
+    private boolean visible(ServerPlayer user,Vec3 destination){
+        var hit=user.level().clip(new ClipContext(user.getEyePosition(),destination,ClipContext.Block.COLLIDER,ClipContext.Fluid.NONE,user));
+        return hit.getType()==HitResult.Type.MISS||hit.getLocation().distanceTo(destination)<.5;
+    }
+    public boolean canUseMedical(ServerPlayer user,String kind){
+        OutbreakSession s=session(user.getUUID());
+        if(s==null||!s.prepared.contains(user.getUUID())||!s.alive.contains(user.getUUID())||s.downed.contains(user.getUUID()))return false;
+        if(!user.level().dimension().equals(s.map.dimension())||s.phase==OutbreakSession.Phase.PREPARING||s.phase==OutbreakSession.Phase.FINISHED)return false;
+        ServerPlayer target=medicalTarget(s,user,kind);if(target==null)return false;
+        return switch(kind){
+            case "medkit"->target.getHealth()-s.temporaryHealth.getOrDefault(target.getUUID(),0f)<target.getMaxHealth()-.01;
+            case "pills","adrenaline"->target.getHealth()<target.getMaxHealth()-.01;
+            case "defib"->s.eliminatedAt.containsKey(target.getUUID())&&!s.alive.contains(target.getUUID());
+            case "explosive_pack"->true;
+            default->false;
+        };
+    }
+    public boolean useMedical(ServerPlayer user,String kind){
+        if(!canUseMedical(user,kind))return false;
+        OutbreakSession s=requireSession(user);ServerPlayer target=medicalTarget(s,user,kind);
+        UUID id=target.getUUID();float before=target.getHealth();
+        switch(kind){
+            case "medkit"->{
+                float temp=s.temporaryHealth.getOrDefault(id,0f);
+                float permanent=Math.max(1,target.getHealth()-temp);
+                float healed=(float)SupplyRules.firstAidPermanent(permanent,target.getMaxHealth());
+                target.setHealth(Math.min(target.getMaxHealth(),healed+temp));
+                s.temporaryHealth.put(id,Math.max(0,target.getHealth()-healed));s.incapCount.remove(id);
+            }
+            case "pills","adrenaline"->{
+                float added=(float)SupplyRules.addTemporary(target.getHealth(),target.getMaxHealth(),kind.equals("adrenaline"));
+                target.setHealth(target.getHealth()+added);s.temporaryHealth.merge(id,added,Float::sum);
+                if(kind.equals("adrenaline")){
+                    s.adrenalineUntil.put(id,server.getTickCount()+300);
+                    target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,300,0,false,true));
+                }
+            }
+            case "defib"->{
+                Vec3 at=s.eliminatedAt.remove(id);if(at==null)return false;
+                target.teleportTo(user.serverLevel(),at.x,at.y,at.z,target.getYRot(),target.getXRot());
+                target.setGameMode(GameType.ADVENTURE);target.setHealth(target.getMaxHealth()*.5f);
+                s.temporaryHealth.remove(id);s.incapCount.remove(id);s.alive.add(id);
+            }
+            case "explosive_pack"->s.supplies.deployUpgrade(user);
+            default->{return false;}
+        }
+        MuxiOutbreak.LOG.info("OUTBREAK_MEDICAL session={} kind={} user={} target={} healthBefore={} healthAfter={} temporary={}",
+            s.shortId(),kind,user.getScoreboardName(),target.getScoreboardName(),before,target.getHealth(),s.temporaryHealth.getOrDefault(id,0f));
+        return true;
+    }
+    public boolean throwEquipment(ServerPlayer player,String kind,ItemStack stack){
+        OutbreakSession s=session(player.getUUID());
+        return s!=null&&inCampaign(player)&&s.throwables.launch(player,kind,stack);
+    }
+
+    private void explosiveImpact(Entity bullet,Vec3 position){
+        if(!(bullet.level() instanceof ServerLevel level)||!bullet.getPersistentData().getBoolean("muxi_outbreak_explosive")||bullet.getPersistentData().getBoolean("muxi_outbreak_explosive_used"))return;
+        bullet.getPersistentData().putBoolean("muxi_outbreak_explosive_used",true);
+        level.sendParticles(net.minecraft.core.particles.ParticleTypes.EXPLOSION,position.x,position.y+.5,position.z,1,0,0,0,0);
+        Entity owner=bullet instanceof net.minecraft.world.entity.projectile.Projectile projectile?projectile.getOwner():null;
+        // Native enhancement splashes entities only; never runs block-destruction logic.
+        for(LivingEntity victim:level.getEntitiesOfClass(LivingEntity.class,new AABB(position,position).inflate(2.5))){
+            double distance=victim.position().distanceTo(position);if(distance>2.5)continue;
+            if(level.clip(new ClipContext(position.add(0,.3,0),victim.getEyePosition(),ClipContext.Block.COLLIDER,ClipContext.Fluid.NONE,victim)).getType()!=HitResult.Type.MISS)continue;
+            victim.hurt(level.damageSources().explosion(bullet,owner instanceof LivingEntity living?living:null),(float)(6*(1-distance/2.5)));
+        }
     }
 
     private OutbreakSession session(UUID player) {

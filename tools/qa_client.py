@@ -1,6 +1,6 @@
 """Launch a clean graphical NeoForge client using cached local launcher libraries.
 
-Only Outbreak is installed here. This is explicitly not a full Better MC client
+Outbreak and its TaCZ/LR dependencies are installed here. This is not a full Better MC client
 load test. Login fields are replaced with a dedicated offline QA profile.
 """
 from __future__ import annotations
@@ -48,7 +48,10 @@ def main():
     for value in args:
         if value.startswith(('--','-D')) and any(s in value.lower() for s in ('password','secret','token')) and value!='--accessToken':
             raise ValueError('unrecognized credential-bearing launcher option')
-    jar=ROOT/'build/libs/muxi-outbreak-0.2.0.jar'
+    from qa_dependencies import install
+    dependencies=install(home)
+    for old in (home/'mods').glob('muxi-outbreak-*.jar'):old.unlink()
+    jar=ROOT/'build/libs'/json.loads((ROOT/'build/release.json').read_text(encoding='utf-8'))['artifact']
     shutil.copy2(jar,home/'mods'/jar.name)
     (home/'options.txt').write_text('\n'.join([
         'version:3955','lang:zh_cn','renderDistance:6','simulationDistance:2','maxFps:30',
@@ -62,7 +65,7 @@ def main():
         process=subprocess.Popen([str(java),'@'+str(argfile)],cwd=home,stdout=log,stderr=subprocess.STDOUT)
         (home/'run.json').write_text(json.dumps({'pid':process.pid,'java':str(java),'username':username,'uuid':ident,
             'jarSha256':hashlib.sha256(jar.read_bytes()).hexdigest(),'fullBetterMCClient':False,
-            'gameDirectory':str(home),'connection':'127.0.0.1:25683','heapMB':1536},indent=2),encoding='utf-8')
+            'gameDirectory':str(home),'connection':'127.0.0.1:25683','heapMB':1536,'dependencies':dependencies},indent=2),encoding='utf-8')
         print('QA_GRAPHICAL_CLIENT',process.pid,str(home/'console.log'),flush=True)
         code=process.wait();print('QA_GRAPHICAL_CLIENT_EXIT',code,flush=True)
         raise SystemExit(code)

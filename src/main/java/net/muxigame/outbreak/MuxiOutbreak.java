@@ -13,6 +13,7 @@ public final class MuxiOutbreak {
     public static final Logger LOG = LoggerFactory.getLogger("muxi-outbreak");
 
     public MuxiOutbreak(IEventBus modBus) {
+        net.muxigame.outbreak.equipment.CampaignItems.register(modBus);
         OutbreakGame game = new OutbreakGame();
         game.register(NeoForge.EVENT_BUS);
         LOG.info("muxi Outbreak loaded");

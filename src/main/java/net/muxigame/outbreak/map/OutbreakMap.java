@@ -27,7 +27,8 @@ public record OutbreakMap(
     String geometry,
     List<Chapter> chapters,
     List<PanicEvent> panicEvents,
-    Finale finale
+    Finale finale,
+    List<Supply> supplies
 ) {
     public enum Mode { CAMPAIGN, SURVIVAL }
     public record Spawn(int section, BlockPos pos) {}
@@ -35,6 +36,7 @@ public record OutbreakMap(
     public record Chapter(String id, String title, BlockPos start, BlockPos end, List<BlockPos> route) {}
     public record PanicEvent(int section, BlockPos pos, int waves) {}
     public record Finale(BlockPos pos, int holdSeconds, double radius, int waves) {}
+    public record Supply(String id,int section,BlockPos pos,List<String> choices,int count,boolean infinite,boolean mustExist,boolean directorChoice) {}
     public record SafeRoom(String id, BlockPos min, BlockPos max, int nextSection) {
         public boolean contains(Vec3 point) {
             return point.x >= Math.min(min.getX(), max.getX()) && point.x <= Math.max(min.getX(), max.getX()) + 1
@@ -69,7 +71,7 @@ public record OutbreakMap(
             spawns(json, "commonSpawns"), spawns(json, "hordeSpawns"), spawns(json, "bossSpawns"),
             items(json, "itemSpawns"),
             json.has("geometry") ? ResourceLocation.parse(json.get("geometry").getAsString()).toString() : "",
-            chapters(json), panics(json), finale(json)
+            chapters(json), panics(json), finale(json), supplies(json)
         );
     }
 
@@ -110,6 +112,20 @@ public record OutbreakMap(
             Math.max(20, Math.min(600, row.get("holdSeconds").getAsInt())),
             Math.max(3, Math.min(32, row.get("radius").getAsDouble())),
             Math.max(1, Math.min(10, row.get("waves").getAsInt())));
+    }
+
+    private static List<Supply> supplies(JsonObject json){
+        List<Supply> result=new ArrayList<>();java.util.Set<String> ids=new java.util.HashSet<>();
+        if(json.has("supplies"))for(var value:json.getAsJsonArray("supplies")){
+            var row=value.getAsJsonObject();String id=requiredString(row,"id");
+            if(!ids.add(id))throw new IllegalArgumentException("duplicate supply id "+id);
+            List<String> choices=new ArrayList<>();for(var choice:row.getAsJsonArray("choices"))choices.add(choice.getAsString());
+            if(choices.isEmpty())throw new IllegalArgumentException("empty supply choices "+id);
+            int count=row.get("count").getAsInt();if(count<1||count>10000)throw new IllegalArgumentException("invalid stock "+id);
+            result.add(new Supply(id,row.get("section").getAsInt(),pos(row.getAsJsonArray("pos")),List.copyOf(choices),count,
+                row.get("infinite").getAsBoolean(),row.get("mustExist").getAsBoolean(),row.get("directorChoice").getAsBoolean()));
+        }
+        return List.copyOf(result);
     }
 
     public List<Spawn> commonFor(int section) { return commonSpawns.stream().filter(s -> s.section == section).toList(); }

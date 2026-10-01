@@ -463,6 +463,9 @@ def main():
         'limitations':['Static/dynamic MDL props are not mesh-converted; L4D2 base-game assets are absent.',
                        'Original Source puzzle scripts/cinematics are replaced by native Outbreak checkpoint/panic/finale rules.']})
     print('CONVERSION_COMPLETE',manifest['blocks'],len(manifest['structures']),manifest['sha256'],flush=True)
+    if args.output.resolve()==RESOURCE.resolve():
+        from import_source_supplies import generate
+        generate()
 
 
 if __name__=='__main__':main()

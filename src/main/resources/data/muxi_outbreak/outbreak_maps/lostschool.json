@@ -1344,62 +1344,7 @@
       ]
     }
   ],
-  "itemSpawns": [
-    {
-      "section": 0,
-      "pos": [
-        -7,
-        83,
-        7
-      ],
-      "preset": "medical"
-    },
-    {
-      "section": 0,
-      "pos": [
-        -59,
-        63,
-        -4
-      ],
-      "preset": "medical"
-    },
-    {
-      "section": 1,
-      "pos": [
-        2011,
-        77,
-        -15
-      ],
-      "preset": "medical"
-    },
-    {
-      "section": 1,
-      "pos": [
-        2054,
-        57,
-        4
-      ],
-      "preset": "medical"
-    },
-    {
-      "section": 2,
-      "pos": [
-        4136,
-        81,
-        13
-      ],
-      "preset": "medical"
-    },
-    {
-      "section": 2,
-      "pos": [
-        4149,
-        78,
-        106
-      ],
-      "preset": "medical"
-    }
-  ],
+  "itemSpawns": [],
   "chapters": [
     {
       "id": "lost",
@@ -2367,5 +2312,3469 @@
     "holdSeconds": 60,
     "radius": 7.0,
     "waves": 3
+  },
+  "supplies": [
+    {
+      "id": "lost_130904",
+      "section": 0,
+      "pos": [
+        -2,
+        84,
+        5
+      ],
+      "choices": [
+        "melee"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_melee_spawn",
+      "sourceHammerId": "130904",
+      "sourceOrigin": [
+        -32.0,
+        -159.0,
+        97.0
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_131093",
+      "section": 0,
+      "pos": [
+        28,
+        83,
+        -20
+      ],
+      "choices": [
+        "medkit"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceHammerId": "131093",
+      "sourceOrigin": [
+        676.0,
+        477.0,
+        114.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_131101",
+      "section": 0,
+      "pos": [
+        -2,
+        86,
+        4
+      ],
+      "choices": [
+        "medkit"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceHammerId": "131101",
+      "sourceOrigin": [
+        -25.6916,
+        -110.0,
+        132.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_131123",
+      "section": 0,
+      "pos": [
+        -11,
+        83,
+        9
+      ],
+      "choices": [
+        "bile_bomb"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_vomitjar_spawn",
+      "sourceHammerId": "131123",
+      "sourceOrigin": [
+        -274.494,
+        -233.0,
+        70.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_131145",
+      "section": 0,
+      "pos": [
+        -11,
+        83,
+        3
+      ],
+      "choices": [
+        "lr:lrtactical:molotov"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_molotov_spawn",
+      "sourceHammerId": "131145",
+      "sourceOrigin": [
+        -275.712,
+        -73.0,
+        81.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_131167",
+      "section": 0,
+      "pos": [
+        28,
+        83,
+        -19
+      ],
+      "choices": [
+        "gun:tacz:m1014"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_autoshotgun_spawn",
+      "sourceHammerId": "131167",
+      "sourceOrigin": [
+        674.0,
+        461.0,
+        85.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_131187",
+      "section": 0,
+      "pos": [
+        -4,
+        83,
+        7
+      ],
+      "choices": [
+        "medkit"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceHammerId": "131187",
+      "sourceOrigin": [
+        -51.0,
+        -172.618,
+        70.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_131193",
+      "section": 0,
+      "pos": [
+        53,
+        84,
+        -13
+      ],
+      "choices": [
+        "medkit"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceHammerId": "131193",
+      "sourceOrigin": [
+        1289.1,
+        324.107,
+        102.376
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_131197",
+      "section": 0,
+      "pos": [
+        44,
+        83,
+        -10
+      ],
+      "choices": [
+        "medkit"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceHammerId": "131197",
+      "sourceOrigin": [
+        1038.0,
+        248.0,
+        70.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_133977",
+      "section": 0,
+      "pos": [
+        53,
+        84,
+        -13
+      ],
+      "choices": [
+        "gun:tacz:ak47"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_rifle_ak47_spawn",
+      "sourceHammerId": "133977",
+      "sourceOrigin": [
+        1282.0,
+        269.0,
+        97.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_133989",
+      "section": 0,
+      "pos": [
+        52,
+        85,
+        -10
+      ],
+      "choices": [
+        "gun:tacz:ak47"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_rifle_ak47_spawn",
+      "sourceHammerId": "133989",
+      "sourceOrigin": [
+        1282.0,
+        260.0,
+        98.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_140419",
+      "section": 0,
+      "pos": [
+        -141,
+        75,
+        8
+      ],
+      "choices": [
+        "melee"
+      ],
+      "count": 5,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_melee_spawn",
+      "sourceHammerId": "140419",
+      "sourceOrigin": [
+        -3352.0,
+        -182.0,
+        -143.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_140427",
+      "section": 0,
+      "pos": [
+        -149,
+        73,
+        6
+      ],
+      "choices": [
+        "pipe_bomb"
+      ],
+      "count": 5,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_pipe_bomb_spawn",
+      "sourceHammerId": "140427",
+      "sourceOrigin": [
+        -3598.05,
+        -137.0,
+        -151.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_140435",
+      "section": 0,
+      "pos": [
+        -130,
+        75,
+        -17
+      ],
+      "choices": [
+        "gun:tacz:glock_17"
+      ],
+      "count": 5,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_pistol_spawn",
+      "sourceHammerId": "140435",
+      "sourceOrigin": [
+        -3146.05,
+        390.081,
+        -105.446
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_140437",
+      "section": 0,
+      "pos": [
+        -130,
+        75,
+        -17
+      ],
+      "choices": [
+        "gun:tacz:glock_17"
+      ],
+      "count": 5,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_pistol_spawn",
+      "sourceHammerId": "140437",
+      "sourceOrigin": [
+        -3154.0,
+        390.081,
+        -106.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_140439",
+      "section": 0,
+      "pos": [
+        -130,
+        75,
+        -17
+      ],
+      "choices": [
+        "gun:tacz:glock_17"
+      ],
+      "count": 5,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_pistol_spawn",
+      "sourceHammerId": "140439",
+      "sourceOrigin": [
+        -3147.0,
+        390.081,
+        -112.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_140441",
+      "section": 0,
+      "pos": [
+        -130,
+        75,
+        -17
+      ],
+      "choices": [
+        "gun:tacz:glock_17"
+      ],
+      "count": 5,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_pistol_spawn",
+      "sourceHammerId": "140441",
+      "sourceOrigin": [
+        -3155.0,
+        390.081,
+        -112.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_140469",
+      "section": 0,
+      "pos": [
+        -141,
+        63,
+        -9
+      ],
+      "choices": [
+        "melee"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_melee_spawn",
+      "sourceHammerId": "140469",
+      "sourceOrigin": [
+        -3390.46,
+        215.527,
+        -414.826
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_140471",
+      "section": 0,
+      "pos": [
+        -150,
+        73,
+        -20
+      ],
+      "choices": [
+        "ammo"
+      ],
+      "count": 5,
+      "infinite": true,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceHammerId": "140471",
+      "sourceOrigin": [
+        -3597.02,
+        486.224,
+        -173.991
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_140616",
+      "section": 0,
+      "pos": [
+        122,
+        63,
+        -11
+      ],
+      "choices": [
+        "gun:tacz:rpg7"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_grenade_launcher",
+      "sourceHammerId": "140616",
+      "sourceOrigin": [
+        2930.53,
+        254.552,
+        -412.864
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_140618",
+      "section": 0,
+      "pos": [
+        118,
+        63,
+        19
+      ],
+      "choices": [
+        "gun:tacz:rpg7"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_grenade_launcher",
+      "sourceHammerId": "140618",
+      "sourceOrigin": [
+        2815.54,
+        -448.666,
+        -412.864
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_143638",
+      "section": 0,
+      "pos": [
+        28,
+        83,
+        -20
+      ],
+      "choices": [
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_adrenaline_spawn",
+      "sourceHammerId": "143638",
+      "sourceOrigin": [
+        676.207,
+        471.0,
+        97.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_143650",
+      "section": 0,
+      "pos": [
+        28,
+        83,
+        -20
+      ],
+      "choices": [
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_adrenaline_spawn",
+      "sourceHammerId": "143650",
+      "sourceOrigin": [
+        676.207,
+        476.0,
+        97.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_143663",
+      "section": 0,
+      "pos": [
+        33,
+        83,
+        -21
+      ],
+      "choices": [
+        "melee"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_melee_spawn",
+      "sourceHammerId": "143663",
+      "sourceOrigin": [
+        802.0,
+        502.0,
+        85.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_161996",
+      "section": 0,
+      "pos": [
+        70,
+        63,
+        14
+      ],
+      "choices": [
+        "gun:tacz:ak47"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_rifle_ak47_spawn",
+      "sourceHammerId": "161996",
+      "sourceOrigin": [
+        1672.2,
+        -359.686,
+        -408.902
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_168065",
+      "section": 0,
+      "pos": [
+        -145,
+        73,
+        -19
+      ],
+      "choices": [
+        "medkit"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_first_aid_kit_spawn",
+      "sourceHammerId": "168065",
+      "sourceOrigin": [
+        -3488.67,
+        452.236,
+        -173.819
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195741",
+      "section": 0,
+      "pos": [
+        38,
+        63,
+        -1
+      ],
+      "choices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_item_spawn",
+      "sourceHammerId": "195741",
+      "sourceOrigin": [
+        901.392,
+        15.47,
+        -408.365
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195745",
+      "section": 0,
+      "pos": [
+        -3,
+        63,
+        12
+      ],
+      "choices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_item_spawn",
+      "sourceHammerId": "195745",
+      "sourceOrigin": [
+        -74.9922,
+        -277.815,
+        -408.365
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195747",
+      "section": 0,
+      "pos": [
+        -26,
+        64,
+        5
+      ],
+      "choices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_item_spawn",
+      "sourceHammerId": "195747",
+      "sourceOrigin": [
+        -622.77,
+        -134.017,
+        -388.718
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195749",
+      "section": 0,
+      "pos": [
+        -138,
+        64,
+        -13
+      ],
+      "choices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_item_spawn",
+      "sourceHammerId": "195749",
+      "sourceOrigin": [
+        -3303.07,
+        338.857,
+        -370.723
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195754",
+      "section": 0,
+      "pos": [
+        -147,
+        73,
+        11
+      ],
+      "choices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_item_spawn",
+      "sourceHammerId": "195754",
+      "sourceOrigin": [
+        -3522.08,
+        -262.874,
+        -167.002
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195758",
+      "section": 0,
+      "pos": [
+        -54,
+        74,
+        5
+      ],
+      "choices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_item_spawn",
+      "sourceHammerId": "195758",
+      "sourceOrigin": [
+        -1274.49,
+        -130.727,
+        -147.355
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195766",
+      "section": 0,
+      "pos": [
+        -108,
+        73,
+        14
+      ],
+      "choices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_item_spawn",
+      "sourceHammerId": "195766",
+      "sourceOrigin": [
+        -2603.83,
+        -347.264,
+        -167.002
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195768",
+      "section": 0,
+      "pos": [
+        -127,
+        73,
+        -4
+      ],
+      "choices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_item_spawn",
+      "sourceHammerId": "195768",
+      "sourceOrigin": [
+        -3037.02,
+        96.0576,
+        -167.002
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195772",
+      "section": 0,
+      "pos": [
+        -141,
+        63,
+        -11
+      ],
+      "choices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_item_spawn",
+      "sourceHammerId": "195772",
+      "sourceOrigin": [
+        -3377.86,
+        261.645,
+        -408.365
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195778",
+      "section": 0,
+      "pos": [
+        -71,
+        63,
+        -5
+      ],
+      "choices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_item_spawn",
+      "sourceHammerId": "195778",
+      "sourceOrigin": [
+        -1693.64,
+        120.934,
+        -408.365
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195780",
+      "section": 0,
+      "pos": [
+        -26,
+        65,
+        13
+      ],
+      "choices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_item_spawn",
+      "sourceHammerId": "195780",
+      "sourceOrigin": [
+        -613.065,
+        -306.346,
+        -357.706
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195782",
+      "section": 0,
+      "pos": [
+        -11,
+        63,
+        7
+      ],
+      "choices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_item_spawn",
+      "sourceHammerId": "195782",
+      "sourceOrigin": [
+        -278.36,
+        -169.721,
+        -406.718
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195784",
+      "section": 0,
+      "pos": [
+        12,
+        63,
+        -18
+      ],
+      "choices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_item_spawn",
+      "sourceHammerId": "195784",
+      "sourceOrigin": [
+        299.656,
+        421.182,
+        -408.365
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195786",
+      "section": 0,
+      "pos": [
+        22,
+        65,
+        -14
+      ],
+      "choices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_item_spawn",
+      "sourceHammerId": "195786",
+      "sourceOrigin": [
+        548.245,
+        332.074,
+        -371.723
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195790",
+      "section": 0,
+      "pos": [
+        -31,
+        85,
+        -17
+      ],
+      "choices": [
+        "gun:tacz:hk_mp5a5",
+        "gun:tacz:m870",
+        "gun:tacz:ak47",
+        "gun:tacz:m4a1",
+        "gun:tacz:m1014",
+        "gun:tacz:m700"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_spawn",
+      "sourceHammerId": "195790",
+      "sourceOrigin": [
+        -746.188,
+        407.789,
+        79.4524
+      ],
+      "sourceFlags": 1,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195800",
+      "section": 0,
+      "pos": [
+        -40,
+        83,
+        -21
+      ],
+      "choices": [
+        "gun:tacz:hk_mp5a5",
+        "gun:tacz:m870",
+        "gun:tacz:ak47",
+        "gun:tacz:m4a1",
+        "gun:tacz:m1014",
+        "gun:tacz:m700"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_spawn",
+      "sourceHammerId": "195800",
+      "sourceOrigin": [
+        -964.721,
+        502.442,
+        83.161
+      ],
+      "sourceFlags": 1,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195806",
+      "section": 0,
+      "pos": [
+        -56,
+        66,
+        -14
+      ],
+      "choices": [
+        "gun:tacz:hk_mp5a5",
+        "gun:tacz:m870",
+        "gun:tacz:ak47",
+        "gun:tacz:m4a1",
+        "gun:tacz:m1014",
+        "gun:tacz:m700"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_spawn",
+      "sourceHammerId": "195806",
+      "sourceOrigin": [
+        -1348.03,
+        334.88,
+        -363.769
+      ],
+      "sourceFlags": 1,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195808",
+      "section": 0,
+      "pos": [
+        -46,
+        66,
+        -9
+      ],
+      "choices": [
+        "gun:tacz:hk_mp5a5",
+        "gun:tacz:m870",
+        "gun:tacz:ak47",
+        "gun:tacz:m4a1",
+        "gun:tacz:m1014",
+        "gun:tacz:m700"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_spawn",
+      "sourceHammerId": "195808",
+      "sourceOrigin": [
+        -1100.28,
+        226.0,
+        -347.0
+      ],
+      "sourceFlags": 1,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195812",
+      "section": 0,
+      "pos": [
+        -18,
+        83,
+        1
+      ],
+      "choices": [
+        "gun:tacz:glock_17",
+        "gun:tacz:deagle"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_spawn",
+      "sourceHammerId": "195812",
+      "sourceOrigin": [
+        -426.85,
+        -16.5584,
+        105.801
+      ],
+      "sourceFlags": 1,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195820",
+      "section": 0,
+      "pos": [
+        -58,
+        78,
+        12
+      ],
+      "choices": [
+        "gun:tacz:glock_17",
+        "gun:tacz:deagle"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_spawn",
+      "sourceHammerId": "195820",
+      "sourceOrigin": [
+        -1380.33,
+        -299.159,
+        -50.996
+      ],
+      "sourceFlags": 1,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lost_195822",
+      "section": 0,
+      "pos": [
+        -128,
+        74,
+        -13
+      ],
+      "choices": [
+        "gun:tacz:glock_17",
+        "gun:tacz:deagle"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_spawn",
+      "sourceHammerId": "195822",
+      "sourceOrigin": [
+        -3076.28,
+        321.853,
+        -132.791
+      ],
+      "sourceFlags": 1,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_12095",
+      "section": 1,
+      "pos": [
+        2101,
+        57,
+        -7
+      ],
+      "choices": [
+        "ammo"
+      ],
+      "count": 30,
+      "infinite": true,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceHammerId": "12095",
+      "sourceOrigin": [
+        1266.0,
+        169.61,
+        -527.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_31983",
+      "section": 1,
+      "pos": [
+        2020,
+        77,
+        -8
+      ],
+      "choices": [
+        "medkit"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceHammerId": "31983",
+      "sourceOrigin": [
+        -674.321,
+        182.056,
+        -77.817
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_31985",
+      "section": 1,
+      "pos": [
+        2025,
+        77,
+        -7
+      ],
+      "choices": [
+        "medkit"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceHammerId": "31985",
+      "sourceOrigin": [
+        -562.966,
+        171.56,
+        -77.817
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_31987",
+      "section": 1,
+      "pos": [
+        2025,
+        77,
+        -4
+      ],
+      "choices": [
+        "medkit"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceHammerId": "31987",
+      "sourceOrigin": [
+        -543.351,
+        85.2208,
+        -77.817
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_31989",
+      "section": 1,
+      "pos": [
+        2021,
+        77,
+        -3
+      ],
+      "choices": [
+        "medkit"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceHammerId": "31989",
+      "sourceOrigin": [
+        -655.203,
+        73.402,
+        -77.817
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_31991",
+      "section": 1,
+      "pos": [
+        2021,
+        77,
+        -12
+      ],
+      "choices": [
+        "ammo"
+      ],
+      "count": 5,
+      "infinite": true,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceHammerId": "31991",
+      "sourceOrigin": [
+        -638.0,
+        273.565,
+        -78.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_32100",
+      "section": 1,
+      "pos": [
+        2101,
+        57,
+        -7
+      ],
+      "choices": [
+        "gun:tacz:m700"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_hunting_rifle_spawn",
+      "sourceHammerId": "32100",
+      "sourceOrigin": [
+        1272.57,
+        177.0,
+        -558.0
+      ],
+      "sourceFlags": 2,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_32162",
+      "section": 1,
+      "pos": [
+        2083,
+        57,
+        2
+      ],
+      "choices": [
+        "melee"
+      ],
+      "count": 2,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_melee_spawn",
+      "sourceHammerId": "32162",
+      "sourceOrigin": [
+        849.036,
+        -37.8202,
+        -545.876
+      ],
+      "sourceFlags": 1,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_33553",
+      "section": 1,
+      "pos": [
+        2028,
+        77,
+        18
+      ],
+      "choices": [
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_adrenaline_spawn",
+      "sourceHammerId": "33553",
+      "sourceOrigin": [
+        -480.772,
+        -436.88,
+        -77.5407
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_33555",
+      "section": 1,
+      "pos": [
+        2018,
+        78,
+        13
+      ],
+      "choices": [
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_adrenaline_spawn",
+      "sourceHammerId": "33555",
+      "sourceOrigin": [
+        -705.854,
+        -292.669,
+        -58.2587
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_33557",
+      "section": 1,
+      "pos": [
+        2028,
+        78,
+        13
+      ],
+      "choices": [
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_adrenaline_spawn",
+      "sourceHammerId": "33557",
+      "sourceOrigin": [
+        -456.294,
+        -324.015,
+        -57.2587
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_33559",
+      "section": 1,
+      "pos": [
+        2028,
+        77,
+        7
+      ],
+      "choices": [
+        "pills"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_pain_pills_spawn",
+      "sourceHammerId": "33559",
+      "sourceOrigin": [
+        -452.659,
+        -175.379,
+        -77.7509
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_33563",
+      "section": 1,
+      "pos": [
+        2027,
+        79,
+        -12
+      ],
+      "choices": [
+        "pills"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_pain_pills_spawn",
+      "sourceHammerId": "33563",
+      "sourceOrigin": [
+        -469.241,
+        284.323,
+        -26.4569
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_33565",
+      "section": 1,
+      "pos": [
+        2027,
+        79,
+        -10
+      ],
+      "choices": [
+        "pills"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_pain_pills_spawn",
+      "sourceHammerId": "33565",
+      "sourceOrigin": [
+        -465.429,
+        227.217,
+        -26.4569
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_33575",
+      "section": 1,
+      "pos": [
+        2055,
+        67,
+        20
+      ],
+      "choices": [
+        "gun:tacz:rpg7"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_grenade_launcher_spawn",
+      "sourceHammerId": "33575",
+      "sourceOrigin": [
+        175.215,
+        -478.386,
+        -316.861
+      ],
+      "sourceFlags": 1,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_36699",
+      "section": 1,
+      "pos": [
+        2101,
+        57,
+        -10
+      ],
+      "choices": [
+        "medkit"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_first_aid_kit_spawn",
+      "sourceHammerId": "36699",
+      "sourceOrigin": [
+        1283.0,
+        233.777,
+        -557.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_36786",
+      "section": 1,
+      "pos": [
+        2117,
+        57,
+        2
+      ],
+      "choices": [
+        "medkit"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_first_aid_kit_spawn",
+      "sourceHammerId": "36786",
+      "sourceOrigin": [
+        1656.68,
+        -55.6285,
+        -557.817
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_36788",
+      "section": 1,
+      "pos": [
+        2087,
+        62,
+        17
+      ],
+      "choices": [
+        "medkit"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_first_aid_kit_spawn",
+      "sourceHammerId": "36788",
+      "sourceOrigin": [
+        934.599,
+        -417.735,
+        -452.365
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_36790",
+      "section": 1,
+      "pos": [
+        2051,
+        57,
+        2
+      ],
+      "choices": [
+        "medkit"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_first_aid_kit_spawn",
+      "sourceHammerId": "36790",
+      "sourceOrigin": [
+        65.538,
+        -46.959,
+        -557.817
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_38620",
+      "section": 1,
+      "pos": [
+        2097,
+        56,
+        -26
+      ],
+      "choices": [
+        "explosive_pack"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_upgradepack_explosive_spawn",
+      "sourceHammerId": "38620",
+      "sourceOrigin": [
+        1196.0,
+        630.0,
+        -580.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_52656",
+      "section": 1,
+      "pos": [
+        2008,
+        77,
+        14
+      ],
+      "choices": [
+        "gun:tacz:m870"
+      ],
+      "count": 2,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_shotgun_chrome_spawn",
+      "sourceHammerId": "52656",
+      "sourceOrigin": [
+        -950.086,
+        -353.496,
+        -39.5955
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_52662",
+      "section": 1,
+      "pos": [
+        2001,
+        67,
+        -18
+      ],
+      "choices": [
+        "gun:tacz:ak47"
+      ],
+      "count": 2,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_rifle_ak47_spawn",
+      "sourceHammerId": "52662",
+      "sourceOrigin": [
+        -1132.0,
+        439.845,
+        -245.0
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_58624",
+      "section": 1,
+      "pos": [
+        2101,
+        57,
+        -6
+      ],
+      "choices": [
+        "pipe_bomb"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_pipe_bomb_spawn",
+      "sourceHammerId": "58624",
+      "sourceOrigin": [
+        1262.0,
+        155.0,
+        -515.744
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_2_58626",
+      "section": 1,
+      "pos": [
+        2097,
+        56,
+        -27
+      ],
+      "choices": [
+        "pipe_bomb"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_pipe_bomb_spawn",
+      "sourceHammerId": "58626",
+      "sourceOrigin": [
+        1195.39,
+        638.263,
+        -554.706
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_56964",
+      "section": 2,
+      "pos": [
+        4197,
+        78,
+        198
+      ],
+      "choices": [
+        "ammo"
+      ],
+      "count": 4,
+      "infinite": true,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceHammerId": "56964",
+      "sourceOrigin": [
+        2412.4,
+        -4757.98,
+        -23.2998
+      ],
+      "sourceFlags": 10,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_56966",
+      "section": 2,
+      "pos": [
+        4200,
+        78,
+        199
+      ],
+      "choices": [
+        "pipe_bomb"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_pipe_bomb_spawn",
+      "sourceHammerId": "56966",
+      "sourceOrigin": [
+        2491.35,
+        -4772.54,
+        -15.2998
+      ],
+      "sourceFlags": 2,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_56968",
+      "section": 2,
+      "pos": [
+        4200,
+        78,
+        199
+      ],
+      "choices": [
+        "pipe_bomb"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_pipe_bomb_spawn",
+      "sourceHammerId": "56968",
+      "sourceOrigin": [
+        2485.81,
+        -4769.33,
+        -20.0
+      ],
+      "sourceFlags": 2,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_88683",
+      "section": 2,
+      "pos": [
+        4143,
+        79,
+        148
+      ],
+      "choices": [
+        "pills"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_pain_pills_spawn",
+      "sourceHammerId": "88683",
+      "sourceOrigin": [
+        1121.0,
+        -3545.0,
+        -3.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_88693",
+      "section": 2,
+      "pos": [
+        4143,
+        79,
+        148
+      ],
+      "choices": [
+        "pills"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_pain_pills_spawn",
+      "sourceHammerId": "88693",
+      "sourceOrigin": [
+        1124.0,
+        -3547.0,
+        -3.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_88695",
+      "section": 2,
+      "pos": [
+        4143,
+        79,
+        148
+      ],
+      "choices": [
+        "pills"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_pain_pills_spawn",
+      "sourceHammerId": "88695",
+      "sourceOrigin": [
+        1126.0,
+        -3543.0,
+        -3.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_88697",
+      "section": 2,
+      "pos": [
+        4143,
+        79,
+        148
+      ],
+      "choices": [
+        "pills"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_pain_pills_spawn",
+      "sourceHammerId": "88697",
+      "sourceOrigin": [
+        1124.0,
+        -3543.0,
+        -1.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_88707",
+      "section": 2,
+      "pos": [
+        4143,
+        79,
+        144
+      ],
+      "choices": [
+        "ammo"
+      ],
+      "count": 4,
+      "infinite": true,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceHammerId": "88707",
+      "sourceOrigin": [
+        1134.0,
+        -3467.0,
+        -3.0
+      ],
+      "sourceFlags": 10,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_88886",
+      "section": 2,
+      "pos": [
+        4144,
+        79,
+        147
+      ],
+      "choices": [
+        "medkit"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceHammerId": "88886",
+      "sourceOrigin": [
+        1145.0,
+        -3535.0,
+        0.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_91822",
+      "section": 2,
+      "pos": [
+        4197,
+        78,
+        198
+      ],
+      "choices": [
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_adrenaline_spawn",
+      "sourceHammerId": "91822",
+      "sourceOrigin": [
+        2423.94,
+        -4741.78,
+        -58.5407
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_94170",
+      "section": 2,
+      "pos": [
+        4198,
+        78,
+        201
+      ],
+      "choices": [
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_adrenaline_spawn",
+      "sourceHammerId": "94170",
+      "sourceOrigin": [
+        2440.0,
+        -4816.0,
+        -21.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_94176",
+      "section": 2,
+      "pos": [
+        4197,
+        78,
+        200
+      ],
+      "choices": [
+        "adrenaline"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_adrenaline_spawn",
+      "sourceHammerId": "94176",
+      "sourceOrigin": [
+        2434.0,
+        -4812.0,
+        -21.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_94182",
+      "section": 2,
+      "pos": [
+        4150,
+        93,
+        200
+      ],
+      "choices": [
+        "ammo"
+      ],
+      "count": 5,
+      "infinite": true,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceHammerId": "94182",
+      "sourceOrigin": [
+        1307.0,
+        -4809.46,
+        292.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_94191",
+      "section": 2,
+      "pos": [
+        4118,
+        93,
+        197
+      ],
+      "choices": [
+        "gun:tacz:m1014"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_autoshotgun_spawn",
+      "sourceHammerId": "94191",
+      "sourceOrigin": [
+        525.136,
+        -4723.0,
+        293.0
+      ],
+      "sourceFlags": 2,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_94201",
+      "section": 2,
+      "pos": [
+        4119,
+        93,
+        198
+      ],
+      "choices": [
+        "gun:tacz:m1014"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_autoshotgun_spawn",
+      "sourceHammerId": "94201",
+      "sourceOrigin": [
+        561.0,
+        -4743.0,
+        293.0
+      ],
+      "sourceFlags": 2,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_94215",
+      "section": 2,
+      "pos": [
+        4159,
+        93,
+        198
+      ],
+      "choices": [
+        "defib"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_defibrillator_spawn",
+      "sourceHammerId": "94215",
+      "sourceOrigin": [
+        1515.99,
+        -4752.45,
+        293.25
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_94217",
+      "section": 2,
+      "pos": [
+        4117,
+        79,
+        127
+      ],
+      "choices": [
+        "defib"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_defibrillator_spawn",
+      "sourceHammerId": "94217",
+      "sourceOrigin": [
+        514.305,
+        -3049.37,
+        -39.75
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_94219",
+      "section": 2,
+      "pos": [
+        4290,
+        78,
+        151
+      ],
+      "choices": [
+        "medkit"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_first_aid_kit_spawn",
+      "sourceHammerId": "94219",
+      "sourceOrigin": [
+        4644.04,
+        -3617.61,
+        -58.817
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95152",
+      "section": 2,
+      "pos": [
+        4194,
+        78,
+        199
+      ],
+      "choices": [
+        "gun:tacz:rpg7"
+      ],
+      "count": 5,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_grenade_launcher_spawn",
+      "sourceHammerId": "95152",
+      "sourceOrigin": [
+        2340.27,
+        -4781.24,
+        -56.8613
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95156",
+      "section": 2,
+      "pos": [
+        4197,
+        78,
+        193
+      ],
+      "choices": [
+        "gun:tacz:m700"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_hunting_rifle_spawn",
+      "sourceHammerId": "95156",
+      "sourceOrigin": [
+        2426.75,
+        -4642.0,
+        -50.0
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95172",
+      "section": 2,
+      "pos": [
+        4166,
+        78,
+        199
+      ],
+      "choices": [
+        "ammo",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline",
+        "bile_bomb"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_item_spawn",
+      "sourceHammerId": "95172",
+      "sourceOrigin": [
+        1683.78,
+        -4764.76,
+        -51.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95174",
+      "section": 2,
+      "pos": [
+        4163,
+        78,
+        199
+      ],
+      "choices": [
+        "ammo",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline",
+        "gun:tacz:m249"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_item_spawn",
+      "sourceHammerId": "95174",
+      "sourceOrigin": [
+        1615.39,
+        -4786.3,
+        -51.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95182",
+      "section": 2,
+      "pos": [
+        4167,
+        78,
+        201
+      ],
+      "choices": [
+        "melee"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_melee_spawn",
+      "sourceHammerId": "95182",
+      "sourceOrigin": [
+        1692.12,
+        -4814.57,
+        -43.9791
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95188",
+      "section": 2,
+      "pos": [
+        4177,
+        78,
+        201
+      ],
+      "choices": [
+        "melee"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_melee_spawn",
+      "sourceHammerId": "95188",
+      "sourceOrigin": [
+        1943.0,
+        -4814.57,
+        -27.0
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95198",
+      "section": 2,
+      "pos": [
+        4151,
+        78,
+        198
+      ],
+      "choices": [
+        "lr:lrtactical:molotov"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_molotov_spawn",
+      "sourceHammerId": "95198",
+      "sourceOrigin": [
+        1329.82,
+        -4756.02,
+        -53.7485
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95204",
+      "section": 2,
+      "pos": [
+        4151,
+        78,
+        198
+      ],
+      "choices": [
+        "lr:lrtactical:molotov"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_molotov_spawn",
+      "sourceHammerId": "95204",
+      "sourceOrigin": [
+        1328.0,
+        -4760.0,
+        -54.0
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95228",
+      "section": 2,
+      "pos": [
+        4196,
+        78,
+        194
+      ],
+      "choices": [
+        "gun:tacz:glock_17"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_pistol_spawn",
+      "sourceHammerId": "95228",
+      "sourceOrigin": [
+        2397.29,
+        -4646.21,
+        -56.6554
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95234",
+      "section": 2,
+      "pos": [
+        4078,
+        78,
+        182
+      ],
+      "choices": [
+        "gun:tacz:m870"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_pumpshotgun_spawn",
+      "sourceHammerId": "95234",
+      "sourceOrigin": [
+        -437.35,
+        -4366.0,
+        -24.0
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95242",
+      "section": 2,
+      "pos": [
+        4076,
+        78,
+        181
+      ],
+      "choices": [
+        "gun:tacz:ak47"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_rifle_ak47_spawn",
+      "sourceHammerId": "95242",
+      "sourceOrigin": [
+        -478.0,
+        -4353.66,
+        -25.0
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95254",
+      "section": 2,
+      "pos": [
+        4086,
+        78,
+        196
+      ],
+      "choices": [
+        "gun:tacz:scar_h"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_rifle_desert_spawn",
+      "sourceHammerId": "95254",
+      "sourceOrigin": [
+        -228.532,
+        -4700.0,
+        -44.0
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95262",
+      "section": 2,
+      "pos": [
+        4087,
+        78,
+        195
+      ],
+      "choices": [
+        "gun:tacz:scar_h"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_rifle_desert_spawn",
+      "sourceHammerId": "95262",
+      "sourceOrigin": [
+        -217.0,
+        -4691.0,
+        -50.0
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95274",
+      "section": 2,
+      "pos": [
+        4064,
+        78,
+        150
+      ],
+      "choices": [
+        "gun:tacz:m249"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_rifle_m60_spawn",
+      "sourceHammerId": "95274",
+      "sourceOrigin": [
+        -778.428,
+        -3596.36,
+        -12.0384
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95282",
+      "section": 2,
+      "pos": [
+        4067,
+        78,
+        104
+      ],
+      "choices": [
+        "gun:tacz:m4a1"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_rifle_spawn",
+      "sourceHammerId": "95282",
+      "sourceOrigin": [
+        -699.484,
+        -2490.56,
+        -54.996
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95290",
+      "section": 2,
+      "pos": [
+        4071,
+        79,
+        110
+      ],
+      "choices": [
+        "gun:tacz:m4a1"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_rifle_spawn",
+      "sourceHammerId": "95290",
+      "sourceOrigin": [
+        -602.0,
+        -2651.0,
+        -41.0
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95308",
+      "section": 2,
+      "pos": [
+        4108,
+        78,
+        89
+      ],
+      "choices": [
+        "gun:tacz:m870"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_shotgun_chrome_spawn",
+      "sourceHammerId": "95308",
+      "sourceOrigin": [
+        279.0,
+        -2146.0,
+        -19.0
+      ],
+      "sourceFlags": 1,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95322",
+      "section": 2,
+      "pos": [
+        4136,
+        78,
+        98
+      ],
+      "choices": [
+        "gun:tacz:ump45"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_smg_silenced_spawn",
+      "sourceHammerId": "95322",
+      "sourceOrigin": [
+        972.0,
+        -2357.0,
+        -37.0
+      ],
+      "sourceFlags": 1,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95334",
+      "section": 2,
+      "pos": [
+        4136,
+        78,
+        97
+      ],
+      "choices": [
+        "gun:tacz:ump45"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_smg_silenced_spawn",
+      "sourceHammerId": "95334",
+      "sourceOrigin": [
+        972.0,
+        -2337.0,
+        -37.0
+      ],
+      "sourceFlags": 1,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95346",
+      "section": 2,
+      "pos": [
+        4156,
+        78,
+        89
+      ],
+      "choices": [
+        "gun:tacz:ai_awp"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_sniper_military_spawn",
+      "sourceHammerId": "95346",
+      "sourceOrigin": [
+        1440.94,
+        -2126.0,
+        -49.0
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95365",
+      "section": 2,
+      "pos": [
+        4155,
+        78,
+        89
+      ],
+      "choices": [
+        "gun:tacz:hk_mp5a5",
+        "gun:tacz:m870",
+        "gun:tacz:ak47",
+        "gun:tacz:m4a1",
+        "gun:tacz:m1014",
+        "gun:tacz:m700"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_spawn",
+      "sourceHammerId": "95365",
+      "sourceOrigin": [
+        1419.23,
+        -2143.8,
+        -54.996
+      ],
+      "sourceFlags": 1,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95375",
+      "section": 2,
+      "pos": [
+        4195,
+        93,
+        205
+      ],
+      "choices": [
+        "gun:tacz:hk_mp5a5",
+        "gun:tacz:m870",
+        "gun:tacz:ak47",
+        "gun:tacz:m4a1",
+        "gun:tacz:m1014",
+        "gun:tacz:m700"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_spawn",
+      "sourceHammerId": "95375",
+      "sourceOrigin": [
+        2377.89,
+        -4920.32,
+        296.004
+      ],
+      "sourceFlags": 1,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95377",
+      "section": 2,
+      "pos": [
+        4210,
+        78,
+        201
+      ],
+      "choices": [
+        "gun:tacz:hk_mp5a5",
+        "gun:tacz:m870",
+        "gun:tacz:ak47",
+        "gun:tacz:m4a1",
+        "gun:tacz:m1014",
+        "gun:tacz:m700"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_spawn",
+      "sourceHammerId": "95377",
+      "sourceOrigin": [
+        2747.33,
+        -4819.89,
+        -55.996
+      ],
+      "sourceFlags": 1,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95379",
+      "section": 2,
+      "pos": [
+        4270,
+        78,
+        174
+      ],
+      "choices": [
+        "gun:tacz:hk_mp5a5",
+        "gun:tacz:m870",
+        "gun:tacz:ak47",
+        "gun:tacz:m4a1",
+        "gun:tacz:m1014",
+        "gun:tacz:m700"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_spawn",
+      "sourceHammerId": "95379",
+      "sourceOrigin": [
+        4167.92,
+        -4174.15,
+        -55.996
+      ],
+      "sourceFlags": 1,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95381",
+      "section": 2,
+      "pos": [
+        4256,
+        78,
+        157
+      ],
+      "choices": [
+        "gun:tacz:hk_mp5a5",
+        "gun:tacz:m870",
+        "gun:tacz:ak47",
+        "gun:tacz:m4a1",
+        "gun:tacz:m1014",
+        "gun:tacz:m700"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": true,
+      "sourceClass": "weapon_spawn",
+      "sourceHammerId": "95381",
+      "sourceOrigin": [
+        3839.35,
+        -3764.6,
+        -55.996
+      ],
+      "sourceFlags": 1,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95387",
+      "section": 2,
+      "pos": [
+        4249,
+        78,
+        94
+      ],
+      "choices": [
+        "explosive_pack"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_upgradepack_explosive_spawn",
+      "sourceHammerId": "95387",
+      "sourceOrigin": [
+        3675.93,
+        -2247.32,
+        -59.7487
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95389",
+      "section": 2,
+      "pos": [
+        4273,
+        78,
+        115
+      ],
+      "choices": [
+        "explosive_pack"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_upgradepack_explosive_spawn",
+      "sourceHammerId": "95389",
+      "sourceOrigin": [
+        4242.95,
+        -2750.62,
+        -59.7487
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95391",
+      "section": 2,
+      "pos": [
+        4289,
+        78,
+        160
+      ],
+      "choices": [
+        "explosive_pack"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_upgradepack_explosive_spawn",
+      "sourceHammerId": "95391",
+      "sourceOrigin": [
+        4643.33,
+        -3833.61,
+        -59.7487
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95393",
+      "section": 2,
+      "pos": [
+        4290,
+        78,
+        163
+      ],
+      "choices": [
+        "explosive_pack"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_upgradepack_explosive_spawn",
+      "sourceHammerId": "95393",
+      "sourceOrigin": [
+        4661.9,
+        -3918.89,
+        -59.7487
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95395",
+      "section": 2,
+      "pos": [
+        4213,
+        93,
+        195
+      ],
+      "choices": [
+        "explosive_pack"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_upgradepack_explosive_spawn",
+      "sourceHammerId": "95395",
+      "sourceOrigin": [
+        2808.65,
+        -4687.59,
+        292.251
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95397",
+      "section": 2,
+      "pos": [
+        4213,
+        93,
+        196
+      ],
+      "choices": [
+        "bile_bomb"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_vomitjar_spawn",
+      "sourceHammerId": "95397",
+      "sourceOrigin": [
+        2817.52,
+        -4709.11,
+        298.196
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95407",
+      "section": 2,
+      "pos": [
+        4213,
+        93,
+        196
+      ],
+      "choices": [
+        "bile_bomb"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_vomitjar_spawn",
+      "sourceHammerId": "95407",
+      "sourceOrigin": [
+        2820.0,
+        -4704.0,
+        297.0
+      ],
+      "sourceFlags": 1,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95421",
+      "section": 2,
+      "pos": [
+        4278,
+        78,
+        138
+      ],
+      "choices": [
+        "ammo"
+      ],
+      "count": 5,
+      "infinite": true,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceHammerId": "95421",
+      "sourceOrigin": [
+        4379.81,
+        -3301.01,
+        -58.9888
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95423",
+      "section": 2,
+      "pos": [
+        4266,
+        78,
+        113
+      ],
+      "choices": [
+        "ammo"
+      ],
+      "count": 5,
+      "infinite": true,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceHammerId": "95423",
+      "sourceOrigin": [
+        4077.64,
+        -2709.8,
+        -58.9888
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95425",
+      "section": 2,
+      "pos": [
+        4168,
+        78,
+        91
+      ],
+      "choices": [
+        "ammo"
+      ],
+      "count": 5,
+      "infinite": true,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceHammerId": "95425",
+      "sourceOrigin": [
+        1730.43,
+        -2177.36,
+        -58.9888
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95427",
+      "section": 2,
+      "pos": [
+        4103,
+        78,
+        88
+      ],
+      "choices": [
+        "ammo"
+      ],
+      "count": 5,
+      "infinite": true,
+      "mustExist": false,
+      "directorChoice": false,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceHammerId": "95427",
+      "sourceOrigin": [
+        173.588,
+        -2117.45,
+        -58.9888
+      ],
+      "sourceFlags": 0,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95433",
+      "section": 2,
+      "pos": [
+        4203,
+        79,
+        171
+      ],
+      "choices": [
+        "ammo"
+      ],
+      "count": 4,
+      "infinite": true,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceHammerId": "95433",
+      "sourceOrigin": [
+        2562.63,
+        -4104.35,
+        -39.835
+      ],
+      "sourceFlags": 10,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95435",
+      "section": 2,
+      "pos": [
+        4053,
+        78,
+        101
+      ],
+      "choices": [
+        "ammo"
+      ],
+      "count": 4,
+      "infinite": true,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceHammerId": "95435",
+      "sourceOrigin": [
+        -1021.06,
+        -2420.82,
+        -58.835
+      ],
+      "sourceFlags": 10,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95437",
+      "section": 2,
+      "pos": [
+        4122,
+        78,
+        191
+      ],
+      "choices": [
+        "ammo"
+      ],
+      "count": 4,
+      "infinite": true,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceHammerId": "95437",
+      "sourceOrigin": [
+        629.561,
+        -4582.69,
+        -58.835
+      ],
+      "sourceFlags": 10,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_95439",
+      "section": 2,
+      "pos": [
+        4231,
+        78,
+        91
+      ],
+      "choices": [
+        "ammo"
+      ],
+      "count": 4,
+      "infinite": true,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceHammerId": "95439",
+      "sourceOrigin": [
+        3248.8,
+        -2194.73,
+        -58.8351
+      ],
+      "sourceFlags": 10,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_114382",
+      "section": 2,
+      "pos": [
+        4185,
+        78,
+        196
+      ],
+      "choices": [
+        "lr:lrtactical:molotov"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_molotov_spawn",
+      "sourceHammerId": "114382",
+      "sourceOrigin": [
+        2135.52,
+        -4716.0,
+        -20.0
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_114392",
+      "section": 2,
+      "pos": [
+        4279,
+        78,
+        146
+      ],
+      "choices": [
+        "lr:lrtactical:molotov"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_molotov_spawn",
+      "sourceHammerId": "114392",
+      "sourceOrigin": [
+        4382.25,
+        -3494.8,
+        -35.8818
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_114394",
+      "section": 2,
+      "pos": [
+        4293,
+        79,
+        205
+      ],
+      "choices": [
+        "lr:lrtactical:molotov"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_molotov_spawn",
+      "sourceHammerId": "114394",
+      "sourceOrigin": [
+        4766.99,
+        -4897.89,
+        64.9753
+      ],
+      "sourceFlags": 3,
+      "unsupportedSourceChoices": []
+    },
+    {
+      "id": "lostschool_3_114396",
+      "section": 2,
+      "pos": [
+        4142,
+        82,
+        54
+      ],
+      "choices": [
+        "lr:lrtactical:molotov"
+      ],
+      "count": 1,
+      "infinite": false,
+      "mustExist": true,
+      "directorChoice": false,
+      "sourceClass": "weapon_molotov_spawn",
+      "sourceHammerId": "114396",
+      "sourceOrigin": [
+        1102.0,
+        -1303.0,
+        59.0
+      ],
+      "sourceFlags": 2,
+      "unsupportedSourceChoices": []
+    }
+  ],
+  "supplyPolicy": {
+    "sharedStock": true,
+    "perPlayerGiftPoints": false,
+    "ammoPile": "unlimited reserve-only refill; no medical/grenade restock",
+    "medicalSlots": "one medkit/defibrillator/upgrade pack AND one pills/adrenaline",
+    "throwableSlot": "one total throwable",
+    "director": "one seeded decision per unseen source node per round; fixed supplies are not overwritten; depleted supplies never regrow",
+    "notExact": "Valve item-density and Director RNG are not reproduced bit-for-bit; undocumented selection weights are an explicit adaptation."
   }
 }

@@ -16,8 +16,16 @@ final class PlayerSnapshot {
     private PlayerSnapshot() {}
 
     static void capture(ServerPlayer player) {
+        checkEligible(player);
+        captureChecked(player);
+    }
+    static void checkEligible(ServerPlayer player){
+        if(player.getPersistentData().contains("muxi_challenge_return"))throw new IllegalStateException("请先退出僵尸枪战，不能重叠保存两局背包");
+        if(!player.containerMenu.getCarried().isEmpty())throw new IllegalStateException("请先放下鼠标上拿着的物品");
         if (player.getPersistentData().contains(KEY, Tag.TAG_COMPOUND))
             throw new IllegalStateException("尚有未恢复的小游戏状态");
+    }
+    private static void captureChecked(ServerPlayer player){
         CompoundTag tag = new CompoundTag();
         tag.put("inventory",player.getInventory().save(new ListTag()));
         tag.putInt("selected",player.getInventory().selected);
@@ -40,6 +48,7 @@ final class PlayerSnapshot {
     static boolean restore(ServerPlayer player) {
         if (!player.getPersistentData().contains(KEY, Tag.TAG_COMPOUND)) return false;
         CompoundTag tag = player.getPersistentData().getCompound(KEY);
+        com.tacz.guns.api.entity.IGunOperator.fromLivingEntity(player).cancelReload();
         player.closeContainer();
         player.getInventory().load(tag.getList("inventory",Tag.TAG_COMPOUND));
         player.getInventory().selected = Math.max(0, Math.min(8,tag.getInt("selected")));
@@ -64,20 +73,6 @@ final class PlayerSnapshot {
     }
 
     static void kit(ServerPlayer player) {
-        player.closeContainer();
-        player.getInventory().clearContent();
-        player.removeAllEffects();
-        player.getInventory().add(new ItemStack(Items.IRON_SWORD));
-        player.getInventory().add(new ItemStack(Items.BOW));
-        player.getInventory().add(new ItemStack(Items.SHIELD));
-        player.getInventory().add(new ItemStack(Items.ARROW,64));
-        player.getInventory().add(new ItemStack(Items.ARROW,64));
-        player.getInventory().add(new ItemStack(Items.COOKED_BEEF,16));
-        player.getInventory().add(new ItemStack(Items.GOLDEN_APPLE,4));
-        player.setGameMode(GameType.ADVENTURE);
-        player.setHealth(player.getMaxHealth());
-        player.getFoodData().setFoodLevel(20);
-        player.getFoodData().setSaturation(10);
-        player.containerMenu.broadcastChanges();
+        net.muxigame.outbreak.equipment.CampaignInventory.kit(player);
     }
 }

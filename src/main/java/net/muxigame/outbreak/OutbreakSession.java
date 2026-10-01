@@ -44,12 +44,22 @@ public final class OutbreakSession {
     public int finaleStarted = -1;
     public int finaleWaves;
     public boolean finaleTankSpawned;
+    public final net.muxigame.outbreak.equipment.CampaignSupplies supplies;
+    public final net.muxigame.outbreak.equipment.CampaignThrowables throwables;
+    public final Map<UUID,Float> temporaryHealth=new HashMap<>();
+    public final Map<UUID,Integer> adrenalineUntil=new HashMap<>();
+    public final Map<UUID,Vec3> eliminatedAt=new HashMap<>();
+    public final Map<UUID,Integer> explosiveRounds=new HashMap<>();
+    public final Map<UUID,Integer> explosiveShotTick=new HashMap<>();
+    public final Set<UUID> equipmentEntities=new HashSet<>();
 
     public record ReturnPoint(ResourceKey<Level> dimension, Vec3 position, float yaw, float pitch) {}
 
     public OutbreakSession(UUID host, OutbreakMap map, OutbreakMap.Mode mode, int difficulty, int now) {
         this.host = host;
         this.map = map;
+        this.supplies=new net.muxigame.outbreak.equipment.CampaignSupplies(this);
+        this.throwables=new net.muxigame.outbreak.equipment.CampaignThrowables(this);
         this.mode = mode;
         this.difficulty = Math.max(0, Math.min(3, difficulty));
         this.timer = now + 200;
