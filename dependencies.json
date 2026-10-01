@@ -1,0 +1,9 @@
+{
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.250",
+  "compileOnly": [
+    "tacz-neoforge-1.21.1-1.1.8-hotfix-r6.jar",
+    "[冠军强敌再续]champions-neoforge-21.1.1.7.jar"
+  ],
+  "compileOnlyNote": "Optional integrations are detected at runtime. Third-party jars are never bundled."
+}

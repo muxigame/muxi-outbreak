@@ -1,0 +1,36 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+
+[[mods]]
+modId="muxi_outbreak"
+version="\${mod_version}"
+displayName="muxi Outbreak"
+description="Cooperative infected campaign/survival minigame with an AI director and legacy Left 2 Mine-compatible map controls."
+displayURL="https://github.com/muxigame/muxi-outbreak"
+
+[[dependencies.muxi_outbreak]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.250,)"
+side="SERVER"
+
+[[dependencies.muxi_outbreak]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1]"
+side="SERVER"
+
+[[dependencies.muxi_outbreak]]
+modId="tacz"
+type="optional"
+versionRange="[1.1.8,)"
+ordering="AFTER"
+side="SERVER"
+
+[[dependencies.muxi_outbreak]]
+modId="muxi_game_core"
+type="optional"
+versionRange="[1.12.0,)"
+ordering="AFTER"
+side="SERVER"
