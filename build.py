@@ -13,6 +13,7 @@ from pathlib import Path
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 import zipfile
 
@@ -129,9 +130,17 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--server", type=Path, default=ROOT.parent / "bmc5server")
     parser.add_argument("--java-home", type=Path)
-    parser.add_argument("--test", action="store_true", help="accepted for build.ps1 compatibility")
+    parser.add_argument("--test", action="store_true", help="run Python and executable Java regression tests before building")
     args = parser.parse_args()
     try:
+        if args.test:
+            subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", str(ROOT / "tests"), "-v"], check=True, cwd=ROOT)
+            javac, java = java_tools(args.java_home)
+            with tempfile.TemporaryDirectory(prefix="outbreak-tests-") as raw:
+                test_dir = Path(raw)
+                compile_java(javac, [ROOT / "src/main/java/net/muxigame/outbreak/director/Director.java",
+                                    ROOT / "tests/java/DirectorTest.java"], test_dir, str(test_dir), test_dir / "test.args")
+                subprocess.run([str(java), "-ea", "-cp", str(test_dir), "DirectorTest"], check=True)
         build(args.server.resolve(), args.java_home)
     except (OSError, ValueError, subprocess.SubprocessError) as error:
         raise SystemExit(str(error)) from None

@@ -1,0 +1,170 @@
+{
+  "id": "campaign_city_zero",
+  "title": "城市零号感染区",
+  "mode": "campaign",
+  "dimension": "muxi_game_core:adventure",
+  "start": [
+    0,
+    72,
+    0
+  ],
+  "finish": [
+    260,
+    74,
+    -80
+  ],
+  "safeRooms": [
+    {
+      "id": "safe_station",
+      "min": [
+        70,
+        68,
+        -20
+      ],
+      "max": [
+        82,
+        76,
+        -8
+      ],
+      "nextSection": 1
+    },
+    {
+      "id": "safe_hospital",
+      "min": [
+        170,
+        70,
+        -70
+      ],
+      "max": [
+        182,
+        78,
+        -58
+      ],
+      "nextSection": 2
+    }
+  ],
+  "commonSpawns": [
+    {
+      "section": 0,
+      "pos": [
+        20,
+        72,
+        -10
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        45,
+        72,
+        14
+      ]
+    },
+    {
+      "section": 1,
+      "pos": [
+        100,
+        72,
+        -35
+      ]
+    },
+    {
+      "section": 1,
+      "pos": [
+        135,
+        72,
+        -50
+      ]
+    },
+    {
+      "section": 2,
+      "pos": [
+        210,
+        73,
+        -70
+      ]
+    },
+    {
+      "section": 2,
+      "pos": [
+        235,
+        73,
+        -60
+      ]
+    }
+  ],
+  "hordeSpawns": [
+    {
+      "section": 0,
+      "pos": [
+        62,
+        72,
+        -12
+      ]
+    },
+    {
+      "section": 1,
+      "pos": [
+        150,
+        72,
+        -55
+      ]
+    },
+    {
+      "section": 2,
+      "pos": [
+        245,
+        73,
+        -75
+      ]
+    }
+  ],
+  "bossSpawns": [
+    {
+      "section": 1,
+      "pos": [
+        155,
+        72,
+        -55
+      ]
+    },
+    {
+      "section": 2,
+      "pos": [
+        250,
+        73,
+        -75
+      ]
+    }
+  ],
+  "itemSpawns": [
+    {
+      "section": 0,
+      "pos": [
+        5,
+        72,
+        5
+      ],
+      "preset": "start"
+    },
+    {
+      "section": 1,
+      "pos": [
+        90,
+        72,
+        -15
+      ],
+      "preset": "medical"
+    },
+    {
+      "section": 2,
+      "pos": [
+        190,
+        73,
+        -65
+      ],
+      "preset": "ammo"
+    }
+  ],
+  "enabled": false
+}

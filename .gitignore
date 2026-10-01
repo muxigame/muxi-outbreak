@@ -14,6 +14,10 @@
 *.jar
 *.zip
 *.class
+*.vpk
+*.bsp
+*.nav
+/maps/workshop/*_extracted/
 **/__pycache__/
 *.py[cod]
 .idea/

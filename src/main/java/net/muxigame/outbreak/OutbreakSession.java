@@ -11,7 +11,7 @@ import net.muxigame.outbreak.map.OutbreakMap;
 import java.util.*;
 
 public final class OutbreakSession {
-    public enum Phase { COUNTDOWN, RUNNING, SAFE_ROOM, FINISHED }
+    public enum Phase { PREPARING, COUNTDOWN, RUNNING, SAFE_ROOM, FINISHED }
 
     public final UUID id = UUID.randomUUID();
     public final UUID host;
@@ -38,6 +38,12 @@ public final class OutbreakSession {
     public int panicDelay;
     public boolean directorEnabled = true;
     public boolean forcedWin;
+    public final Set<Integer> triggeredPanics = new HashSet<>();
+    public final Set<String> claimedSupplies = new HashSet<>();
+    public final Set<UUID> prepared = new HashSet<>();
+    public int finaleStarted = -1;
+    public int finaleWaves;
+    public boolean finaleTankSpawned;
 
     public record ReturnPoint(ResourceKey<Level> dimension, Vec3 position, float yaw, float pitch) {}
 

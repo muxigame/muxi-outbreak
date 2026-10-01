@@ -1,0 +1,15 @@
+﻿{
+  "source": "l4d2_workshop",
+  "campaign": "Back To School Campaign",
+  "workshopId": "121115793",
+  "author": "envirozavr",
+  "status": "pending_asset_import",
+  "chapters": 6,
+  "target": "muxi_outbreak",
+  "pipeline": {
+    "sourceFormat": "BSP/VPK",
+    "geometry": "pending",
+    "metadata": "pending",
+    "minecraftDimension": "muxi_game_core:adventure"
+  }
+}

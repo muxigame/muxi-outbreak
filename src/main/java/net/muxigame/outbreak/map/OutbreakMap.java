@@ -23,11 +23,18 @@ public record OutbreakMap(
     List<Spawn> commonSpawns,
     List<Spawn> hordeSpawns,
     List<Spawn> bossSpawns,
-    List<ItemSpawn> itemSpawns
+    List<ItemSpawn> itemSpawns,
+    String geometry,
+    List<Chapter> chapters,
+    List<PanicEvent> panicEvents,
+    Finale finale
 ) {
     public enum Mode { CAMPAIGN, SURVIVAL }
     public record Spawn(int section, BlockPos pos) {}
     public record ItemSpawn(int section, BlockPos pos, String preset) {}
+    public record Chapter(String id, String title, BlockPos start, BlockPos end, List<BlockPos> route) {}
+    public record PanicEvent(int section, BlockPos pos, int waves) {}
+    public record Finale(BlockPos pos, int holdSeconds, double radius, int waves) {}
     public record SafeRoom(String id, BlockPos min, BlockPos max, int nextSection) {
         public boolean contains(Vec3 point) {
             return point.x >= Math.min(min.getX(), max.getX()) && point.x <= Math.max(min.getX(), max.getX()) + 1
@@ -60,8 +67,49 @@ public record OutbreakMap(
         return new OutbreakMap(
             id, title, mode, dimension, start, finish, List.copyOf(safeRooms),
             spawns(json, "commonSpawns"), spawns(json, "hordeSpawns"), spawns(json, "bossSpawns"),
-            items(json, "itemSpawns")
+            items(json, "itemSpawns"),
+            json.has("geometry") ? ResourceLocation.parse(json.get("geometry").getAsString()).toString() : "",
+            chapters(json), panics(json), finale(json)
         );
+    }
+
+    public BlockPos sectionStart(int section) {
+        return section >= 0 && section < chapters.size() ? chapters.get(section).start() : start;
+    }
+
+    public String sectionTitle(int section) {
+        return section >= 0 && section < chapters.size() ? chapters.get(section).title() : title;
+    }
+
+    private static List<Chapter> chapters(JsonObject json) {
+        List<Chapter> result = new ArrayList<>();
+        if (json.has("chapters")) for (var element : json.getAsJsonArray("chapters")) {
+            JsonObject row = element.getAsJsonObject();
+            List<BlockPos> route = new ArrayList<>();
+            if (row.has("route")) for (var point : row.getAsJsonArray("route")) route.add(pos(point.getAsJsonArray()));
+            result.add(new Chapter(requiredString(row,"id"), requiredString(row,"title"),
+                pos(row.getAsJsonArray("start")), pos(row.getAsJsonArray("end")), List.copyOf(route)));
+        }
+        return List.copyOf(result);
+    }
+
+    private static List<PanicEvent> panics(JsonObject json) {
+        List<PanicEvent> result = new ArrayList<>();
+        if (json.has("panicEvents")) for (var element : json.getAsJsonArray("panicEvents")) {
+            JsonObject row = element.getAsJsonObject();
+            result.add(new PanicEvent(row.get("section").getAsInt(), pos(row.getAsJsonArray("pos")),
+                Math.max(1, Math.min(10, row.get("waves").getAsInt()))));
+        }
+        return List.copyOf(result);
+    }
+
+    private static Finale finale(JsonObject json) {
+        if (!json.has("finale")) return null;
+        JsonObject row = json.getAsJsonObject("finale");
+        return new Finale(pos(row.getAsJsonArray("pos")),
+            Math.max(20, Math.min(600, row.get("holdSeconds").getAsInt())),
+            Math.max(3, Math.min(32, row.get("radius").getAsDouble())),
+            Math.max(1, Math.min(10, row.get("waves").getAsInt())));
     }
 
     public List<Spawn> commonFor(int section) { return commonSpawns.stream().filter(s -> s.section == section).toList(); }

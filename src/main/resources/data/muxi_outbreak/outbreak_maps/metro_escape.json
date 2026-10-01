@@ -3,35 +3,192 @@
   "title": "地铁撤离",
   "mode": "campaign",
   "dimension": "muxi_game_core:adventure",
-  "start": [0, 72, 0],
-  "finish": [184, 73, -46],
+  "start": [
+    0,
+    72,
+    0
+  ],
+  "finish": [
+    184,
+    73,
+    -46
+  ],
   "safeRooms": [
-    {"id": "safe_1", "min": [55, 68, -18], "max": [64, 76, -7], "nextSection": 1},
-    {"id": "safe_2", "min": [118, 69, -62], "max": [128, 77, -50], "nextSection": 2}
+    {
+      "id": "safe_1",
+      "min": [
+        55,
+        68,
+        -18
+      ],
+      "max": [
+        64,
+        76,
+        -7
+      ],
+      "nextSection": 1
+    },
+    {
+      "id": "safe_2",
+      "min": [
+        118,
+        69,
+        -62
+      ],
+      "max": [
+        128,
+        77,
+        -50
+      ],
+      "nextSection": 2
+    }
   ],
   "commonSpawns": [
-    {"section": 0, "pos": [18, 71, -13]},
-    {"section": 0, "pos": [31, 71, 8]},
-    {"section": 0, "pos": [46, 70, -24]},
-    {"section": 1, "pos": [79, 70, -36]},
-    {"section": 1, "pos": [92, 72, -17]},
-    {"section": 1, "pos": [108, 70, -55]},
-    {"section": 2, "pos": [143, 72, -41]},
-    {"section": 2, "pos": [160, 71, -68]},
-    {"section": 2, "pos": [174, 73, -36]}
+    {
+      "section": 0,
+      "pos": [
+        18,
+        71,
+        -13
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        31,
+        71,
+        8
+      ]
+    },
+    {
+      "section": 0,
+      "pos": [
+        46,
+        70,
+        -24
+      ]
+    },
+    {
+      "section": 1,
+      "pos": [
+        79,
+        70,
+        -36
+      ]
+    },
+    {
+      "section": 1,
+      "pos": [
+        92,
+        72,
+        -17
+      ]
+    },
+    {
+      "section": 1,
+      "pos": [
+        108,
+        70,
+        -55
+      ]
+    },
+    {
+      "section": 2,
+      "pos": [
+        143,
+        72,
+        -41
+      ]
+    },
+    {
+      "section": 2,
+      "pos": [
+        160,
+        71,
+        -68
+      ]
+    },
+    {
+      "section": 2,
+      "pos": [
+        174,
+        73,
+        -36
+      ]
+    }
   ],
   "hordeSpawns": [
-    {"section": 0, "pos": [42, 70, -27]},
-    {"section": 1, "pos": [103, 70, -58]},
-    {"section": 2, "pos": [170, 72, -72]}
+    {
+      "section": 0,
+      "pos": [
+        42,
+        70,
+        -27
+      ]
+    },
+    {
+      "section": 1,
+      "pos": [
+        103,
+        70,
+        -58
+      ]
+    },
+    {
+      "section": 2,
+      "pos": [
+        170,
+        72,
+        -72
+      ]
+    }
   ],
   "bossSpawns": [
-    {"section": 1, "pos": [112, 70, -57]},
-    {"section": 2, "pos": [176, 72, -66]}
+    {
+      "section": 1,
+      "pos": [
+        112,
+        70,
+        -57
+      ]
+    },
+    {
+      "section": 2,
+      "pos": [
+        176,
+        72,
+        -66
+      ]
+    }
   ],
   "itemSpawns": [
-    {"section": 0, "pos": [4, 72, 3], "preset": "start"},
-    {"section": 1, "pos": [65, 71, -10], "preset": "medical"},
-    {"section": 2, "pos": [130, 72, -52], "preset": "ammo"}
-  ]
+    {
+      "section": 0,
+      "pos": [
+        4,
+        72,
+        3
+      ],
+      "preset": "start"
+    },
+    {
+      "section": 1,
+      "pos": [
+        65,
+        71,
+        -10
+      ],
+      "preset": "medical"
+    },
+    {
+      "section": 2,
+      "pos": [
+        130,
+        72,
+        -52
+      ],
+      "preset": "ammo"
+    }
+  ],
+  "enabled": false
 }

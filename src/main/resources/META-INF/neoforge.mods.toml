@@ -4,7 +4,7 @@ license="MIT"
 
 [[mods]]
 modId="muxi_outbreak"
-version="\${mod_version}"
+version="${mod_version}"
 displayName="muxi Outbreak"
 description="Cooperative infected campaign/survival minigame with an AI director and legacy Left 2 Mine-compatible map controls."
 displayURL="https://github.com/muxigame/muxi-outbreak"
@@ -31,6 +31,6 @@ side="SERVER"
 [[dependencies.muxi_outbreak]]
 modId="muxi_game_core"
 type="optional"
-versionRange="[1.12.0,)"
+versionRange="[0,)"
 ordering="AFTER"
 side="SERVER"

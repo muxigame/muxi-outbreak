@@ -17,7 +17,9 @@ public final class OutbreakMapLoader {
         for (var entry : resources.entrySet()) {
             if (!entry.getKey().getNamespace().equals(MuxiOutbreak.MOD_ID)) continue;
             try (Reader reader = entry.getValue().openAsReader()) {
-                OutbreakMap map = OutbreakMap.parse(JsonParser.parseReader(reader).getAsJsonObject());
+                var json = JsonParser.parseReader(reader).getAsJsonObject();
+                if (json.has("enabled") && !json.get("enabled").getAsBoolean()) continue;
+                OutbreakMap map = OutbreakMap.parse(json);
                 if (result.putIfAbsent(map.id(), map) != null) {
                     throw new IllegalArgumentException("duplicate map id " + map.id());
                 }

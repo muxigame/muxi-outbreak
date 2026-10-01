@@ -1387,5 +1387,6 @@
       "Safe-room bounds are estimated around saferoom-node anchors and should be audited before publishing.",
       "Section links use node parent coordinates and saferoom-door proximity, with distance fallback."
     ]
-  }
+  },
+  "enabled": false
 }

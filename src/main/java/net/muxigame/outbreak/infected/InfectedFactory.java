@@ -27,6 +27,8 @@ public final class InfectedFactory {
         if (mob == null) throw new IllegalStateException("Unable to create " + kind);
         mob.getPersistentData().putString(TAG_SESSION, sessionId.toString());
         mob.getPersistentData().putString(TAG_KIND, kind.name());
+        mob.addTag("muxi_outbreak");
+        mob.addTag("muxi_outbreak_" + kind.name().toLowerCase(java.util.Locale.ROOT));
         mob.setPersistenceRequired();
         mob.setCanPickUpLoot(false);
         mob.setCustomName(Component.literal(display(kind)));
@@ -34,7 +36,7 @@ public final class InfectedFactory {
 
         if (mob instanceof Zombie zombie) {
             zombie.setBaby(kind == InfectedKind.HUNTER || kind == InfectedKind.JOCKEY);
-            zombie.setCanBreakDoors(true);
+            zombie.setCanBreakDoors(false);
         }
         double party = 1.0 + Math.max(0, playerCount - 1) * 0.16;
         double diff = 0.85 + Math.max(0, Math.min(3, difficulty)) * 0.17;

@@ -1,0 +1,18 @@
+﻿{
+  "id": "lostschool",
+  "title": "逃离学院",
+  "source": "L4D2 Workshop VPK",
+  "workshopId": "795271842",
+  "author": "未名",
+  "chapters": [
+    {"map":"lost","title":"9号宿舍","bsp":"maps/lost.bsp"},
+    {"map":"lostschool_2","title":"8号宿舍","bsp":"maps/lostschool_2.bsp"},
+    {"map":"lostschool_3","title":"大操场","bsp":"maps/lostschool_3.bsp"}
+  ],
+  "dimension":"muxi_game_core:adventure",
+  "conversion": {
+    "status":"bsp_extracted",
+    "geometry":"pending",
+    "gameplay":"ready_for_markers"
+  }
+}
