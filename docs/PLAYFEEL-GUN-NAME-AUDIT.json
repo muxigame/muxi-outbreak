@@ -1,0 +1,112 @@
+{
+  "guns": [
+    {
+      "gunId": "tacz:ai_awp",
+      "nameKey": "tacz.gun.ai_awp.name",
+      "names": {
+        "zh_cn": "精密国际 AWM 狙击步枪",
+        "en_us": "Accuracy International AWM"
+      }
+    },
+    {
+      "gunId": "tacz:ak47",
+      "nameKey": "tacz.gun.ak47.name",
+      "names": {
+        "zh_cn": "AKM 突击步枪",
+        "en_us": "AKM"
+      }
+    },
+    {
+      "gunId": "tacz:deagle",
+      "nameKey": "tacz.gun.deagle.name",
+      "names": {
+        "zh_cn": ".50 沙漠之鹰",
+        "en_us": "Deagle 50"
+      }
+    },
+    {
+      "gunId": "tacz:glock_17",
+      "nameKey": "tacz.gun.glock_17.name",
+      "names": {
+        "zh_cn": "格洛克 17 手枪",
+        "en_us": "Glock 17"
+      }
+    },
+    {
+      "gunId": "tacz:hk_mp5a5",
+      "nameKey": "tacz.gun.hk_mp5a5.name",
+      "names": {
+        "zh_cn": "MP5A5 冲锋枪",
+        "en_us": "HK-MP5A5"
+      }
+    },
+    {
+      "gunId": "tacz:m1014",
+      "nameKey": "tacz.gun.m1014.name",
+      "names": {
+        "zh_cn": "M1014 战斗霰弹枪",
+        "en_us": "M1014 Battle Shotgun"
+      }
+    },
+    {
+      "gunId": "tacz:m249",
+      "nameKey": "tacz.gun.m249.name",
+      "names": {
+        "zh_cn": "M249 机枪",
+        "en_us": "M249 Machine Gun"
+      }
+    },
+    {
+      "gunId": "tacz:m4a1",
+      "nameKey": "tacz.gun.m4a1.name",
+      "names": {
+        "zh_cn": "M4A1 卡宾枪",
+        "en_us": "M4A1 Carbine"
+      }
+    },
+    {
+      "gunId": "tacz:m700",
+      "nameKey": "tacz.gun.m700.name",
+      "names": {
+        "zh_cn": "M700 狙击步枪",
+        "en_us": "M700 Sniper Rifle"
+      }
+    },
+    {
+      "gunId": "tacz:m870",
+      "nameKey": "tacz.gun.m870.name",
+      "names": {
+        "zh_cn": "M870 霰弹枪",
+        "en_us": "M870"
+      }
+    },
+    {
+      "gunId": "tacz:rpg7",
+      "nameKey": "tacz.gun.rpg7.name",
+      "names": {
+        "zh_cn": "RPG-7 火箭筒",
+        "en_us": "RPG-7"
+      }
+    },
+    {
+      "gunId": "tacz:scar_h",
+      "nameKey": "tacz.gun.scar_h.name",
+      "names": {
+        "zh_cn": "SCAR-H 战斗步枪",
+        "en_us": "SCAR-H Battle Rifle"
+      }
+    },
+    {
+      "gunId": "tacz:ump45",
+      "nameKey": "tacz.gun.ump45.name",
+      "names": {
+        "zh_cn": "UMP45 冲锋枪",
+        "en_us": "UMP45 SMG"
+      }
+    }
+  ],
+  "allRealDefinitionKeysAndNames": true,
+  "count": 13,
+  "serverNamePath": "TimelessAPI.getCommonGunIndex(id).getPojo().getName() -> translatable component -> client language",
+  "clientPack": "existing tacz_default_gun"
+}

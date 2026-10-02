@@ -6,5 +6,7 @@
   "item.muxi_outbreak.explosive_ammo_pack": "Explosive Ammo Pack",
   "item.muxi_outbreak.pipe_bomb": "Pipe Bomb",
   "item.muxi_outbreak.bile_bomb": "Bile Bomb",
-  "supply.muxi_outbreak.ammo": "Ammo Pile"
+  "supply.muxi_outbreak.ammo": "Ammo Pile",
+  "supply.muxi_outbreak.baseball_bat": "Baseball Bat",
+  "supply.muxi_outbreak.molotov": "Molotov"
 }

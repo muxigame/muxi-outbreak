@@ -21,6 +21,7 @@ public final class CampaignSupplies {
         public final SupplyRules.Stock stock;public final ItemStack item;
         public Entity display,hitbox;
         public final Set<UUID> upgradesClaimed=new HashSet<>();
+        public final Set<UUID> startClaims=new HashSet<>();
         Node(String id,String kind,int section,BlockPos pos,int count,boolean infinite,ItemStack item){
             this.id=id;this.kind=kind;this.section=section;this.pos=pos;stock=new SupplyRules.Stock(count,infinite);this.item=item;
         }
@@ -34,9 +35,14 @@ public final class CampaignSupplies {
 
     public void tick(ServerLevel level,List<ServerPlayer> players,int now){
         if(players.isEmpty())return;
+        ensureStartCache(level,players);
         if(now%10==0)for(var source:session.map.supplies()){
             if(source.section()!=session.section||decided.contains(source.id()))continue;
             if(players.stream().noneMatch(p->p.distanceToSqr(source.pos().getCenter())<48*48))continue;
+            // Optional Director choices belong to the team's approaching floor/area.
+            // Fixed BSP caches remain preplaced; do not choose downstairs loot at upstairs spawn.
+            if(source.directorChoice()&&players.stream().noneMatch(p->Math.abs(p.getY()-source.pos().getY())<=6&&p.distanceToSqr(source.pos().getCenter())<24*24))continue;
+            if(!level.areEntitiesLoaded(new net.minecraft.world.level.ChunkPos(source.pos()).toLong())||!level.isPositionEntityTicking(source.pos()))continue;
             decided.add(source.id());
             double health=players.stream().mapToDouble(p->p.getHealth()/p.getMaxHealth()).average().orElse(1);
             int meds=(int)players.stream().filter(p->!p.getInventory().getItem(3).isEmpty()).count();
@@ -52,6 +58,27 @@ public final class CampaignSupplies {
             if(!near){removeVisuals(node);continue;}
             if(node.hitbox==null||node.hitbox.isRemoved())show(level,node);
         }
+    }
+    /** Explicit native starting-cache adaptation; source BSP pickups stay unchanged. */
+    private void ensureStartCache(ServerLevel level,List<ServerPlayer> players){
+        if(session.section!=0||decided.contains("campaign_start_cache"))return;
+        BlockPos start=session.map.sectionStart(0);var room=session.map.startRoom(0);
+        List<BlockPos> positions=new ArrayList<>();
+        for(int radius=1;radius<=3&&positions.size()<3;radius++)for(int dx=-radius;dx<=radius&&positions.size()<3;dx++)for(int dz=-radius;dz<=radius&&positions.size()<3;dz++){
+            if(Math.max(Math.abs(dx),Math.abs(dz))!=radius)continue;
+            BlockPos at=start.offset(dx,0,dz);
+            if(room!=null&&!room.contains(at.getBottomCenter()))continue;
+            if(!level.getBlockState(at).getCollisionShape(level,at).isEmpty()||!level.getBlockState(at.above()).getCollisionShape(level,at.above()).isEmpty()||level.getBlockState(at.below()).getCollisionShape(level,at.below()).isEmpty())continue;
+            positions.add(at);
+        }
+        if(positions.size()<3)throw new IllegalStateException("No supported starting weapon cache positions in "+session.map.id());
+        Random seeded=new Random(session.id.getMostSignificantBits()^session.id.getLeastSignificantBits());
+        String primary=seeded.nextBoolean()?"gun:tacz:hk_mp5a5":"gun:tacz:m870";
+        String[] ids={"campaign_start_primary","campaign_start_pistol","campaign_start_melee"};
+        String[] kinds={primary,"gun:tacz:glock_17","melee"};
+        int count=Math.max(1,session.players.size());
+        for(int i=0;i<3;i++)nodes.put(ids[i],new Node(ids[i],kinds[i],0,positions.get(i),count,false,CampaignInventory.create(players.getFirst(),kinds[i])));
+        decided.add("campaign_start_cache");
     }
     private void show(ServerLevel level,Node node){
         removeVisuals(node);
@@ -74,7 +101,7 @@ public final class CampaignSupplies {
         // Preserve the translatable component until it reaches the player's client.
         // Resolving getString() on the server baked English names into a Chinese UI.
         Component itemName=node.kind.equals("ammo")?Component.translatable("supply.muxi_outbreak.ammo"):
-            node.kind.equals("upgrade_station")?Component.translatable("item.muxi_outbreak.explosive_ammo_pack"):node.item.getHoverName();
+            node.kind.equals("upgrade_station")?Component.translatable("item.muxi_outbreak.explosive_ammo_pack"):CampaignInventory.displayName(node.item);
         return Component.empty().append(itemName).append(node.stock.infinite()?" ∞":" ×"+node.stock.remaining());
     }
     public String take(ServerPlayer player,String id,boolean swap){
@@ -104,16 +131,18 @@ public final class CampaignSupplies {
         if(slot<0)return "该物品不能携带";
         ItemStack previous=player.getInventory().getItem(slot);
         if(!previous.isEmpty()&&!swap)return "同类装备只能携带一个；蹲下右键可交换，旧物品留给队友";
+        if(node.id.startsWith("campaign_start_")&&node.startClaims.contains(player.getUUID()))return "本轮已从这个起始武器点取过装备";
         if(!previous.isEmpty()&&ItemStack.isSameItemSameComponents(previous,node.item))return "已持有同款物品";
         // All operations run on the server thread; quantity is decremented only after all preconditions pass.
         if(!node.stock.take(true))return "补给已被队友取走";
         if(slot<=1)com.tacz.guns.api.entity.IGunOperator.fromLivingEntity(player).cancelReload();
         player.getInventory().setItem(slot,node.item.copyWithCount(1));
+        if(node.id.startsWith("campaign_start_")){node.startClaims.add(player.getUUID());if(slot<=1&&!CampaignInventory.gunId(node.item).isEmpty())CampaignInventory.refill(player,false);}
         if(!previous.isEmpty())drop(player,previous);
         player.inventoryMenu.broadcastChanges();
         if(!node.stock.available())removeVisuals(node);
         else if(node.hitbox!=null)node.hitbox.setCustomName(label(node));
-        player.sendSystemMessage(Component.literal("[Outbreak] 已拾取 ").append(node.item.getHoverName()));
+        player.sendSystemMessage(Component.literal("[Outbreak] 已拾取 ").append(CampaignInventory.displayName(node.item)));
         return "";
     }
     public void drop(ServerPlayer player,ItemStack item){

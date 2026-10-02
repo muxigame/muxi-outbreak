@@ -29,6 +29,16 @@ public final class CampaignInventory {
             .setFireMode(modes.contains(FireMode.AUTO)?FireMode.AUTO:modes.getFirst()).build(player.registryAccess());
         fillMagazine(stack);return stack;
     }
+    /** Dedicated servers have no ClientGunIndex. Carry the common pack's name key to the client. */
+    public static net.minecraft.network.chat.Component displayName(ItemStack stack){
+        IGun gun=IGun.getIGunOrNull(stack);
+        if(gun!=null)return TimelessAPI.getCommonGunIndex(gun.getGunId(stack))
+            .map(i->net.minecraft.network.chat.Component.translatable(i.getPojo().getName()))
+            .orElseGet(()->net.minecraft.network.chat.Component.literal(gun.getGunId(stack).getPath()));
+        if(stack.getItem() instanceof IMeleeWeapon melee&&melee.getId(stack).toString().equals("lrtactical:baseball_bat"))return net.minecraft.network.chat.Component.translatable("supply.muxi_outbreak.baseball_bat");
+        if(stack.getItem() instanceof IThrowable throwable&&throwable.getId(stack).toString().equals("lrtactical:molotov"))return net.minecraft.network.chat.Component.translatable("supply.muxi_outbreak.molotov");
+        return stack.getHoverName();
+    }
     public static int capacity(ItemStack stack){
         IGun gun=IGun.getIGunOrNull(stack);
         if(gun==null)return 0;
@@ -86,9 +96,9 @@ public final class CampaignInventory {
     public static void validate(ServerPlayer player){gun(player,PRIMARY);gun(player,SECONDARY);throwable("lrtactical:m67");}
     public static void kit(ServerPlayer p){
         validate(p);p.closeContainer();p.getInventory().clearContent();p.removeAllEffects();
-        p.getInventory().setItem(0,gun(p,PRIMARY));p.getInventory().setItem(1,gun(p,SECONDARY));
-        // Medkits/throwables are world supplies, not duplicated into every player's inventory.
-        refill(p,false);p.getInventory().selected=0;p.setGameMode(GameType.ADVENTURE);
+        // The captured original inventory is already saved by preparePlayer.
+        // Campaign guns and melee must be picked up from the scene, like other supplies.
+        p.getInventory().selected=0;p.setGameMode(GameType.ADVENTURE);
         p.setHealth(p.getMaxHealth());p.getFoodData().setFoodLevel(20);p.getFoodData().setSaturation(0);
         p.inventoryMenu.broadcastChanges();
     }

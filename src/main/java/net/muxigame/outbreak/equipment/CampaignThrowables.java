@@ -26,7 +26,7 @@ public final class CampaignThrowables {
     public CampaignThrowables(OutbreakSession session){this.session=session;}
     public boolean launch(ServerPlayer player,String kind,ItemStack stack){
         if(!session.alive.contains(player.getUUID())||session.downed.contains(player.getUUID())||
-            session.phase!=OutbreakSession.Phase.RUNNING||active.size()>=32)return false;
+            (session.phase!=OutbreakSession.Phase.RUNNING&&session.phase!=OutbreakSession.Phase.START_ROOM)||active.size()>=32)return false;
         Snowball ball=new Snowball(player.serverLevel(),player);ball.setItem(stack.copyWithCount(1));
         ball.shootFromRotation(player,player.getXRot(),player.getYRot(),-8,1.15f,.5f);
         ball.getPersistentData().putString(TAG,session.id.toString());

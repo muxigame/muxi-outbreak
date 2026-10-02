@@ -1,0 +1,21 @@
+{
+  "candidate": {
+    "id": "muxi_outbreak",
+    "name": "muxi Outbreak",
+    "version": "0.3.9-playfeel-qa.4",
+    "artifact": "muxi-outbreak-0.3.9-playfeel-qa.4.jar",
+    "sha256": "181a1338af634418ba846f3eb67358ef80b2519fc49ac9a4ba2f22ba48f31e15",
+    "size": 2112174,
+    "minecraft": "1.21.1",
+    "neoforge": "21.1.250",
+    "java": 21
+  },
+  "resourceEntryCount": 991,
+  "identical": 989,
+  "changed": [
+    "assets/muxi_outbreak/lang/en_us.json",
+    "assets/muxi_outbreak/lang/zh_cn.json"
+  ],
+  "sourceAndGeometryUnchanged": true,
+  "qaAndRawSourceBundled": false
+}

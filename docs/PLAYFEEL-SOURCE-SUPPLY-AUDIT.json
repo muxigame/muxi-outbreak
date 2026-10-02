@@ -1,0 +1,3995 @@
+{
+  "sourceSupplies": 133,
+  "fixed": 105,
+  "directorChoice": 28,
+  "rows": [
+    {
+      "id": "lost_130904",
+      "section": 0,
+      "sourceClass": "weapon_melee_spawn",
+      "sourceOrigin": [
+        -32.0,
+        -159.0,
+        97.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        -5.5
+      ],
+      "nativePos": [
+        -2,
+        84,
+        5
+      ],
+      "nativeChoices": [
+        "melee"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": "electric_guitar",
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_131093",
+      "section": 0,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceOrigin": [
+        676.0,
+        477.0,
+        114.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        179.5,
+        -90.0
+      ],
+      "nativePos": [
+        28,
+        83,
+        -20
+      ],
+      "nativeChoices": [
+        "medkit"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_131101",
+      "section": 0,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceOrigin": [
+        -25.6916,
+        -110.0,
+        132.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -2,
+        86,
+        4
+      ],
+      "nativeChoices": [
+        "medkit"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_131123",
+      "section": 0,
+      "sourceClass": "weapon_vomitjar_spawn",
+      "sourceOrigin": [
+        -274.494,
+        -233.0,
+        70.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        88.0,
+        180.0,
+        180.0
+      ],
+      "nativePos": [
+        -11,
+        83,
+        9
+      ],
+      "nativeChoices": [
+        "bile_bomb"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_131145",
+      "section": 0,
+      "sourceClass": "weapon_molotov_spawn",
+      "sourceOrigin": [
+        -275.712,
+        -73.0,
+        81.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -11,
+        83,
+        3
+      ],
+      "nativeChoices": [
+        "lr:lrtactical:molotov"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_131167",
+      "section": 0,
+      "sourceClass": "weapon_autoshotgun_spawn",
+      "sourceOrigin": [
+        674.0,
+        461.0,
+        85.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        -88.0,
+        91.5001,
+        179.5
+      ],
+      "nativePos": [
+        28,
+        83,
+        -19
+      ],
+      "nativeChoices": [
+        "gun:tacz:m1014"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_131187",
+      "section": 0,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceOrigin": [
+        -51.0,
+        -172.618,
+        70.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        87.5,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -4,
+        83,
+        7
+      ],
+      "nativeChoices": [
+        "medkit"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_131193",
+      "section": 0,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceOrigin": [
+        1289.1,
+        324.107,
+        102.376
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        53,
+        84,
+        -13
+      ],
+      "nativeChoices": [
+        "medkit"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_131197",
+      "section": 0,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceOrigin": [
+        1038.0,
+        248.0,
+        70.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        89.5,
+        180.0,
+        -93.0
+      ],
+      "nativePos": [
+        44,
+        83,
+        -10
+      ],
+      "nativeChoices": [
+        "medkit"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_133977",
+      "section": 0,
+      "sourceClass": "weapon_rifle_ak47_spawn",
+      "sourceOrigin": [
+        1282.0,
+        269.0,
+        97.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        -77.5,
+        0.0,
+        -91.0
+      ],
+      "nativePos": [
+        53,
+        84,
+        -13
+      ],
+      "nativeChoices": [
+        "gun:tacz:ak47"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_133989",
+      "section": 0,
+      "sourceClass": "weapon_rifle_ak47_spawn",
+      "sourceOrigin": [
+        1282.0,
+        260.0,
+        98.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        -77.5,
+        0.0,
+        -91.0
+      ],
+      "nativePos": [
+        52,
+        85,
+        -10
+      ],
+      "nativeChoices": [
+        "gun:tacz:ak47"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_140419",
+      "section": 0,
+      "sourceClass": "weapon_melee_spawn",
+      "sourceOrigin": [
+        -3352.0,
+        -182.0,
+        -143.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -141,
+        75,
+        8
+      ],
+      "nativeChoices": [
+        "melee"
+      ],
+      "sourceCount": 5,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": "any",
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_140427",
+      "section": 0,
+      "sourceClass": "weapon_pipe_bomb_spawn",
+      "sourceOrigin": [
+        -3598.05,
+        -137.0,
+        -151.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -149,
+        73,
+        6
+      ],
+      "nativeChoices": [
+        "pipe_bomb"
+      ],
+      "sourceCount": 5,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_140435",
+      "section": 0,
+      "sourceClass": "weapon_pistol_spawn",
+      "sourceOrigin": [
+        -3146.05,
+        390.081,
+        -105.446
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -130,
+        75,
+        -17
+      ],
+      "nativeChoices": [
+        "gun:tacz:glock_17"
+      ],
+      "sourceCount": 5,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_140437",
+      "section": 0,
+      "sourceClass": "weapon_pistol_spawn",
+      "sourceOrigin": [
+        -3154.0,
+        390.081,
+        -106.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -130,
+        75,
+        -17
+      ],
+      "nativeChoices": [
+        "gun:tacz:glock_17"
+      ],
+      "sourceCount": 5,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_140439",
+      "section": 0,
+      "sourceClass": "weapon_pistol_spawn",
+      "sourceOrigin": [
+        -3147.0,
+        390.081,
+        -112.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -130,
+        75,
+        -17
+      ],
+      "nativeChoices": [
+        "gun:tacz:glock_17"
+      ],
+      "sourceCount": 5,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_140441",
+      "section": 0,
+      "sourceClass": "weapon_pistol_spawn",
+      "sourceOrigin": [
+        -3155.0,
+        390.081,
+        -112.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -130,
+        75,
+        -17
+      ],
+      "nativeChoices": [
+        "gun:tacz:glock_17"
+      ],
+      "sourceCount": 5,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_140469",
+      "section": 0,
+      "sourceClass": "weapon_melee_spawn",
+      "sourceOrigin": [
+        -3390.46,
+        215.527,
+        -414.826
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        -90.5
+      ],
+      "nativePos": [
+        -141,
+        63,
+        -9
+      ],
+      "nativeChoices": [
+        "melee"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": "any",
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_140471",
+      "section": 0,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceOrigin": [
+        -3597.02,
+        486.224,
+        -173.991
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -150,
+        73,
+        -20
+      ],
+      "nativeChoices": [
+        "ammo"
+      ],
+      "sourceCount": 5,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_140616",
+      "section": 0,
+      "sourceClass": "weapon_grenade_launcher",
+      "sourceOrigin": [
+        2930.53,
+        254.552,
+        -412.864
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        122,
+        63,
+        -11
+      ],
+      "nativeChoices": [
+        "gun:tacz:rpg7"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_140618",
+      "section": 0,
+      "sourceClass": "weapon_grenade_launcher",
+      "sourceOrigin": [
+        2815.54,
+        -448.666,
+        -412.864
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        118,
+        63,
+        19
+      ],
+      "nativeChoices": [
+        "gun:tacz:rpg7"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_143638",
+      "section": 0,
+      "sourceClass": "weapon_adrenaline_spawn",
+      "sourceOrigin": [
+        676.207,
+        471.0,
+        97.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        89.0
+      ],
+      "nativePos": [
+        28,
+        83,
+        -20
+      ],
+      "nativeChoices": [
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_143650",
+      "section": 0,
+      "sourceClass": "weapon_adrenaline_spawn",
+      "sourceOrigin": [
+        676.207,
+        476.0,
+        97.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        89.0
+      ],
+      "nativePos": [
+        28,
+        83,
+        -20
+      ],
+      "nativeChoices": [
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_143663",
+      "section": 0,
+      "sourceClass": "weapon_melee_spawn",
+      "sourceOrigin": [
+        802.0,
+        502.0,
+        85.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        33,
+        83,
+        -21
+      ],
+      "nativeChoices": [
+        "melee"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": "any",
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_161996",
+      "section": 0,
+      "sourceClass": "weapon_rifle_ak47_spawn",
+      "sourceOrigin": [
+        1672.2,
+        -359.686,
+        -408.902
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        70,
+        63,
+        14
+      ],
+      "nativeChoices": [
+        "gun:tacz:ak47"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_168065",
+      "section": 0,
+      "sourceClass": "weapon_first_aid_kit_spawn",
+      "sourceOrigin": [
+        -3488.67,
+        452.236,
+        -173.819
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -145,
+        73,
+        -19
+      ],
+      "nativeChoices": [
+        "medkit"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195741",
+      "section": 0,
+      "sourceClass": "weapon_item_spawn",
+      "sourceOrigin": [
+        901.392,
+        15.47,
+        -408.365
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        38,
+        63,
+        -1
+      ],
+      "nativeChoices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195745",
+      "section": 0,
+      "sourceClass": "weapon_item_spawn",
+      "sourceOrigin": [
+        -74.9922,
+        -277.815,
+        -408.365
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -3,
+        63,
+        12
+      ],
+      "nativeChoices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195747",
+      "section": 0,
+      "sourceClass": "weapon_item_spawn",
+      "sourceOrigin": [
+        -622.77,
+        -134.017,
+        -388.718
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -26,
+        64,
+        5
+      ],
+      "nativeChoices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195749",
+      "section": 0,
+      "sourceClass": "weapon_item_spawn",
+      "sourceOrigin": [
+        -3303.07,
+        338.857,
+        -370.723
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -138,
+        64,
+        -13
+      ],
+      "nativeChoices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195754",
+      "section": 0,
+      "sourceClass": "weapon_item_spawn",
+      "sourceOrigin": [
+        -3522.08,
+        -262.874,
+        -167.002
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -147,
+        73,
+        11
+      ],
+      "nativeChoices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195758",
+      "section": 0,
+      "sourceClass": "weapon_item_spawn",
+      "sourceOrigin": [
+        -1274.49,
+        -130.727,
+        -147.355
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -54,
+        74,
+        5
+      ],
+      "nativeChoices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195766",
+      "section": 0,
+      "sourceClass": "weapon_item_spawn",
+      "sourceOrigin": [
+        -2603.83,
+        -347.264,
+        -167.002
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -108,
+        73,
+        14
+      ],
+      "nativeChoices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195768",
+      "section": 0,
+      "sourceClass": "weapon_item_spawn",
+      "sourceOrigin": [
+        -3037.02,
+        96.0576,
+        -167.002
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -127,
+        73,
+        -4
+      ],
+      "nativeChoices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195772",
+      "section": 0,
+      "sourceClass": "weapon_item_spawn",
+      "sourceOrigin": [
+        -3377.86,
+        261.645,
+        -408.365
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -141,
+        63,
+        -11
+      ],
+      "nativeChoices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195778",
+      "section": 0,
+      "sourceClass": "weapon_item_spawn",
+      "sourceOrigin": [
+        -1693.64,
+        120.934,
+        -408.365
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -71,
+        63,
+        -5
+      ],
+      "nativeChoices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195780",
+      "section": 0,
+      "sourceClass": "weapon_item_spawn",
+      "sourceOrigin": [
+        -613.065,
+        -306.346,
+        -357.706
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -26,
+        65,
+        13
+      ],
+      "nativeChoices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195782",
+      "section": 0,
+      "sourceClass": "weapon_item_spawn",
+      "sourceOrigin": [
+        -278.36,
+        -169.721,
+        -406.718
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -11,
+        63,
+        7
+      ],
+      "nativeChoices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195784",
+      "section": 0,
+      "sourceClass": "weapon_item_spawn",
+      "sourceOrigin": [
+        299.656,
+        421.182,
+        -408.365
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        12,
+        63,
+        -18
+      ],
+      "nativeChoices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195786",
+      "section": 0,
+      "sourceClass": "weapon_item_spawn",
+      "sourceOrigin": [
+        548.245,
+        332.074,
+        -371.723
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        22,
+        65,
+        -14
+      ],
+      "nativeChoices": [
+        "ammo",
+        "medkit",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195790",
+      "section": 0,
+      "sourceClass": "weapon_spawn",
+      "sourceOrigin": [
+        -746.188,
+        407.789,
+        79.4524
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -31,
+        85,
+        -17
+      ],
+      "nativeChoices": [
+        "gun:tacz:hk_mp5a5",
+        "gun:tacz:m870",
+        "gun:tacz:ak47",
+        "gun:tacz:m4a1",
+        "gun:tacz:m1014",
+        "gun:tacz:m700"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 1,
+      "sourceMelee": null,
+      "sourceWeaponSelection": "any_primary",
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195800",
+      "section": 0,
+      "sourceClass": "weapon_spawn",
+      "sourceOrigin": [
+        -964.721,
+        502.442,
+        83.161
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -40,
+        83,
+        -21
+      ],
+      "nativeChoices": [
+        "gun:tacz:hk_mp5a5",
+        "gun:tacz:m870",
+        "gun:tacz:ak47",
+        "gun:tacz:m4a1",
+        "gun:tacz:m1014",
+        "gun:tacz:m700"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 1,
+      "sourceMelee": null,
+      "sourceWeaponSelection": "any_primary",
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195806",
+      "section": 0,
+      "sourceClass": "weapon_spawn",
+      "sourceOrigin": [
+        -1348.03,
+        334.88,
+        -363.769
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -56,
+        66,
+        -14
+      ],
+      "nativeChoices": [
+        "gun:tacz:hk_mp5a5",
+        "gun:tacz:m870",
+        "gun:tacz:ak47",
+        "gun:tacz:m4a1",
+        "gun:tacz:m1014",
+        "gun:tacz:m700"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 1,
+      "sourceMelee": null,
+      "sourceWeaponSelection": "any_primary",
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195808",
+      "section": 0,
+      "sourceClass": "weapon_spawn",
+      "sourceOrigin": [
+        -1100.28,
+        226.0,
+        -347.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -46,
+        66,
+        -9
+      ],
+      "nativeChoices": [
+        "gun:tacz:hk_mp5a5",
+        "gun:tacz:m870",
+        "gun:tacz:ak47",
+        "gun:tacz:m4a1",
+        "gun:tacz:m1014",
+        "gun:tacz:m700"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 1,
+      "sourceMelee": null,
+      "sourceWeaponSelection": "any_primary",
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195812",
+      "section": 0,
+      "sourceClass": "weapon_spawn",
+      "sourceOrigin": [
+        -426.85,
+        -16.5584,
+        105.801
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -18,
+        83,
+        1
+      ],
+      "nativeChoices": [
+        "gun:tacz:glock_17",
+        "gun:tacz:deagle"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 1,
+      "sourceMelee": null,
+      "sourceWeaponSelection": "any_pistol",
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195820",
+      "section": 0,
+      "sourceClass": "weapon_spawn",
+      "sourceOrigin": [
+        -1380.33,
+        -299.159,
+        -50.996
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -58,
+        78,
+        12
+      ],
+      "nativeChoices": [
+        "gun:tacz:glock_17",
+        "gun:tacz:deagle"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 1,
+      "sourceMelee": null,
+      "sourceWeaponSelection": "any_pistol",
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lost_195822",
+      "section": 0,
+      "sourceClass": "weapon_spawn",
+      "sourceOrigin": [
+        -3076.28,
+        321.853,
+        -132.791
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        -128,
+        74,
+        -13
+      ],
+      "nativeChoices": [
+        "gun:tacz:glock_17",
+        "gun:tacz:deagle"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 1,
+      "sourceMelee": null,
+      "sourceWeaponSelection": "any_pistol",
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_12095",
+      "section": 1,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceOrigin": [
+        1266.0,
+        169.61,
+        -527.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2101,
+        57,
+        -7
+      ],
+      "nativeChoices": [
+        "ammo"
+      ],
+      "sourceCount": 30,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_31983",
+      "section": 1,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceOrigin": [
+        -674.321,
+        182.056,
+        -77.817
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2020,
+        77,
+        -8
+      ],
+      "nativeChoices": [
+        "medkit"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_31985",
+      "section": 1,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceOrigin": [
+        -562.966,
+        171.56,
+        -77.817
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2025,
+        77,
+        -7
+      ],
+      "nativeChoices": [
+        "medkit"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_31987",
+      "section": 1,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceOrigin": [
+        -543.351,
+        85.2208,
+        -77.817
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2025,
+        77,
+        -4
+      ],
+      "nativeChoices": [
+        "medkit"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_31989",
+      "section": 1,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceOrigin": [
+        -655.203,
+        73.402,
+        -77.817
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2021,
+        77,
+        -3
+      ],
+      "nativeChoices": [
+        "medkit"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_31991",
+      "section": 1,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceOrigin": [
+        -638.0,
+        273.565,
+        -78.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2021,
+        77,
+        -12
+      ],
+      "nativeChoices": [
+        "ammo"
+      ],
+      "sourceCount": 5,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_32100",
+      "section": 1,
+      "sourceClass": "weapon_hunting_rifle_spawn",
+      "sourceOrigin": [
+        1272.57,
+        177.0,
+        -558.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        -90.0
+      ],
+      "nativePos": [
+        2101,
+        57,
+        -7
+      ],
+      "nativeChoices": [
+        "gun:tacz:m700"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 2,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_32162",
+      "section": 1,
+      "sourceClass": "weapon_melee_spawn",
+      "sourceOrigin": [
+        849.036,
+        -37.8202,
+        -545.876
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2083,
+        57,
+        2
+      ],
+      "nativeChoices": [
+        "melee"
+      ],
+      "sourceCount": 2,
+      "fixed": true,
+      "sourceFlags": 1,
+      "sourceMelee": "any",
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_33553",
+      "section": 1,
+      "sourceClass": "weapon_adrenaline_spawn",
+      "sourceOrigin": [
+        -480.772,
+        -436.88,
+        -77.5407
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2028,
+        77,
+        18
+      ],
+      "nativeChoices": [
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_33555",
+      "section": 1,
+      "sourceClass": "weapon_adrenaline_spawn",
+      "sourceOrigin": [
+        -705.854,
+        -292.669,
+        -58.2587
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2018,
+        78,
+        13
+      ],
+      "nativeChoices": [
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_33557",
+      "section": 1,
+      "sourceClass": "weapon_adrenaline_spawn",
+      "sourceOrigin": [
+        -456.294,
+        -324.015,
+        -57.2587
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2028,
+        78,
+        13
+      ],
+      "nativeChoices": [
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_33559",
+      "section": 1,
+      "sourceClass": "weapon_pain_pills_spawn",
+      "sourceOrigin": [
+        -452.659,
+        -175.379,
+        -77.7509
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2028,
+        77,
+        7
+      ],
+      "nativeChoices": [
+        "pills"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_33563",
+      "section": 1,
+      "sourceClass": "weapon_pain_pills_spawn",
+      "sourceOrigin": [
+        -469.241,
+        284.323,
+        -26.4569
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2027,
+        79,
+        -12
+      ],
+      "nativeChoices": [
+        "pills"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_33565",
+      "section": 1,
+      "sourceClass": "weapon_pain_pills_spawn",
+      "sourceOrigin": [
+        -465.429,
+        227.217,
+        -26.4569
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2027,
+        79,
+        -10
+      ],
+      "nativeChoices": [
+        "pills"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_33575",
+      "section": 1,
+      "sourceClass": "weapon_grenade_launcher_spawn",
+      "sourceOrigin": [
+        175.215,
+        -478.386,
+        -316.861
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2055,
+        67,
+        20
+      ],
+      "nativeChoices": [
+        "gun:tacz:rpg7"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 1,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_36699",
+      "section": 1,
+      "sourceClass": "weapon_first_aid_kit_spawn",
+      "sourceOrigin": [
+        1283.0,
+        233.777,
+        -557.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        88.5,
+        180.0,
+        -180.0
+      ],
+      "nativePos": [
+        2101,
+        57,
+        -10
+      ],
+      "nativeChoices": [
+        "medkit"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_36786",
+      "section": 1,
+      "sourceClass": "weapon_first_aid_kit_spawn",
+      "sourceOrigin": [
+        1656.68,
+        -55.6285,
+        -557.817
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2117,
+        57,
+        2
+      ],
+      "nativeChoices": [
+        "medkit"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_36788",
+      "section": 1,
+      "sourceClass": "weapon_first_aid_kit_spawn",
+      "sourceOrigin": [
+        934.599,
+        -417.735,
+        -452.365
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2087,
+        62,
+        17
+      ],
+      "nativeChoices": [
+        "medkit"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_36790",
+      "section": 1,
+      "sourceClass": "weapon_first_aid_kit_spawn",
+      "sourceOrigin": [
+        65.538,
+        -46.959,
+        -557.817
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2051,
+        57,
+        2
+      ],
+      "nativeChoices": [
+        "medkit"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_38620",
+      "section": 1,
+      "sourceClass": "weapon_upgradepack_explosive_spawn",
+      "sourceOrigin": [
+        1196.0,
+        630.0,
+        -580.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        -90.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2097,
+        56,
+        -26
+      ],
+      "nativeChoices": [
+        "explosive_pack"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_52656",
+      "section": 1,
+      "sourceClass": "weapon_shotgun_chrome_spawn",
+      "sourceOrigin": [
+        -950.086,
+        -353.496,
+        -39.5955
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2008,
+        77,
+        14
+      ],
+      "nativeChoices": [
+        "gun:tacz:m870"
+      ],
+      "sourceCount": 2,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_52662",
+      "section": 1,
+      "sourceClass": "weapon_rifle_ak47_spawn",
+      "sourceOrigin": [
+        -1132.0,
+        439.845,
+        -245.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2001,
+        67,
+        -18
+      ],
+      "nativeChoices": [
+        "gun:tacz:ak47"
+      ],
+      "sourceCount": 2,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_58624",
+      "section": 1,
+      "sourceClass": "weapon_pipe_bomb_spawn",
+      "sourceOrigin": [
+        1262.0,
+        155.0,
+        -515.744
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        -39.5
+      ],
+      "nativePos": [
+        2101,
+        57,
+        -6
+      ],
+      "nativeChoices": [
+        "pipe_bomb"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_2_58626",
+      "section": 1,
+      "sourceClass": "weapon_pipe_bomb_spawn",
+      "sourceOrigin": [
+        1195.39,
+        638.263,
+        -554.706
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        2097,
+        56,
+        -27
+      ],
+      "nativeChoices": [
+        "pipe_bomb"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_56964",
+      "section": 2,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceOrigin": [
+        2412.4,
+        -4757.98,
+        -23.2998
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        27.0,
+        0.0
+      ],
+      "nativePos": [
+        4197,
+        78,
+        198
+      ],
+      "nativeChoices": [
+        "ammo"
+      ],
+      "sourceCount": 4,
+      "fixed": true,
+      "sourceFlags": 10,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_56966",
+      "section": 2,
+      "sourceClass": "weapon_pipe_bomb_spawn",
+      "sourceOrigin": [
+        2491.35,
+        -4772.54,
+        -15.2998
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        278.5,
+        0.0
+      ],
+      "nativePos": [
+        4200,
+        78,
+        199
+      ],
+      "nativeChoices": [
+        "pipe_bomb"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 2,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_56968",
+      "section": 2,
+      "sourceClass": "weapon_pipe_bomb_spawn",
+      "sourceOrigin": [
+        2485.81,
+        -4769.33,
+        -20.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        298.0,
+        90.0
+      ],
+      "nativePos": [
+        4200,
+        78,
+        199
+      ],
+      "nativeChoices": [
+        "pipe_bomb"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 2,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_88683",
+      "section": 2,
+      "sourceClass": "weapon_pain_pills_spawn",
+      "sourceOrigin": [
+        1121.0,
+        -3545.0,
+        -3.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4143,
+        79,
+        148
+      ],
+      "nativeChoices": [
+        "pills"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_88693",
+      "section": 2,
+      "sourceClass": "weapon_pain_pills_spawn",
+      "sourceOrigin": [
+        1124.0,
+        -3547.0,
+        -3.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4143,
+        79,
+        148
+      ],
+      "nativeChoices": [
+        "pills"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_88695",
+      "section": 2,
+      "sourceClass": "weapon_pain_pills_spawn",
+      "sourceOrigin": [
+        1126.0,
+        -3543.0,
+        -3.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4143,
+        79,
+        148
+      ],
+      "nativeChoices": [
+        "pills"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_88697",
+      "section": 2,
+      "sourceClass": "weapon_pain_pills_spawn",
+      "sourceOrigin": [
+        1124.0,
+        -3543.0,
+        -1.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        -89.0
+      ],
+      "nativePos": [
+        4143,
+        79,
+        148
+      ],
+      "nativeChoices": [
+        "pills"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_88707",
+      "section": 2,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceOrigin": [
+        1134.0,
+        -3467.0,
+        -3.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        87.0,
+        0.0
+      ],
+      "nativePos": [
+        4143,
+        79,
+        144
+      ],
+      "nativeChoices": [
+        "ammo"
+      ],
+      "sourceCount": 4,
+      "fixed": true,
+      "sourceFlags": 10,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_88886",
+      "section": 2,
+      "sourceClass": "weapon_first_aid_kit",
+      "sourceOrigin": [
+        1145.0,
+        -3535.0,
+        0.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        89.5,
+        250.5,
+        0.0
+      ],
+      "nativePos": [
+        4144,
+        79,
+        147
+      ],
+      "nativeChoices": [
+        "medkit"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_91822",
+      "section": 2,
+      "sourceClass": "weapon_adrenaline_spawn",
+      "sourceOrigin": [
+        2423.94,
+        -4741.78,
+        -58.5407
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4197,
+        78,
+        198
+      ],
+      "nativeChoices": [
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_94170",
+      "section": 2,
+      "sourceClass": "weapon_adrenaline_spawn",
+      "sourceOrigin": [
+        2440.0,
+        -4816.0,
+        -21.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4198,
+        78,
+        201
+      ],
+      "nativeChoices": [
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_94176",
+      "section": 2,
+      "sourceClass": "weapon_adrenaline_spawn",
+      "sourceOrigin": [
+        2434.0,
+        -4812.0,
+        -21.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        60.0,
+        0.0
+      ],
+      "nativePos": [
+        4197,
+        78,
+        200
+      ],
+      "nativeChoices": [
+        "adrenaline"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_94182",
+      "section": 2,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceOrigin": [
+        1307.0,
+        -4809.46,
+        292.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4150,
+        93,
+        200
+      ],
+      "nativeChoices": [
+        "ammo"
+      ],
+      "sourceCount": 5,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_94191",
+      "section": 2,
+      "sourceClass": "weapon_autoshotgun_spawn",
+      "sourceOrigin": [
+        525.136,
+        -4723.0,
+        293.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        90.5
+      ],
+      "nativePos": [
+        4118,
+        93,
+        197
+      ],
+      "nativeChoices": [
+        "gun:tacz:m1014"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 2,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_94201",
+      "section": 2,
+      "sourceClass": "weapon_autoshotgun_spawn",
+      "sourceOrigin": [
+        561.0,
+        -4743.0,
+        293.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        111.0,
+        90.5
+      ],
+      "nativePos": [
+        4119,
+        93,
+        198
+      ],
+      "nativeChoices": [
+        "gun:tacz:m1014"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 2,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_94215",
+      "section": 2,
+      "sourceClass": "weapon_defibrillator_spawn",
+      "sourceOrigin": [
+        1515.99,
+        -4752.45,
+        293.25
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4159,
+        93,
+        198
+      ],
+      "nativeChoices": [
+        "defib"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_94217",
+      "section": 2,
+      "sourceClass": "weapon_defibrillator_spawn",
+      "sourceOrigin": [
+        514.305,
+        -3049.37,
+        -39.75
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4117,
+        79,
+        127
+      ],
+      "nativeChoices": [
+        "defib"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_94219",
+      "section": 2,
+      "sourceClass": "weapon_first_aid_kit_spawn",
+      "sourceOrigin": [
+        4644.04,
+        -3617.61,
+        -58.817
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4290,
+        78,
+        151
+      ],
+      "nativeChoices": [
+        "medkit"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95152",
+      "section": 2,
+      "sourceClass": "weapon_grenade_launcher_spawn",
+      "sourceOrigin": [
+        2340.27,
+        -4781.24,
+        -56.8613
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4194,
+        78,
+        199
+      ],
+      "nativeChoices": [
+        "gun:tacz:rpg7"
+      ],
+      "sourceCount": 5,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95156",
+      "section": 2,
+      "sourceClass": "weapon_hunting_rifle_spawn",
+      "sourceOrigin": [
+        2426.75,
+        -4642.0,
+        -50.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        62.5
+      ],
+      "nativePos": [
+        4197,
+        78,
+        193
+      ],
+      "nativeChoices": [
+        "gun:tacz:m700"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95172",
+      "section": 2,
+      "sourceClass": "weapon_item_spawn",
+      "sourceOrigin": [
+        1683.78,
+        -4764.76,
+        -51.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4166,
+        78,
+        199
+      ],
+      "nativeChoices": [
+        "ammo",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline",
+        "bile_bomb"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95174",
+      "section": 2,
+      "sourceClass": "weapon_item_spawn",
+      "sourceOrigin": [
+        1615.39,
+        -4786.3,
+        -51.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4163,
+        78,
+        199
+      ],
+      "nativeChoices": [
+        "ammo",
+        "lr:lrtactical:molotov",
+        "pills",
+        "pipe_bomb",
+        "adrenaline",
+        "gun:tacz:m249"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95182",
+      "section": 2,
+      "sourceClass": "weapon_melee_spawn",
+      "sourceOrigin": [
+        1692.12,
+        -4814.57,
+        -43.9791
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4167,
+        78,
+        201
+      ],
+      "nativeChoices": [
+        "melee"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": "any",
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95188",
+      "section": 2,
+      "sourceClass": "weapon_melee_spawn",
+      "sourceOrigin": [
+        1943.0,
+        -4814.57,
+        -27.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4177,
+        78,
+        201
+      ],
+      "nativeChoices": [
+        "melee"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": "any",
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95198",
+      "section": 2,
+      "sourceClass": "weapon_molotov_spawn",
+      "sourceOrigin": [
+        1329.82,
+        -4756.02,
+        -53.7485
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4151,
+        78,
+        198
+      ],
+      "nativeChoices": [
+        "lr:lrtactical:molotov"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95204",
+      "section": 2,
+      "sourceClass": "weapon_molotov_spawn",
+      "sourceOrigin": [
+        1328.0,
+        -4760.0,
+        -54.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        46.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4151,
+        78,
+        198
+      ],
+      "nativeChoices": [
+        "lr:lrtactical:molotov"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95228",
+      "section": 2,
+      "sourceClass": "weapon_pistol_spawn",
+      "sourceOrigin": [
+        2397.29,
+        -4646.21,
+        -56.6554
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4196,
+        78,
+        194
+      ],
+      "nativeChoices": [
+        "gun:tacz:glock_17"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95234",
+      "section": 2,
+      "sourceClass": "weapon_pumpshotgun_spawn",
+      "sourceOrigin": [
+        -437.35,
+        -4366.0,
+        -24.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4078,
+        78,
+        182
+      ],
+      "nativeChoices": [
+        "gun:tacz:m870"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95242",
+      "section": 2,
+      "sourceClass": "weapon_rifle_ak47_spawn",
+      "sourceOrigin": [
+        -478.0,
+        -4353.66,
+        -25.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        31.0,
+        0.0
+      ],
+      "nativePos": [
+        4076,
+        78,
+        181
+      ],
+      "nativeChoices": [
+        "gun:tacz:ak47"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95254",
+      "section": 2,
+      "sourceClass": "weapon_rifle_desert_spawn",
+      "sourceOrigin": [
+        -228.532,
+        -4700.0,
+        -44.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4086,
+        78,
+        196
+      ],
+      "nativeChoices": [
+        "gun:tacz:scar_h"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95262",
+      "section": 2,
+      "sourceClass": "weapon_rifle_desert_spawn",
+      "sourceOrigin": [
+        -217.0,
+        -4691.0,
+        -50.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        279.5,
+        -78.0
+      ],
+      "nativePos": [
+        4087,
+        78,
+        195
+      ],
+      "nativeChoices": [
+        "gun:tacz:scar_h"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95274",
+      "section": 2,
+      "sourceClass": "weapon_rifle_m60_spawn",
+      "sourceOrigin": [
+        -778.428,
+        -3596.36,
+        -12.0384
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4064,
+        78,
+        150
+      ],
+      "nativeChoices": [
+        "gun:tacz:m249"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95282",
+      "section": 2,
+      "sourceClass": "weapon_rifle_spawn",
+      "sourceOrigin": [
+        -699.484,
+        -2490.56,
+        -54.996
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4067,
+        78,
+        104
+      ],
+      "nativeChoices": [
+        "gun:tacz:m4a1"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95290",
+      "section": 2,
+      "sourceClass": "weapon_rifle_spawn",
+      "sourceOrigin": [
+        -602.0,
+        -2651.0,
+        -41.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        328.0,
+        88.0
+      ],
+      "nativePos": [
+        4071,
+        79,
+        110
+      ],
+      "nativeChoices": [
+        "gun:tacz:m4a1"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95308",
+      "section": 2,
+      "sourceClass": "weapon_shotgun_chrome_spawn",
+      "sourceOrigin": [
+        279.0,
+        -2146.0,
+        -19.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4108,
+        78,
+        89
+      ],
+      "nativeChoices": [
+        "gun:tacz:m870"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 1,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95322",
+      "section": 2,
+      "sourceClass": "weapon_smg_silenced_spawn",
+      "sourceOrigin": [
+        972.0,
+        -2357.0,
+        -37.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4136,
+        78,
+        98
+      ],
+      "nativeChoices": [
+        "gun:tacz:ump45"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 1,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95334",
+      "section": 2,
+      "sourceClass": "weapon_smg_silenced_spawn",
+      "sourceOrigin": [
+        972.0,
+        -2337.0,
+        -37.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4136,
+        78,
+        97
+      ],
+      "nativeChoices": [
+        "gun:tacz:ump45"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 1,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95346",
+      "section": 2,
+      "sourceClass": "weapon_sniper_military_spawn",
+      "sourceOrigin": [
+        1440.94,
+        -2126.0,
+        -49.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        77.0
+      ],
+      "nativePos": [
+        4156,
+        78,
+        89
+      ],
+      "nativeChoices": [
+        "gun:tacz:ai_awp"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95365",
+      "section": 2,
+      "sourceClass": "weapon_spawn",
+      "sourceOrigin": [
+        1419.23,
+        -2143.8,
+        -54.996
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4155,
+        78,
+        89
+      ],
+      "nativeChoices": [
+        "gun:tacz:hk_mp5a5",
+        "gun:tacz:m870",
+        "gun:tacz:ak47",
+        "gun:tacz:m4a1",
+        "gun:tacz:m1014",
+        "gun:tacz:m700"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 1,
+      "sourceMelee": null,
+      "sourceWeaponSelection": "any_primary",
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95375",
+      "section": 2,
+      "sourceClass": "weapon_spawn",
+      "sourceOrigin": [
+        2377.89,
+        -4920.32,
+        296.004
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4195,
+        93,
+        205
+      ],
+      "nativeChoices": [
+        "gun:tacz:hk_mp5a5",
+        "gun:tacz:m870",
+        "gun:tacz:ak47",
+        "gun:tacz:m4a1",
+        "gun:tacz:m1014",
+        "gun:tacz:m700"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 1,
+      "sourceMelee": null,
+      "sourceWeaponSelection": "any_primary",
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95377",
+      "section": 2,
+      "sourceClass": "weapon_spawn",
+      "sourceOrigin": [
+        2747.33,
+        -4819.89,
+        -55.996
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4210,
+        78,
+        201
+      ],
+      "nativeChoices": [
+        "gun:tacz:hk_mp5a5",
+        "gun:tacz:m870",
+        "gun:tacz:ak47",
+        "gun:tacz:m4a1",
+        "gun:tacz:m1014",
+        "gun:tacz:m700"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 1,
+      "sourceMelee": null,
+      "sourceWeaponSelection": "any_primary",
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95379",
+      "section": 2,
+      "sourceClass": "weapon_spawn",
+      "sourceOrigin": [
+        4167.92,
+        -4174.15,
+        -55.996
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4270,
+        78,
+        174
+      ],
+      "nativeChoices": [
+        "gun:tacz:hk_mp5a5",
+        "gun:tacz:m870",
+        "gun:tacz:ak47",
+        "gun:tacz:m4a1",
+        "gun:tacz:m1014",
+        "gun:tacz:m700"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 1,
+      "sourceMelee": null,
+      "sourceWeaponSelection": "any_primary",
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95381",
+      "section": 2,
+      "sourceClass": "weapon_spawn",
+      "sourceOrigin": [
+        3839.35,
+        -3764.6,
+        -55.996
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4256,
+        78,
+        157
+      ],
+      "nativeChoices": [
+        "gun:tacz:hk_mp5a5",
+        "gun:tacz:m870",
+        "gun:tacz:ak47",
+        "gun:tacz:m4a1",
+        "gun:tacz:m1014",
+        "gun:tacz:m700"
+      ],
+      "sourceCount": 1,
+      "fixed": false,
+      "sourceFlags": 1,
+      "sourceMelee": null,
+      "sourceWeaponSelection": "any_primary",
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95387",
+      "section": 2,
+      "sourceClass": "weapon_upgradepack_explosive_spawn",
+      "sourceOrigin": [
+        3675.93,
+        -2247.32,
+        -59.7487
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4249,
+        78,
+        94
+      ],
+      "nativeChoices": [
+        "explosive_pack"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95389",
+      "section": 2,
+      "sourceClass": "weapon_upgradepack_explosive_spawn",
+      "sourceOrigin": [
+        4242.95,
+        -2750.62,
+        -59.7487
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4273,
+        78,
+        115
+      ],
+      "nativeChoices": [
+        "explosive_pack"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95391",
+      "section": 2,
+      "sourceClass": "weapon_upgradepack_explosive_spawn",
+      "sourceOrigin": [
+        4643.33,
+        -3833.61,
+        -59.7487
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4289,
+        78,
+        160
+      ],
+      "nativeChoices": [
+        "explosive_pack"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95393",
+      "section": 2,
+      "sourceClass": "weapon_upgradepack_explosive_spawn",
+      "sourceOrigin": [
+        4661.9,
+        -3918.89,
+        -59.7487
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4290,
+        78,
+        163
+      ],
+      "nativeChoices": [
+        "explosive_pack"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95395",
+      "section": 2,
+      "sourceClass": "weapon_upgradepack_explosive_spawn",
+      "sourceOrigin": [
+        2808.65,
+        -4687.59,
+        292.251
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4213,
+        93,
+        195
+      ],
+      "nativeChoices": [
+        "explosive_pack"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95397",
+      "section": 2,
+      "sourceClass": "weapon_vomitjar_spawn",
+      "sourceOrigin": [
+        2817.52,
+        -4709.11,
+        298.196
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4213,
+        93,
+        196
+      ],
+      "nativeChoices": [
+        "bile_bomb"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95407",
+      "section": 2,
+      "sourceClass": "weapon_vomitjar_spawn",
+      "sourceOrigin": [
+        2820.0,
+        -4704.0,
+        297.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        71.5,
+        180.0,
+        180.0
+      ],
+      "nativePos": [
+        4213,
+        93,
+        196
+      ],
+      "nativeChoices": [
+        "bile_bomb"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 1,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95421",
+      "section": 2,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceOrigin": [
+        4379.81,
+        -3301.01,
+        -58.9888
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4278,
+        78,
+        138
+      ],
+      "nativeChoices": [
+        "ammo"
+      ],
+      "sourceCount": 5,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95423",
+      "section": 2,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceOrigin": [
+        4077.64,
+        -2709.8,
+        -58.9888
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4266,
+        78,
+        113
+      ],
+      "nativeChoices": [
+        "ammo"
+      ],
+      "sourceCount": 5,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95425",
+      "section": 2,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceOrigin": [
+        1730.43,
+        -2177.36,
+        -58.9888
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4168,
+        78,
+        91
+      ],
+      "nativeChoices": [
+        "ammo"
+      ],
+      "sourceCount": 5,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95427",
+      "section": 2,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceOrigin": [
+        173.588,
+        -2117.45,
+        -58.9888
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4103,
+        78,
+        88
+      ],
+      "nativeChoices": [
+        "ammo"
+      ],
+      "sourceCount": 5,
+      "fixed": true,
+      "sourceFlags": 0,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95433",
+      "section": 2,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceOrigin": [
+        2562.63,
+        -4104.35,
+        -39.835
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        87.0,
+        0.0
+      ],
+      "nativePos": [
+        4203,
+        79,
+        171
+      ],
+      "nativeChoices": [
+        "ammo"
+      ],
+      "sourceCount": 4,
+      "fixed": true,
+      "sourceFlags": 10,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95435",
+      "section": 2,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceOrigin": [
+        -1021.06,
+        -2420.82,
+        -58.835
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        87.0,
+        0.0
+      ],
+      "nativePos": [
+        4053,
+        78,
+        101
+      ],
+      "nativeChoices": [
+        "ammo"
+      ],
+      "sourceCount": 4,
+      "fixed": true,
+      "sourceFlags": 10,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95437",
+      "section": 2,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceOrigin": [
+        629.561,
+        -4582.69,
+        -58.835
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        87.0,
+        0.0
+      ],
+      "nativePos": [
+        4122,
+        78,
+        191
+      ],
+      "nativeChoices": [
+        "ammo"
+      ],
+      "sourceCount": 4,
+      "fixed": true,
+      "sourceFlags": 10,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_95439",
+      "section": 2,
+      "sourceClass": "weapon_ammo_spawn",
+      "sourceOrigin": [
+        3248.8,
+        -2194.73,
+        -58.8351
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        87.0,
+        0.0
+      ],
+      "nativePos": [
+        4231,
+        78,
+        91
+      ],
+      "nativeChoices": [
+        "ammo"
+      ],
+      "sourceCount": 4,
+      "fixed": true,
+      "sourceFlags": 10,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_114382",
+      "section": 2,
+      "sourceClass": "weapon_molotov_spawn",
+      "sourceOrigin": [
+        2135.52,
+        -4716.0,
+        -20.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4185,
+        78,
+        196
+      ],
+      "nativeChoices": [
+        "lr:lrtactical:molotov"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_114392",
+      "section": 2,
+      "sourceClass": "weapon_molotov_spawn",
+      "sourceOrigin": [
+        4382.25,
+        -3494.8,
+        -35.8818
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4279,
+        78,
+        146
+      ],
+      "nativeChoices": [
+        "lr:lrtactical:molotov"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_114394",
+      "section": 2,
+      "sourceClass": "weapon_molotov_spawn",
+      "sourceOrigin": [
+        4766.99,
+        -4897.89,
+        64.9753
+      ],
+      "sourceAnglesPitchYawRoll": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nativePos": [
+        4293,
+        79,
+        205
+      ],
+      "nativeChoices": [
+        "lr:lrtactical:molotov"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 3,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    },
+    {
+      "id": "lostschool_3_114396",
+      "section": 2,
+      "sourceClass": "weapon_molotov_spawn",
+      "sourceOrigin": [
+        1102.0,
+        -1303.0,
+        59.0
+      ],
+      "sourceAnglesPitchYawRoll": [
+        40.0996,
+        356.212,
+        3.93301
+      ],
+      "nativePos": [
+        4142,
+        82,
+        54
+      ],
+      "nativeChoices": [
+        "lr:lrtactical:molotov"
+      ],
+      "sourceCount": 1,
+      "fixed": true,
+      "sourceFlags": 2,
+      "sourceMelee": null,
+      "sourceWeaponSelection": null,
+      "orientationNote": "Source pose audited; native item ground transform is an adaptation, not the original Source weapon mesh."
+    }
+  ],
+  "lockedResourceFilesByteIdentical": 975,
+  "sourceStartingGunCache": false,
+  "newStartingCache": "Explicit user-requested native adaptation: one low-tier primary, pistol or melee per player from scene; source 133 entries untouched."
+}

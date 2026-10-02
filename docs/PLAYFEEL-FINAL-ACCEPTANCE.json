@@ -1,0 +1,204 @@
+{
+  "repo": "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak",
+  "branch": "dev",
+  "baseCommit": "ce3b692e9fa29f4eef50d3e7f11986971ae344ab",
+  "candidate": {
+    "id": "muxi_outbreak",
+    "name": "muxi Outbreak",
+    "version": "0.3.9-playfeel-qa.4",
+    "artifact": "muxi-outbreak-0.3.9-playfeel-qa.4.jar",
+    "sha256": "181a1338af634418ba846f3eb67358ef80b2519fc49ac9a4ba2f22ba48f31e15",
+    "size": 2112174,
+    "minecraft": "1.21.1",
+    "neoforge": "21.1.250",
+    "java": 21
+  },
+  "finalActualMinecraft": {
+    "home": "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\playfeel-final-acceptance-native-20261002-1720",
+    "inputs": {
+      "qaOnly": true,
+      "visible": false,
+      "focusRequested": false,
+      "realMinecraftClient": true,
+      "originalWorldUsed": false,
+      "outbreakSha256": "181a1338af634418ba846f3eb67358ef80b2519fc49ac9a4ba2f22ba48f31e15",
+      "mods": [
+        {
+          "file": "LesRaisins-Tactical-Equipements-1.21.1-0.4.3.jar",
+          "sha256": "b492f2d37a993d76a8ffd6b79bea89a64de91d4710b1b4841f63d65982f610ac"
+        },
+        {
+          "file": "muxi-minigames-0.1.3-task14-social-qa.1.jar",
+          "sha256": "9bfe8eed57ce679b7dc69cb9399a16b1e5f57f019d942303a0961b1dc86084f9"
+        },
+        {
+          "file": "muxi-outbreak-0.3.9-playfeel-qa.4.jar",
+          "sha256": "181a1338af634418ba846f3eb67358ef80b2519fc49ac9a4ba2f22ba48f31e15"
+        },
+        {
+          "file": "outbreak-native-QA-ONLY.jar",
+          "sha256": "a4c3bf2f329043bffd83d2028670e704a52ec7af958ce4d4ee9c2f38adf48b22"
+        },
+        {
+          "file": "tacz-neoforge-1.21.1-1.1.8-hotfix-r6.jar",
+          "sha256": "58f6ab47c59218bdb10bb9eee1905b6cd27f3bc98d4af13982a6002a99b1d3e7"
+        }
+      ],
+      "pid": 31368
+    },
+    "result": {
+      "passed": true,
+      "realMinecraftClient": true,
+      "realLocalNetworkPlayer": true,
+      "fakePlayers": false,
+      "windowVisible": false,
+      "assistedRouteTeleportsAndCombat": true,
+      "naturalFinaleClock": true
+    },
+    "exit": {
+      "exitCode": 0,
+      "normalExit": true
+    },
+    "labels": [
+      "network_waiting_room",
+      "native_start_room",
+      "bile_in_start_room",
+      "full_health_medkit",
+      "injured_medkit",
+      "source_gun_pickup",
+      "picked_scene_gun_fired",
+      "scene_melee_pickup",
+      "native_rendered_infected",
+      "bile_in_running",
+      "pipe_in_running",
+      "pipe_fuse_completed",
+      "native_lr_molotov",
+      "native_lower_floor_refill",
+      "new_floor_director_supply_decision",
+      "native_first_checkpoint",
+      "native_chapter_two",
+      "native_chapter_three",
+      "native_finale_wave",
+      "native_tank_rendered",
+      "native_natural_victory",
+      "second_round_waiting",
+      "second_round_scene_start",
+      "second_round_failed_and_restored"
+    ],
+    "restoreReceipts": [
+      {
+        "inventoryComponents": true,
+        "originalMarkers": true,
+        "dimension": true,
+        "position": true,
+        "mode": true,
+        "health": true,
+        "food": true,
+        "selectedSlot": true,
+        "pendingRemoved": true,
+        "savedHealth": 20.0,
+        "restoredHealth": 20.0,
+        "transactionTime": 4573,
+        "verified": true
+      },
+      {
+        "inventoryComponents": true,
+        "originalMarkers": true,
+        "dimension": true,
+        "position": true,
+        "mode": true,
+        "health": true,
+        "food": true,
+        "selectedSlot": true,
+        "pendingRemoved": true,
+        "savedHealth": 20.0,
+        "restoredHealth": 20.0,
+        "transactionTime": 4955,
+        "verified": true
+      }
+    ]
+  },
+  "priorNaturalDirectorCycle": {
+    "home": "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\playfeel-repeat-20261002-1647",
+    "candidateSha256": "9510ba07a14385fae8c2d1e0bfcb4102136aac47502c17aebb9319db742740d3",
+    "result": {
+      "passed": true,
+      "realMinecraftClient": true,
+      "realLocalNetworkPlayer": true,
+      "fakePlayers": false,
+      "windowVisible": false,
+      "assistedRouteTeleportsAndCombat": true,
+      "naturalFinaleClock": true
+    },
+    "exit": {
+      "exitCode": 0,
+      "normalExit": true
+    },
+    "paces": [
+      "BUILD",
+      "FADE",
+      "PEAK",
+      "RELAX"
+    ]
+  },
+  "dedicatedFixture": {
+    "home": "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\playfeel-final-server-20261002-1656",
+    "run": {
+      "pid": 31128,
+      "port": 25817,
+      "artifact": "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\libs\\muxi-outbreak-0.3.9-playfeel-qa.3.jar",
+      "networkClients": false,
+      "qaOnly": true
+    },
+    "result": {
+      "passed": true,
+      "fixturePlayers": true,
+      "actualNetworkClients": false,
+      "normalHaltRequested": true
+    },
+    "processExitObserved": 0,
+    "actualNetworkClients": false
+  },
+  "qa3ToFinalClassDelta": {
+    "qa3Sha256": "ad7a0d8753146fbe07e9447c95e379479acc4cb89d9952c55883007d135e985d",
+    "qa4Sha256": "181a1338af634418ba846f3eb67358ef80b2519fc49ac9a4ba2f22ba48f31e15",
+    "changedClasses": [
+      "net/muxigame/outbreak/equipment/CampaignInventory.class"
+    ],
+    "unchangedClasses": 46,
+    "correction": "Preserve original IMeleeWeapon -> SECONDARY for all LR melee, while only known baseball-bat display label is specialized. No director, supply stock, projectile, health, lifecycle or map runtime change."
+  },
+  "lockedMapResources": {
+    "candidate": {
+      "id": "muxi_outbreak",
+      "name": "muxi Outbreak",
+      "version": "0.3.9-playfeel-qa.4",
+      "artifact": "muxi-outbreak-0.3.9-playfeel-qa.4.jar",
+      "sha256": "181a1338af634418ba846f3eb67358ef80b2519fc49ac9a4ba2f22ba48f31e15",
+      "size": 2112174,
+      "minecraft": "1.21.1",
+      "neoforge": "21.1.250",
+      "java": 21
+    },
+    "resourceEntryCount": 991,
+    "identical": 989,
+    "changed": [
+      "assets/muxi_outbreak/lang/en_us.json",
+      "assets/muxi_outbreak/lang/zh_cn.json"
+    ],
+    "sourceAndGeometryUnchanged": true,
+    "qaAndRawSourceBundled": false
+  },
+  "regressions": {
+    "python": 24,
+    "sourceNavSkipped": false,
+    "supplyAssertions": 3110,
+    "directorRegressionPassed": true
+  },
+  "boundaries": [
+    "No new branch/worktree, push, deployment, production008, credentials or OSHI service restart",
+    "Native route/combat assistance disclosed; natural finale clock and real local network client",
+    "Shared CEF/authentication/platform receipt and short reconnect resume remain shared-owner integration work",
+    "No claim that installed production1.4.27 matches this candidate"
+  ]
+}

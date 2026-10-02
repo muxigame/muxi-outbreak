@@ -1,0 +1,9 @@
+{
+  "qa3Sha256": "ad7a0d8753146fbe07e9447c95e379479acc4cb89d9952c55883007d135e985d",
+  "qa4Sha256": "181a1338af634418ba846f3eb67358ef80b2519fc49ac9a4ba2f22ba48f31e15",
+  "changedClasses": [
+    "net/muxigame/outbreak/equipment/CampaignInventory.class"
+  ],
+  "unchangedClasses": 46,
+  "correction": "Preserve original IMeleeWeapon -> SECONDARY for all LR melee, while only known baseball-bat display label is specialized. No director, supply stock, projectile, health, lifecycle or map runtime change."
+}
