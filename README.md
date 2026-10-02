@@ -56,3 +56,27 @@ QA固定127.0.0.1:25683/25684和build/qa-server独立存档，不使用正式服
 地图源为用户提供的myl4d2addons_wm_lostschool.vpk；包内标注作者未名、Workshop 795271842。
 自编代码许可不授予原作者地图及衍生结构的再分发权；原始VPK、Source音乐/纹理和依赖模组素材不随自编JAR打包。
 静态/动态MDL道具、Source谜题和演出不是一比一移植。本版属于原生合作生存改编，不能称为完整L4D2引擎移植。
+
+---
+
+## Original master branch documentation
+
+# muxi Outbreak
+
+Cooperative infected campaign/survival minigame for muxigame Minecraft.
+
+## Status
+
+- AI Director prototype
+- Left 2 Mine clean-room metadata conversion pipeline
+- NeoForge 1.21.1 server-side architecture
+
+## Development
+
+The repository is split into:
+
+- native maps: muxigame original campaigns
+- legacy maps: converted gameplay metadata from compatible sources
+- tools: world analysis and conversion helpers
+
+Third-party maps/assets are not bundled unless redistribution rights are available.
