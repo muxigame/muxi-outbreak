@@ -5880,5 +5880,6 @@
     "source": "Existing BSP/NAV-converted geometry and changelevel landmarks; native door adaptation at existing room openings, not imported Source MDL props",
     "completion": "All living survivors inside, none incapacitated, entrance doors closed",
     "finale": "Retain existing source trigger_finale rescue hold, waves and tank objective"
-  }
+  },
+  "sourceDetails": "muxi_outbreak:outbreak_details/lostschool.json"
 }

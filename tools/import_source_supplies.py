@@ -31,15 +31,18 @@ SELECTIONS={'any_primary':['gun:tacz:'+g for g in ('hk_mp5a5','m870','ak47','m4a
             'tier2_any':['gun:tacz:ak47','gun:tacz:m4a1','gun:tacz:m1014','gun:tacz:m700']}
 
 
-def generate():
-    path=ROOT/'src/main/resources/data/muxi_outbreak/outbreak_maps/lostschool.json'
+def generate(source_dir=None, campaign_path=None, cache_dir=None, report_path=None):
+    # Alternate source roots and staged conversion output must use the same inputs.
+    source_dir=Path(source_dir) if source_dir is not None else ROOT/'maps/workshop/lostschool_extracted/maps'
+    cache_dir=Path(cache_dir) if cache_dir is not None else ROOT/'build'
+    path=Path(campaign_path) if campaign_path is not None else ROOT/'src/main/resources/data/muxi_outbreak/outbreak_maps/lostschool.json'
     campaign=json.loads(path.read_text(encoding='utf-8'))
     imported=[];skipped=[];relocated=[]
     for section,chapter in enumerate(campaign['chapters']):
-        name=chapter['id'];bsp_path=ROOT/'maps/workshop/lostschool_extracted/maps'/f'{name}.bsp'
+        name=chapter['id'];bsp_path=source_dir/f'{name}.bsp'
         bsp=bsp_tool.ValveBsp.from_file(left4dead2,str(bsp_path))
-        cache=np.load(ROOT/f'build/{name}-voxels.npz');grid=cache['grid'];origin=cache['origin'];palette=json.loads(str(cache['palette']))
-        passable={i for i,p in enumerate(palette) if p['Name'] in {'minecraft:air','minecraft:ladder','minecraft:scaffolding'}}
+        cache=np.load(cache_dir/f'{name}-voxels.npz');grid=cache['grid'];origin=cache['origin'];palette=json.loads(str(cache['palette']))
+        passable={i for i,p in enumerate(palette) if p['Name'] in {'minecraft:air','minecraft:light','minecraft:ladder','minecraft:scaffolding'}}
         def get(p):
             q=np.asarray(p)-origin
             return int(grid[tuple(q)]) if np.all(q>=0) and np.all(q<grid.shape) else 0
@@ -92,7 +95,7 @@ def generate():
     report={'imported':len(imported),'perChapter':dict(Counter(p['section'] for p in imported)),
         'bySourceClass':dict(Counter(p['sourceClass'] for p in imported)),'relocated':relocated,'skipped':skipped,
         'gunMapping':GUNS,'otherMapping':FIXED}
-    dest=ROOT/'build/source-supply-report.json';dest.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    dest=Path(report_path) if report_path is not None else ROOT/'build/source-supply-report.json';dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print('SOURCE_SUPPLIES_IMPORTED',len(imported),'relocated',len(relocated),'skipped',len(skipped),report['bySourceClass'])
     return report
 

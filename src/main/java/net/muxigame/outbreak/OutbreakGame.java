@@ -119,7 +119,13 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
         bus.addListener(this::login);
         bus.addListener(this::entityJoin);
         bus.addListener((PlayerInteractEvent.RightClickBlock event)->{
-            if(!(event.getEntity() instanceof ServerPlayer p)||event.getHand()!=net.minecraft.world.InteractionHand.MAIN_HAND)return;
+            if(!(event.getEntity() instanceof ServerPlayer p))return;
+            // Beds are campaign scenery. This dimension cannot sleep: vanilla use
+            // would explode the bed, damage players and destroy the restored map.
+            if(inCampaign(p)&&p.level().getBlockState(event.getPos()).getBlock() instanceof net.minecraft.world.level.block.BedBlock){
+                event.setCanceled(true);event.setCancellationResult(InteractionResult.SUCCESS);return;
+            }
+            if(event.getHand()!=net.minecraft.world.InteractionHand.MAIN_HAND)return;
             var s=session(p.getUUID());
             if(s==null||!s.prepared.contains(p.getUUID())||!p.level().dimension().equals(s.map.dimension()))return;
             if(s.checkpointDoors.interact(p.serverLevel(),event.getPos(),s.map,s.section,s.phase==OutbreakSession.Phase.START_ROOM||s.phase==OutbreakSession.Phase.RUNNING)){

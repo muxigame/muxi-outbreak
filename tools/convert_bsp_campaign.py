@@ -452,22 +452,29 @@ def main():
     manifest['sha256']=hashlib.sha256(json.dumps(manifest,sort_keys=True).encode()).hexdigest()
     json_write(staging/'outbreak_geometry/lostschool.json',manifest)
     json_write(staging/'outbreak_maps/lostschool.json',output)
+    # Supplies and Source details are also staged before any resource publication.
+    # A custom --source must never silently read a different private BSP directory.
+    from import_source_supplies import generate as generate_supplies
+    generate_supplies(args.source, staging/'outbreak_maps/lostschool.json')
+    from source_details import generate as generate_details
+    details_staging = ROOT/'build/source-details-conversion-staging'
+    generate_details(args.source, staging, details_staging)
+    for rel in ('structure', 'outbreak_geometry', 'outbreak_maps', 'outbreak_details'):
+        shutil.copytree(details_staging/rel, staging/rel, dirs_exist_ok=True)
+    manifest=json.loads((staging/'outbreak_geometry/lostschool.json').read_text(encoding='utf-8'))
     # Publish only after all three chapters successfully convert.
     destination=args.output/'structure/lostschool'
     if destination.exists():shutil.rmtree(destination)
     shutil.copytree(staging/'structure/lostschool',destination)
-    for rel in ('outbreak_geometry/lostschool.json','outbreak_maps/lostschool.json'):
+    for rel in ('outbreak_geometry/lostschool.json','outbreak_maps/lostschool.json','outbreak_details/lostschool.json'):
         (args.output/rel).parent.mkdir(parents=True,exist_ok=True)
         shutil.copy2(staging/rel,args.output/rel)
     json_write(ROOT/'build/conversion-report.json',{'chapters':reports,'totalBlocks':manifest['blocks'],
         'structures':len(manifest['structures']),'geometrySha256':manifest['sha256'],
         'dependencies':{p:importlib.metadata.version(p) for p in ('bsp_tool','numpy')},
-        'limitations':['Static/dynamic MDL props are not mesh-converted; L4D2 base-game assets are absent.',
+        'limitations':['Source props use reviewed vanilla approximations; conflicting/unmapped instances remain in outbreak_details coverage. L4D2 base-game meshes are absent.',
                        'Original Source puzzle scripts/cinematics are replaced by native Outbreak checkpoint/panic/finale rules.']})
     print('CONVERSION_COMPLETE',manifest['blocks'],len(manifest['structures']),manifest['sha256'],flush=True)
-    if args.output.resolve()==RESOURCE.resolve():
-        from import_source_supplies import generate
-        generate()
 
 
 if __name__=='__main__':main()

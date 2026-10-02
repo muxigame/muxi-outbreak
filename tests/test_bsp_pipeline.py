@@ -1,5 +1,6 @@
 from __future__ import annotations
 import gzip
+import os
 import hashlib
 import json
 from pathlib import Path
@@ -64,7 +65,7 @@ class CampaignConversionTest(unittest.TestCase):
         self.assertNotEqual(data['start'],[0,72,0])
 
     def test_source_nav_graph_routes(self):
-        source=ROOT/'maps/workshop/lostschool_extracted/maps'
+        source=Path(os.environ.get('OUTBREAK_SOURCE_DIR',str(ROOT/'maps/workshop/lostschool_extracted/maps')))
         if not source.exists():self.skipTest('private source VPK is not installed')
         campaign=json.loads((ROOT/'src/main/resources/data/muxi_outbreak/outbreak_maps/lostschool.json').read_text(encoding='utf-8'))
         for chapter in campaign['chapters']:
@@ -80,7 +81,7 @@ class CampaignConversionTest(unittest.TestCase):
             if not path.exists():self.skipTest('run converter to create independent voxel fixtures')
             data=np.load(path);grid=data['grid'];origin=data['origin'];route=data['route'];palette=json.loads(str(data['palette']))
             climb={i for i,p in enumerate(palette) if p['Name'] in {'minecraft:ladder','minecraft:scaffolding'}}
-            clear={0,*climb}
+            clear={i for i,p in enumerate(palette) if p['Name'] in {'minecraft:air','minecraft:light'}}|climb
             def get(p):
                 p=np.asarray(p)-origin
                 return int(grid[tuple(p)]) if np.all(p>=0) and np.all(p<grid.shape) else -1
@@ -88,7 +89,7 @@ class CampaignConversionTest(unittest.TestCase):
                 x,y,z=map(int,p)
                 self.assertIn(get((x,y,z)),clear,(name,p,'feet'))
                 self.assertIn(get((x,y+1,z)),clear,(name,p,'head'))
-                self.assertTrue(get((x,y-1,z)) not in {0,-1} or get((x,y,z)) in climb,(name,p,'support'))
+                self.assertTrue(get((x,y-1,z)) not in clear|{-1} or get((x,y,z)) in climb,(name,p,'support'))
             for a,b in zip(route,route[1:]):
                 delta=np.abs(b-a)
                 self.assertLessEqual(delta[0]+delta[2],1,(name,a,b,'horizontal discontinuity'))

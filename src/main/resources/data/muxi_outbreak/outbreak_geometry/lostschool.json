@@ -3,14 +3,24 @@
   "id": "lostschool",
   "structures": [
     {
+      "resource": "muxi_outbreak:structure/lostschool/lost/0_0_32.nbt",
+      "origin": [
+        -163,
+        34,
+        -65
+      ],
+      "blocks": 266,
+      "sha256": "09fe33e91968ab4aa4648aa70fcf9d098ea2c7e30e1e7bc89e354441d432e87e"
+    },
+    {
       "resource": "muxi_outbreak:structure/lostschool/lost/0_0_64.nbt",
       "origin": [
         -163,
         34,
         -33
       ],
-      "blocks": 1596,
-      "sha256": "e9202bbdaedaaac7f107ca8e60f717ba700e95309c1ba5ef58a493fdedd66420"
+      "blocks": 1757,
+      "sha256": "fd17da814144db4a7e8f0045e539ad1fd384e3de188a24e7bbe2ee2354438d9b"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/0_0_96.nbt",
@@ -19,8 +29,18 @@
         34,
         -1
       ],
-      "blocks": 2184,
-      "sha256": "0f905ff04dc45f39d5818b420b9b5672df8ccbe250f8f3b2888d8a4d8bc13958"
+      "blocks": 2194,
+      "sha256": "28144d8178cff75ea3488642e1d575a37e864132eec4675e13fc56d41f7ad8a0"
+    },
+    {
+      "resource": "muxi_outbreak:structure/lostschool/lost/0_32_32.nbt",
+      "origin": [
+        -163,
+        66,
+        -65
+      ],
+      "blocks": 358,
+      "sha256": "73eb5ba545e2e8f7933bb9cb5f8efb9d1976fede650f15b7a807f4ed736d7129"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/0_32_64.nbt",
@@ -29,8 +49,8 @@
         66,
         -33
       ],
-      "blocks": 3581,
-      "sha256": "5f2cccb6b95af17c8619a3b24c036624e471b0243087b4bf5fa8588cd35569f6"
+      "blocks": 4004,
+      "sha256": "a7f137e1ae1452752312ce7a00ea7041571a9d9688b3e0bbb984189874a2968f"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/0_32_96.nbt",
@@ -39,8 +59,18 @@
         66,
         -1
       ],
-      "blocks": 5287,
-      "sha256": "51259e867ad284eab9f45e87eec2160f1fa85f2916873b6a9b2702693c111a01"
+      "blocks": 5313,
+      "sha256": "b57aa9340ad0c4d894ce180e46f64596198b8fb1569957173d3ac22a687d005d"
+    },
+    {
+      "resource": "muxi_outbreak:structure/lostschool/lost/32_0_32.nbt",
+      "origin": [
+        -131,
+        34,
+        -65
+      ],
+      "blocks": 12,
+      "sha256": "41eba3877a8cbc523e5b4eb2d78c93ac5d3e71eed23fe52fd224bcb7aefe2dbd"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/32_0_64.nbt",
@@ -49,8 +79,8 @@
         34,
         -33
       ],
-      "blocks": 3524,
-      "sha256": "18bb93c31e997b73f1197c029bdeb365293fd9a0b215bb236751e643bdc5b887"
+      "blocks": 3535,
+      "sha256": "62c215d40451b3756277a29d86f1a4005f0b9b329503e9945bc3383ff7aa824c"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/32_0_96.nbt",
@@ -59,8 +89,18 @@
         34,
         -1
       ],
-      "blocks": 2976,
-      "sha256": "b0b5fe30d76875638a618ea922906de2108fe1e073c2c39583a9dbb997d6f1d0"
+      "blocks": 2977,
+      "sha256": "470128f02ac61d6535f5500b3d59f8eb559e2128fb73cf73fbd9cdae7b9e117f"
+    },
+    {
+      "resource": "muxi_outbreak:structure/lostschool/lost/32_32_32.nbt",
+      "origin": [
+        -131,
+        66,
+        -65
+      ],
+      "blocks": 11,
+      "sha256": "375b7e8039af650a53ca9bf40d023001587d5e1bd59c503697fc76e386d89e45"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/32_32_64.nbt",
@@ -69,8 +109,8 @@
         66,
         -33
       ],
-      "blocks": 9414,
-      "sha256": "428d2553d3c7b24964f8491155e90488a5dfc6fbca1899a44ef3290412404a63"
+      "blocks": 9467,
+      "sha256": "ef16084f4eb12ff95d2332455bd5d7d7510e232f14b382b5ccc232ce18d45154"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/32_32_96.nbt",
@@ -79,8 +119,18 @@
         66,
         -1
       ],
-      "blocks": 8041,
-      "sha256": "ce093a6b3a859c1de13db6afa48a963280cedb906f301ab85c93f635b7b6ed73"
+      "blocks": 8071,
+      "sha256": "9888151116d60a9671d57a31e88d862db6873385326d1803524fa0440ff78261"
+    },
+    {
+      "resource": "muxi_outbreak:structure/lostschool/lost/64_0_32.nbt",
+      "origin": [
+        -99,
+        34,
+        -65
+      ],
+      "blocks": 14,
+      "sha256": "29ab2e9aaf532e299f6fdc51989290917fd0ebb5d84be995528cbd917100eabc"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/64_0_64.nbt",
@@ -89,8 +139,8 @@
         34,
         -33
       ],
-      "blocks": 3263,
-      "sha256": "6a3d88c478832701a1d9822384409244e4fec40739086f5780abce7da4b2c2e1"
+      "blocks": 3280,
+      "sha256": "9daa22d3542767b1aab633ec51457517cf529e2d00f39578e0955280e3adcc58"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/64_0_96.nbt",
@@ -99,8 +149,8 @@
         34,
         -1
       ],
-      "blocks": 2940,
-      "sha256": "a50032777d9866b519554b2ba80fbb36858faf12d28bf0f96766701788db94f7"
+      "blocks": 2968,
+      "sha256": "b93b2cee723c4316a7782ccc4bf8fbeb18d22db4273f874b6ce45632f7570af5"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/64_32_64.nbt",
@@ -109,8 +159,8 @@
         66,
         -33
       ],
-      "blocks": 13353,
-      "sha256": "d9d38d4c147df2d0ec72c6e139b363b52f642bea0de34bc79519a868c06cb339"
+      "blocks": 13455,
+      "sha256": "f334442b543e567a72abb8135b5f4e4f8cdc191613cac7d7ec0ad5dd153bfd3a"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/64_32_96.nbt",
@@ -119,8 +169,8 @@
         66,
         -1
       ],
-      "blocks": 11780,
-      "sha256": "690de16e7ae7e65df900787d7d1307a5bf75d18f83d39630d7bb8cc51506f34d"
+      "blocks": 11886,
+      "sha256": "d2e93fc29fd9ab503066b8375bd171ac7541d32fe63b8ac6619b7984af3f2a31"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/64_64_64.nbt",
@@ -130,7 +180,7 @@
         -33
       ],
       "blocks": 522,
-      "sha256": "f20420e4f839c18c3daa6d0af6a3368dac59e082b6b8111117fc8c159579b132"
+      "sha256": "42f5f19612954520ffc5e680a29e5b2598fd3d4b526b0a5a503d51e3247360d7"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/64_64_96.nbt",
@@ -140,7 +190,17 @@
         -1
       ],
       "blocks": 476,
-      "sha256": "344343bfa715cae8b168c2785bac287e9e80f7ba5a9b1412f98d08db1ee4749a"
+      "sha256": "535353f5d45b84bdf162537f4f038880183ccc15a796a0bd276bb150cec9daf6"
+    },
+    {
+      "resource": "muxi_outbreak:structure/lostschool/lost/96_0_32.nbt",
+      "origin": [
+        -67,
+        34,
+        -65
+      ],
+      "blocks": 14,
+      "sha256": "de90acd24a00485d13bebf313de82e9f87027e8d62f23a90ac24b20e6813da1c"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/96_0_64.nbt",
@@ -149,8 +209,8 @@
         34,
         -33
       ],
-      "blocks": 3198,
-      "sha256": "68b44672f9c5b613f5fb6353a88cf4946dfab6061c0804d173fdb3a0793039af"
+      "blocks": 3214,
+      "sha256": "2907493e2f11fe65581f5130a7655f2e24fe2419c93076fe8e5b4c751e33b120"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/96_0_96.nbt",
@@ -159,8 +219,8 @@
         34,
         -1
       ],
-      "blocks": 2595,
-      "sha256": "3ff24b0d4dfafacf8e737be169c40a4b959d6b60a5a24a0a5aa092a057499ada"
+      "blocks": 2657,
+      "sha256": "8ec1df307ca1ee0ff6749ba2cefe65b0075613e786d133371fbe835722baef38"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/96_32_64.nbt",
@@ -169,8 +229,8 @@
         66,
         -33
       ],
-      "blocks": 16567,
-      "sha256": "59cb9ec0efdb77d8cdb1f51096de0ab188a36392f5156c157c414edc209f3001"
+      "blocks": 16674,
+      "sha256": "dcb77958f696cf07984a6f993dab2c357fb6e9ee53e7aa73e9b62fca73c8f10c"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/96_32_96.nbt",
@@ -179,8 +239,8 @@
         66,
         -1
       ],
-      "blocks": 11114,
-      "sha256": "448c5f90114a81b8e4c61d5a78a2256ab88fd096a11e54c9595d42173b963332"
+      "blocks": 11405,
+      "sha256": "22f19f8abe1225bd424cd6049e241ac0af30ac39e1679353743cdd5f4a5bbfe9"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/96_64_64.nbt",
@@ -190,7 +250,7 @@
         -33
       ],
       "blocks": 1071,
-      "sha256": "c0c6921fbc16de339b8c907db1de09ac6f4ad08751e837d4ed2894945a4d3f93"
+      "sha256": "0d89faa5f7a2fbd74598497d82abc62ce20528d4bf58cc2792f408515ddbe0de"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/96_64_96.nbt",
@@ -200,7 +260,7 @@
         -1
       ],
       "blocks": 1088,
-      "sha256": "0937e26a734c1dd6222302a15d400e86a82fac4d7c1126358ad2319d27411c65"
+      "sha256": "3eafc0c22ef282561711b410f736c86b6ef84c9eb55bea0605f40b8c9d859798"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/128_0_0.nbt",
@@ -229,8 +289,8 @@
         34,
         -33
       ],
-      "blocks": 3591,
-      "sha256": "9cbeebceb5f72888be1a7c7bcb366d90456b41656aaaa41c47f469b036db572a"
+      "blocks": 3603,
+      "sha256": "9c8343c06c0e5d576c079b63cd85437911a9aeb09dcc4ed06c325a2c04d24790"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/128_0_96.nbt",
@@ -239,8 +299,8 @@
         34,
         -1
       ],
-      "blocks": 2434,
-      "sha256": "ce125edd2f7e00dd43223dea626c816160a41dbf753a5091b1fc9126a3f5aa21"
+      "blocks": 2436,
+      "sha256": "6d697433f2c598f46422a5e830da8954201a4b48264bbb8fa9cdde5726fc3945"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/128_32_32.nbt",
@@ -259,8 +319,8 @@
         66,
         -33
       ],
-      "blocks": 15173,
-      "sha256": "e94f212b4a31191a43159cec8a6f5da34853802613ddc3bfbd708b2096e68189"
+      "blocks": 15223,
+      "sha256": "f2ed5567f85a337646e1ca930113f2fa4bc0fc9d94a88b692813f82f25b690d7"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/128_32_96.nbt",
@@ -269,8 +329,8 @@
         66,
         -1
       ],
-      "blocks": 10995,
-      "sha256": "9f9cbabde04f8a623f02508b7077e26571e8301c682a7cc6ea3154337f8d2bcb"
+      "blocks": 11023,
+      "sha256": "6662dd976192075e359df449fc106072c1738b2722aae875cf8dd2f8f0abad47"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/128_64_64.nbt",
@@ -280,7 +340,7 @@
         -33
       ],
       "blocks": 1280,
-      "sha256": "5ae7edbc501504d8915c7a182a7e5ccfad48106e36882ffb2cc1df97af07c36e"
+      "sha256": "8c2e58d24f11c682a8b8c3b7e5f8a69d38094d7c20dc85e1e262f6f7466297dd"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/128_64_96.nbt",
@@ -290,7 +350,7 @@
         -1
       ],
       "blocks": 1088,
-      "sha256": "0937e26a734c1dd6222302a15d400e86a82fac4d7c1126358ad2319d27411c65"
+      "sha256": "3eafc0c22ef282561711b410f736c86b6ef84c9eb55bea0605f40b8c9d859798"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/160_0_0.nbt",
@@ -309,8 +369,8 @@
         34,
         -65
       ],
-      "blocks": 1168,
-      "sha256": "0fa9586e460e52583b94882036c6f98002ebfb14423ac7ea1856b55b5702614e"
+      "blocks": 1179,
+      "sha256": "28cc88b0c48ac3a36be8e2d474cfeab1f8d1e5155a41361d67a04879b67dc41d"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/160_0_64.nbt",
@@ -319,8 +379,8 @@
         34,
         -33
       ],
-      "blocks": 3124,
-      "sha256": "9fadb549bb9c67409a1a52a8135db10b137a7fcf6f6996cd81300a4866301abc"
+      "blocks": 3140,
+      "sha256": "fb0e444a23ff69d34cf39ec1abfee0e165d3f107b6fd4aeeb2cedf4286640dd5"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/160_0_96.nbt",
@@ -330,7 +390,7 @@
         -1
       ],
       "blocks": 3033,
-      "sha256": "1f773cff2428b525ad63c6a8ac8ed50d9bf6ed0307bb5eb456cf48434c506261"
+      "sha256": "7ac163f33216edef3e8a7b23d35aec55ed7408e482c545ab8940c821b39f1352"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/160_32_32.nbt",
@@ -349,8 +409,8 @@
         66,
         -33
       ],
-      "blocks": 14079,
-      "sha256": "6a3d996c0cf2b87ccc1a36cde38d69fce3de229434a678c2db6e1a8fa0b09b53"
+      "blocks": 14151,
+      "sha256": "737f3bafa5fed2bc9d261596790d572e3171fbaccc325cf4fa17d4480a4851c7"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/160_32_96.nbt",
@@ -359,8 +419,8 @@
         66,
         -1
       ],
-      "blocks": 12983,
-      "sha256": "dc49ca3bf021b8974c19e70658aa4e83b56eaf4d1ab3f5f1c08a73ef62b8ed6c"
+      "blocks": 12985,
+      "sha256": "77ba8f1790b39064dbc66b88973947a7b371102e4d68d6a19c0b189eee4b4ca6"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/160_64_64.nbt",
@@ -370,7 +430,7 @@
         -33
       ],
       "blocks": 1280,
-      "sha256": "5ae7edbc501504d8915c7a182a7e5ccfad48106e36882ffb2cc1df97af07c36e"
+      "sha256": "8c2e58d24f11c682a8b8c3b7e5f8a69d38094d7c20dc85e1e262f6f7466297dd"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/160_64_96.nbt",
@@ -380,7 +440,17 @@
         -1
       ],
       "blocks": 1088,
-      "sha256": "0937e26a734c1dd6222302a15d400e86a82fac4d7c1126358ad2319d27411c65"
+      "sha256": "3eafc0c22ef282561711b410f736c86b6ef84c9eb55bea0605f40b8c9d859798"
+    },
+    {
+      "resource": "muxi_outbreak:structure/lostschool/lost/192_0_32.nbt",
+      "origin": [
+        29,
+        34,
+        -65
+      ],
+      "blocks": 2,
+      "sha256": "1404f5d89422fd0cb813ba46f4f8698d5ff1cf1e76cc6a48ed9a0d549c333c50"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/192_0_64.nbt",
@@ -389,8 +459,8 @@
         34,
         -33
       ],
-      "blocks": 3526,
-      "sha256": "6c4698053300d751a48c564b80785a1ccceccd7d16425c29476756291afd31fe"
+      "blocks": 3575,
+      "sha256": "d7cbe79a7880886907e3670832bbfcd6869185e9fd83bd4f1c16cfd713fc2209"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/192_0_96.nbt",
@@ -399,8 +469,8 @@
         34,
         -1
       ],
-      "blocks": 2331,
-      "sha256": "29a937df44d3375624c5028b07a07bf4bb87ad8ff2561609470d624c2e237134"
+      "blocks": 2376,
+      "sha256": "4da7f099e7524bc3468aedeff06aeb96096a758e25616415524e3722a1b47555"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/192_32_64.nbt",
@@ -409,8 +479,8 @@
         66,
         -33
       ],
-      "blocks": 11443,
-      "sha256": "1e5767b3e78fb9d6b62faa146854033a9e939301b1f9ad05ce66bbfa8b47147f"
+      "blocks": 11515,
+      "sha256": "8e74c8aca770eb2296ed5e16852e204119dce9c187c99e9295140268a865d363"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/192_32_96.nbt",
@@ -419,8 +489,8 @@
         66,
         -1
       ],
-      "blocks": 10818,
-      "sha256": "ef821b50fb217c53cfb007df542680584f5c4def6c2c0c3a74a91630287f1659"
+      "blocks": 10837,
+      "sha256": "87f9b010ea27d64f760fe0d57925e2c981de56652a9591b53c32e9cf149b3991"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/192_64_64.nbt",
@@ -429,8 +499,8 @@
         98,
         -33
       ],
-      "blocks": 1080,
-      "sha256": "a1eafd42e3daee2196306972ea88dbf57767f12570eb561197ea2cffbeda63ea"
+      "blocks": 1092,
+      "sha256": "7b29cd066c21bc3bc8cefe5f61a4159a9f32f8d05a2613e09f3ab500bab7d732"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/192_64_96.nbt",
@@ -439,8 +509,18 @@
         98,
         -1
       ],
-      "blocks": 918,
-      "sha256": "e42051722e1bf5a0c7c1b2c70d4051b45555f7ba10cf1e608fbf9a3e53acad10"
+      "blocks": 925,
+      "sha256": "d0ae9fe29f68f1abff9330c8a3abe78d5d93223e4bce47fb4f4a309ee9e10b05"
+    },
+    {
+      "resource": "muxi_outbreak:structure/lostschool/lost/224_0_32.nbt",
+      "origin": [
+        61,
+        34,
+        -65
+      ],
+      "blocks": 11,
+      "sha256": "22eb122c871dbd91db55237e496fe9fdddd95e4b15ce6a66ef1deed9c03e9c45"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/224_0_64.nbt",
@@ -449,8 +529,8 @@
         34,
         -33
       ],
-      "blocks": 4633,
-      "sha256": "897157dec8e0af607193380366aed10e32259c7e603cc62005dd612786f2eb5c"
+      "blocks": 4659,
+      "sha256": "57dec518614e4f2c43ccb83cf27d51c617b3c69abac27c795d0d6e868850cc89"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/224_0_96.nbt",
@@ -459,8 +539,18 @@
         34,
         -1
       ],
-      "blocks": 6398,
-      "sha256": "d99fa2b54d9f893ce4fc8c8013527a03a5753911699146c87bea7948451d3e7c"
+      "blocks": 6469,
+      "sha256": "03c2cfa5f408f1a3168946b6816c9bb5c568b48b71a77e783b2542bd3aed3d92"
+    },
+    {
+      "resource": "muxi_outbreak:structure/lostschool/lost/224_32_32.nbt",
+      "origin": [
+        61,
+        66,
+        -65
+      ],
+      "blocks": 3,
+      "sha256": "164dc088068de709dcfcad239fcfa597bc082fc69874994b601b172fde3bec9a"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/224_32_64.nbt",
@@ -469,8 +559,8 @@
         66,
         -33
       ],
-      "blocks": 3440,
-      "sha256": "11629be70d0bdbb823c905000c5810c478249839efc8ef6b953d17320afdd5ec"
+      "blocks": 3544,
+      "sha256": "41fa6affa5cb4f825ae10b795f610ba1aaa176fbc31dff407d2dfa66af173b93"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/224_32_96.nbt",
@@ -479,8 +569,38 @@
         66,
         -1
       ],
-      "blocks": 4034,
-      "sha256": "aeded715a5a6a4eb3c8a731fa923c9057967826743f3544ec3339450c2b066f8"
+      "blocks": 4089,
+      "sha256": "6cfb3bdf020cf04772e474b5face0f95bd526e289a7c5917baf3715fd1de6504"
+    },
+    {
+      "resource": "muxi_outbreak:structure/lostschool/lost/224_64_64.nbt",
+      "origin": [
+        61,
+        98,
+        -33
+      ],
+      "blocks": 66,
+      "sha256": "3a6a1eb50d8b893ab2f12d0de92dfa5b70427f2f5376c97d8207d330b4462796"
+    },
+    {
+      "resource": "muxi_outbreak:structure/lostschool/lost/224_64_96.nbt",
+      "origin": [
+        61,
+        98,
+        -1
+      ],
+      "blocks": 231,
+      "sha256": "d702a9e066dfcfc0208e1a83cc3b47929dc72c5da9f9fc268e6e0146970eecb0"
+    },
+    {
+      "resource": "muxi_outbreak:structure/lostschool/lost/256_0_32.nbt",
+      "origin": [
+        93,
+        34,
+        -65
+      ],
+      "blocks": 8,
+      "sha256": "0174be425ca567dabc383fbd37734905e6851a695c83d2d8edf633a12c62aff8"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/256_0_64.nbt",
@@ -489,8 +609,8 @@
         34,
         -33
       ],
-      "blocks": 6618,
-      "sha256": "214a9b54120099754e0cf245bcfc11e2f7b94869caa6865d30a31ff93101fb12"
+      "blocks": 6621,
+      "sha256": "c18fd8cb8bc4560f9c0f2b67bc3592002b3b77216a8289d6ba6e1f4cd8bfda98"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/256_0_96.nbt",
@@ -499,8 +619,8 @@
         34,
         -1
       ],
-      "blocks": 10205,
-      "sha256": "7893a428a9db3388ebb3e86548d23e90d8fcc8ba394d3562af74538fafa8d941"
+      "blocks": 10258,
+      "sha256": "8ba45ec0875b2b7d558ef76f0e9e4a83075bf8d75cbbcfd9c0309b463a4b153c"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/256_32_64.nbt",
@@ -509,8 +629,8 @@
         66,
         -33
       ],
-      "blocks": 2692,
-      "sha256": "07e27a01f064575876fa523f4f78daf0b26f423f7fdb73807d8e7ad24d1a00f9"
+      "blocks": 2701,
+      "sha256": "d98644867d3c828ff1e05680416468e3ec05ef82b5bf6de2e115e2512d9e5b71"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/256_32_96.nbt",
@@ -519,8 +639,18 @@
         66,
         -1
       ],
-      "blocks": 4327,
-      "sha256": "f0d009a9a02e783dd79e54f8ce3c54e54b9298b19ec812b85414b345fbeefaff"
+      "blocks": 4362,
+      "sha256": "35dab2dbfba2dc21d20d4308923be5966a635eeb3f43f62d195b80e24ef56842"
+    },
+    {
+      "resource": "muxi_outbreak:structure/lostschool/lost/288_0_32.nbt",
+      "origin": [
+        125,
+        34,
+        -65
+      ],
+      "blocks": 6,
+      "sha256": "a53ccd2c5a48b8d187898c93f099c6fb9260027ae923af398c9db957a6b2585c"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/288_0_64.nbt",
@@ -530,7 +660,7 @@
         -33
       ],
       "blocks": 5113,
-      "sha256": "dda9b6a0482fb8f945de2d9229ecbd1cfd3e97f8787298f9c1dcffd073d74cd4"
+      "sha256": "7ef5b8f425bde566527458e67672706fe241f6466b34fb8152f670a78c516d68"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/288_0_96.nbt",
@@ -539,8 +669,8 @@
         34,
         -1
       ],
-      "blocks": 8223,
-      "sha256": "9a4d2e212e68f37120db0fc254c3b105fd66f419cc8d265f8f2207a4cb50e478"
+      "blocks": 8242,
+      "sha256": "6678bf451fd89fbb41cf101e0c68a3e24b87cadba055af2b8f9f82d4e227283f"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/288_32_64.nbt",
@@ -549,8 +679,8 @@
         66,
         -33
       ],
-      "blocks": 2847,
-      "sha256": "ed63ee43c3fc441e6cdb46b5b65a322a9639db2a40f112ad0d3171a3288440dc"
+      "blocks": 2851,
+      "sha256": "218122db1443f931c03cb2782faed7c2e3197819279ef6df213f19a5f061b5e8"
     },
     {
       "resource": "muxi_outbreak:structure/lostschool/lost/288_32_96.nbt",
@@ -559,11 +689,11 @@
         66,
         -1
       ],
-      "blocks": 4425,
-      "sha256": "c65ae8d3c7f99954d4af4851dbae2d8efa92cd93bc26052e70dc390dd6ab62f5"
+      "blocks": 4444,
+      "sha256": "556f2a332e8c1c007099ebf0bb31af3b17cedc03769e176727ce95076fc67d40"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/128_64_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/0_64_64.nbt",
       "origin": [
         1812,
         94,
@@ -573,7 +703,7 @@
       "sha256": "70da887c0b5bbe84618bb196776cd8333abbff9be5bd6ebcda671c91817e8959"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/128_64_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/0_64_96.nbt",
       "origin": [
         1812,
         94,
@@ -583,7 +713,7 @@
       "sha256": "4ef4130cc531a82f3e99de5c0e01b1f1f43f5ba7965912b22028f2d968271c09"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/160_32_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/32_32_64.nbt",
       "origin": [
         1844,
         62,
@@ -593,7 +723,7 @@
       "sha256": "f334bab4751c3a40ea9c971a00f2dedce251f14324ebc8ca3628d2567886bc89"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/160_32_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/32_32_96.nbt",
       "origin": [
         1844,
         62,
@@ -603,7 +733,7 @@
       "sha256": "a7b2120d962647822dd8b1726a8cbbe81028feb0dfc219047447db19b2b7ebe3"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/160_64_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/32_64_64.nbt",
       "origin": [
         1844,
         94,
@@ -613,7 +743,7 @@
       "sha256": "07cbfb47185bf4ceb8d9f32b037a3feee0aa5a573b1d36778b3984c837add75f"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/160_64_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/32_64_96.nbt",
       "origin": [
         1844,
         94,
@@ -623,7 +753,7 @@
       "sha256": "3dc15a9174f64dfe7d740a0efb7726e69cb03a4b9be041fc9e188bfe2d11bf2e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/192_32_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/64_32_64.nbt",
       "origin": [
         1876,
         62,
@@ -633,7 +763,7 @@
       "sha256": "e24d117eecf0abe9185e16b03cd10f41f27262f93a8a1fa07c157edcc247a00d"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/192_32_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/64_32_96.nbt",
       "origin": [
         1876,
         62,
@@ -643,7 +773,7 @@
       "sha256": "8e9c3968832c841f8c7fd2471dd952d153492e9435f0fa551c074447f4309442"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/192_64_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/64_64_64.nbt",
       "origin": [
         1876,
         94,
@@ -653,7 +783,7 @@
       "sha256": "55ab9ea57e3c6ead35cee78cc8e3af0e2477b8d9f38cfb6a720c2b2e58847463"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/192_64_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/64_64_96.nbt",
       "origin": [
         1876,
         94,
@@ -663,7 +793,7 @@
       "sha256": "4cdb5577e6d2954de5a1aaee2880650fab200c720c72be300f5a80cceb86e66e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/288_0_32.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/160_0_0.nbt",
       "origin": [
         1972,
         30,
@@ -673,7 +803,7 @@
       "sha256": "4682c1658bc5538dfdfa72ea3d8082854c0374e6b0b54e412cff90cb97b434a7"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/288_0_64.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/160_0_32.nbt",
       "origin": [
         1972,
         30,
@@ -683,7 +813,7 @@
       "sha256": "f498e191d38b14c338b2ecb7dc64d94145e99a698fd886838cb9282e2702b7ff"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/288_0_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/160_0_64.nbt",
       "origin": [
         1972,
         30,
@@ -693,17 +823,17 @@
       "sha256": "2a5cbbe4d7d5bbf6d677bc33c7e776f8fc9e23ed66ba65d94a3ff64bfbd95504"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/288_0_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/160_0_96.nbt",
       "origin": [
         1972,
         30,
         -37
       ],
       "blocks": 1076,
-      "sha256": "895950fcf5b09ed713fa642b4b08a03085993edb5608ec4546790aea31ada10d"
+      "sha256": "c7e6662144de4a09d7302482011e6d142290cb1a5073e43564378a7c7b83bccc"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/288_0_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/160_0_128.nbt",
       "origin": [
         1972,
         30,
@@ -713,7 +843,7 @@
       "sha256": "a03480096db63deba87743af4ab4f33375694b8607006dd9fdbde9b5f8c810a6"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/288_0_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/160_0_160.nbt",
       "origin": [
         1972,
         30,
@@ -723,27 +853,27 @@
       "sha256": "f24eceef1ab85925b30df6124fb59dea5af0aac6de3879786f30fee1af4daf41"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/288_32_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/160_32_96.nbt",
       "origin": [
         1972,
         62,
         -37
       ],
-      "blocks": 1204,
-      "sha256": "7fce3c0d93213aad6165362a652bd2f587f82a68c718ee7338c5542b9b5a462d"
+      "blocks": 1217,
+      "sha256": "3ef7defc524166ec561da5ed04330f9aabbc73917e5af4f49cc4fb6fd9f2f614"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/288_32_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/160_32_128.nbt",
       "origin": [
         1972,
         62,
         -5
       ],
-      "blocks": 1472,
-      "sha256": "925f7015c1232a5982dc4b622ea1544f0836752a8c87f82b0cba82128b9fde2f"
+      "blocks": 1501,
+      "sha256": "24b4d64658e2a881e9d58bf7df64cab0905517a9267e22f0a057244d601b650b"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_0_32.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/192_0_0.nbt",
       "origin": [
         2004,
         30,
@@ -753,7 +883,7 @@
       "sha256": "6bb3e000f5d4c2c4c1a9c43b6c096da4dce6133a5dd15c4d7bd9650ce4d38731"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_0_64.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/192_0_32.nbt",
       "origin": [
         2004,
         30,
@@ -763,7 +893,7 @@
       "sha256": "a82822a0a729bddfb06b3ccbe4f7721173eb9fc30a2425483ba4baae262605c4"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_0_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/192_0_64.nbt",
       "origin": [
         2004,
         30,
@@ -773,27 +903,27 @@
       "sha256": "6c0993c639f9011515f770f838ffbb15f42b81bb2fea576fbdf53f0a285763f9"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_0_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/192_0_96.nbt",
       "origin": [
         2004,
         30,
         -37
       ],
       "blocks": 4011,
-      "sha256": "18c344d8d2ec4f2988c0e0c0b1f69075be443cc0750df09653c1ca9735379557"
+      "sha256": "eed90d526a193f1ef9b29732f1a5c5d37762126f51bbdd0a4582484cf0306c37"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_0_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/192_0_128.nbt",
       "origin": [
         2004,
         30,
         -5
       ],
       "blocks": 3839,
-      "sha256": "3e26dbdfb87015b5db6b3a8a0c60693467bc4d004800fece96d4bc6951a83261"
+      "sha256": "deb1240eeec44da4e666a690b4fa33298edd5c51b182b185281e484e2b3593f7"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_0_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/192_0_160.nbt",
       "origin": [
         2004,
         30,
@@ -803,7 +933,7 @@
       "sha256": "a1d7325a3ace60094083f27ae994b11d1f4d0f425bdb7f3e30135fecf7bc9dba"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_32_64.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/192_32_32.nbt",
       "origin": [
         2004,
         62,
@@ -813,27 +943,27 @@
       "sha256": "2a89bf1cf77395557d785e807bebaa5b53f0cc91eb5eb9d4324d9d58f64d423b"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_32_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/192_32_96.nbt",
       "origin": [
         2004,
         62,
         -37
       ],
-      "blocks": 6550,
-      "sha256": "51c97e0b5d48789742dd37aa1c3c9c32d41c301db2a22b7900e37c8a93bb1bfc"
+      "blocks": 6576,
+      "sha256": "76439131d8a499c588c68e22057699c9e69ed2cce890b09549f5beae5d1eb4fb"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_32_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/192_32_128.nbt",
       "origin": [
         2004,
         62,
         -5
       ],
-      "blocks": 13296,
-      "sha256": "0cd1bac147629a7c4a0cb5d8e527cb36995421867a96b695d26477c0c8fba43a"
+      "blocks": 13337,
+      "sha256": "45e01bd84810ce44b14076871c3255249b58ff6dc8202c0c617fc3f9b026da3e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_64_64.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/192_64_32.nbt",
       "origin": [
         2004,
         94,
@@ -843,7 +973,27 @@
       "sha256": "42c97377e77bf0fb37004af273c16232d7916730a7a31111bcbf031be65af92b"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_0_32.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/192_64_96.nbt",
+      "origin": [
+        2004,
+        94,
+        -37
+      ],
+      "blocks": 279,
+      "sha256": "ecbefd6f6f322cc4222fdf714290cd577adadf6d90e4e3f4a6c45b1c31f8c603"
+    },
+    {
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/192_64_128.nbt",
+      "origin": [
+        2004,
+        94,
+        -5
+      ],
+      "blocks": 90,
+      "sha256": "909d732466374e70379de6b335f7489ce3d35ac518c678f5f7ca42f961bca0d8"
+    },
+    {
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/224_0_0.nbt",
       "origin": [
         2036,
         30,
@@ -853,7 +1003,7 @@
       "sha256": "6bb3e000f5d4c2c4c1a9c43b6c096da4dce6133a5dd15c4d7bd9650ce4d38731"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_0_64.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/224_0_32.nbt",
       "origin": [
         2036,
         30,
@@ -863,47 +1013,47 @@
       "sha256": "fdba705822ae0123352a8a2b8e20d20b5bd912b0650927315e7c4fff380b2d1e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_0_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/224_0_64.nbt",
       "origin": [
         2036,
         30,
         -69
       ],
       "blocks": 4166,
-      "sha256": "ec943e7ba132d291c09a5e75fdcd8e0eca78f73eccd6b274573f2763f26bebc2"
+      "sha256": "6d26d831d1474efb613b0937c9a7a26ce596404994c49b755bd2eb5784167f2e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_0_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/224_0_96.nbt",
       "origin": [
         2036,
         30,
         -37
       ],
       "blocks": 4841,
-      "sha256": "bde14deeb413d4850c89a8b1ce22192453b3c9022471ee0b67cd77657afdab0c"
+      "sha256": "9c6f140280400c6574cb342160fb09d5cb48ab655fc3d3e50dda5656c897ea4e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_0_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/224_0_128.nbt",
       "origin": [
         2036,
         30,
         -5
       ],
       "blocks": 4533,
-      "sha256": "76534dad82db98c27358e64b067087573ec552c06dce9e08e003dca3bbdcee27"
+      "sha256": "14829db0bafb3f79c4aca67adfc1fd472b50410e70b1272b03890086928bfd8b"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_0_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/224_0_160.nbt",
       "origin": [
         2036,
         30,
         27
       ],
-      "blocks": 192,
-      "sha256": "a1d7325a3ace60094083f27ae994b11d1f4d0f425bdb7f3e30135fecf7bc9dba"
+      "blocks": 204,
+      "sha256": "f03a4759d5536feb9d0ad5188b635c6e8c14f1a87c3bf32efdfcf0626953ec6f"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_32_64.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/224_32_32.nbt",
       "origin": [
         2036,
         62,
@@ -913,7 +1063,7 @@
       "sha256": "5878fc514e23245ac489efb01254816812790b405b1d5bda547c41a4d9195dfb"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_32_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/224_32_96.nbt",
       "origin": [
         2036,
         62,
@@ -923,17 +1073,17 @@
       "sha256": "b1c54a4bcdc4cd3720611ac8fa4ae427bdba2cb0647a6b4632af44ce22d890ab"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_32_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/224_32_128.nbt",
       "origin": [
         2036,
         62,
         -5
       ],
-      "blocks": 18302,
-      "sha256": "2ceb4377e99cf31687cc5dcfdb6424487e8a8934ac89b5f2a7912b82c682f4dc"
+      "blocks": 18337,
+      "sha256": "52fa495d4e76e0b1a3c3f581b88436163921ea5dda579bea772bdc4a6bca7cef"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_64_64.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/224_64_32.nbt",
       "origin": [
         2036,
         94,
@@ -943,7 +1093,17 @@
       "sha256": "44f4016305c53f6f7d43a566233402d2b3405611e62a07875f8c7479c616ca23"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/384_0_32.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/224_64_96.nbt",
+      "origin": [
+        2036,
+        94,
+        -37
+      ],
+      "blocks": 11,
+      "sha256": "a40e2113f68ca271211bfc81036df93c53ea4be0b3a1ae61d8cc8c0e34757916"
+    },
+    {
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/256_0_0.nbt",
       "origin": [
         2068,
         30,
@@ -953,7 +1113,7 @@
       "sha256": "6bb3e000f5d4c2c4c1a9c43b6c096da4dce6133a5dd15c4d7bd9650ce4d38731"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/384_0_64.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/256_0_32.nbt",
       "origin": [
         2068,
         30,
@@ -963,37 +1123,37 @@
       "sha256": "8785beff27a469bdf7ddf79dcc5f6a24666b38d98aafbf20166c0dcabbda6781"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/384_0_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/256_0_64.nbt",
       "origin": [
         2068,
         30,
         -69
       ],
       "blocks": 4571,
-      "sha256": "d4e1a006fcba1be0a38bdd7c1f7128c9da55f669956bc9f8448402b0eb3c29ab"
+      "sha256": "67818ac5bfc3cd4ece5bdd230c37838c446025f8eb43633b5d8656e4388220c7"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/384_0_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/256_0_96.nbt",
       "origin": [
         2068,
         30,
         -37
       ],
       "blocks": 4729,
-      "sha256": "4a35ac78e3f1676ff6b43446c6fd5e9850d3c267948799b752c11a4d17bbaa1b"
+      "sha256": "832270bdba8f1a4ea07088cea35ce67ed4d5f62a850604898a1ab46f9200c43e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/384_0_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/256_0_128.nbt",
       "origin": [
         2068,
         30,
         -5
       ],
       "blocks": 4863,
-      "sha256": "9e5145fd91b403979c621685462ad2b34ce33947691670a7dc1978eb7812acc1"
+      "sha256": "378d9f8cf50e92b62c4be0f7df04f37bab932c8183bc3b01a0fdb3d2e60243d0"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/384_0_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/256_0_160.nbt",
       "origin": [
         2068,
         30,
@@ -1003,7 +1163,7 @@
       "sha256": "a1d7325a3ace60094083f27ae994b11d1f4d0f425bdb7f3e30135fecf7bc9dba"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/384_32_64.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/256_32_32.nbt",
       "origin": [
         2068,
         62,
@@ -1013,27 +1173,27 @@
       "sha256": "5cf49db13c5dca829c48c8675e15972fe505293ff397a1bff3cd271f7182bd37"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/384_32_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/256_32_96.nbt",
       "origin": [
         2068,
         62,
         -37
       ],
       "blocks": 4724,
-      "sha256": "0b03492ad4fef3a57e7307b462d5ad617056772518ec2efb4f0e7561c71b7a7d"
+      "sha256": "633246373932f3fe0b3ac6c94a246ad07ebe18f1cf241eea5d1fdf3d92bc5027"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/384_32_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/256_32_128.nbt",
       "origin": [
         2068,
         62,
         -5
       ],
       "blocks": 11774,
-      "sha256": "1596109bd42fc0bc25eb9c1e336f6c934c7ac3b559e11059d0c87dfff3207d01"
+      "sha256": "3b63b674abd07ccd39e029928cd0fc09280fdb9259a05818d66b46211cb67442"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/384_64_64.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/256_64_32.nbt",
       "origin": [
         2068,
         94,
@@ -1043,7 +1203,7 @@
       "sha256": "4be1fdbf5e62442796a9f5e573db5b345962b0a61a90ed9daef0600b6ced1b51"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/416_0_32.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/288_0_0.nbt",
       "origin": [
         2100,
         30,
@@ -1053,7 +1213,7 @@
       "sha256": "6bb3e000f5d4c2c4c1a9c43b6c096da4dce6133a5dd15c4d7bd9650ce4d38731"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/416_0_64.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/288_0_32.nbt",
       "origin": [
         2100,
         30,
@@ -1063,37 +1223,37 @@
       "sha256": "6d2d8556ea93df1e92ae0af983ec2894cb732685d184a9b54872103e5d9a6c4e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/416_0_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/288_0_64.nbt",
       "origin": [
         2100,
         30,
         -69
       ],
       "blocks": 4580,
-      "sha256": "4fb04ae36e0690b291776f31d519b9ec7be09476ba9eaff0ad91b47ba1eadc24"
+      "sha256": "d9c3c948d774821130a8fec1c9739e8b7bf0b15f1dee9f57a0ffedaab5096508"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/416_0_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/288_0_96.nbt",
       "origin": [
         2100,
         30,
         -37
       ],
-      "blocks": 5346,
-      "sha256": "61ec2981390bb2e91e3cea1d0ffaf6631fd93366b35688a2ce2a82766ba5a346"
+      "blocks": 5352,
+      "sha256": "297712b3ae3896364d8baa39712d32a8f61c6a0cc5c755937a3c3d6b874fe76a"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/416_0_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/288_0_128.nbt",
       "origin": [
         2100,
         30,
         -5
       ],
-      "blocks": 4655,
-      "sha256": "fa391809d506331aebfa628d69bd1c5bffdc61ce237196312bd006105778a102"
+      "blocks": 4659,
+      "sha256": "add78aa3913b07c2eae286c35f7ea723d53c769f01ebc8bc92eb00a3b9973a12"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/416_0_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/288_0_160.nbt",
       "origin": [
         2100,
         30,
@@ -1103,7 +1263,7 @@
       "sha256": "a1d7325a3ace60094083f27ae994b11d1f4d0f425bdb7f3e30135fecf7bc9dba"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/416_32_64.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/288_32_32.nbt",
       "origin": [
         2100,
         62,
@@ -1113,27 +1273,27 @@
       "sha256": "5878fc514e23245ac489efb01254816812790b405b1d5bda547c41a4d9195dfb"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/416_32_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/288_32_96.nbt",
       "origin": [
         2100,
         62,
         -37
       ],
       "blocks": 3948,
-      "sha256": "bdfcd552a75446d8c0169925d24c2b5cffd657ac672ed4f427f5662d47d2ddb8"
+      "sha256": "b5b130efbd8cd787890a7cc73bc76aba9060f127edb1eb1fd40d168b6848497a"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/416_32_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/288_32_128.nbt",
       "origin": [
         2100,
         62,
         -5
       ],
-      "blocks": 10818,
-      "sha256": "4bf649e7cd381e6258f4fc4912d41166cd909ac3b56adcb21cd58573a4838d9a"
+      "blocks": 10820,
+      "sha256": "a65304c48b657733d9b83fbd20bd7614402e53890fb585196dfa04705e1b325a"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/416_64_64.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/288_64_32.nbt",
       "origin": [
         2100,
         94,
@@ -1143,7 +1303,7 @@
       "sha256": "89b61ec4a3950747be4f24f78d81c74796aad3c85b78ebac1fe8b7368d615992"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/448_0_32.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_0_0.nbt",
       "origin": [
         2132,
         30,
@@ -1153,7 +1313,7 @@
       "sha256": "6bb3e000f5d4c2c4c1a9c43b6c096da4dce6133a5dd15c4d7bd9650ce4d38731"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/448_0_64.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_0_32.nbt",
       "origin": [
         2132,
         30,
@@ -1163,47 +1323,47 @@
       "sha256": "1465b0a660468a31cbdde128c27312b57703429ecd314886be4a1c1588f886cc"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/448_0_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_0_64.nbt",
       "origin": [
         2132,
         30,
         -69
       ],
       "blocks": 3119,
-      "sha256": "090badd5b583c90e3ca9903e25e132ba38069e967199a181e4c7b8f795935962"
+      "sha256": "f7988419df237d39911014779188ef5d9824066bea747d121b551ed260ac5674"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/448_0_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_0_96.nbt",
       "origin": [
         2132,
         30,
         -37
       ],
       "blocks": 4803,
-      "sha256": "3b9029915f393239a440091b9c7b4d3d5d3e3a6be992b1918d48bb09cffddeda"
+      "sha256": "e0b3d629f4c0b7d4ddeb6afe92ece36740b312c6d1fe503c1100d88223c43d53"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/448_0_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_0_128.nbt",
       "origin": [
         2132,
         30,
         -5
       ],
       "blocks": 4500,
-      "sha256": "dd321c2b34514bbe61335dd5a7a92f9bc2e2dd07d6387d84f014df63bc5c1c9f"
+      "sha256": "27fc22d41d3dfe4b64c1a83e3d5644736be7ea2aef2490e421e23c66f1d97d5b"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/448_0_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_0_160.nbt",
       "origin": [
         2132,
         30,
         27
       ],
-      "blocks": 192,
-      "sha256": "a1d7325a3ace60094083f27ae994b11d1f4d0f425bdb7f3e30135fecf7bc9dba"
+      "blocks": 193,
+      "sha256": "c1f7efec6c73842f0cf4dca5be1ccfd4449b2ce5a358d62d52cbaeb4554f638d"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/448_32_64.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_32_32.nbt",
       "origin": [
         2132,
         62,
@@ -1213,7 +1373,7 @@
       "sha256": "59e023a79b97d4f203c668349a963c94c0d3ccd9f0c1cb228637b71d676e767d"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/448_32_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_32_96.nbt",
       "origin": [
         2132,
         62,
@@ -1223,17 +1383,17 @@
       "sha256": "0c382d520fa6fadb54e3b1c2e2715af1ff955d64f5099a604fd7d54562c37c68"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/448_32_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_32_128.nbt",
       "origin": [
         2132,
         62,
         -5
       ],
       "blocks": 8536,
-      "sha256": "bfdefbfe25395083f3c06b4105651d50729d027683c6a42adecc124c467ad31e"
+      "sha256": "190ac8f8138ba82c844909beb38a08c85804a36d715c204ae414b539bdb8f3fd"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/448_64_64.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/320_64_32.nbt",
       "origin": [
         2132,
         94,
@@ -1243,7 +1403,7 @@
       "sha256": "28a91dac8f20daa6aed50ad822426cad597d9135edd6ec5bc87f4fab1fb362cb"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/480_0_32.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_0_0.nbt",
       "origin": [
         2164,
         30,
@@ -1253,7 +1413,7 @@
       "sha256": "054ca85ad11d2d66395a7e9eb4988901293bb25f3a6516adfe9b722fc2ba22cb"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/480_0_64.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_0_32.nbt",
       "origin": [
         2164,
         30,
@@ -1263,7 +1423,7 @@
       "sha256": "e35d7f4e94d6e3bca0c920fc05dee79884664916bcc35c9faac3be8f2bd1f223"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/480_0_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_0_64.nbt",
       "origin": [
         2164,
         30,
@@ -1273,17 +1433,17 @@
       "sha256": "4fb4628acae6348992ee5d94ea7796632208b614b636b98f88b9fcabb0e3cac5"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/480_0_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_0_96.nbt",
       "origin": [
         2164,
         30,
         -37
       ],
       "blocks": 1183,
-      "sha256": "50707d5f15fb0ee702d47656c02502a85d23a6e06bfe8bd5e7d8d0bd57aeecae"
+      "sha256": "307742d53e61db8388842fcc802c78d6a0a5690b6b1a0624aa1a7674d2053cb2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/480_0_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_0_128.nbt",
       "origin": [
         2164,
         30,
@@ -1293,7 +1453,7 @@
       "sha256": "1e22b68b77af38a93f2add8d2c0812012162f1d01ebc31ccb353167a4a07dd3b"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/480_0_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_0_160.nbt",
       "origin": [
         2164,
         30,
@@ -1303,7 +1463,7 @@
       "sha256": "f5acacffb2982a0dff7630f39666d7bc7dcf40471f546a2da6d1987a31a24113"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/480_32_64.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_32_32.nbt",
       "origin": [
         2164,
         62,
@@ -1313,7 +1473,7 @@
       "sha256": "ab3db2d8b7e8a0c8e53ded3d4797ea415f03906305560ec1e86a5a150dc24bae"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/480_32_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_32_96.nbt",
       "origin": [
         2164,
         62,
@@ -1323,7 +1483,7 @@
       "sha256": "8aa87ce25b3f7f8c6cc4f9e754053161f17a964f99754d3f45752e239dd2f248"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/480_32_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_32_128.nbt",
       "origin": [
         2164,
         62,
@@ -1333,7 +1493,7 @@
       "sha256": "81587acf83e8b839f636c9e1cd756aff15f77a684fd1f59c2089965d032b0278"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/480_64_64.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_2/352_64_32.nbt",
       "origin": [
         2164,
         94,
@@ -1343,7 +1503,7 @@
       "sha256": "84bd9a8851979195095b9ee002681e961719ce81445676e336fd914e3b26b21f"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/0_0_0.nbt",
       "origin": [
         4011,
         47,
@@ -1353,7 +1513,7 @@
       "sha256": "dfc59b238791e81cce92e799ffc1136d9444d578ee88a26ef1b5ffca9c4437d1"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/0_0_32.nbt",
       "origin": [
         4011,
         47,
@@ -1363,7 +1523,7 @@
       "sha256": "f84cfe6d78d77d3b5053b3d484fa33f341c1a098ce73fb115d54004c2153f89f"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/0_0_64.nbt",
       "origin": [
         4011,
         47,
@@ -1373,7 +1533,7 @@
       "sha256": "f84cfe6d78d77d3b5053b3d484fa33f341c1a098ce73fb115d54004c2153f89f"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/0_0_96.nbt",
       "origin": [
         4011,
         47,
@@ -1383,7 +1543,7 @@
       "sha256": "f84cfe6d78d77d3b5053b3d484fa33f341c1a098ce73fb115d54004c2153f89f"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/0_0_128.nbt",
       "origin": [
         4011,
         47,
@@ -1393,7 +1553,7 @@
       "sha256": "ec76a97bb294239e46bf1613332fe8d8311a2fc956800f5b69b906bdd51e6d5d"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_256.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/0_0_160.nbt",
       "origin": [
         4011,
         47,
@@ -1403,7 +1563,7 @@
       "sha256": "8f734aabc6370b8155dcf4d14969ac3ff1fbc0ffd8f7841f65e6b1424f2003c2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_288.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/0_0_192.nbt",
       "origin": [
         4011,
         47,
@@ -1413,37 +1573,37 @@
       "sha256": "8f734aabc6370b8155dcf4d14969ac3ff1fbc0ffd8f7841f65e6b1424f2003c2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/0_0_224.nbt",
       "origin": [
         4011,
         47,
         182
       ],
       "blocks": 2435,
-      "sha256": "9ceb4cee95e30f082c3edaf93fcf7f9b09e0640bf3a663908fd69ed7d6f94226"
+      "sha256": "615b75a1480c7d747975c5e21c664ab1a3611d62e16c50983a74840570e64303"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/0_0_256.nbt",
       "origin": [
         4011,
         47,
         214
       ],
       "blocks": 3200,
-      "sha256": "5a5335978bc3ff920406468e7016b0fc3d2823910fbc8e6e505ee6767463f7a2"
+      "sha256": "ca7d05c92a20534f9a7f779c976c2eb189fa97099cf6372a5a6b6aba6f9241e0"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/0_0_288.nbt",
       "origin": [
         4011,
         47,
         246
       ],
       "blocks": 729,
-      "sha256": "169be7ee02dbf0493f8a0a4727fcc54d7a78bd45c2a3df1601f267540a4d9b49"
+      "sha256": "809f8aa757ef283d721a2081ced0d46e99bd9db2206f4f604b320cd748088781"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_32_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/0_32_0.nbt",
       "origin": [
         4011,
         79,
@@ -1453,7 +1613,7 @@
       "sha256": "c061cc6a9b517bf3e23a92a6c2654c8bb224fbb9cdaa7ba8f7c472ab9fa09e98"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_32_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/0_32_32.nbt",
       "origin": [
         4011,
         79,
@@ -1463,7 +1623,7 @@
       "sha256": "dc6f315ab015cb8d02a2e69a930e1dacdd9a342f9e96ca6688122978dab051ff"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_32_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/0_32_64.nbt",
       "origin": [
         4011,
         79,
@@ -1473,7 +1633,7 @@
       "sha256": "dc6f315ab015cb8d02a2e69a930e1dacdd9a342f9e96ca6688122978dab051ff"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_32_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/0_32_96.nbt",
       "origin": [
         4011,
         79,
@@ -1483,7 +1643,7 @@
       "sha256": "dc6f315ab015cb8d02a2e69a930e1dacdd9a342f9e96ca6688122978dab051ff"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_32_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/0_32_128.nbt",
       "origin": [
         4011,
         79,
@@ -1493,7 +1653,7 @@
       "sha256": "a11419f1cd7ef34b23f78949fd2d900f9c956b479f5ac24157636596a07c3199"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_32_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/0_32_224.nbt",
       "origin": [
         4011,
         79,
@@ -1503,7 +1663,7 @@
       "sha256": "f665beea0f4e624c0f7ecdc36a1126c68f8ad8e2af50a547565202967dbd9ac0"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_32_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/0_32_256.nbt",
       "origin": [
         4011,
         79,
@@ -1513,7 +1673,7 @@
       "sha256": "f6c04fa6563c79b2b864210ee787f351ab1338c1a21fea0f4e0ba6ee50744992"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_32_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/0_32_288.nbt",
       "origin": [
         4011,
         79,
@@ -1523,7 +1683,7 @@
       "sha256": "0b9fe2b343e3121ab9739cbba5c80a46fc4bf9125d0e7815c603057a47903e62"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_0.nbt",
       "origin": [
         4043,
         47,
@@ -1533,7 +1693,7 @@
       "sha256": "2d609e3807791df999776f72341c97b7d3f69ce87a294c00a80adffb9ad240de"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_32.nbt",
       "origin": [
         4043,
         47,
@@ -1543,7 +1703,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_64.nbt",
       "origin": [
         4043,
         47,
@@ -1553,7 +1713,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_96.nbt",
       "origin": [
         4043,
         47,
@@ -1563,37 +1723,37 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_128.nbt",
       "origin": [
         4043,
         47,
         86
       ],
-      "blocks": 4205,
-      "sha256": "5203a41d26b8b7938db064b8b640f4e82ddb864eb8b738241be4935e6ce1c969"
+      "blocks": 4215,
+      "sha256": "39be070c61d9290bdefccecad748b638a5c9fadc37a626bfe2eef9608d7703bd"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_256.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_160.nbt",
       "origin": [
         4043,
         47,
         118
       ],
-      "blocks": 4185,
-      "sha256": "144d308983086fa99aa8850943af4d75024803fef39f46dc97f91db365e6aa4b"
+      "blocks": 4188,
+      "sha256": "1d259a34c14725186755eee4cdae7740df6c3fe280b53ccd0a78e314f0d3c4b7"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_288.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_192.nbt",
       "origin": [
         4043,
         47,
         150
       ],
-      "blocks": 4188,
-      "sha256": "6d443e3a81ac16139759dd08909f12a374edf349b377a17f68ee5d0ec53e09bc"
+      "blocks": 4189,
+      "sha256": "5031a0e6033a12e7ea1700111b3e24991987c0316e2f0d01cccf6549179d78a4"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_224.nbt",
       "origin": [
         4043,
         47,
@@ -1603,7 +1763,7 @@
       "sha256": "6a33f5ff0babfbecae19ac51e0714adbbfc75f2bfe994fe75d979e5761efcf55"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_256.nbt",
       "origin": [
         4043,
         47,
@@ -1613,7 +1773,7 @@
       "sha256": "0afa824c9a5e1cefbc43177c144cc713c7813d5b593955d0406010fd20b4d3c7"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_0_288.nbt",
       "origin": [
         4043,
         47,
@@ -1623,7 +1783,7 @@
       "sha256": "6d6d9b0cb7b1e9447712985fb7412594e1bd9d3a38ce3ef68b94a9c3a9baf4c7"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_32_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_32_0.nbt",
       "origin": [
         4043,
         79,
@@ -1633,7 +1793,7 @@
       "sha256": "356cc227262c324a57a64a6ccbc864c6e2b84d5a0902e71637d1bd47b1400059"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_32_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_32_32.nbt",
       "origin": [
         4043,
         79,
@@ -1643,7 +1803,7 @@
       "sha256": "2e94f7d825cfedbd41f1d8836b3a841a84f64775d4a5de03b75b50c3fffadb55"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_32_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_32_64.nbt",
       "origin": [
         4043,
         79,
@@ -1653,7 +1813,7 @@
       "sha256": "2e94f7d825cfedbd41f1d8836b3a841a84f64775d4a5de03b75b50c3fffadb55"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_32_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_32_96.nbt",
       "origin": [
         4043,
         79,
@@ -1663,7 +1823,7 @@
       "sha256": "2e94f7d825cfedbd41f1d8836b3a841a84f64775d4a5de03b75b50c3fffadb55"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_32_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_32_128.nbt",
       "origin": [
         4043,
         79,
@@ -1673,7 +1833,7 @@
       "sha256": "e33e929f50b2ad278cbcc0c3ac97c7b300bd2beb7b36b86236133b77f36208d2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_32_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_32_224.nbt",
       "origin": [
         4043,
         79,
@@ -1683,7 +1843,7 @@
       "sha256": "19cc0a84bb1fb6e42ac88b3df5e12f80fd95837e8e3a2a002a2f9f6d3df8ad74"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_32_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_32_256.nbt",
       "origin": [
         4043,
         79,
@@ -1693,7 +1853,7 @@
       "sha256": "78f4bc780464bcae77b0bca72189c605a3befde9439a2a7aaabae2a4f1eb29a4"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_32_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/32_32_288.nbt",
       "origin": [
         4043,
         79,
@@ -1703,7 +1863,7 @@
       "sha256": "fce784a206618f5c336b716561ccce907c9861dd291eba88c363ce139c35c8c3"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_0.nbt",
       "origin": [
         4075,
         47,
@@ -1713,7 +1873,7 @@
       "sha256": "2d609e3807791df999776f72341c97b7d3f69ce87a294c00a80adffb9ad240de"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_32.nbt",
       "origin": [
         4075,
         47,
@@ -1723,7 +1883,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_64.nbt",
       "origin": [
         4075,
         47,
@@ -1733,7 +1893,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_96.nbt",
       "origin": [
         4075,
         47,
@@ -1743,7 +1903,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_128.nbt",
       "origin": [
         4075,
         47,
@@ -1753,7 +1913,7 @@
       "sha256": "dbbce372ae816f0b1e6cb9e2c7a5c094b39c0c5c9e9d6f0eb4c35c8378606b1c"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_256.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_160.nbt",
       "origin": [
         4075,
         47,
@@ -1763,7 +1923,7 @@
       "sha256": "6d3fe984f3d136af6b8c3b7445ae44da8b1911b6fffb6797c51426d8c3513760"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_288.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_192.nbt",
       "origin": [
         4075,
         47,
@@ -1773,7 +1933,7 @@
       "sha256": "2d264fc006b476604b8d2f3157d89cceda7d307c38ab8aa7b351096e4a5cc3f6"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_224.nbt",
       "origin": [
         4075,
         47,
@@ -1783,7 +1943,7 @@
       "sha256": "6a33f5ff0babfbecae19ac51e0714adbbfc75f2bfe994fe75d979e5761efcf55"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_256.nbt",
       "origin": [
         4075,
         47,
@@ -1793,7 +1953,7 @@
       "sha256": "0afa824c9a5e1cefbc43177c144cc713c7813d5b593955d0406010fd20b4d3c7"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_0_288.nbt",
       "origin": [
         4075,
         47,
@@ -1803,47 +1963,47 @@
       "sha256": "6d6d9b0cb7b1e9447712985fb7412594e1bd9d3a38ce3ef68b94a9c3a9baf4c7"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_32_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_32_0.nbt",
       "origin": [
         4075,
         79,
         -42
       ],
-      "blocks": 9728,
-      "sha256": "356cc227262c324a57a64a6ccbc864c6e2b84d5a0902e71637d1bd47b1400059"
+      "blocks": 9735,
+      "sha256": "7cb2d0d123346aa704c64ed3e3b3b72152c557d80a94cfdc816a80d47315318e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_32_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_32_32.nbt",
       "origin": [
         4075,
         79,
         -10
       ],
-      "blocks": 6403,
-      "sha256": "c312bf164831a37c2ebaf66c0bcb5842f7424166db51eefa20d6220d4630f50e"
+      "blocks": 7159,
+      "sha256": "a5c17bab9dae232327766a3f5905b9ea3e0a31476cb9e9e89fbdd3bf9fbef91a"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_32_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_32_64.nbt",
       "origin": [
         4075,
         79,
         22
       ],
-      "blocks": 8263,
-      "sha256": "df9e323d5b43bda6d80eafc6fd2132cf89d80a0599b94b97e8ab62d423f40c63"
+      "blocks": 8668,
+      "sha256": "a890aa890a4a5c5baac94b9b67d595d90e1834afb89d64ce2a27a9f1c94e7198"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_32_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_32_96.nbt",
       "origin": [
         4075,
         79,
         54
       ],
-      "blocks": 2756,
-      "sha256": "ecab282e20d302c636bb00b0dfd01b8ecea9f04a2ec750d47a843db551906c4a"
+      "blocks": 2804,
+      "sha256": "6867776563ae07d15ea432a9b5f1e0182d99336a7faa8d25ad338a807fbf3806"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_32_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_32_128.nbt",
       "origin": [
         4075,
         79,
@@ -1853,7 +2013,7 @@
       "sha256": "e33e929f50b2ad278cbcc0c3ac97c7b300bd2beb7b36b86236133b77f36208d2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_32_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_32_224.nbt",
       "origin": [
         4075,
         79,
@@ -1863,7 +2023,7 @@
       "sha256": "19cc0a84bb1fb6e42ac88b3df5e12f80fd95837e8e3a2a002a2f9f6d3df8ad74"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_32_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_32_256.nbt",
       "origin": [
         4075,
         79,
@@ -1873,7 +2033,7 @@
       "sha256": "78f4bc780464bcae77b0bca72189c605a3befde9439a2a7aaabae2a4f1eb29a4"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_32_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_32_288.nbt",
       "origin": [
         4075,
         79,
@@ -1883,7 +2043,7 @@
       "sha256": "fce784a206618f5c336b716561ccce907c9861dd291eba88c363ce139c35c8c3"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_64_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_64_32.nbt",
       "origin": [
         4075,
         111,
@@ -1893,7 +2053,7 @@
       "sha256": "ba3df9a29c8885446c9b270e5973337c4098c78373de741c42e9b98afc49de39"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_64_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_64_64.nbt",
       "origin": [
         4075,
         111,
@@ -1903,7 +2063,7 @@
       "sha256": "c158596716daca0b63a965197e939fe74e263182a38a619181146bf844c8b9b2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_64_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_64_96.nbt",
       "origin": [
         4075,
         111,
@@ -1913,7 +2073,7 @@
       "sha256": "53e5132e32e40b92faf3e6b18500262bbbe8c3c2892b21e43e57b24e2e8b653c"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_96_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_96_32.nbt",
       "origin": [
         4075,
         143,
@@ -1923,7 +2083,7 @@
       "sha256": "35da396086946239daadddd1446a1202428e4211eb37f3bd6a811e0ef58bc865"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_96_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_96_64.nbt",
       "origin": [
         4075,
         143,
@@ -1933,7 +2093,7 @@
       "sha256": "4abc23c2e4899ce2b58f5153bc3a0a9a180df61ded643b6e8b71a5bee9e7ee5e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_96_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/64_96_96.nbt",
       "origin": [
         4075,
         143,
@@ -1943,7 +2103,7 @@
       "sha256": "364033493d5d522f75ac12cf7346a4ac83391fd999b5eeef095d815df65786ae"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_0.nbt",
       "origin": [
         4107,
         47,
@@ -1953,7 +2113,7 @@
       "sha256": "2d609e3807791df999776f72341c97b7d3f69ce87a294c00a80adffb9ad240de"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_32.nbt",
       "origin": [
         4107,
         47,
@@ -1963,7 +2123,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_64.nbt",
       "origin": [
         4107,
         47,
@@ -1973,7 +2133,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_96.nbt",
       "origin": [
         4107,
         47,
@@ -1983,17 +2143,17 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_128.nbt",
       "origin": [
         4107,
         47,
         86
       ],
-      "blocks": 4512,
-      "sha256": "d2d960268e91187f49687be9df336080512e3b41d51a0eda3dbf2f496684576b"
+      "blocks": 4517,
+      "sha256": "dc19177455a1755f187fc44f6ceae551e5980851e99ac3bbeac2ea882cafec10"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_256.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_160.nbt",
       "origin": [
         4107,
         47,
@@ -2003,7 +2163,7 @@
       "sha256": "e7b13c22d9212a5c416d4f3ba8fa3309294ef5e3d557dfd5dfb3f28c5de057b1"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_288.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_192.nbt",
       "origin": [
         4107,
         47,
@@ -2013,77 +2173,77 @@
       "sha256": "3a61de11909306e6c721fa273486bcd1e2dd17de489bb1838e9a3b4758dfd707"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_224.nbt",
       "origin": [
         4107,
         47,
         182
       ],
       "blocks": 4458,
-      "sha256": "dcaf2eeb9300b53312715ce52b0793a7aab6093440ec288a22f2b2ff8f272b4c"
+      "sha256": "91d3f7797a7439b150e2d0a3247089a35d0c62f8af52dd011a4d096d2976bbc2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_256.nbt",
       "origin": [
         4107,
         47,
         214
       ],
       "blocks": 5120,
-      "sha256": "48e9ed1f7470cb9988928b5fce0154b2dd96e0085cd8fce0d19e9e8954f33a80"
+      "sha256": "4f83a43d6a53cd8e5908923c9b7b1bc9bd3b7b63f65e843d4d1dba9202c0ddf3"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_0_288.nbt",
       "origin": [
         4107,
         47,
         246
       ],
       "blocks": 1440,
-      "sha256": "6e89367feaf6d4cfe563917a573eabfe5c2443a2fcd51b499229cde974093b71"
+      "sha256": "293a7cab4f5112e31041c8cb9062aec6df2fc47d292c7f53b16be98598aca0cd"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_32_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_32_0.nbt",
       "origin": [
         4107,
         79,
         -42
       ],
-      "blocks": 9728,
-      "sha256": "356cc227262c324a57a64a6ccbc864c6e2b84d5a0902e71637d1bd47b1400059"
+      "blocks": 9758,
+      "sha256": "fbf4650cff156a544f1e5d49b5caaea6025792464899dd076aed0c862039094f"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_32_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_32_32.nbt",
       "origin": [
         4107,
         79,
         -10
       ],
-      "blocks": 8284,
-      "sha256": "9a62d74c3e369529cf934ae01f026619b29a5b89b64ca0599c24824a4ae340c6"
+      "blocks": 9808,
+      "sha256": "6211d595d2057636f92f9d9a79c112099967682f75e343f1c9341eef27a523b6"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_32_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_32_64.nbt",
       "origin": [
         4107,
         79,
         22
       ],
-      "blocks": 11271,
-      "sha256": "232c46877c39c74759c7aad3e994f185469a26b420b83ebd96813af079790664"
+      "blocks": 11944,
+      "sha256": "3e1558f961832ae65341f68e6b161cf4f64b17621cb6fadb4bcfc7468cb10360"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_32_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_32_96.nbt",
       "origin": [
         4107,
         79,
         54
       ],
-      "blocks": 3200,
-      "sha256": "af229283141dae65ed04e49cab9cbd95049addfe1682e4ac64ab50a743626a1c"
+      "blocks": 3247,
+      "sha256": "63210b9966d2d3e1787ce5e7a5095a1687625e0d560ca08185c3fadd255b1da7"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_32_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_32_128.nbt",
       "origin": [
         4107,
         79,
@@ -2093,37 +2253,47 @@
       "sha256": "e33e929f50b2ad278cbcc0c3ac97c7b300bd2beb7b36b86236133b77f36208d2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_32_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_32_160.nbt",
+      "origin": [
+        4107,
+        79,
+        118
+      ],
+      "blocks": 12,
+      "sha256": "0eeda29a893b7e535527e4715f128b4552739b5420c44661a157b9e66a8fe151"
+    },
+    {
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_32_224.nbt",
       "origin": [
         4107,
         79,
         182
       ],
       "blocks": 4485,
-      "sha256": "fd17a16e5265b497e55ad9624a4eda7dbffc36b9ac89311fa9390e7e805aca4a"
+      "sha256": "ed1292ea510f39744fc5ee61bfacec6eb98b735723998d000ef0b69c84981a16"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_32_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_32_256.nbt",
       "origin": [
         4107,
         79,
         214
       ],
       "blocks": 13856,
-      "sha256": "2926f1bb8982e4d50b9068bd817cd05c5d1bb2c72612d6afb41e8fb9c43a590b"
+      "sha256": "d7327c347a45fde5f24506fa9496073d8dbcdcab42fa34e2966ec40d1a4d5aed"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_32_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_32_288.nbt",
       "origin": [
         4107,
         79,
         246
       ],
       "blocks": 4240,
-      "sha256": "280f80bceba216408a6527a3baa9752313d4e278a0a7f0a2e504d596390a13dc"
+      "sha256": "0790a1da826f535ee20e8d550442e84b8fd906f05518c9cdd9309d32a69c95c9"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_64_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_64_32.nbt",
       "origin": [
         4107,
         111,
@@ -2133,7 +2303,7 @@
       "sha256": "4c8cf6bd9b212c0cd0698b92a820bfe24b04cccaa523b7f5b5c9a5a4157ca6ce"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_64_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_64_64.nbt",
       "origin": [
         4107,
         111,
@@ -2143,7 +2313,7 @@
       "sha256": "89de475b92ca8b22da56b4d69d2059b12b7c0346e51521d48b2cb2f0fc44f9e6"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_64_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_64_96.nbt",
       "origin": [
         4107,
         111,
@@ -2153,7 +2323,7 @@
       "sha256": "a770bddbf35bac074579715d74e4856f10a6e41f289493f7b0c635f8ad5176b1"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_64_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_64_224.nbt",
       "origin": [
         4107,
         111,
@@ -2163,7 +2333,7 @@
       "sha256": "df6c3532ff65742ac0016ecf37f5c9469cf0318b2d625a314a562615515b9f1b"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_64_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_64_256.nbt",
       "origin": [
         4107,
         111,
@@ -2173,7 +2343,7 @@
       "sha256": "9b9fbbc7b27bd8d9c5b3ae588c78113afddb56dd1aa1e8f184184c58e30f7d4c"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_64_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_64_288.nbt",
       "origin": [
         4107,
         111,
@@ -2183,7 +2353,7 @@
       "sha256": "03b83f1424e8f958a4fc9c8ee1b9e3b25bb06d62d9dd917a301b34d447a4232d"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_96_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_96_32.nbt",
       "origin": [
         4107,
         143,
@@ -2193,7 +2363,7 @@
       "sha256": "d61bf50d338398c44f6fe8fcca206db0cd01c18db36ae3d00d245ded0ad23747"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_96_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_96_64.nbt",
       "origin": [
         4107,
         143,
@@ -2203,7 +2373,7 @@
       "sha256": "fc37f0d64a72e8ee76fac1019ebb2ed22837dfa8be6dff4e740c50bb0af9711b"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_96_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/96_96_96.nbt",
       "origin": [
         4107,
         143,
@@ -2213,7 +2383,7 @@
       "sha256": "8ae27973e14d7c5f145f329e9a03dee2c794d785062614644bdda9e6898b23fa"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_0.nbt",
       "origin": [
         4139,
         47,
@@ -2223,7 +2393,7 @@
       "sha256": "2d609e3807791df999776f72341c97b7d3f69ce87a294c00a80adffb9ad240de"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_32.nbt",
       "origin": [
         4139,
         47,
@@ -2233,7 +2403,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_64.nbt",
       "origin": [
         4139,
         47,
@@ -2243,7 +2413,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_96.nbt",
       "origin": [
         4139,
         47,
@@ -2253,17 +2423,17 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_128.nbt",
       "origin": [
         4139,
         47,
         86
       ],
-      "blocks": 4537,
-      "sha256": "84c4de3e79753f8ab457aaaf441a4faf3de0b770434bb040e38d43ac222a810f"
+      "blocks": 4539,
+      "sha256": "eb9ae4d139c30f6458702d5e5ec5b5acc1c4ba7dd8d3d93f2c91bdd8dc22689f"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_256.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_160.nbt",
       "origin": [
         4139,
         47,
@@ -2273,7 +2443,7 @@
       "sha256": "b5869a8e7928d2ce2c5c00c9100961a64c45ca3a6c28c3352841e95d639d7642"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_288.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_192.nbt",
       "origin": [
         4139,
         47,
@@ -2283,17 +2453,17 @@
       "sha256": "95b74d065c4274a09aec56336d93c0fb202a442b8df86457f4d748fef541a30e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_224.nbt",
       "origin": [
         4139,
         47,
         182
       ],
       "blocks": 3664,
-      "sha256": "779219ccdc7da0ed68dfedf68597bf77d5920720e6350ca5d1ecb592c09719f6"
+      "sha256": "b3d5173978101edd40694b873321048562aac3df402bbfcdff64741dae005d80"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_256.nbt",
       "origin": [
         4139,
         47,
@@ -2303,17 +2473,17 @@
       "sha256": "6692812fda2bdd010d39c2cad077eaef258f2166f64537d497b66973fec43df4"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_0_288.nbt",
       "origin": [
         4139,
         47,
         246
       ],
       "blocks": 1365,
-      "sha256": "a49a6d16552a191e1a45dbff435400ec9634ca12f91445156bc39303b0f96cdd"
+      "sha256": "6cea5c5d37d8baea233522d185202bf529a69403098e50e76dae76c9bb91dcd9"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_32_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_32_0.nbt",
       "origin": [
         4139,
         79,
@@ -2323,37 +2493,37 @@
       "sha256": "356cc227262c324a57a64a6ccbc864c6e2b84d5a0902e71637d1bd47b1400059"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_32_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_32_32.nbt",
       "origin": [
         4139,
         79,
         -10
       ],
-      "blocks": 8018,
-      "sha256": "79c00061552aa8ec3f6892afc57d0b9d96a8373330fde775d9633fcbe68ab956"
+      "blocks": 8090,
+      "sha256": "d4ea76d81c12387f58776288db55810c353b7aacaf910968c33abb26499ef2f4"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_32_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_32_64.nbt",
       "origin": [
         4139,
         79,
         22
       ],
-      "blocks": 10521,
-      "sha256": "869f3f67e331a9208a5e3f9daaa26d4838f3ae81e82b400b5b45a3dc261cb1ae"
+      "blocks": 10643,
+      "sha256": "62d2ca3734d98f6152fd0f5096eb24a36f26cbbba7fd2a8db399bb6a26a1e470"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_32_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_32_96.nbt",
       "origin": [
         4139,
         79,
         54
       ],
       "blocks": 2785,
-      "sha256": "a4dd20571feaca53ea9ef1fcdbb818598333951c3fd17c08a6d4bae15fa43120"
+      "sha256": "7d877643d1328bb136153bf8adf871dc75f36a12b18068dcbc0240440295d058"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_32_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_32_128.nbt",
       "origin": [
         4139,
         79,
@@ -2363,7 +2533,17 @@
       "sha256": "6f283d8a6a89fbb334865ef203ac098ca61abbd30b427a12840c3a1557582510"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_32_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_32_160.nbt",
+      "origin": [
+        4139,
+        79,
+        118
+      ],
+      "blocks": 1,
+      "sha256": "52fbb77792109f0f51223b6d07011522f4c2c1904bbbbb57b76f9ed3f36f7a34"
+    },
+    {
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_32_224.nbt",
       "origin": [
         4139,
         79,
@@ -2373,27 +2553,27 @@
       "sha256": "8a7075fc7d624fa107029b66c419bff637ea4cb906e7925b9099ab6a5cd3df51"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_32_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_32_256.nbt",
       "origin": [
         4139,
         79,
         214
       ],
-      "blocks": 10038,
-      "sha256": "89627c7f5399373a79cc6106b29ea43bc01bc4074387312016977cc2670c7da5"
+      "blocks": 10046,
+      "sha256": "9b3bd450e701c6bac94b2c0dd231477756b2d31cba86c9301076026a5615e7d0"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_32_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_32_288.nbt",
       "origin": [
         4139,
         79,
         246
       ],
       "blocks": 4076,
-      "sha256": "6248a3fa7c73cd7208aa18f2f162457e4f2a830371f7af471e1929af02bc4c61"
+      "sha256": "61e2a513ca769738ba03dcef01cd431f1d6cbfe9d4ec802880870bdcb8ece2a7"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_64_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_64_32.nbt",
       "origin": [
         4139,
         111,
@@ -2403,7 +2583,7 @@
       "sha256": "ce922c06e2b9e46f97750a6885c5b851f7f0b019f0bdb15bd153330f0d042017"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_64_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_64_64.nbt",
       "origin": [
         4139,
         111,
@@ -2413,7 +2593,7 @@
       "sha256": "2689d66780d797372d1a6a3e4ba4cd87dd7ee7477516b4fdab35c452d5dac65c"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_64_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_64_96.nbt",
       "origin": [
         4139,
         111,
@@ -2423,7 +2603,7 @@
       "sha256": "e692671e3d97d4886383f797c32360ad1a7dcb20acbd810bf281b809cc17b35f"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_64_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_64_224.nbt",
       "origin": [
         4139,
         111,
@@ -2433,7 +2613,7 @@
       "sha256": "23de4ab7b4a96631526d844c6c24354ee223e9bd53b3dee2b145b772622d5569"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_64_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_64_256.nbt",
       "origin": [
         4139,
         111,
@@ -2443,7 +2623,7 @@
       "sha256": "3de8f8ecd5463b1b03e23d06d7bc8d9858009a654ec7752a02a08935ec1115b8"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_64_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_64_288.nbt",
       "origin": [
         4139,
         111,
@@ -2453,7 +2633,7 @@
       "sha256": "3e12781f4b3404831d1612a4efbf481cabbe0f8dcc01e587a24a78db8644c87a"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_96_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_96_32.nbt",
       "origin": [
         4139,
         143,
@@ -2463,7 +2643,7 @@
       "sha256": "1a5c838c3c807b406b187b38bfd63f6d4b6f962dcbb55fd22691198c40f9e1e0"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_96_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_96_64.nbt",
       "origin": [
         4139,
         143,
@@ -2473,7 +2653,7 @@
       "sha256": "5fb017388ae9390a766cdb84a0709f1498c8e2183668db8e071b4cb631a71f7f"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_96_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/128_96_96.nbt",
       "origin": [
         4139,
         143,
@@ -2483,7 +2663,7 @@
       "sha256": "07984f464dfd33ec0831319d1b5ff13a1674712bb357dfbe5427eff371327541"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_0.nbt",
       "origin": [
         4171,
         47,
@@ -2493,7 +2673,7 @@
       "sha256": "2d609e3807791df999776f72341c97b7d3f69ce87a294c00a80adffb9ad240de"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_32.nbt",
       "origin": [
         4171,
         47,
@@ -2503,7 +2683,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_64.nbt",
       "origin": [
         4171,
         47,
@@ -2513,7 +2693,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_96.nbt",
       "origin": [
         4171,
         47,
@@ -2523,7 +2703,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_128.nbt",
       "origin": [
         4171,
         47,
@@ -2533,7 +2713,7 @@
       "sha256": "d2d960268e91187f49687be9df336080512e3b41d51a0eda3dbf2f496684576b"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_256.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_160.nbt",
       "origin": [
         4171,
         47,
@@ -2543,7 +2723,7 @@
       "sha256": "64fb53a2aa9b34b6ed8c1b8d525227bdaa95c1238e4936ada4dd0a9e362a39f6"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_288.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_192.nbt",
       "origin": [
         4171,
         47,
@@ -2553,17 +2733,17 @@
       "sha256": "95b74d065c4274a09aec56336d93c0fb202a442b8df86457f4d748fef541a30e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_224.nbt",
       "origin": [
         4171,
         47,
         182
       ],
-      "blocks": 4360,
-      "sha256": "eca0778c20b3e9d3fc48bc40423c310c762c546afde451287a3e2fee9cdf6a58"
+      "blocks": 4365,
+      "sha256": "dd719cc116d34860c7e21a043995e176b22c94898ac6c652fd621043b921e05e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_256.nbt",
       "origin": [
         4171,
         47,
@@ -2573,17 +2753,17 @@
       "sha256": "fd2b1c1e53b8e3daf647b44b59ada5fd8a973933efbdf5780f26c1a7d4929eda"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_0_288.nbt",
       "origin": [
         4171,
         47,
         246
       ],
       "blocks": 1430,
-      "sha256": "e4660c47762baa0f4eb00fb3aea910b206bc4af83603efbc8234e8d024fbc69a"
+      "sha256": "81123d82759fd5e71bcb443a7124f6047e6b7d7ca4a28ab5326c17199d84227b"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_32_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_32_0.nbt",
       "origin": [
         4171,
         79,
@@ -2593,37 +2773,37 @@
       "sha256": "356cc227262c324a57a64a6ccbc864c6e2b84d5a0902e71637d1bd47b1400059"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_32_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_32_32.nbt",
       "origin": [
         4171,
         79,
         -10
       ],
-      "blocks": 15818,
-      "sha256": "1ab9775c0a377c134e465cc7b8e4748e11f332bae1353466cef3774eb42d4cd3"
+      "blocks": 15822,
+      "sha256": "b967b5bc09bf85d9d8ef757fbdc9134ab6fd34c11840c4bebc05d533af9eb858"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_32_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_32_64.nbt",
       "origin": [
         4171,
         79,
         22
       ],
-      "blocks": 18964,
-      "sha256": "7bf1688ed36cf7025c0fe4959813eef97f511636ef28f01c951c20a606ea2e52"
+      "blocks": 19068,
+      "sha256": "c98e243c236362ba5e04c431ddd75fdf3efbdc12a42c0d627d0788369d66c30e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_32_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_32_96.nbt",
       "origin": [
         4171,
         79,
         54
       ],
-      "blocks": 5528,
-      "sha256": "c2fffa46f0c0b4198594b5d35a2fe43f5be49abbacc1779a7db128ada60a6376"
+      "blocks": 5530,
+      "sha256": "ff57fef4df6a0cdbda189816b27c0ad6b3a64f054086b2b2581b1422fa1bc3c5"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_32_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_32_128.nbt",
       "origin": [
         4171,
         79,
@@ -2633,7 +2813,7 @@
       "sha256": "e33e929f50b2ad278cbcc0c3ac97c7b300bd2beb7b36b86236133b77f36208d2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_32_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_32_224.nbt",
       "origin": [
         4171,
         79,
@@ -2643,7 +2823,7 @@
       "sha256": "63fd0a16e49fd947c67b7a53c1dda369ae1a14ce6663e903fd686be5bb2074bb"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_32_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_32_256.nbt",
       "origin": [
         4171,
         79,
@@ -2653,17 +2833,17 @@
       "sha256": "a5deef114848ba9bd1c2686d16097ebdacb00619a10448417eba1d3f8b3ddf8f"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_32_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_32_288.nbt",
       "origin": [
         4171,
         79,
         246
       ],
       "blocks": 4232,
-      "sha256": "c4199e53f6c8a80418c1b8be925ce51bb0a4c0f4f90e79328b1feff6ccdce9c1"
+      "sha256": "efdf7dccb85bc55bef464378f15839e74608fb636e0473066c2e840e5b7822ee"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_64_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_64_32.nbt",
       "origin": [
         4171,
         111,
@@ -2673,7 +2853,7 @@
       "sha256": "0aaeec7e1af765d6ec40027660fa7ad664a7eb851bb78493d161efe007bde638"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_64_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_64_64.nbt",
       "origin": [
         4171,
         111,
@@ -2683,7 +2863,7 @@
       "sha256": "31a53b56e414f80ddf63b68917543c956af1082d72858cf588b1c1cdf396519a"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_64_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_64_96.nbt",
       "origin": [
         4171,
         111,
@@ -2693,7 +2873,7 @@
       "sha256": "19f1cd342ad5e0f295257c5c47c00c9481dbc16cd813ffe8a30182f7db609bf5"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_64_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_64_224.nbt",
       "origin": [
         4171,
         111,
@@ -2703,7 +2883,7 @@
       "sha256": "23de4ab7b4a96631526d844c6c24354ee223e9bd53b3dee2b145b772622d5569"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_64_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_64_256.nbt",
       "origin": [
         4171,
         111,
@@ -2713,7 +2893,7 @@
       "sha256": "91c3a55207628841951aa5efb17533f59f3f1179cada62d3e896c7de43b50170"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_64_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/160_64_288.nbt",
       "origin": [
         4171,
         111,
@@ -2723,7 +2903,7 @@
       "sha256": "3e12781f4b3404831d1612a4efbf481cabbe0f8dcc01e587a24a78db8644c87a"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_0.nbt",
       "origin": [
         4203,
         47,
@@ -2733,7 +2913,7 @@
       "sha256": "2d609e3807791df999776f72341c97b7d3f69ce87a294c00a80adffb9ad240de"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_32.nbt",
       "origin": [
         4203,
         47,
@@ -2743,7 +2923,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_64.nbt",
       "origin": [
         4203,
         47,
@@ -2753,7 +2933,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_96.nbt",
       "origin": [
         4203,
         47,
@@ -2763,7 +2943,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_128.nbt",
       "origin": [
         4203,
         47,
@@ -2773,7 +2953,7 @@
       "sha256": "7b2677fde9bb267510d05b49630517fd56e7efd1557c07f60609c9b4ee77f17a"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_256.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_160.nbt",
       "origin": [
         4203,
         47,
@@ -2783,7 +2963,7 @@
       "sha256": "f288a48cf8c9b201ebe6d7cf22e29fd747e016d7b0061783394a54baf5192276"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_288.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_192.nbt",
       "origin": [
         4203,
         47,
@@ -2793,37 +2973,37 @@
       "sha256": "6b008809b30221ebed2c8ba66fa58b09a88fe964c922d467a7fff3c6fdb43efc"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_224.nbt",
       "origin": [
         4203,
         47,
         182
       ],
-      "blocks": 4423,
-      "sha256": "80cffcd1a022b7fe90c96a8abc36daa3511dcaca1c35791966542c2dafbeda9a"
+      "blocks": 4426,
+      "sha256": "188eed4259b3c03488caa538adb4a63018c62f4149bd68c50dbc204ef8c7242d"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_256.nbt",
       "origin": [
         4203,
         47,
         214
       ],
       "blocks": 5120,
-      "sha256": "6170f446a393b5e6cc26e37e90cdaab078a96159e3a0117ba52578edc470a309"
+      "sha256": "2cf66a41285c36249205ad572c7044ff22b149ab16e593dfb37cc51991d8f9cf"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_0_288.nbt",
       "origin": [
         4203,
         47,
         246
       ],
       "blocks": 1440,
-      "sha256": "68bc38c4e9676947b04af52f662e0be5dda668cc654a6df1bf49e03a9e0e7b86"
+      "sha256": "e2bf867d179124bf4ec9ab2fb89d346d11ca7ffe652c17128a72208958e9d39e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_32_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_32_0.nbt",
       "origin": [
         4203,
         79,
@@ -2833,37 +3013,37 @@
       "sha256": "356cc227262c324a57a64a6ccbc864c6e2b84d5a0902e71637d1bd47b1400059"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_32_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_32_32.nbt",
       "origin": [
         4203,
         79,
         -10
       ],
       "blocks": 27968,
-      "sha256": "032e280a816545b7d125db460f7aec5d2c130cc260b57ed69acbb3fe9ac529f7"
+      "sha256": "be6be53dd9b2f06c7cb70b7ffd5cc04e9211b63d57b314802b3aa8ce19356f4c"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_32_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_32_64.nbt",
       "origin": [
         4203,
         79,
         22
       ],
       "blocks": 32768,
-      "sha256": "1f44983465c95caaf1e63d6f2746a6fe00ad0705d9d6cd6a05b998fa0e667108"
+      "sha256": "afde191b306e5f592bb960abac40924c8bef372361d15585a032ffc0b9dd6d5e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_32_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_32_96.nbt",
       "origin": [
         4203,
         79,
         54
       ],
       "blocks": 8768,
-      "sha256": "cb0f97ae5c2d60372aa4838ca5ede8b8ae1efda4c94e5a05c147db71d5ee8367"
+      "sha256": "0d6dc929af67e83e9239571fa54a5f845ff18576ef8f17ae925919d069e1b8aa"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_32_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_32_128.nbt",
       "origin": [
         4203,
         79,
@@ -2873,37 +3053,57 @@
       "sha256": "e33e929f50b2ad278cbcc0c3ac97c7b300bd2beb7b36b86236133b77f36208d2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_32_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_32_160.nbt",
+      "origin": [
+        4203,
+        79,
+        118
+      ],
+      "blocks": 2,
+      "sha256": "63fbe99c06ab6e6f44fe39fe6230b2c97c0b6d810b4cdc7779762af13d05777a"
+    },
+    {
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_32_192.nbt",
+      "origin": [
+        4203,
+        79,
+        150
+      ],
+      "blocks": 2,
+      "sha256": "cb0932a10ed097d371a3a73dde71715925e7c282fb790f0eacf80313d110ecd6"
+    },
+    {
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_32_224.nbt",
       "origin": [
         4203,
         79,
         182
       ],
       "blocks": 2646,
-      "sha256": "eff05dd72a3c0745b85a2d914f9ee706118bdea5745fae3eb761cdce33c156cf"
+      "sha256": "dc830a529263c0e5d7366ea8e3f7072be875b79f4c5302b3dc4fc88f14e3061c"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_32_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_32_256.nbt",
       "origin": [
         4203,
         79,
         214
       ],
       "blocks": 11078,
-      "sha256": "d255e02fd1dda3c78bc41866bcc5471c63b6b84c075968f7fd3bd2e47937ec66"
+      "sha256": "03a348e14ac752c6cf37ff9d43b95a8ccb5f3fc873277d9e7943d3bc765b78c9"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_32_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_32_288.nbt",
       "origin": [
         4203,
         79,
         246
       ],
       "blocks": 4218,
-      "sha256": "8f41395e3098a6603ba612981c9e1cc3b13ee73d6cea2fe36f6a8178b7187a9f"
+      "sha256": "41a47ee1aa7963350949581681c9fe59771d87103569ffd18cf80bd77f1c4dc9"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_64_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_64_32.nbt",
       "origin": [
         4203,
         111,
@@ -2913,7 +3113,7 @@
       "sha256": "b811618cc536202fc721987801969ada13e4a7413e00a1a99ae82df14dae1f18"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_64_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_64_64.nbt",
       "origin": [
         4203,
         111,
@@ -2923,7 +3123,7 @@
       "sha256": "71bb6efb5d0917a7fddf7ce025051b609c429ada4dceab8b82e459e3fd561d66"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_64_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_64_96.nbt",
       "origin": [
         4203,
         111,
@@ -2933,7 +3133,7 @@
       "sha256": "4d22a18b80e4bf5b5ccf9347737b207c0a10c73d4305f1a7a903c1a1c501c27a"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_64_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_64_224.nbt",
       "origin": [
         4203,
         111,
@@ -2943,7 +3143,7 @@
       "sha256": "0b8686158fe1159d811354a6139f623e65f72092cd08e56dace0d200aff6c25e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_64_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_64_256.nbt",
       "origin": [
         4203,
         111,
@@ -2953,7 +3153,7 @@
       "sha256": "5f67a8c0a7e25442f41a456fd5202176a8fa89c871a256749553718217a8e786"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_64_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/192_64_288.nbt",
       "origin": [
         4203,
         111,
@@ -2963,7 +3163,7 @@
       "sha256": "5fa968f92bf14cfa1724bf4052b6e89b455e7f996def7bed5881be2e5cdb97f6"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_0.nbt",
       "origin": [
         4235,
         47,
@@ -2973,7 +3173,7 @@
       "sha256": "2d609e3807791df999776f72341c97b7d3f69ce87a294c00a80adffb9ad240de"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_32.nbt",
       "origin": [
         4235,
         47,
@@ -2983,7 +3183,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_64.nbt",
       "origin": [
         4235,
         47,
@@ -2993,7 +3193,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_96.nbt",
       "origin": [
         4235,
         47,
@@ -3003,7 +3203,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_128.nbt",
       "origin": [
         4235,
         47,
@@ -3013,7 +3213,7 @@
       "sha256": "e660866b66c3a087578b40b85aee96cd798ccf554f9003afd6eb00f4e61f9b59"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_256.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_160.nbt",
       "origin": [
         4235,
         47,
@@ -3023,7 +3223,7 @@
       "sha256": "de4375638ab4fe28aeacd744f8a64965697932508181d8cecb6f28ac0c8bf612"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_288.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_192.nbt",
       "origin": [
         4235,
         47,
@@ -3033,7 +3233,7 @@
       "sha256": "d6efde3eeba4c45c73127e5e6f28975790ccf9da357163a5946ce23fa09612f4"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_224.nbt",
       "origin": [
         4235,
         47,
@@ -3043,7 +3243,7 @@
       "sha256": "6a33f5ff0babfbecae19ac51e0714adbbfc75f2bfe994fe75d979e5761efcf55"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_256.nbt",
       "origin": [
         4235,
         47,
@@ -3053,7 +3253,7 @@
       "sha256": "0afa824c9a5e1cefbc43177c144cc713c7813d5b593955d0406010fd20b4d3c7"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_0_288.nbt",
       "origin": [
         4235,
         47,
@@ -3063,7 +3263,7 @@
       "sha256": "6d6d9b0cb7b1e9447712985fb7412594e1bd9d3a38ce3ef68b94a9c3a9baf4c7"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_32_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_32_0.nbt",
       "origin": [
         4235,
         79,
@@ -3073,37 +3273,37 @@
       "sha256": "356cc227262c324a57a64a6ccbc864c6e2b84d5a0902e71637d1bd47b1400059"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_32_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_32_32.nbt",
       "origin": [
         4235,
         79,
         -10
       ],
       "blocks": 23108,
-      "sha256": "490f20b299421bb0a702ea7713af92907b2cae7875ba65a7ac0729dc699cc7d3"
+      "sha256": "59f30cc7b6bbf92e4eea4bb09d31bf55e7cd37628522cd64f2d342b71d25c79d"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_32_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_32_64.nbt",
       "origin": [
         4235,
         79,
         22
       ],
       "blocks": 27008,
-      "sha256": "23ed51bf352183889ca64d21c3097f7c2d6c6f97dd25dbf10db2e87002a36066"
+      "sha256": "46c4a95cb28fed7dae6bbaeee6754b8ab5d6fbab4c01b1943eb42a5cd5eae6d0"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_32_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_32_96.nbt",
       "origin": [
         4235,
         79,
         54
       ],
       "blocks": 7508,
-      "sha256": "593def5f0aa3223cd18f298f465f85c2b163ab07676eabc7dabb5aa082e69777"
+      "sha256": "84c0ea35d56209dc19b367fe6137626e7cc394afd1785b24f95c6d7897420bbe"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_32_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_32_128.nbt",
       "origin": [
         4235,
         79,
@@ -3113,7 +3313,7 @@
       "sha256": "e33e929f50b2ad278cbcc0c3ac97c7b300bd2beb7b36b86236133b77f36208d2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_32_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_32_224.nbt",
       "origin": [
         4235,
         79,
@@ -3123,7 +3323,7 @@
       "sha256": "19cc0a84bb1fb6e42ac88b3df5e12f80fd95837e8e3a2a002a2f9f6d3df8ad74"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_32_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_32_256.nbt",
       "origin": [
         4235,
         79,
@@ -3133,7 +3333,7 @@
       "sha256": "5c441baf8a9561275d9bf154c28b9470f564c0b1391a70c62328e94b934ec410"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_32_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_32_288.nbt",
       "origin": [
         4235,
         79,
@@ -3143,7 +3343,7 @@
       "sha256": "fce784a206618f5c336b716561ccce907c9861dd291eba88c363ce139c35c8c3"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_64_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_64_32.nbt",
       "origin": [
         4235,
         111,
@@ -3153,7 +3353,7 @@
       "sha256": "3d3c6f22a681cd799ca73174e1f60412bf56d3f23f031bf4c607b4ad63668b07"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_64_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_64_64.nbt",
       "origin": [
         4235,
         111,
@@ -3163,7 +3363,7 @@
       "sha256": "82462c68bbf4917f39dbd2cfbd84f8c966eccf5f438ac15dcf1fc65cb9b4eb4a"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_64_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/224_64_96.nbt",
       "origin": [
         4235,
         111,
@@ -3173,7 +3373,7 @@
       "sha256": "b260b1f22e769d7630d7cbf46a38a14b9a57bdb6bcfe4678027f4a595ec65678"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_0.nbt",
       "origin": [
         4267,
         47,
@@ -3183,7 +3383,7 @@
       "sha256": "2d609e3807791df999776f72341c97b7d3f69ce87a294c00a80adffb9ad240de"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_32.nbt",
       "origin": [
         4267,
         47,
@@ -3193,7 +3393,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_64.nbt",
       "origin": [
         4267,
         47,
@@ -3203,7 +3403,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_96.nbt",
       "origin": [
         4267,
         47,
@@ -3213,7 +3413,7 @@
       "sha256": "bfcee4e0c98be0b0d29ae7ee3c75f0fb580060f1144584b8d91812e5262fc4a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_128.nbt",
       "origin": [
         4267,
         47,
@@ -3223,57 +3423,57 @@
       "sha256": "ec7ee406cf7e6667b3d7448f655eff2127826d5e58dd5cad17755c331c17c222"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_256.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_160.nbt",
       "origin": [
         4267,
         47,
         118
       ],
-      "blocks": 4162,
-      "sha256": "998bd0101c776cb2022b27e64d2a0f9acafaac6f8e93c7e7af4d1fecf676b188"
+      "blocks": 4170,
+      "sha256": "c06e364b89262747d94c8336a52f528af2b32210c02831470ea6137d305e1c7d"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_288.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_192.nbt",
       "origin": [
         4267,
         47,
         150
       ],
-      "blocks": 4127,
-      "sha256": "a046c8df7e7b92d76d299ddb18052aca4fb4ece41d826cafc1a7dc36cdf52d41"
+      "blocks": 4129,
+      "sha256": "5b2488ca81602b77cc2a374afbd3decc8d6853607403094bda4610687230640f"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_224.nbt",
       "origin": [
         4267,
         47,
         182
       ],
       "blocks": 4363,
-      "sha256": "2ed57f99c7e430337d3f2d038e96f480fd1fe5a89d6bb924030044a10041dd6d"
+      "sha256": "1c0b1ca652bfc6eeab15b1c847ab87572cb0eff80d99aaf96f111d42c9f3e16e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_256.nbt",
       "origin": [
         4267,
         47,
         214
       ],
       "blocks": 5024,
-      "sha256": "fe79bfee9f844af365aa13abef434737a8803b1d51f4c4dc7d32203c8469e1e5"
+      "sha256": "b3add62ccdcce6fab4e49f3d902dbead593123a16c52aebac4638b9058cb3485"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_0_288.nbt",
       "origin": [
         4267,
         47,
         246
       ],
       "blocks": 812,
-      "sha256": "8effa1b259c30d02f58d4752983eb65efe48f629755c259b178ca67afdef4425"
+      "sha256": "7072e90042dbbfdd2edd03473478dc4dc2d4e7a664e5718c82613c560ede315f"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_32_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_32_0.nbt",
       "origin": [
         4267,
         79,
@@ -3283,37 +3483,37 @@
       "sha256": "356cc227262c324a57a64a6ccbc864c6e2b84d5a0902e71637d1bd47b1400059"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_32_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_32_32.nbt",
       "origin": [
         4267,
         79,
         -10
       ],
       "blocks": 27968,
-      "sha256": "032e280a816545b7d125db460f7aec5d2c130cc260b57ed69acbb3fe9ac529f7"
+      "sha256": "be6be53dd9b2f06c7cb70b7ffd5cc04e9211b63d57b314802b3aa8ce19356f4c"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_32_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_32_64.nbt",
       "origin": [
         4267,
         79,
         22
       ],
       "blocks": 32768,
-      "sha256": "1f44983465c95caaf1e63d6f2746a6fe00ad0705d9d6cd6a05b998fa0e667108"
+      "sha256": "afde191b306e5f592bb960abac40924c8bef372361d15585a032ffc0b9dd6d5e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_32_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_32_96.nbt",
       "origin": [
         4267,
         79,
         54
       ],
       "blocks": 8768,
-      "sha256": "cb0f97ae5c2d60372aa4838ca5ede8b8ae1efda4c94e5a05c147db71d5ee8367"
+      "sha256": "0d6dc929af67e83e9239571fa54a5f845ff18576ef8f17ae925919d069e1b8aa"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_32_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_32_128.nbt",
       "origin": [
         4267,
         79,
@@ -3323,7 +3523,7 @@
       "sha256": "e33e929f50b2ad278cbcc0c3ac97c7b300bd2beb7b36b86236133b77f36208d2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_32_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_32_224.nbt",
       "origin": [
         4267,
         79,
@@ -3333,7 +3533,7 @@
       "sha256": "810cceb8313d4a0baa5b27ad632141f656a58edf0c8306231c2632ee9c432926"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_32_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_32_256.nbt",
       "origin": [
         4267,
         79,
@@ -3343,7 +3543,7 @@
       "sha256": "483b7bfe709225b062505bb2bf94dee2b6f7b01ad8e5b3865ea11372903a5901"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_32_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_32_288.nbt",
       "origin": [
         4267,
         79,
@@ -3353,7 +3553,7 @@
       "sha256": "0d5f62bacd4dcc2687dcf0ba87ed0574863dcada4f8a8bacbdc949e102ed8756"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_64_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_64_32.nbt",
       "origin": [
         4267,
         111,
@@ -3363,7 +3563,7 @@
       "sha256": "b811618cc536202fc721987801969ada13e4a7413e00a1a99ae82df14dae1f18"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_64_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_64_64.nbt",
       "origin": [
         4267,
         111,
@@ -3373,7 +3573,7 @@
       "sha256": "71bb6efb5d0917a7fddf7ce025051b609c429ada4dceab8b82e459e3fd561d66"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_64_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/256_64_96.nbt",
       "origin": [
         4267,
         111,
@@ -3383,7 +3583,7 @@
       "sha256": "4d22a18b80e4bf5b5ccf9347737b207c0a10c73d4305f1a7a903c1a1c501c27a"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/320_0_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_0.nbt",
       "origin": [
         4299,
         47,
@@ -3393,7 +3593,7 @@
       "sha256": "41b547310847e0de57bc4fdc1ba892eb86ca689233e44d2e615f5157218a3b6d"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/320_0_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_32.nbt",
       "origin": [
         4299,
         47,
@@ -3403,7 +3603,7 @@
       "sha256": "56e29f88806140e5fd5b429c2311484652aaa465d4504f05166ffd1b2258003e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/320_0_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_64.nbt",
       "origin": [
         4299,
         47,
@@ -3413,7 +3613,7 @@
       "sha256": "56e29f88806140e5fd5b429c2311484652aaa465d4504f05166ffd1b2258003e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/320_0_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_96.nbt",
       "origin": [
         4299,
         47,
@@ -3423,7 +3623,7 @@
       "sha256": "56e29f88806140e5fd5b429c2311484652aaa465d4504f05166ffd1b2258003e"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/320_0_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_128.nbt",
       "origin": [
         4299,
         47,
@@ -3433,7 +3633,7 @@
       "sha256": "0c6b1affbaa6d31907957ccc30002b6d8a4a4e8d8ca9ccfb7f33737b86dd4904"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/320_0_256.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_160.nbt",
       "origin": [
         4299,
         47,
@@ -3443,7 +3643,7 @@
       "sha256": "4db7f83eb8cbd96957fc064b08e01f315c9cd3fea4efb47c01803f1accbf2d02"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/320_0_288.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_192.nbt",
       "origin": [
         4299,
         47,
@@ -3453,17 +3653,17 @@
       "sha256": "4db7f83eb8cbd96957fc064b08e01f315c9cd3fea4efb47c01803f1accbf2d02"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/320_0_320.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_224.nbt",
       "origin": [
         4299,
         47,
         182
       ],
       "blocks": 1920,
-      "sha256": "617afb122bf1bf8a5708088c2d732cbb0fb0a7139f1c3cbbceb44287b59fa6fd"
+      "sha256": "cb1759e3bdc5967017966bb0991632b6fabf21a866a088d532a8786c1629ed97"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/320_0_352.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_256.nbt",
       "origin": [
         4299,
         47,
@@ -3473,7 +3673,7 @@
       "sha256": "404dc7a10ca5ccbe5a72e9e616c8045d23722959d81eb1f6d5a2a4f18cec2331"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/320_0_384.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_0_288.nbt",
       "origin": [
         4299,
         47,
@@ -3483,7 +3683,7 @@
       "sha256": "215a3810cc3dde1a9854e865dd63489812f68dbd797eed915e53bed4d07a6969"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/320_32_96.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_32_0.nbt",
       "origin": [
         4299,
         79,
@@ -3493,37 +3693,37 @@
       "sha256": "b5015eeca28a55dfe990d8d6d99ff5a5a6f4c61df504bf73e336c8de090e2bd0"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/320_32_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_32_32.nbt",
       "origin": [
         4299,
         79,
         -10
       ],
       "blocks": 13110,
-      "sha256": "2b1b4449e758befef241a6453cfb211af9f6cf0e2683d489c050033612a1ed7c"
+      "sha256": "2b0bff4911047b370fb0b7087df19efc6242ba45b91b26dcc38020fc38a4e7ce"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/320_32_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_32_64.nbt",
       "origin": [
         4299,
         79,
         22
       ],
       "blocks": 15360,
-      "sha256": "d67b2a0514b6c1c9bef7aac265138db017a220d9c5b79f770cc36c62adf96d14"
+      "sha256": "ace1b6b62e8c2098e302e05cbaa3bd5b43e046a5abaee43b4a23b54053602363"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/320_32_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_32_96.nbt",
       "origin": [
         4299,
         79,
         54
       ],
       "blocks": 4110,
-      "sha256": "fca8a9440cd5675aa6217198d76f66284e3621b6e6a5bb633b255a7e9f199a9b"
+      "sha256": "7370af67a9531482ece5447d60a1fe33944227c2b8a7aa4a486f6e3fca694987"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/320_32_224.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_32_128.nbt",
       "origin": [
         4299,
         79,
@@ -3533,7 +3733,7 @@
       "sha256": "8bea504c4123bfcc680fcb9d9572a552a3d7e1be852f20b52e0a4a122a19d49f"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/320_64_128.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_64_32.nbt",
       "origin": [
         4299,
         111,
@@ -3543,7 +3743,7 @@
       "sha256": "36ad62e0f2ad8f695d1f73531450d744cf3192bb05ef62b3566443ea1f3190f5"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/320_64_160.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_64_64.nbt",
       "origin": [
         4299,
         111,
@@ -3553,7 +3753,7 @@
       "sha256": "b892f179e76070e609e2138084de9a5943309d0e376365f81121484bf398da99"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/320_64_192.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/288_64_96.nbt",
       "origin": [
         4299,
         111,
@@ -3563,7 +3763,7 @@
       "sha256": "e72fe332da46e80fe82fde91477e61265df51f40526ccd7159498c8f96966191"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/544_64_576.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/512_64_480.nbt",
       "origin": [
         4523,
         111,
@@ -3573,7 +3773,7 @@
       "sha256": "40a84f6411327b2cd3aa0f5f33c44e785278586d59f18a131e73c40004fb20bb"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/544_64_608.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/512_64_512.nbt",
       "origin": [
         4523,
         111,
@@ -3583,7 +3783,7 @@
       "sha256": "9a82096257b00bcfd2703d472779d9b8ec1060dffb665489a05a52bc6d392924"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/544_64_640.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/512_64_544.nbt",
       "origin": [
         4523,
         111,
@@ -3593,7 +3793,7 @@
       "sha256": "0d76617d39f6e19450fe149e4023f3f7da63ab8f7602fffdb63bd6bee2cd4571"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/576_64_576.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/544_64_480.nbt",
       "origin": [
         4555,
         111,
@@ -3603,7 +3803,7 @@
       "sha256": "a12abf455c174573f40a1b70527e0c7c4e332130e272414df6f058a84a1597ce"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/576_64_608.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/544_64_512.nbt",
       "origin": [
         4555,
         111,
@@ -3613,7 +3813,7 @@
       "sha256": "f69a6d70cd294d5adac56e3a5ffea58c454ebc4eec9631c4b3a7967aad99655b"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/576_64_640.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/544_64_544.nbt",
       "origin": [
         4555,
         111,
@@ -3623,7 +3823,7 @@
       "sha256": "78b6740b512f643690bf6d53a292cb4405cf0e24596c73827a74a98169d9d8a2"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/608_64_576.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/576_64_480.nbt",
       "origin": [
         4587,
         111,
@@ -3633,7 +3833,7 @@
       "sha256": "a12abf455c174573f40a1b70527e0c7c4e332130e272414df6f058a84a1597ce"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/608_64_608.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/576_64_512.nbt",
       "origin": [
         4587,
         111,
@@ -3643,7 +3843,7 @@
       "sha256": "1c40d37680af5a7b179f84a8c1210725da47dd8da308f204febc853474db6460"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/608_64_640.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/576_64_544.nbt",
       "origin": [
         4587,
         111,
@@ -3653,7 +3853,7 @@
       "sha256": "40c6e81d901a08b541cad8afc7f95ee63ac723917543cfe010c0076739e43379"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/640_64_576.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/608_64_480.nbt",
       "origin": [
         4619,
         111,
@@ -3663,7 +3863,7 @@
       "sha256": "fc137a843fe75dcdd1e5dcfc2a8c789dd33a21da9f01643f8971109cbbf7d52c"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/640_64_608.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/608_64_512.nbt",
       "origin": [
         4619,
         111,
@@ -3673,7 +3873,7 @@
       "sha256": "600371fef4eff5fad5c6d37f160c2aa8928dca8e9250184d9cdfeba1560fe22c"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/640_64_640.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/608_64_544.nbt",
       "origin": [
         4619,
         111,
@@ -3683,7 +3883,7 @@
       "sha256": "4e7ebd7a5ce36490d422702a6294f286d6c1865dd18b42cf03c0dc6bc8305fab"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/672_64_608.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/640_64_512.nbt",
       "origin": [
         4651,
         111,
@@ -3693,7 +3893,7 @@
       "sha256": "b25caa4ededda199409a2b2e48a92ff575411d2fc14926e36f0ba154dff75679"
     },
     {
-      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/672_64_640.nbt",
+      "resource": "muxi_outbreak:structure/lostschool/lostschool_3/640_64_544.nbt",
       "origin": [
         4651,
         111,
@@ -3703,6 +3903,6 @@
       "sha256": "05c2a813e92af980e2abf5e48bb8b39975d96dfed119c7da259005fac41ded74"
     }
   ],
-  "blocks": 1999012,
-  "sha256": "ab21a91a3adc9d0aa1d26522440ac23c4f224ed7ffa1b23c92c427f45a60d102"
+  "blocks": 2006660,
+  "sha256": "d06ecb7f0c0b1b6560a929a2350ebb65a6d5118984e489d01500115ad679b113"
 }
