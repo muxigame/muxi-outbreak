@@ -30,6 +30,7 @@ public final class Director {
     private boolean forcedPanic;
 
     public Pace pace() { return pace; }
+    public void reset() {pace=Pace.RELAX;stateSeconds=0;specialCooldown=8;hordeCooldown=12;bossCooldown=80;forcedPanic=false;}
     public void forcePanic(boolean enabled) {
         forcedPanic = enabled;
         if (enabled && pace != Pace.PEAK) transition(Pace.PEAK);

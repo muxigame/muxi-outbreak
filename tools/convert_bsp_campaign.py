@@ -446,6 +446,8 @@ def main():
         reports.append(report)
         print(json.dumps(report,ensure_ascii=False),flush=True)
         del vox
+    from checkpoint_metadata import apply as apply_checkpoint_metadata
+    apply_checkpoint_metadata(output)
     manifest['blocks']=sum(e['blocks'] for e in manifest['structures'])
     manifest['sha256']=hashlib.sha256(json.dumps(manifest,sort_keys=True).encode()).hexdigest()
     json_write(staging/'outbreak_geometry/lostschool.json',manifest)

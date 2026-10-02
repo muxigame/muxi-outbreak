@@ -20,6 +20,7 @@ public record OutbreakMap(
     BlockPos start,
     BlockPos finish,
     List<SafeRoom> safeRooms,
+    List<SafeRoom> startRooms,
     List<Spawn> commonSpawns,
     List<Spawn> hordeSpawns,
     List<Spawn> bossSpawns,
@@ -37,7 +38,7 @@ public record OutbreakMap(
     public record PanicEvent(int section, BlockPos pos, int waves) {}
     public record Finale(BlockPos pos, int holdSeconds, double radius, int waves) {}
     public record Supply(String id,int section,BlockPos pos,List<String> choices,int count,boolean infinite,boolean mustExist,boolean directorChoice) {}
-    public record SafeRoom(String id, BlockPos min, BlockPos max, int nextSection) {
+    public record SafeRoom(String id, BlockPos min, BlockPos max, int nextSection, List<BlockPos> doors) {
         public boolean contains(Vec3 point) {
             return point.x >= Math.min(min.getX(), max.getX()) && point.x <= Math.max(min.getX(), max.getX()) + 1
                 && point.y >= Math.min(min.getY(), max.getY()) && point.y <= Math.max(min.getY(), max.getY()) + 1
@@ -63,17 +64,33 @@ public record OutbreakMap(
                 requiredString(row, "id"),
                 pos(row.getAsJsonArray("min")),
                 pos(row.getAsJsonArray("max")),
-                row.has("nextSection") ? row.get("nextSection").getAsInt() : safeRooms.size() + 1
+                row.has("nextSection") ? row.get("nextSection").getAsInt() : safeRooms.size() + 1,
+                positions(row,"doors")
             ));
         }
         return new OutbreakMap(
-            id, title, mode, dimension, start, finish, List.copyOf(safeRooms),
+            id, title, mode, dimension, start, finish, List.copyOf(safeRooms), startRooms(json),
             spawns(json, "commonSpawns"), spawns(json, "hordeSpawns"), spawns(json, "bossSpawns"),
             items(json, "itemSpawns"),
             json.has("geometry") ? ResourceLocation.parse(json.get("geometry").getAsString()).toString() : "",
             chapters(json), panics(json), finale(json), supplies(json)
         );
     }
+
+    private static List<BlockPos> positions(JsonObject row,String key) {
+        List<BlockPos> result=new ArrayList<>();
+        if(row.has(key))for(var value:row.getAsJsonArray(key))result.add(pos(value.getAsJsonArray()));
+        return List.copyOf(result);
+    }
+    private static List<SafeRoom> startRooms(JsonObject json) {
+        List<SafeRoom> result=new ArrayList<>();
+        if(json.has("startRooms"))for(var element:json.getAsJsonArray("startRooms")) {
+            var row=element.getAsJsonObject();
+            result.add(new SafeRoom(requiredString(row,"id"),pos(row.getAsJsonArray("min")),pos(row.getAsJsonArray("max")),row.get("section").getAsInt(),positions(row,"doors")));
+        }
+        return List.copyOf(result);
+    }
+    public SafeRoom startRoom(int section) {return startRooms.stream().filter(r->r.nextSection()==section).findFirst().orElse(null);}
 
     public BlockPos sectionStart(int section) {
         return section >= 0 && section < chapters.size() ? chapters.get(section).start() : start;

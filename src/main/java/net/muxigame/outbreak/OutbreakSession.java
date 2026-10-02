@@ -11,7 +11,7 @@ import net.muxigame.outbreak.map.OutbreakMap;
 import java.util.*;
 
 public final class OutbreakSession {
-    public enum Phase { PREPARING, COUNTDOWN, RUNNING, SAFE_ROOM, FINISHED }
+    public enum Phase { WAITING, PREPARING, COUNTDOWN, START_ROOM, RUNNING, SAFE_ROOM, FINISHED }
 
     public final net.muxigame.minigames.RoomTeam team;
     public final UUID id;
@@ -35,6 +35,8 @@ public final class OutbreakSession {
     public int section;
     public int timer;
     public int seconds;
+    public int spawnAttempts,spawnSuccesses,spawnInactive,spawnDistance,spawnCollision;
+    public final net.muxigame.outbreak.map.CheckpointDoors checkpointDoors=new net.muxigame.outbreak.map.CheckpointDoors();
     public int difficulty;
     public int panicWaves;
     public int panicDelay;
@@ -46,6 +48,8 @@ public final class OutbreakSession {
     public int finaleStarted = -1;
     public int finaleWaves;
     public boolean finaleTankSpawned;
+    public UUID finaleTankId;
+    public boolean finaleTankDefeated;
     public final net.muxigame.outbreak.equipment.CampaignSupplies supplies;
     public final net.muxigame.outbreak.equipment.CampaignThrowables throwables;
     public final Map<UUID,Float> temporaryHealth=new HashMap<>();

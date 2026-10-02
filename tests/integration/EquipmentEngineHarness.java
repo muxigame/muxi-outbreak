@@ -170,9 +170,9 @@ public final class EquipmentEngineHarness {
         });
         step("invite teammate",5,()->terminal(a,"invite",b.getUUID().toString()));
         step("join teammate",5,()->{terminal(b,"join",session.shortId());check("two_server_players_joined",session.players.size()==2,session.phase);});
-        step("terminal lobby waits for host",230,()->{check("does_not_autostart_before_invites",session.lobbyWaiting&&session.phase==OutbreakSession.Phase.COUNTDOWN,session.phase);terminal(a,"start","");});
+        step("terminal lobby waits for host",230,()->{check("does_not_autostart_before_invites",session.lobbyWaiting&&session.phase==OutbreakSession.Phase.WAITING,session.phase);terminal(a,"start","");});
         step("native loadout",230,()->{
-            check("countdown_completed",session.phase==OutbreakSession.Phase.RUNNING,session.phase);
+            check("countdown_completed",session.phase==OutbreakSession.Phase.START_ROOM,session.phase);
             check("actual_spawn_coordinates",a.position().distanceTo(session.map.start().getBottomCenter())<2,a.position());
             check("real_source_supplies_initialized",session.map.supplies().size()==133&&session.supplies.inspect().size()>0,session.supplies.inspect().size());
             check("same_primary_as_zombie_game",CampaignInventory.gunId(a.getInventory().getItem(0)).equals(CampaignInventory.PRIMARY),CampaignInventory.gunId(a.getInventory().getItem(0)));
@@ -304,16 +304,16 @@ public final class EquipmentEngineHarness {
         });
         step("special",5,()->{
             check("special_with_equipment_runtime",session.infectedKinds.containsValue(InfectedKind.HUNTER),session.infectedKinds);killInfected();
-            healthy(a,10);healthy(b,12);protect(a);protect(b);both(session.map.chapters().get(0).end().getBottomCenter());
+            healthy(a,10);healthy(b,12);protect(a);protect(b);both(session.map.chapters().get(0).end().getBottomCenter());session.checkpointDoors.interact(a.serverLevel(),session.map.safeRooms().get(0).doors().get(0),session.map,0,true);
         });
         step("safe room does not heal or duplicate items",170,()->{
-            check("safe_room_advanced",session.section==1&&session.phase==OutbreakSession.Phase.RUNNING,session.phase);
+            check("safe_room_advanced",session.section==1&&session.phase==OutbreakSession.Phase.START_ROOM,session.phase);
             check("safe_room_preserves_wounds",Math.abs(a.getHealth()-10)<.1&&Math.abs(b.getHealth()-12)<.1,a.getHealth()+" / "+b.getHealth());
             check("finite_old_stock_did_not_regrow",node(medNode).get("remaining").getAsInt()==0,node(medNode));
-            both(session.map.chapters().get(1).end().getBottomCenter());
+            both(session.map.chapters().get(1).end().getBottomCenter());session.checkpointDoors.interact(a.serverLevel(),session.map.safeRooms().get(1).doors().get(0),session.map,1,true);
         });
         step("third chapter",170,()->{
-            check("third_chapter_entry",session.section==2&&session.phase==OutbreakSession.Phase.RUNNING,session.section);
+            check("third_chapter_entry",session.section==2&&session.phase==OutbreakSession.Phase.START_ROOM,session.section);
             both(session.map.finish().getBottomCenter());
         });
         // Native 60-second finale is advanced only by real server ticks, never by force-win/clock manipulation.
@@ -339,7 +339,7 @@ public final class EquipmentEngineHarness {
             if(b!=null&&!b.isRemoved()){((NoSocketListener)b.connection).acknowledgeTeleport();b.doTick();}
             if(server.getTickCount()<waitUntil)return;
             if(steps.isEmpty()){passed=true;running=false;persist();cleanup();return;}
-            if(steps.peekFirst().label().equals("terminal lobby waits for host")&&session.phase==OutbreakSession.Phase.PREPARING){
+            if(steps.peekFirst().label().equals("terminal lobby waits for host")&&!game.snapshot(a).getAsJsonArray("rooms").get(0).getAsJsonObject().get("mapReady").getAsBoolean()){
                 if(server.getTickCount()-startedAt>6000)throw new AssertionError("fresh campaign preparation timed out before host start");
                 return;
             }

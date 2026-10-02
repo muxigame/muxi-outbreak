@@ -87,11 +87,11 @@ def compile_java(javac: Path, sources: list[Path], output: Path, classpath: str,
     subprocess.run([str(javac), "@" + str(argfile)], check=True)
 
 
-def build(server: Path, java_home: Path | None = None) -> Path:
+def build(server: Path, java_home: Path | None = None, framework: Path | None = None) -> Path:
     meta = json.loads((ROOT / "mod.json").read_text(encoding="utf-8"))
     javac, _ = java_tools(java_home)
     jars = server_classpath(server, meta["neoforge"])
-    framework = ROOT.parent / "muxi-minigames/build/libs/muxi-minigames-0.1.3-task14-social-qa.1.jar"
+    framework = framework or ROOT.parent / "muxi-minigames/build/libs/muxi-minigames-0.1.3-task14-social-qa.1.jar"
     if not framework.is_file():
         raise ValueError("Build muxi-minigames first")
     jars.append(framework)
@@ -141,6 +141,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--server", type=Path, default=ROOT.parent / "bmc5server")
     parser.add_argument("--java-home", type=Path)
+    parser.add_argument("--framework", type=Path, help="Explicit existing minigames framework jar")
     parser.add_argument("--test", action="store_true", help="run Python and executable Java regression tests before building")
     args = parser.parse_args()
     try:
@@ -155,7 +156,7 @@ def main() -> None:
                 compile_java(javac, [ROOT / "src/main/java/net/muxigame/outbreak/equipment/SupplyRules.java",
                                     ROOT / "tests/java/SupplyRulesTest.java"], test_dir, str(test_dir), test_dir / "supplies.args")
                 subprocess.run([str(java), "-ea", "-cp", str(test_dir), "SupplyRulesTest"], check=True)
-        build(args.server.resolve(), args.java_home)
+        build(args.server.resolve(), args.java_home, args.framework)
     except (OSError, ValueError, subprocess.SubprocessError) as error:
         raise SystemExit(str(error)) from None
 

@@ -8,30 +8,54 @@
     {
       "id": "lost_checkpoint",
       "min": [
-        65,
-        52,
-        -19
+        62,
+        53,
+        -21
       ],
       "max": [
-        69,
-        56,
-        -15
+        70,
+        57,
+        -13
       ],
-      "nextSection": 1
+      "nextSection": 1,
+      "doors": [
+        [
+          61,
+          53,
+          -14
+        ],
+        [
+          61,
+          53,
+          -13
+        ]
+      ]
     },
     {
       "id": "lostschool_2_checkpoint",
       "min": [
-        2008,
-        56,
-        -18
+        2006,
+        57,
+        -21
       ],
       "max": [
-        2012,
-        60,
-        -14
+        2014,
+        61,
+        -13
       ],
-      "nextSection": 2
+      "nextSection": 2,
+      "doors": [
+        [
+          2005,
+          57,
+          -14
+        ],
+        [
+          2005,
+          57,
+          -13
+        ]
+      ]
     }
   ],
   "commonSpawns": [
@@ -5776,5 +5800,85 @@
     "throwableSlot": "one total throwable",
     "director": "one seeded decision per unseen source node per round; fixed supplies are not overwritten; depleted supplies never regrow",
     "notExact": "Valve item-density and Director RNG are not reproduced bit-for-bit; undocumented selection weights are an explicit adaptation."
+  },
+  "startRooms": [
+    {
+      "id": "lost_start",
+      "section": 0,
+      "min": [
+        -11,
+        83,
+        1
+      ],
+      "max": [
+        -4,
+        87,
+        9
+      ],
+      "doors": [
+        [
+          -7,
+          83,
+          0
+        ],
+        [
+          -6,
+          83,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "lostschool_2_start",
+      "section": 1,
+      "min": [
+        2006,
+        77,
+        -21
+      ],
+      "max": [
+        2014,
+        81,
+        -13
+      ],
+      "doors": [
+        [
+          2005,
+          77,
+          -14
+        ],
+        [
+          2005,
+          77,
+          -13
+        ]
+      ]
+    },
+    {
+      "id": "lostschool_3_start",
+      "section": 2,
+      "min": [
+        4135,
+        81,
+        12
+      ],
+      "max": [
+        4137,
+        85,
+        14
+      ],
+      "doors": [
+        [
+          4136,
+          81,
+          15
+        ]
+      ]
+    }
+  ],
+  "checkpointPolicy": {
+    "source": "Existing BSP/NAV-converted geometry and changelevel landmarks; native door adaptation at existing room openings, not imported Source MDL props",
+    "completion": "All living survivors inside, none incapacitated, entrance doors closed",
+    "finale": "Retain existing source trigger_finale rescue hold, waves and tank objective"
   }
 }
