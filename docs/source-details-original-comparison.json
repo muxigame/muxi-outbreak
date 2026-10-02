@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "layoutComparison": "all original non-air full blockstate properties at identical coordinates",
+  "chapters": [
+    {
+      "chapter": "lost",
+      "originalBlocksCompared": 273553,
+      "bedPartsVerified": 34,
+      "sampledRouteFootHeadClear": true,
+      "supplyPickupFootHeadClear": true,
+      "addedBlocks": 5464
+    },
+    {
+      "chapter": "lostschool_2",
+      "originalBlocksCompared": 396436,
+      "bedPartsVerified": 4,
+      "sampledRouteFootHeadClear": true,
+      "supplyPickupFootHeadClear": true,
+      "addedBlocks": 1694
+    },
+    {
+      "chapter": "lostschool_3",
+      "originalBlocksCompared": 1329023,
+      "bedPartsVerified": 12,
+      "sampledRouteFootHeadClear": true,
+      "supplyPickupFootHeadClear": true,
+      "addedBlocks": 3883
+    }
+  ],
+  "geometrySha256": "b5ed34a3518eef58d43d8d85b3fac16a72247813a88196432474834210a3b966",
+  "sourceAssetsBundled": false
+}

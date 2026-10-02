@@ -1,0 +1,587 @@
+{
+  "passed": true,
+  "release": {
+    "id": "muxi_outbreak",
+    "name": "muxi Outbreak",
+    "version": "0.3.8-source-details-qa.2",
+    "artifact": "muxi-outbreak-0.3.8-source-details-qa.2.jar",
+    "sha256": "5c112943c58e256f3432544add024b249c0bb668d0f4be160b09d7c37fb151b1",
+    "size": 2110152,
+    "minecraft": "1.21.1",
+    "neoforge": "21.1.250",
+    "java": 21
+  },
+  "branch": "dev",
+  "realCopiedOldQaSaveUpgrade": {
+    "source": {
+      "qaOnly": true,
+      "sourceHome": "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\recovery-source-details-complete-20261002",
+      "sourceProductSha256": "eefb6f8fbc2919a2acac3f97c74e2318bbfa44e8ae4c8ab06cfdbe15afd61ddd",
+      "copiedIsolatedNormalExitWorldOnly": true,
+      "productionWorldUsed": false
+    },
+    "worldLoadWarning": {
+      "qaCopyOnly": true,
+      "title": "使用“实验性设置”的世界不受支持",
+      "backupRequested": true,
+      "screen": "net.minecraft.client.gui.screens.BackupConfirmScreen"
+    },
+    "realClientResult": {
+      "passed": true,
+      "realMinecraftClient": true,
+      "realLocalNetworkPlayer": true,
+      "fakePlayers": false,
+      "windowVisible": false,
+      "assistedRouteTeleportsAndCombat": true,
+      "naturalFinaleClock": true
+    },
+    "normalExit": {
+      "exitCode": 0,
+      "normalExit": true
+    },
+    "actualSavedDisplays": {
+      "passed": true,
+      "normalExitRequired": true,
+      "expectedUniqueParts": 2736,
+      "savedUniqueParts": 2736,
+      "ownedSavedEntityChunks": 106,
+      "regionFiles": [
+        "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\recovery-source-upgrade-fixed-final-20261002\\saves\\outbreak-native-qa\\dimensions\\muxi_outbreak\\campaign\\entities\\r.-1.-1.mca",
+        "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\recovery-source-upgrade-fixed-final-20261002\\saves\\outbreak-native-qa\\dimensions\\muxi_outbreak\\campaign\\entities\\r.-1.0.mca",
+        "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\recovery-source-upgrade-fixed-final-20261002\\saves\\outbreak-native-qa\\dimensions\\muxi_outbreak\\campaign\\entities\\r.0.-1.mca",
+        "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\recovery-source-upgrade-fixed-final-20261002\\saves\\outbreak-native-qa\\dimensions\\muxi_outbreak\\campaign\\entities\\r.0.0.mca",
+        "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\recovery-source-upgrade-fixed-final-20261002\\saves\\outbreak-native-qa\\dimensions\\muxi_outbreak\\campaign\\entities\\r.3.-1.mca",
+        "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\recovery-source-upgrade-fixed-final-20261002\\saves\\outbreak-native-qa\\dimensions\\muxi_outbreak\\campaign\\entities\\r.3.0.mca",
+        "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\recovery-source-upgrade-fixed-final-20261002\\saves\\outbreak-native-qa\\dimensions\\muxi_outbreak\\campaign\\entities\\r.4.-1.mca",
+        "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\recovery-source-upgrade-fixed-final-20261002\\saves\\outbreak-native-qa\\dimensions\\muxi_outbreak\\campaign\\entities\\r.4.0.mca",
+        "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\recovery-source-upgrade-fixed-final-20261002\\saves\\outbreak-native-qa\\dimensions\\muxi_outbreak\\campaign\\entities\\r.7.-1.mca",
+        "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\recovery-source-upgrade-fixed-final-20261002\\saves\\outbreak-native-qa\\dimensions\\muxi_outbreak\\campaign\\entities\\r.7.0.mca",
+        "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\recovery-source-upgrade-fixed-final-20261002\\saves\\outbreak-native-qa\\dimensions\\muxi_outbreak\\campaign\\entities\\r.8.-1.mca",
+        "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\recovery-source-upgrade-fixed-final-20261002\\saves\\outbreak-native-qa\\dimensions\\muxi_outbreak\\campaign\\entities\\r.8.0.mca",
+        "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\recovery-source-upgrade-fixed-final-20261002\\saves\\outbreak-native-qa\\dimensions\\muxi_outbreak\\campaign\\entities\\r.8.1.mca",
+        "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\recovery-source-upgrade-fixed-final-20261002\\saves\\outbreak-native-qa\\dimensions\\muxi_outbreak\\campaign\\entities\\r.9.0.mca",
+        "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\recovery-source-upgrade-fixed-final-20261002\\saves\\outbreak-native-qa\\dimensions\\muxi_outbreak\\campaign\\entities\\r.9.1.mca"
+      ],
+      "duplicateUuids": false,
+      "inventoryAbsent": true,
+      "sourceNativePoseAndTransformVerified": true,
+      "actualSavedEntitiesVerified": true
+    },
+    "duplicateUuidWarnings": 0,
+    "realEvidenceLabels": [
+      "network_waiting_room",
+      "native_start_room",
+      "native_rendered_infected",
+      "native_lower_floor_refill",
+      "native_first_checkpoint",
+      "native_chapter_two",
+      "native_chapter_three",
+      "native_finale_wave",
+      "native_tank_rendered",
+      "native_natural_victory"
+    ]
+  },
+  "visualSurvey": {
+    "realClientResult": {
+      "directorPausedForSurvey": true,
+      "baselineOnly": false,
+      "normalClientAndServerRestoreVerified": true,
+      "routeMovementAssisted": true,
+      "hiddenWindow": true,
+      "mcefLoaded": false,
+      "passed": true,
+      "sampledRoutePositions": 232,
+      "mappingImplementationWritten": true,
+      "realLocalNetworkPlayer": true
+    },
+    "normalExit": {
+      "exitCode": 0,
+      "normalExit": true
+    },
+    "actualBedEvents": [
+      {
+        "hand": "MAIN_HAND",
+        "canceled": true,
+        "result": "SUCCESS",
+        "pos": "-87, 66, -14"
+      },
+      {
+        "hand": "OFF_HAND",
+        "canceled": true,
+        "result": "SUCCESS",
+        "pos": "-87, 66, -14"
+      },
+      {
+        "hand": "MAIN_HAND",
+        "canceled": true,
+        "result": "SUCCESS",
+        "pos": "2046, 70, 11"
+      },
+      {
+        "hand": "OFF_HAND",
+        "canceled": true,
+        "result": "SUCCESS",
+        "pos": "2046, 70, 11"
+      },
+      {
+        "hand": "MAIN_HAND",
+        "canceled": true,
+        "result": "SUCCESS",
+        "pos": "4121, 79, 141"
+      },
+      {
+        "hand": "OFF_HAND",
+        "canceled": true,
+        "result": "SUCCESS",
+        "pos": "4121, 79, 141"
+      }
+    ],
+    "personallyReviewedCloseups": 99,
+    "spectatorCamera": {
+      "routeMovementAssisted": true,
+      "normalClientAndServerRestoreVerified": true,
+      "baselineOnly": false,
+      "directorPausedForSurvey": true,
+      "spectatorCameraForVisualReview": true,
+      "realLocalNetworkPlayer": true,
+      "sampledRoutePositions": 99,
+      "passed": true,
+      "mcefLoaded": false,
+      "hiddenWindow": true
+    },
+    "targetedCamera": {
+      "realLocalNetworkPlayer": true,
+      "spectatorCameraForVisualReview": true,
+      "directorPausedForSurvey": true,
+      "baselineOnly": false,
+      "normalClientAndServerRestoreVerified": true,
+      "routeMovementAssisted": true,
+      "hiddenWindow": true,
+      "mcefLoaded": false,
+      "passed": true,
+      "sampledRoutePositions": 4
+    },
+    "curtainCameraFallbackFlag": false,
+    "visualResourcesIdentical": {
+      "passed": true,
+      "visualResourceFiles": 991,
+      "byteDifferences": [],
+      "previousActualVisualCandidateSha256": "9c33bf46c0775a9439af877a65fbb8fcc7598df1fa2ac1d1511fe4567a0135d3",
+      "finalProductSha256": "5c112943c58e256f3432544add024b249c0bb668d0f4be160b09d7c37fb151b1",
+      "sameNativeGeometryFurnitureLightingSuppliesAndAssets": true,
+      "finalRuntimeChange": "await loaded/ticking saved entity sections before deterministic UUID update"
+    }
+  },
+  "lighting": {
+    "actualSameRoutePositions": 133,
+    "beforeBlockEyesZero": 110,
+    "afterBlockEyesZero": 16,
+    "beforeBothEyesZero": 66,
+    "afterBothEyesZero": 0,
+    "brighter": 117,
+    "dimmer": 0,
+    "gammaUnchanged": true,
+    "complete": true
+  },
+  "coverage": {
+    "totalSourceInstances": 1644,
+    "nativeBlockInstances": 97,
+    "nativeDisplayInstances": 516,
+    "remainingUnmapped": 1031,
+    "requestedCategories": {
+      "bed": {
+        "total": 126,
+        "block": 25,
+        "display": 101,
+        "conflicts": 0,
+        "unmapped": 0
+      },
+      "table": {
+        "total": 31,
+        "block": 16,
+        "display": 15,
+        "conflicts": 0,
+        "unmapped": 0
+      },
+      "cabinet": {
+        "total": 21,
+        "block": 6,
+        "display": 15,
+        "conflicts": 0,
+        "unmapped": 0
+      },
+      "chair": {
+        "total": 152,
+        "block": 6,
+        "display": 146,
+        "conflicts": 0,
+        "unmapped": 0
+      },
+      "fixture": {
+        "total": 74,
+        "block": 0,
+        "display": 74,
+        "conflicts": 0,
+        "unmapped": 0
+      },
+      "crate": {
+        "total": 63,
+        "block": 44,
+        "display": 19,
+        "conflicts": 0,
+        "unmapped": 0
+      }
+    },
+    "unmappedGroups": {
+      "access_and_structural_edges": {
+        "instances": 168,
+        "models": {
+          "models/props/cs_militia/ladderwood.mdl": 54,
+          "models/props_c17/handrail04_doublerise.mdl": 12,
+          "models/props_interiors/railing_128_breakable01.mdl": 2,
+          "models/props_c17/handrail04_brokenlong.mdl": 2,
+          "models/props_c17/handrail04_long.mdl": 6,
+          "models/props_c17/handrail04_brokencorner.mdl": 1,
+          "models/props_exteriors/wood_railing002.mdl": 1,
+          "models/props/cs_office/ladder1.mdl": 1,
+          "models/props_cemetery/curb_128.mdl": 1,
+          "models/props_unique/park_gazebo_steps.mdl": 3,
+          "models/props_vehicles/train_ladder.mdl": 1,
+          "models/props_vehicles/tankertrailer.mdl": 1,
+          "models/c1_chargerexit/mall_rampbundle.mdl": 1,
+          "models/props_downtown/railing04_256.mdl": 21,
+          "models/props_downtown/railing03_128.mdl": 45,
+          "models/props_exteriors/guardrail512_bent.mdl": 1,
+          "models/props_exteriors/guardrail512.mdl": 5,
+          "models/props_exteriors/guardrail128b.mdl": 3,
+          "models/props_vehicles/semi_trailer.mdl": 6,
+          "models/destruction_tanker/pre_destruction_tanker_trailer.mdl": 1
+        },
+        "status": "owner-reviewed; unmapped and not counted as completed",
+        "reason": "Classified by the owner in SOURCE-DETAILS-AUTOMATIC-DIFF.csv; missing Source mesh/collision/animation prevents an exact conversion. Preserve existing native layout and gameplay rather than invent interactive equivalents."
+      },
+      "doors_and_windows": {
+        "instances": 409,
+        "models": {
+          "models/props_downtown/metal_window01_8.mdl": 129,
+          "models/props/de_nuke/window01.mdl": 68,
+          "models/props_downtown/metal_door_doublewide_112_16_frame.mdl": 10,
+          "models/props_doors/doorglassmain01_small_dm03_a.mdl": 1,
+          "models/props_doors/doorglassmain01_small_dm03_g.mdl": 1,
+          "models/props_doors/doorglassmain01_small_dm03_c.mdl": 1,
+          "models/props_doors/doorglassmain01_small_dm03_b.mdl": 1,
+          "models/props_doors/doorglassmain01_small_dm03_h.mdl": 1,
+          "models/props_windows/window_industrial.mdl": 4,
+          "models/props_doors/doormainmetal01.mdl": 126,
+          "models/props_doors/doormain01.mdl": 27,
+          "models/props_doors/doorglassmain01_dm01.mdl": 4,
+          "models/props_downtown/metal_door_112_static.mdl": 11,
+          "models/props_downtown/metal_door_112_static_noskins.mdl": 4,
+          "models/props_doors/doormainmetalsmall01_dm07.mdl": 1,
+          "models/props_doors/doormain03_small_01.mdl": 1,
+          "models/props_doors/doorglassmain01_small_dm02.mdl": 1,
+          "models/props_doors/doorglassmain01_small.mdl": 2,
+          "models/props_doors/checkpoint_door_-02.mdl": 2,
+          "models/props_doors/checkpoint_door_-01.mdl": 1,
+          "models/props_doors/doormainmetal01_dm01.mdl": 1,
+          "models/props_mill/elevator01_cagedoor02.mdl": 2,
+          "models/props_waterfront/door02_80_136_redlight.mdl": 3,
+          "models/props_doors/doormainmetalwindow01.mdl": 3,
+          "models/props_doors/shackwall01_dmg03.mdl": 2,
+          "models/props_doors/shackwall01_dmg02.mdl": 2
+        },
+        "status": "owner-reviewed; unmapped and not counted as completed",
+        "reason": "Classified by the owner in SOURCE-DETAILS-AUTOMATIC-DIFF.csv; missing Source mesh/collision/animation prevents an exact conversion. Preserve existing native layout and gameplay rather than invent interactive equivalents."
+      },
+      "other_small_decorations_manual_review": {
+        "instances": 74,
+        "models": {
+          "models/props_interiors/water_cooler.mdl": 1,
+          "models/props_office/vending_machine01.mdl": 3,
+          "models/props/cs_office/vending_machine.mdl": 1,
+          "models/props_fairgrounds/monitor_speaker.mdl": 1,
+          "models/props_lab/powerbox01a.mdl": 2,
+          "models/props_vents/ventbreakable01_dm01_frame.mdl": 1,
+          "models/props_rooftop/train_signalbox_01.mdl": 2,
+          "models/props/cs_assault/camera.mdl": 7,
+          "models/props_office/computer_monitor_01.mdl": 2,
+          "models/props_interiors/computer_monitor_p1.mdl": 1,
+          "models/props_interiors/computer_monitor_p1a.mdl": 1,
+          "models/props_interiors/books02.mdl": 1,
+          "models/props_interiors/book_gib07.mdl": 1,
+          "models/props_misc/flour_sack-1.mdl": 1,
+          "models/props/de_nuke/electricalbox02.mdl": 1,
+          "models/props/de_nuke/electricalbox01.mdl": 1,
+          "models/props_equipment/snack_machine.mdl": 2,
+          "models/props_interiors/waterbottle.mdl": 16,
+          "models/props_interiors/computer_monitor.mdl": 6,
+          "models/props_interiors/computer_keyboard.mdl": 6,
+          "models/props/cs_office/computer_mouse.mdl": 6,
+          "models/props_fortifications/orange_cone001_reference.mdl": 6,
+          "models/props_street/trashbin01.mdl": 4,
+          "models/props_downtown/phone_book.mdl": 1
+        },
+        "status": "owner-reviewed; unmapped and not counted as completed",
+        "reason": "Classified by the owner in SOURCE-DETAILS-AUTOMATIC-DIFF.csv; missing Source mesh/collision/animation prevents an exact conversion. Preserve existing native layout and gameplay rather than invent interactive equivalents."
+      },
+      "barriers_and_destructible_structure": {
+        "instances": 65,
+        "models": {
+          "models/props_unique/wooden_barricade_break1.mdl": 6,
+          "models/props_mill/brickwall_broken01_b.mdl": 1,
+          "models/props_unique/infectedbreakwall01_2x4core_main.mdl": 2,
+          "models/props_mill/wood_stack.mdl": 4,
+          "models/props_unique/wooden_barricade_break3.mdl": 1,
+          "models/props_unique/wooden_barricade_break2.mdl": 1,
+          "models/props_interiors/breakwall_interior.mdl": 1,
+          "models/props/de_prodigy/concretebags3.mdl": 2,
+          "models/props_debris/walldestroyed01a.mdl": 1,
+          "models/props_debris/walldestroyed05a.mdl": 1,
+          "models/props_street/police_barricade2.mdl": 12,
+          "models/props_street/police_barricade.mdl": 1,
+          "models/props_street/barricade_unique.mdl": 1,
+          "models/props_fortifications/concrete_barrier001_96_reference.mdl": 9,
+          "models/props_street/police_barricade_368in.mdl": 9,
+          "models/props_street/police_barricade3.mdl": 10,
+          "models/props_fortifications/sandbags_line2.mdl": 3
+        },
+        "status": "owner-reviewed; unmapped and not counted as completed",
+        "reason": "Classified by the owner in SOURCE-DETAILS-AUTOMATIC-DIFF.csv; missing Source mesh/collision/animation prevents an exact conversion. Preserve existing native layout and gameplay rather than invent interactive equivalents."
+      },
+      "infected_and_corpse_models": {
+        "instances": 66,
+        "models": {
+          "models/deadbodies/dead_male_torso_01.mdl": 1,
+          "models/deadbodies/dead_male_legs_01.mdl": 1,
+          "models/deadbodies/riot/riot_truck_a.mdl": 1,
+          "models/deadbodies/cemetary/fence_a.mdl": 1,
+          "models/deadbodies/bodies96_a.mdl": 1,
+          "models/deadbodies/bodies128_a.mdl": 2,
+          "models/deadbodies/bodieshall128.mdl": 2,
+          "models/deadbodies/cemetary/wall_192_b.mdl": 2,
+          "models/deadbodies/cemetary/pose_a.mdl": 1,
+          "models/deadbodies/cemetary/wall_192_c.mdl": 2,
+          "models/deadbodies/default/oval_128_a.mdl": 1,
+          "models/deadbodies/default/oval_128_b.mdl": 1,
+          "models/deadbodies/dead_female_civilian_02.mdl": 1,
+          "models/deadbodies/default/wall_192_a.mdl": 1,
+          "models/infected/charger.mdl": 1,
+          "models/infected/witch.mdl": 1,
+          "models/deadbodies/cemetary/barricade_c.mdl": 2,
+          "models/deadbodies/dead_male_sittingchair.mdl": 1,
+          "models/deadbodies/bodies_oval_192.mdl": 1,
+          "models/deadbodies/cemetary/barricade_a.mdl": 1,
+          "models/deadbodies/bodies_oval_128.mdl": 1,
+          "models/deadbodies/bodieshall96.mdl": 1,
+          "models/deadbodies/cemetary/barricade_b.mdl": 1,
+          "models/deadbodies/cemetary/corner_b.mdl": 1,
+          "models/deadbodies/cemetary/corner_c.mdl": 1,
+          "models/deadbodies/cemetary/oval_128_a.mdl": 2,
+          "models/deadbodies/cemetary/oval_128_b.mdl": 1,
+          "models/deadbodies/cemetary/oval_128_c.mdl": 1,
+          "models/deadbodies/cemetary/oval_192_a.mdl": 1,
+          "models/deadbodies/cemetary/oval_192_b.mdl": 1,
+          "models/deadbodies/cemetary/oval_192_c.mdl": 1,
+          "models/deadbodies/cemetary/wall_192_a.mdl": 1,
+          "models/deadbodies/deepswamp/barricade_b.mdl": 1,
+          "models/deadbodies/deepswamp/barricade_c.mdl": 1,
+          "models/deadbodies/deepswamp/corner_b.mdl": 1,
+          "models/infected/common_male_ceda.mdl": 3,
+          "models/infected/common_male_fallen_survivor.mdl": 6,
+          "models/infected/common_male_riot.mdl": 4,
+          "models/infected/common_military_male01.mdl": 3,
+          "models/infected/common_male_jimmy.mdl": 5,
+          "models/infected/common_male_roadcrew.mdl": 2,
+          "models/infected/hulk_dlc3.mdl": 2
+        },
+        "status": "owner-reviewed; unmapped and not counted as completed",
+        "reason": "Classified by the owner in SOURCE-DETAILS-AUTOMATIC-DIFF.csv; missing Source mesh/collision/animation prevents an exact conversion. Preserve existing native layout and gameplay rather than invent interactive equivalents."
+      },
+      "skybox_models": {
+        "instances": 13,
+        "models": {
+          "models/props_unique/skybox_cityscape_highrise.mdl": 10,
+          "models/props_foliage/tree_pine_card_cluster_02_skybox.mdl": 3
+        },
+        "status": "owner-reviewed; unmapped and not counted as completed",
+        "reason": "Classified by the owner in SOURCE-DETAILS-AUTOMATIC-DIFF.csv; missing Source mesh/collision/animation prevents an exact conversion. Preserve existing native layout and gameplay rather than invent interactive equivalents."
+      },
+      "source_interactive_controls_manual_review": {
+        "instances": 9,
+        "models": {
+          "models/props/objectives/key_old_ring.mdl": 3,
+          "models/props_vehicles/floodlight_generator_switch02.mdl": 1,
+          "models/props_mill/freightelevatorbutton01.mdl": 1,
+          "models/props_vehicles/radio_generator_fillup.mdl": 1,
+          "models/props_fairgrounds/lighting_board.mdl": 1,
+          "models/c1_chargerexit/mall_directory_dest.mdl": 1,
+          "models/w_models/weapons/50cal.mdl": 1
+        },
+        "status": "owner-reviewed; unmapped and not counted as completed",
+        "reason": "Classified by the owner in SOURCE-DETAILS-AUTOMATIC-DIFF.csv; missing Source mesh/collision/animation prevents an exact conversion. Preserve existing native layout and gameplay rather than invent interactive equivalents."
+      },
+      "vehicles_and_large_setpieces_manual_review": {
+        "instances": 120,
+        "models": {
+          "models/props_vehicles/tanker001a.mdl": 1,
+          "models/props_vehicles/truck001a.mdl": 1,
+          "models/props_vehicles/cara_95sedan_glass.mdl": 2,
+          "models/props_vehicles/cara_95sedan.mdl": 2,
+          "models/destruction_tanker/destruction_tanker_rear.mdl": 1,
+          "models/props_vehicles/cara_82hatchback_wrecked.mdl": 1,
+          "models/props_vehicles/police_car_rural.mdl": 9,
+          "models/props_vehicles/airplane_piperwreck.mdl": 1,
+          "models/props_vehicles/racecar_damaged.mdl": 2,
+          "models/props_vehicles/train_orecar.mdl": 2,
+          "models/props_vehicles/train_enginecar.mdl": 1,
+          "models/props_vehicles/hmmwv.mdl": 15,
+          "models/props_vehicles/ambulance.mdl": 3,
+          "models/props_vehicles/hmmwv_glass.mdl": 4,
+          "models/props_vehicles/army_truck.mdl": 3,
+          "models/props_vehicles/utility_truck.mdl": 4,
+          "models/props/de_nuke/truck_nuke.mdl": 1,
+          "models/props_vehicles/longnose_truck.mdl": 6,
+          "models/props_vehicles/bus01_2.mdl": 3,
+          "models/props_vehicles/airport_fuel_truck.mdl": 3,
+          "models/props_vehicles/airport_catering_truck.mdl": 4,
+          "models/props_vehicles/helicopter_news_downed.mdl": 2,
+          "models/props_vehicles/pickup_load03.mdl": 3,
+          "models/props_vehicles/pickup_load02.mdl": 3,
+          "models/props_vehicles/pickup_load01.mdl": 7,
+          "models/c5_bridge_destruction/bridge_busses.mdl": 1,
+          "models/props_vehicles/car005a_physics.mdl": 12,
+          "models/props_vehicles/cara_82hatchback.mdl": 4,
+          "models/props_vehicles/cara_95sedan_wrecked.mdl": 2,
+          "models/props_vehicles/helicopter_rescue.mdl": 1,
+          "models/props_vehicles/c130.mdl": 3,
+          "models/f18/f18_placeholder.mdl": 13
+        },
+        "status": "owner-reviewed; unmapped and not counted as completed",
+        "reason": "Classified by the owner in SOURCE-DETAILS-AUTOMATIC-DIFF.csv; missing Source mesh/collision/animation prevents an exact conversion. Preserve existing native layout and gameplay rather than invent interactive equivalents."
+      },
+      "foliage": {
+        "instances": 62,
+        "models": {
+          "models/props_foliage/tree_pine_large.mdl": 6,
+          "models/props_foliage/trees_dryleaves01.mdl": 3,
+          "models/props_foliage/urban_tree_base_bushes01.mdl": 1,
+          "models/props_foliage/urban_tree_base_bushes01_large.mdl": 31,
+          "models/props_foliage/urban_trees_cluster01.mdl": 1,
+          "models/props_foliage/urban_trees_dryleaves01.mdl": 2,
+          "models/props_foliage/urban_trees_dryleaves01_dense.mdl": 2,
+          "models/props_foliage/mall_tree_large01.mdl": 11,
+          "models/props_foliage/mall_tree_medium01.mdl": 1,
+          "models/props_foliage/tree_city01.mdl": 1,
+          "models/props_foliage/tree_pine04_tallcluster.mdl": 2,
+          "models/props_foliage/tree_pine04_tencluster.mdl": 1
+        },
+        "status": "owner-reviewed; unmapped and not counted as completed",
+        "reason": "Classified by the owner in SOURCE-DETAILS-AUTOMATIC-DIFF.csv; missing Source mesh/collision/animation prevents an exact conversion. Preserve existing native layout and gameplay rather than invent interactive equivalents."
+      },
+      "tents_manual_review": {
+        "instances": 45,
+        "models": {
+          "models/props_misc/fairground_tent_closed.mdl": 21,
+          "models/props_misc/fairground_tent_board.mdl": 9,
+          "models/props_misc/fairground_tent_open.mdl": 4,
+          "models/props_misc/triage_tent.mdl": 10,
+          "models/props_downtown/sign_donotenter.mdl": 1
+        },
+        "status": "owner-reviewed; unmapped and not counted as completed",
+        "reason": "Classified by the owner in SOURCE-DETAILS-AUTOMATIC-DIFF.csv; missing Source mesh/collision/animation prevents an exact conversion. Preserve existing native layout and gameplay rather than invent interactive equivalents."
+      }
+    },
+    "sourceMeshesRecovered": false,
+    "privateSourceAssetsBundled": false,
+    "manualCountsOrUserReviewRequired": false
+  },
+  "reconversion": {
+    "passed": true,
+    "actualDetailedMapReconverted": true,
+    "immutableBaseUsed": true,
+    "filesCompared": 775,
+    "byteDifferences": [],
+    "duplicatePropsIntroduced": false,
+    "outputs": [
+      "structures including immutable baseline",
+      "geometry manifest and UUIDs",
+      "Source coverage and transforms",
+      "campaign and supplies"
+    ]
+  },
+  "fullOriginalStates": {
+    "passed": true,
+    "layoutComparison": "all original non-air full blockstate properties at identical coordinates",
+    "chapters": [
+      {
+        "chapter": "lost",
+        "originalBlocksCompared": 273553,
+        "bedPartsVerified": 34,
+        "sampledRouteFootHeadClear": true,
+        "supplyPickupFootHeadClear": true,
+        "addedBlocks": 5464
+      },
+      {
+        "chapter": "lostschool_2",
+        "originalBlocksCompared": 396436,
+        "bedPartsVerified": 4,
+        "sampledRouteFootHeadClear": true,
+        "supplyPickupFootHeadClear": true,
+        "addedBlocks": 1694
+      },
+      {
+        "chapter": "lostschool_3",
+        "originalBlocksCompared": 1329023,
+        "bedPartsVerified": 12,
+        "sampledRouteFootHeadClear": true,
+        "supplyPickupFootHeadClear": true,
+        "addedBlocks": 3883
+      }
+    ],
+    "geometrySha256": "b5ed34a3518eef58d43d8d85b3fac16a72247813a88196432474834210a3b966",
+    "sourceAssetsBundled": false
+  },
+  "fullNav": {
+    "passed": true,
+    "chapters": [
+      {
+        "chapter": "lost",
+        "sourceNavRouteAreas": 119,
+        "fullRouteCells": 697,
+        "footHeadAndSupportVerified": true
+      },
+      {
+        "chapter": "lostschool_2",
+        "sourceNavRouteAreas": 36,
+        "fullRouteCells": 275,
+        "footHeadAndSupportVerified": true
+      },
+      {
+        "chapter": "lostschool_3",
+        "sourceNavRouteAreas": 46,
+        "fullRouteCells": 463,
+        "footHeadAndSupportVerified": true
+      }
+    ]
+  },
+  "pythonTests": 24,
+  "pythonSkipped": 0,
+  "directorRegression": true,
+  "supplyAssertions": 3110,
+  "actualSourceLightQueries": 1644,
+  "actualSourceLightUnloaded": 0,
+  "failedRunsPreservedAndExcluded": [
+    "map-human-reviewed-closeups-final-20261002: physical viewpoint unreachable; normal exit",
+    "recovery-source-upgrade-reviewed-final-20261002: native experimental-world backup warning; normal deadline exit"
+  ],
+  "limitations": [
+    "1031 other Source models owner-classified but unmapped",
+    "native approximate meshes and lighting; no Source movable physics",
+    "two-client MCEF invitations and authenticated platform receipt unverified",
+    "exact current production module hashes unavailable"
+  ],
+  "pushed": false,
+  "deployed": false,
+  "production008Touched": false,
+  "completedAtUtc": "2026-10-02T15:50:46.454393+00:00"
+}

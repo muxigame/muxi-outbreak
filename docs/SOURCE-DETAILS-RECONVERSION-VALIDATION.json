@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "actualDetailedMapReconverted": true,
+  "immutableBaseUsed": true,
+  "filesCompared": 775,
+  "byteDifferences": [],
+  "duplicatePropsIntroduced": false,
+  "outputs": [
+    "structures including immutable baseline",
+    "geometry manifest and UUIDs",
+    "Source coverage and transforms",
+    "campaign and supplies"
+  ]
+}

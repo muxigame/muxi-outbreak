@@ -372,7 +372,7 @@ def main():
     parser.add_argument('--source', type=Path, default=ROOT/'maps/workshop/lostschool_extracted/maps')
     parser.add_argument('--output', type=Path, default=RESOURCE)
     args = parser.parse_args()
-    staging = ROOT/'build/bsp-conversion-staging'
+    staging = ROOT/'build'/('bsp-conversion-staging-'+__import__('uuid').uuid4().hex)
     staging.mkdir(parents=True,exist_ok=True)
     output = {'id':'lostschool','title':'逃离学院','mode':'campaign',
               'dimension':'muxi_outbreak:campaign','geometry':'muxi_outbreak:outbreak_geometry/lostschool.json',
@@ -457,7 +457,7 @@ def main():
     from import_source_supplies import generate as generate_supplies
     generate_supplies(args.source, staging/'outbreak_maps/lostschool.json')
     from source_details import generate as generate_details
-    details_staging = ROOT/'build/source-details-conversion-staging'
+    details_staging = staging/'source-details-derived'
     generate_details(args.source, staging, details_staging)
     for rel in ('structure', 'outbreak_geometry', 'outbreak_maps', 'outbreak_details'):
         shutil.copytree(details_staging/rel, staging/rel, dirs_exist_ok=True)
@@ -466,7 +466,7 @@ def main():
     destination=args.output/'structure/lostschool'
     if destination.exists():shutil.rmtree(destination)
     shutil.copytree(staging/'structure/lostschool',destination)
-    for rel in ('outbreak_geometry/lostschool.json','outbreak_maps/lostschool.json','outbreak_details/lostschool.json'):
+    for rel in ('outbreak_geometry/lostschool.json','outbreak_maps/lostschool.json','outbreak_details/lostschool.json','outbreak_geometry/lostschool-base.json'):
         (args.output/rel).parent.mkdir(parents=True,exist_ok=True)
         shutil.copy2(staging/rel,args.output/rel)
     json_write(ROOT/'build/conversion-report.json',{'chapters':reports,'totalBlocks':manifest['blocks'],

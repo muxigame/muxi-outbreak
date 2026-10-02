@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "chapters": [
+    {
+      "chapter": "lost",
+      "sourceNavRouteAreas": 119,
+      "fullRouteCells": 697,
+      "footHeadAndSupportVerified": true
+    },
+    {
+      "chapter": "lostschool_2",
+      "sourceNavRouteAreas": 36,
+      "fullRouteCells": 275,
+      "footHeadAndSupportVerified": true
+    },
+    {
+      "chapter": "lostschool_3",
+      "sourceNavRouteAreas": 46,
+      "fullRouteCells": 463,
+      "footHeadAndSupportVerified": true
+    }
+  ]
+}

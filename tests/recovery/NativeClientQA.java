@@ -41,7 +41,19 @@ public final class NativeClientQA {
     if(failed!=null)throw new RuntimeException(failed);
     if(ticks>9000)throw new IllegalStateException("Native QA deadline reached");
     if(!starting){if(ticks<30||mc.getOverlay()!=null||mc.screen==null)return;starting=true;if(mc.getLevelSource().levelExists("outbreak-native-qa")){mc.createWorldOpenFlows().openWorld("outbreak-native-qa",()->{});return;}mc.createWorldOpenFlows().createFreshLevel("outbreak-native-qa",new LevelSettings("Outbreak isolated real client QA",GameType.SURVIVAL,false,Difficulty.PEACEFUL,true,new GameRules(),WorldDataConfiguration.DEFAULT),new WorldOptions(817131L,false,false),r->r.registryOrThrow(Registries.WORLD_PRESET).getHolderOrThrow(WorldPresets.FLAT).value().createWorldDimensions(),mc.screen);return;}
-    if(mc.player==null||mc.getSingleplayerServer()==null)return;
+    if(mc.player==null||mc.getSingleplayerServer()==null){
+      if(ticks%100==0){Files.writeString(Path.of("native-loading-state.json"),new Gson().toJson(Map.of("ticks",ticks,"screen",mc.screen==null?"none":mc.screen.getClass().getName(),"title",mc.screen==null?"none":mc.screen.getTitle().getString())));}
+      if(Files.exists(Path.of("upgrade-input.json"))&&mc.screen instanceof net.minecraft.client.gui.screens.BackupConfirmScreen backup){
+        var f=net.minecraft.client.gui.screens.BackupConfirmScreen.class.getDeclaredField("onProceed");f.setAccessible(true);
+        Files.writeString(Path.of("upgrade-load-confirmation.json"),new Gson().toJson(Map.of("qaCopyOnly",true,"screen",backup.getClass().getName(),"title",backup.getTitle().getString(),"backupRequested",true)));
+        ((net.minecraft.client.gui.screens.BackupConfirmScreen.Listener)f.get(backup)).proceed(true,false);
+      }else if(Files.exists(Path.of("upgrade-input.json"))&&mc.screen instanceof net.minecraft.client.gui.screens.ConfirmScreen confirm){
+        var f=net.minecraft.client.gui.screens.ConfirmScreen.class.getDeclaredField("callback");f.setAccessible(true);
+        Files.writeString(Path.of("upgrade-load-confirmation.json"),new Gson().toJson(Map.of("qaCopyOnly",true,"screen",confirm.getClass().getName(),"title",confirm.getTitle().getString())));
+        ((it.unimi.dsi.fastutil.booleans.BooleanConsumer)f.get(confirm)).accept(true);
+      }
+      return;
+    }
     if(mc.screen!=null&&stage>0)mc.setScreen(null);
     if(ticks%10==0)observe(mc);
     if(ticks%100==0)Files.writeString(Path.of("native-progress.json"),"{\"stage\":"+stage+",\"ticks\":"+ticks+",\"observation\":"+observed+"}");

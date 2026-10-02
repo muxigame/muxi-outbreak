@@ -44,9 +44,11 @@ def model_rule(model):
     if 'cabinet' in stem: return 'cabinet', 0
     if 'table' in stem or 'desk' in stem: return 'table', 0
     if ('chair' in stem or 'stool' in stem) and 'dead_' not in stem: return 'chair', 0
-    if stem in {'light_inset', 'wall_light', 'light_ceiling', 'light_shop2', 'lamppost03a_off', 'surgery_lamp', 'floodlight'}:
+    if stem in {'light_inset', 'wall_light', 'light_ceiling', 'light_shop2', 'lamppost03a_off', 'surgery_lamp', 'floodlight', 'light_floodlight'}:
         return 'fixture', 0
     if stem in {'static_crate_40', 'crate_40', 'wood_crate', 'boxes_garage_lower', 'boxes_frontroom'}: return 'crate', 0
+    accessory={'shelves_metal2':'shelf','bookshelf2':'shelf','toolchest_01':'toolchest','gurney':'medical_gurney','surgicaltray_01':'medical_cart','hospital_cart01':'medical_cart','iv_pole':'medical_pole','sleeping_bag1':'sleeping_bag','sleeping_bag2':'sleeping_bag','sleeping_bag3':'sleeping_bag','hospitalcurtain01':'curtain','bathroomsink01':'bathroom_sink','toilet_d':'toilet','hotel_bathroom_showerhead001':'showerhead','supply_crate01':'container_box','supply_crate02':'container_box','wood_crate001a':'container_box','box_stack2':'container_box','cardboard_box01':'container_box','cargo_container01':'shipping_container','cargo_container03':'shipping_container'}
+    if stem in accessory:return accessory[stem],0
     return None, 0
 
 class Grid:
@@ -132,6 +134,7 @@ def protect(g, nav, campaign, index):
 def furniture(g, prop, index):
     kind,pivot=model_rule(prop['model']); row=dict(prop, mapping=kind, modelMeshRecovered=False)
     if not kind: return dict(row,status='unmapped',reason='no_reviewed_native_model_rule')
+    if kind not in {'bed','chair','table','cabinet','crate','fixture'}:return dict(row,status='manual_review',reason='reviewed_accessory_requires_pose_preserving_display')
     angles=prop['angles']; origin=prop['origin']
     if abs(angles[0])>5 or abs(angles[2])>5 or prop.get('scale',1)!=1:
         return dict(row,status='manual_review',reason='tilted_or_scaled_model')
@@ -165,6 +168,29 @@ def furniture(g, prop, index):
                 pivotOffsetBlocks=pivot, approximation='vanilla geometry; cardinal yaw; bounded vertical support; original X/Z unchanged',
                 cells=[{'pos':p.tolist(),'state':g.palette[s]} for p,s in cells] if not reason else [])
 
+def native_safety_lights(g,campaign,index):
+    # A low light floor only at indoor main-route combat/vertical/end approaches.
+    # These are explicit native NAV adaptations, not invented Source emitters.
+    points=campaign['chapters'][index]['route'];spawns=[s['pos'] for key in ('commonSpawns','hordeSpawns','bossSpawns') for s in campaign[key] if s['section']==index]
+    end=campaign['chapters'][index]['end'];rows=[]
+    doors={tuple(np.asarray(d)+[0,y,0]) for room in campaign.get('startRooms',[])+campaign.get('safeRooms',[]) for d in room.get('doors',[]) for y in (0,1)}
+    for i,p in enumerate(points):
+        vertical=any(abs(p[1]-points[j][1])>=1 for j in (max(0,i-1),min(len(points)-1,i+1)))
+        combat=any(math.dist(p,s)<=8 for s in spawns)
+        approach=math.dist(p,end)<=12 or (math.dist(p,end)<=18 and math.dist(points[min(len(points)-1,i+1)],end)<=12)
+        if not (vertical or combat or approach):continue
+        roof=any(g.solid(np.asarray(p)+[0,y,0]) for y in range(2,33))
+        if not roof and not vertical:continue
+        candidates=[np.asarray(p)+[0,1,0],np.asarray(p)+[1,1,0],np.asarray(p)+[-1,1,0],np.asarray(p)+[0,1,1],np.asarray(p)+[0,1,-1]]
+        for at in candidates:
+            if tuple(at) in doors:continue
+            state=g.palette[g.get(at)];q=g.at(at)
+            if q is None or state['Name'] not in {'minecraft:air','minecraft:light'}:continue
+            if state['Name']=='minecraft:light' and int(state['Properties']['level'])>=4:break
+            g.grid[q]=g.state('minecraft:light',level='4',waterlogged='false')
+            rows.append(dict(position=at.tolist(),level=4,routeSample=i,combat=combat,verticalTransition=vertical,endApproach=approach,sourceEmitter=False));break
+    return rows
+
 def light_field(g, lights, index):
     # Native monochrome approximation of Source intensity/attenuation, ray occluded.
     # Sampling every 3 cells allows Minecraft's own light engine to interpolate.
@@ -175,7 +201,7 @@ def light_field(g, lights, index):
         row=dict(light)
         if light['type']!=1:
             rows.append(dict(row,status='environment_preserved',approximation='native existing skylight; Source sky RGB/direction not reproduced'));continue
-        src=transform(light['origin'],index); maximum=36
+        src=transform(light['origin'],index)+np.asarray(light.get('nativeVoxelPivotCorrection',[0,0,0])); maximum=36
         lo=np.maximum(np.floor(src-maximum).astype(int),g.origin);hi=np.minimum(np.ceil(src+maximum).astype(int),g.origin+g.grid.shape-1)
         axes=[np.arange(a,b+1,3) for a,b in zip(lo,hi)]
         pts=np.asarray(np.meshgrid(*axes,indexing='ij')).reshape(3,-1).T
@@ -216,26 +242,65 @@ def read_props(bsp,name):
         result.append(dict(id=f'{name}:entity:{e.get("hammerid",i)}',model=e['model'],origin=list(map(float,e['origin'].split())),angles=list(map(float,e.get('angles','0 0 0').split())),scale=float(e.get('modelscale','1')),sourceClass=e['classname']))
     return result
 
+def freeze_base(resource,output):
+    # A detailed map is never treated as a new base: that would duplicate each
+    # previously placed prop. Preserve a distinct immutable native snapshot.
+    stored=resource/'outbreak_geometry/lostschool-base.json'
+    if stored.exists():
+        base=json.loads(stored.read_text(encoding='utf-8'))
+    else:
+        if (resource/'outbreak_details/lostschool.json').exists():raise ValueError('detailed input has no immutable base; use pristine converted geometry, never augment a detailed map')
+        base=json.loads((resource/'outbreak_geometry/lostschool.json').read_text(encoding='utf-8'))
+        base['originalGeometrySha256']=base['sha256']
+        for piece in base['structures']:
+            old=piece['resource'].split(':')[1];raw=(resource/old).read_bytes();assert hashlib.sha256(raw).hexdigest()==piece['sha256']
+            rel=old.replace('structure/lostschool/','structure/lostschool/_baseline/',1)
+            piece['resource']='muxi_outbreak:'+rel;target=output/rel;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(raw)
+        base.pop('sha256',None);base['sha256']=hashlib.sha256(json.dumps(base,sort_keys=True).encode()).hexdigest()
+    for piece in base['structures']:
+        rel=piece['resource'].split(':')[1];target=output/rel
+        if not target.exists():target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(resource/rel,target)
+        if hashlib.sha256(target.read_bytes()).hexdigest()!=piece['sha256']:raise ValueError('immutable native baseline hash mismatch')
+    target=output/'outbreak_geometry/lostschool-base.json';target.parent.mkdir(parents=True,exist_ok=True);target.write_text(json.dumps(base,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    return base
+
 def generate(source, resource, output):
     import bsp_tool
     from bsp_tool.branches.valve import left4dead2
     campaign=json.loads((resource/'outbreak_maps/lostschool.json').read_text(encoding='utf-8'))
-    original=json.loads((resource/'outbreak_geometry/lostschool.json').read_text(encoding='utf-8'))
+    original=freeze_base(resource,output)
     report=dict(version=1,sourceScale=24,layoutPreserved=True,baseGeometrySha256=original['sha256'],sourceAssetsBundled=False,
                 lightingPolicy='HDR once, v21 100-byte records; source attenuation + occluded 3-cell native light samples; radius36; monochrome',chapters=[])
-    manifest=dict(version=1,id='lostschool',structures=[])
+    manifest=dict(version=2,id='lostschool',structures=[],decorations=[])
     for index,name in enumerate(NAMES):
         bsp_path=source/f'{name}.bsp';bsp=bsp_tool.ValveBsp.from_file(left4dead2,str(bsp_path))
         if bsp.loading_errors:raise ValueError(str(bsp.loading_errors))
-        nav=source_nav.load(bsp_path.with_suffix('.nav'));g=Grid(resource,original,name);protect(g,nav,campaign,index)
-        props=[furniture(g,p,index) for p in read_props(bsp,name)]
+        nav=source_nav.load(bsp_path.with_suffix('.nav'));g=Grid(output,original,name);protect(g,nav,campaign,index)
+        props=[]
+        from source_detail_models import display_mapping
+        for prop in read_props(bsp,name):
+            initial=furniture(g,prop,index)
+            if initial['mapping'] and initial['status']!='placed':initial=display_mapping(g,prop,index,transform,initial)
+            if initial['status']=='placed':initial['placementKind']='blocks'
+            props.append(initial)
+            manifest['decorations'].extend(initial.get('descriptors',[]))
         compiled=compiled_lights(bsp_path);chosen=compiled['HDR'] or compiled['LDR']
         entity_points=[np.asarray(list(map(float,e['origin'].split()))) for e in bsp.ENTITIES if e['classname']=='light']
         points=[l for l in chosen if l['type']==1]
         if len(points)!=len(entity_points) or any(not any(np.linalg.norm(np.asarray(l['origin'])-p)<.01 for p in entity_points) for l in points):raise ValueError('compiled/entity point-light mismatch')
-        lights=light_field(g,chosen,index);verified=g.verify();entries=g.export(name,output);manifest['structures'].extend(entries)
+        for light in chosen:
+            if light['type']!=1:continue
+            matched=[p for p in props if p['mapping']=='fixture' and p.get('manualModelPivotReview') and p.get('descriptors') and math.dist(p['origin'],light['origin'])/24<.75]
+            if matched:
+                lamp=min(matched,key=lambda p:math.dist(p['origin'],light['origin']))
+                correction=lamp['renderPivotOffset']
+                if abs(correction[0])<1e-4 and abs(correction[2])<1e-4 and abs(correction[1])>1:
+                    light['nativeVoxelPivotCorrection']=correction
+                    light['pivotReviewSourceInstance']=lamp['id']
+                    light['pivotReviewReason']='Source fixture/emitter paired within .75 block; expose below/above intact voxelized floor slab at reviewed native model face'
+        lights=light_field(g,chosen,index);safety=native_safety_lights(g,campaign,index);verified=g.verify();entries=g.export(name,output);manifest['structures'].extend(entries)
         row=dict(chapter=name,bspSha256=hashlib.sha256(bsp_path.read_bytes()).hexdigest(),navSha256=hashlib.sha256(bsp_path.with_suffix('.nav').read_bytes()).hexdigest(),
-            props=props,lights=lights,propCounts=dict(collections.Counter(p['status'] for p in props)),**verified)
+            props=props,lights=lights,nativeRouteSafetyLights=safety,propCounts=dict(collections.Counter(p['status'] for p in props)),**verified)
         report['chapters'].append(row);print(name,row['propCounts'],verified,flush=True)
     manifest['blocks']=sum(p['blocks'] for p in manifest['structures']);manifest['sha256']=hashlib.sha256(json.dumps(manifest,sort_keys=True).encode()).hexdigest()
     campaign['sourceDetails']='muxi_outbreak:outbreak_details/lostschool.json'

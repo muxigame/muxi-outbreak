@@ -9,6 +9,9 @@ parser.add_argument("--jdk",type=Path,required=True)
 parser.add_argument("--home",type=Path,required=True)
 parser.add_argument("--game",type=Path)
 parser.add_argument("--details-only",action="store_true")
+parser.add_argument("--all-props-only",action="store_true")
+parser.add_argument("--visual-camera",action="store_true")
+parser.add_argument("--review-props",nargs="*",help="QA-only subset of exact Source prop IDs for a targeted visual followup")
 args=parser.parse_args()
 ROOT=Path(__file__).resolve().parents[1]
 AUDIT_WORK=ROOT
@@ -34,7 +37,9 @@ if AUDIT_WORK not in home.parents:raise SystemExit("QA home must be inside this 
 if (home/"run.json").exists() or (home/"inputs.json").exists():raise SystemExit("Use a new QA home; prior process ownership must be checked before reuse")
 for name in ['audit-result.json','baseline-route-light.json','audit-progress.json']:
     if (home/name).exists():(home/name).unlink()
-if args.details_only:(home/'detail-only.flag').write_text('QA-only closeups and actual bed-event verification')
+if args.all_props_only:(home/'all-props-only.flag').write_text('QA-only actual Source-instance light-engine and collision probe')
+if args.visual_camera:(home/'visual-camera.flag').write_text('QA-only spectator camera; bed packets verified independently in actual gameplay mode')
+if args.details_only or args.visual_camera:(home/'detail-only.flag').write_text('QA-only closeups and actual bed-event verification')
 mods=home/'mods';mods.mkdir(exist_ok=True)
 artifact=ROOT/'build/libs'/json.loads((ROOT/'build/release.json').read_text())['artifact']
 for f in [artifact,FRAMEWORK,*list((SERVER/'mods').glob('tacz-neoforge-*.jar')),*list((ROOT/'build/equipment-research').glob('LesRaisins*.jar'))]:shutil.copy2(f,mods/f.name)
@@ -46,6 +51,14 @@ if missing:raise SystemExit('Missing libraries: '+json.dumps(missing[:10]))
 with zipfile.ZipFile(artifact) as actual_product:
     (home/'map-input.json').write_bytes(actual_product.read('data/muxi_outbreak/outbreak_maps/lostschool.json'))
     (home/'map-details.json').write_bytes(actual_product.read('data/muxi_outbreak/outbreak_details/lostschool.json'))
+from prepare_display_review import prepare
+prepare(home)
+if args.review_props:
+    target=home/'map-prepared-details.json'
+    rows=json.loads(target.read_text(encoding='utf-8'))
+    rows=[row for row in rows if row['propId'] in set(args.review_props)]
+    if len(rows)!=len(set(args.review_props)):raise SystemExit('Unknown requested review prop')
+    target.write_text(json.dumps(rows,indent=2)+'\n',encoding='utf-8')
 classes=home/'qa-classes'
 cp=[GAME/'libraries/net/neoforged/neoforge/21.1.250/neoforge-21.1.250-client.jar',GAME/'libraries/net/minecraft/client/1.21.1-20240808.144430/client-1.21.1-20240808.144430-srg.jar',*libs,*build.server_classpath(SERVER,'21.1.250'),artifact,FRAMEWORK]
 build.compile_java(JDK/'bin/javac.exe',[ROOT/'tests/map-details/NativeClientQA.java',ROOT/'tests/recovery/HiddenWindowMixin.java',ROOT/'tests/recovery/HardwareWmiTimeoutQAMixin.java'],classes,os.pathsep.join(map(str,cp)),home/'compile.args')

@@ -25,6 +25,8 @@ public final class GeometryInstaller {
     private final class Job {
         final OutbreakMap map;
         final List<Piece> pieces = new ArrayList<>();
+        final List<SourceDecorations.Part> decorations;
+        int decorationIndex;
         final Path marker;
         final String hash;
         int pieceIndex, blockIndex, placed, expected;
@@ -34,6 +36,7 @@ public final class GeometryInstaller {
         String error;
         Job(OutbreakMap map, JsonObject manifest) {
             this.map = map;
+            decorations=SourceDecorations.read(manifest);
             hash = manifest.get("sha256").getAsString();
             if (!hash.matches("[a-f0-9]{64}")) throw new IllegalArgumentException("invalid geometry hash");
             marker = server.getWorldPath(LevelResource.ROOT).resolve("data/muxi-outbreak/geometry-" + hash + ".done");
@@ -127,7 +130,13 @@ public final class GeometryInstaller {
                         job.pieceIndex++;
                     }
                 }
-                if (job.pieceIndex == job.pieces.size()) {
+                if(job.pieceIndex==job.pieces.size()){
+                    while(budget>0&&System.nanoTime()<deadline&&job.decorationIndex<job.decorations.size()){
+                        if(!SourceDecorations.install(level,job.decorations.get(job.decorationIndex)))break;
+                        job.decorationIndex++;budget--;
+                    }
+                }
+                if (job.pieceIndex == job.pieces.size()&&job.decorationIndex==job.decorations.size()) {
                     // Flush before the marker; a crash must not mark unsaved chunks as installed.
                     level.save(null, true, false);
                     Files.createDirectories(job.marker.getParent());
@@ -135,7 +144,7 @@ public final class GeometryInstaller {
                     Files.writeString(tmp, job.hash + "\n" + job.placed + "\n");
                     Files.move(tmp,job.marker,StandardCopyOption.REPLACE_EXISTING);
                     job.ready = true;
-                    MuxiOutbreak.LOG.info("OUTBREAK_GEOMETRY_READY map={} blocks={} structures={} sha256={}",job.map.id(),job.placed,job.pieces.size(),job.hash);
+                    MuxiOutbreak.LOG.info("OUTBREAK_GEOMETRY_READY map={} blocks={} structures={} decorations={} sha256={}",job.map.id(),job.placed,job.pieces.size(),job.decorationIndex,job.hash);
                 }
             } catch (Exception error) {
                 job.error = error.getMessage();
