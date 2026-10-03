@@ -1,0 +1,43 @@
+{
+  "status": "STATIC_REPAIR_READY_NATIVE_WINDOW_PENDING",
+  "baseHead": "81b57bab7e0db1b83caaaee641a340c268597bb3",
+  "branch": "dev",
+  "initialDirty": false,
+  "scopedActiveBuildOrTestProcesses": [],
+  "ownerOverride": "Main session explicitly delegated this one Outbreak guard repair after original owner stopped; no other Outbreak scope taken",
+  "candidateArtifact": "C:\\Users\\ranzh\\workspace\\dev\\muxigame\\muxi-outbreak\\build\\entity-admission-repair\\muxi-outbreak-0.4.0-equipment.1.jar",
+  "candidateSha256": "ccb99f2a5d42b4c965b54da18fcce7ca6d9acc963b4f7aebe1dd2b21e174869e",
+  "candidateBytes": 2113747,
+  "candidateVersion": "0.4.0-equipment.1",
+  "versionNote": "Version unchanged; candidate is distinguished by frozen path and SHA, not deployed",
+  "previousNativeArtifactSha256": "bafabf983dcc11f3e18218938f4616c9a7764e270018c2dc38e3a33c0a7536e8",
+  "frameworkSha256": "75aead1ee9f55fafeac46cb394c2e3b759737befc8cee1a6efb7852e114342b7",
+  "nativeCoreForFutureVerification": {
+    "sourceHead": "71d3d3e6abbe00a29b1f01113fde9b04992e261c",
+    "sha256": "c05a6bdb6cb97befb6e1d76e9120c7d1d6916028a0c9d759d21814ff728febbd"
+  },
+  "verification": {
+    "behaviorCases": 19,
+    "behaviorPassed": true,
+    "productionWiringChecksPassed": true,
+    "fullOutbreakJavacAndPackagingPassed": true,
+    "newNativeRunPerformed": false,
+    "nativeAcceptance": false
+  },
+  "unchangedGuards": [
+    "invalid private supply session cancellation/discard",
+    "invalid private equipment session cancellation/discard",
+    "owner/session dimension tagging",
+    "infected session and entity UUID membership",
+    "unclaimed Mob campaign-dimension rejection",
+    "damage and room isolation",
+    "actual shared item consumption only after original launch returns true"
+  ],
+  "pending": [
+    "one separately scheduled two-game native validation: consumption1, real projectile effect, cross-room/dimension isolation, exact exit restore"
+  ],
+  "sharedEndgameChanged": false,
+  "productionTouched": false,
+  "parentGitlinksChanged": false,
+  "recordedAtUtc": "2026-10-03T12:43:53.999282+00:00"
+}

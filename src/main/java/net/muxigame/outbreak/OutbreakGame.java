@@ -960,12 +960,8 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
     private void entityJoin(EntityJoinLevelEvent event) {
         if (!(event.getLevel() instanceof ServerLevel)) return;
         Entity entity=event.getEntity();
-        String supplySession=entity.getPersistentData().getString(CampaignSupplies.SESSION);
-        String throwSession=entity.getPersistentData().getString(CampaignThrowables.TAG);
-        String equipmentSession=entity.getPersistentData().getString("muxi_outbreak_equipment_session");
-        if((!supplySession.isBlank()&&sessions.stream().noneMatch(s->s.id.toString().equals(supplySession)))||
-            (!equipmentSession.isBlank()&&sessions.stream().noneMatch(s->s.id.toString().equals(equipmentSession)))||
-            (!throwSession.isBlank()&&sessions.stream().noneMatch(s->s.id.toString().equals(throwSession)))){
+        if(OutbreakEntityAdmission.rejectForeignSession(entity.getPersistentData()::getString,
+            id->sessions.stream().anyMatch(s->s.id.toString().equals(id)))){
             event.setCanceled(true);entity.discard();return;
         }
         if(entity instanceof EntityKineticBullet bullet&&bullet.getOwner() instanceof ServerPlayer p){
