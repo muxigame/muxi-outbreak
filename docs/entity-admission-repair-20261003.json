@@ -1,5 +1,5 @@
 {
-  "status": "STATIC_REPAIR_READY_NATIVE_WINDOW_PENDING",
+  "status": "NATIVE_ZOMBIE_GRENADE_UNBLOCKED_PAIR_VALIDATION_INCOMPLETE",
   "baseHead": "81b57bab7e0db1b83caaaee641a340c268597bb3",
   "branch": "dev",
   "initialDirty": false,
@@ -39,5 +39,22 @@
   "sharedEndgameChanged": false,
   "productionTouched": false,
   "parentGitlinksChanged": false,
-  "recordedAtUtc": "2026-10-03T12:43:53.999282+00:00"
+  "recordedAtUtc": "2026-10-03T12:43:53.999282+00:00",
+  "nativeVerification": {
+    "document": "../../muxi-zombie-challenge/docs/shared-grenade-pair-native-20261003.json",
+    "runId": "f7c65ba94fdc4e35a3562a7390c98f1e",
+    "zombieActualConsumeOneAndEntityAcceptancePassed": true,
+    "actualNativeExplosionOnce": true,
+    "invalidPrivateSupplyAndEquipmentStillRejected": true,
+    "isolationAssertionPassed": false,
+    "isolationFailureCauseEstablished": false,
+    "OutbreakThrowReached": false,
+    "wholeRequestedTargetAccepted": false,
+    "normalExitCodes": {
+      "server": 0,
+      "host": 0,
+      "guest": 0
+    },
+    "windowReleased": true
+  }
 }
