@@ -91,7 +91,7 @@ def build(server: Path, java_home: Path | None = None, framework: Path | None = 
     meta = json.loads((ROOT / "mod.json").read_text(encoding="utf-8"))
     javac, _ = java_tools(java_home)
     jars = server_classpath(server, meta["neoforge"])
-    framework = framework or ROOT.parent / "muxi-minigames/build/libs/muxi-minigames-0.1.3-task14-social-qa.1.jar"
+    framework = framework or ROOT.parent / "muxi-minigames/build/libs/muxi-minigames-0.2.1-equipment.1.jar"
     if not framework.is_file():
         raise ValueError("Build muxi-minigames first")
     jars.append(framework)
@@ -144,6 +144,7 @@ def main() -> None:
     parser.add_argument("--framework", type=Path, help="Explicit existing minigames framework jar")
     parser.add_argument("--test", action="store_true", help="run Python and executable Java regression tests before building")
     args = parser.parse_args()
+    args.framework = args.framework or ROOT.parent / "muxi-minigames/build/libs/muxi-minigames-0.2.1-equipment.1.jar"
     try:
         if args.test:
             subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", str(ROOT / "tests"), "-v"], check=True, cwd=ROOT)
@@ -154,8 +155,8 @@ def main() -> None:
                                     ROOT / "tests/java/DirectorTest.java"], test_dir, str(test_dir), test_dir / "test.args")
                 subprocess.run([str(java), "-ea", "-cp", str(test_dir), "DirectorTest"], check=True)
                 compile_java(javac, [ROOT / "src/main/java/net/muxigame/outbreak/equipment/SupplyRules.java",
-                                    ROOT / "tests/java/SupplyRulesTest.java"], test_dir, str(test_dir), test_dir / "supplies.args")
-                subprocess.run([str(java), "-ea", "-cp", str(test_dir), "SupplyRulesTest"], check=True)
+                                    ROOT / "tests/java/SupplyRulesTest.java"], test_dir, str(test_dir)+os.pathsep+str(args.framework), test_dir / "supplies.args")
+                subprocess.run([str(java), "-ea", "-cp", str(test_dir)+os.pathsep+str(args.framework), "SupplyRulesTest"], check=True)
         build(args.server.resolve(), args.java_home, args.framework)
     except (OSError, ValueError, subprocess.SubprocessError) as error:
         raise SystemExit(str(error)) from None

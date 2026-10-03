@@ -67,6 +67,7 @@ public final class CampaignInventory {
     public static ItemStack create(ServerPlayer player,String kind){
         if(kind.startsWith("gun:"))return gun(player,kind.substring(4));
         if(kind.startsWith("lr:"))return throwable(kind.substring(3));
+        if(kind.startsWith("melee:"))return net.muxigame.minigames.equipment.SharedMelee.create(kind.substring(6));
         return switch(kind){
             case "ammo"->new ItemStack(Items.CHEST);
             case "medkit"->new ItemStack(CampaignItems.MEDKIT.get());
@@ -76,7 +77,7 @@ public final class CampaignInventory {
             case "explosive_pack"->new ItemStack(CampaignItems.EXPLOSIVE_AMMO.get());
             case "pipe_bomb"->new ItemStack(CampaignItems.PIPE.get());
             case "bile_bomb"->new ItemStack(CampaignItems.BILE.get());
-            case "melee"->{ItemStack stack=new ItemStack(ModItems.MELEE.get());IMeleeWeapon.of(stack).setId(stack,ResourceLocation.parse("lrtactical:baseball_bat"));yield stack;}
+            case "melee"->net.muxigame.minigames.equipment.SharedMelee.lr("lrtactical:baseball_bat");
             default->throw new IllegalArgumentException("未实现的补给种类 "+kind);
         };
     }
@@ -84,9 +85,9 @@ public final class CampaignInventory {
         if(stack.isEmpty())return SupplyRules.Slot.NONE;
         if(IGun.getIGunOrNull(stack)!=null)return gunType(stack).equals("pistol")?SupplyRules.Slot.SECONDARY:SupplyRules.Slot.PRIMARY;
         if(IAmmo.getIAmmoOrNull(stack)!=null)return SupplyRules.Slot.AMMO;
-        if(stack.getItem() instanceof IThrowable||stack.getItem() instanceof CampaignItems.ThrowItem||stack.is(ModItems.DETONATOR.get()))return SupplyRules.Slot.THROWABLE;
-        if(stack.getItem() instanceof IMeleeWeapon)return SupplyRules.Slot.SECONDARY;
-        if(stack.getItem() instanceof CampaignItems.MedicalItem item)
+        if(stack.getItem() instanceof IThrowable||stack.getItem() instanceof net.muxigame.minigames.equipment.SharedItems.ThrowItem||stack.is(ModItems.DETONATOR.get()))return SupplyRules.Slot.THROWABLE;
+        if(stack.getItem() instanceof IMeleeWeapon||net.muxigame.minigames.equipment.SharedMelee.is(stack))return SupplyRules.Slot.SECONDARY;
+        if(stack.getItem() instanceof net.muxigame.minigames.equipment.SharedItems.MedicalItem item)
             return item.kind.equals("pills")||item.kind.equals("adrenaline")?SupplyRules.Slot.SMALL_MEDICAL:SupplyRules.Slot.LARGE_MEDICAL;
         if(stack.getItem() instanceof IConsumable)return SupplyRules.Slot.LARGE_MEDICAL;
         return SupplyRules.Slot.NONE;
@@ -133,6 +134,17 @@ public final class CampaignInventory {
         }
         if(changed)p.inventoryMenu.broadcastChanges();return changed;
     }
+    public static int looseAmmoCapacity(ServerPlayer p,ItemStack source){
+        IAmmo ammo=IAmmo.getIAmmoOrNull(source);if(ammo==null)return 0;
+        int need=reserveCaps(p,false).getOrDefault(ammo.getAmmoId(source).toString(),0)-ammoCount(p,ammo.getAmmoId(source).toString());
+        int space=0;for(int i=9;i<36;i++){var held=p.getInventory().getItem(i);if(held.isEmpty())space+=Math.min(60,source.getMaxStackSize());else if(ItemStack.isSameItemSameComponents(held,source))space+=Math.max(0,Math.min(60,held.getMaxStackSize())-held.getCount());}
+        return Math.max(0,Math.min(need,space));
+    }
+    public static void receiveLooseAmmo(ServerPlayer p,ItemStack source,int count){
+        for(int i=9;i<36&&count>0;i++){var held=p.getInventory().getItem(i);if(held.isEmpty())continue;if(ItemStack.isSameItemSameComponents(held,source)){int n=Math.min(count,Math.max(0,Math.min(60,held.getMaxStackSize())-held.getCount()));held.grow(n);count-=n;}}
+        for(int i=9;i<36&&count>0;i++)if(p.getInventory().getItem(i).isEmpty()){int n=Math.min(count,Math.min(60,source.getMaxStackSize()));p.getInventory().setItem(i,source.copyWithCount(n));count-=n;}
+        if(count!=0)throw new IllegalStateException("Validated ammunition capacity changed");p.inventoryMenu.broadcastChanges();
+    }
     public static int ammoCount(ServerPlayer p,String id){
         int count=0;for(int i=0;i<p.getInventory().getContainerSize();i++){
             ItemStack stack=p.getInventory().getItem(i);IAmmo ammo=IAmmo.getIAmmoOrNull(stack);
@@ -145,6 +157,7 @@ public final class CampaignInventory {
     public static void explosiveRounds(ItemStack gun,int count){
         net.minecraft.world.item.component.CustomData.update(DataComponents.CUSTOM_DATA,gun,tag->tag.putInt("muxi_outbreak_explosive_rounds",Math.max(0,count)));
     }
+    public static int slotLimit(SupplyRules.Slot category,ItemStack stack){return category==SupplyRules.Slot.PRIMARY||category==SupplyRules.Slot.SECONDARY?1:stack.getMaxStackSize();}
     /** Invariant includes offhand, armor and cursor; no hidden second medical/grenade stack. */
     public static void normalize(ServerPlayer p,Consumer<ItemStack> overflow){
         List<ItemStack> all=new ArrayList<>();boolean bad=false;
@@ -152,7 +165,7 @@ public final class CampaignInventory {
         for(int i=0;i<p.getInventory().getContainerSize();i++){
             ItemStack stack=p.getInventory().getItem(i);if(stack.isEmpty())continue;
             var cat=category(stack);int target=slot(cat);
-            if(cat==SupplyRules.Slot.NONE||target>=0&&(i!=target||stack.getCount()!=1||!seen.add(cat))||cat==SupplyRules.Slot.AMMO&&(i<9||i>=36))bad=true;
+            if(cat==SupplyRules.Slot.NONE||target>=0&&(i!=target||stack.getCount()>slotLimit(cat,stack)||!seen.add(cat))||cat==SupplyRules.Slot.AMMO&&(i<9||i>=36))bad=true;
             all.add(stack);
         }
         ItemStack carried=p.containerMenu.getCarried();
@@ -162,12 +175,11 @@ public final class CampaignInventory {
         for(ItemStack stack:all){
             var cat=category(stack);int target=slot(cat);
             if(target>=0){
-                if(p.getInventory().getItem(target).isEmpty()){
-                    ItemStack keep=stack.copyWithCount(1);
-                    if(cat==SupplyRules.Slot.THROWABLE)keep.set(DataComponents.MAX_STACK_SIZE,1);
-                    p.getInventory().setItem(target,keep);stack=stack.copy();stack.shrink(1);
-                }
-                while(!stack.isEmpty()){overflow.accept(stack.copyWithCount(1));stack.shrink(1);}
+                ItemStack held=p.getInventory().getItem(target);int limit=slotLimit(cat,stack);
+                stack=stack.copy();
+                if(held.isEmpty()){int count=Math.min(limit,stack.getCount());p.getInventory().setItem(target,stack.copyWithCount(count));stack.shrink(count);}
+                else if(ItemStack.isSameItemSameComponents(held,stack)){int count=Math.min(stack.getCount(),Math.max(0,limit-held.getCount()));held.grow(count);stack.shrink(count);}
+                if(!stack.isEmpty())overflow.accept(stack.copy());
             }else if(cat==SupplyRules.Slot.AMMO){
                 for(int i=9;i<36&&!stack.isEmpty();i++)if(p.getInventory().getItem(i).isEmpty()){
                     int n=Math.min(stack.getMaxStackSize(),stack.getCount());p.getInventory().setItem(i,stack.copyWithCount(n));stack.shrink(n);

@@ -38,7 +38,7 @@ side="BOTH"
 [[dependencies.muxi_outbreak]]
 modId="muxi_minigames"
 type="required"
-versionRange="[0.1.1,0.2)"
+versionRange="[0.2.1-equipment.1,)"
 ordering="AFTER"
 side="BOTH"
 

@@ -13,10 +13,10 @@ public final class SupplyRules {
             Math.max(120,Math.min(600,combinedMagazineCapacity*4));
     }
     public static double firstAidPermanent(double permanent,double maximum) {
-        return Math.min(maximum,permanent+(maximum-permanent)*.8);
+        return net.muxigame.minigames.equipment.EquipmentRules.firstAidPermanent(permanent,maximum);
     }
     public static double addTemporary(double currentTotal,double maximum,boolean adrenaline) {
-        return Math.min(maximum-currentTotal,maximum*(adrenaline?.25:.5));
+        return net.muxigame.minigames.equipment.EquipmentRules.temporaryHealth(currentTotal,maximum,adrenaline);
     }
 
     public static final class Stock {
@@ -30,11 +30,8 @@ public final class SupplyRules {
         public boolean infinite(){return infinite;}
         public boolean available(){return infinite||remaining>0;}
         // Full slot or failed transaction must not consume the source's shared stock.
-        public boolean take(boolean accepted) {
-            if(!accepted||!available())return false;
-            if(!infinite)remaining--;
-            return true;
-        }
+        public boolean take(boolean accepted){return accepted&&take(1);}
+        public boolean take(int quantity){if(quantity<1||!available()||!infinite&&quantity>remaining)return false;if(!infinite)remaining-=quantity;return true;}
     }
 
     /** Native adaptation of the documented Director item-choice contract, not Valve's private RNG. */

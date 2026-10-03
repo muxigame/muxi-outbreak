@@ -86,6 +86,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
                 OutbreakMap.Mode mode=choice.has("mode")?OutbreakMap.Mode.valueOf(choice.get("mode").getAsString()):null;
                 createRoom(p,choice.get("map").getAsString(),mode,Integer.parseInt(level),true);
             }
+            case "interact"->{require(value.isBlank(),"无效交互参数");interact(p);}
             case "invite"->invite(p,UUID.fromString(value));
             case "start"->startWaiting(p);
             case "join"->join(p,value);
@@ -103,11 +104,21 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
         tell(guest,host.getDisplayName().getString()+" 邀请你加入求援之路房间 "+room.shortId()+"，请在终端小游戏大厅加入");
     }
     public void register(IEventBus bus) {
+        net.muxigame.minigames.equipment.GameEquipment.register(new net.muxigame.minigames.equipment.EquipmentContext(){
+            public String gameId(){return "outbreak";}
+            public boolean active(ServerPlayer p){var g=OutbreakGame.active(p);return g!=null&&g.inCampaign(p);}
+            public boolean canUseMedical(ServerPlayer p,String kind){var g=OutbreakGame.active(p);return g!=null&&g.canUseMedical(p,kind);}
+            public boolean useMedical(ServerPlayer p,String kind){var g=OutbreakGame.active(p);return g!=null&&g.useMedical(p,kind);}
+            public boolean throwEquipment(ServerPlayer p,String kind,ItemStack stack){var g=OutbreakGame.active(p);return g!=null&&g.throwEquipment(p,kind,stack);}
+            public boolean interact(ServerPlayer p){var g=OutbreakGame.active(p);return g!=null&&g.interact(p);}
+        });
         bus.addListener(this::started);
         bus.addListener(this::stopping);
         bus.addListener(this::tick);
         bus.addListener(this::commands);
         bus.addListener(EventPriority.HIGHEST, this::incomingDamage);
+        bus.addListener(EventPriority.LOWEST, this::roomIncomingDamage);
+        bus.addListener(EventPriority.LOWEST, this::roomDamageLimit);
         bus.addListener(EventPriority.LOWEST, this::damageDone);
         bus.addListener(EventPriority.HIGHEST, this::death);
         bus.addListener(EventPriority.LOWEST,(LivingDeathEvent event)->{
@@ -166,11 +177,12 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
             if (!(event.getPlayer() instanceof ServerPlayer player)) return;
             OutbreakSession session=session(player.getUUID());
             if (session==null || !session.prepared.contains(player.getUUID())) return;
-            // Toss is fired after the inventory slot was removed. Return it on cancellation.
-            event.setCanceled(true);
-            player.getInventory().add(event.getEntity().getItem().copy());
+            // Vanilla has already removed exactly this count. Convert it once to session-owned finite stock.
+            event.setCanceled(true);ItemStack removed=event.getEntity().getItem().copy();
+            if(!session.alive.contains(player.getUUID())||session.downed.contains(player.getUUID())||!player.level().dimension().equals(session.map.dimension())||!session.supplies.drop(player,removed)){
+                player.getInventory().add(removed);tell(player,"当前不能丢下装备");
+            }
             player.containerMenu.broadcastChanges();
-            tell(player,"小游戏临时装备不能丢弃；离开后恢复原背包");
         });
         bus.addListener((BlockEvent.BreakEvent event) -> {
             if (event.getPlayer().level().dimension().location().toString().equals("muxi_outbreak:campaign")) event.setCanceled(true);
@@ -874,6 +886,34 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
         }
     }
 
+    private OutbreakSession combatRoom(ServerPlayer player){
+        var s=session(player.getUUID());return s!=null&&s.prepared.contains(player.getUUID())&&s.alive.contains(player.getUUID())&&s.phase==OutbreakSession.Phase.RUNNING&&player.level().dimension().equals(s.map.dimension())?s:null;
+    }
+    private double roomDamage(OutbreakSession s,ServerPlayer target,net.minecraft.world.damagesource.DamageSource source,float original){
+        Entity attacker=source.getEntity();
+        if(attacker instanceof Mob mob&&mob.getPersistentData().contains(InfectedFactory.TAG_SESSION)){
+            if(!s.id.toString().equals(mob.getPersistentData().getString(InfectedFactory.TAG_SESSION)))return 0;
+            var kind=s.infectedKinds.get(mob.getUUID());if(kind==null)return 0;
+            double amount=net.muxigame.outbreak.infected.OutbreakCombatRules.melee(kind,s.difficulty);
+            if(kind==InfectedKind.COMMON&&target.getLookAngle().multiply(1,0,1).dot(mob.position().subtract(target.position()).multiply(1,0,1))<0)amount*=.5;
+            return amount;
+        }
+        if(attacker instanceof ServerPlayer teammate){
+            if(!s.players.contains(teammate.getUUID()))return 0;
+            if(teammate!=target)return original*net.muxigame.outbreak.infected.OutbreakCombatRules.friendly(s.difficulty);
+        }
+        return -1; // environment and self damage retain their existing rules
+    }
+    private void roomIncomingDamage(LivingIncomingDamageEvent event){
+        if(!(event.getEntity() instanceof ServerPlayer target))return;var s=combatRoom(target);if(s==null)return;
+        double amount=roomDamage(s,target,event.getSource(),event.getOriginalAmount());if(amount<0)return;
+        if(amount==0)event.setCanceled(true);else event.setAmount((float)amount);
+    }
+    private void roomDamageLimit(LivingDamageEvent.Pre event){
+        if(!(event.getEntity() instanceof ServerPlayer target))return;var s=combatRoom(target);if(s==null)return;
+        double amount=roomDamage(s,target,event.getSource(),event.getOriginalDamage());if(amount>=0)event.setNewDamage(Math.min(event.getNewDamage(),(float)amount));
+    }
+
     private void damageDone(LivingDamageEvent.Post event) {
         if (!(event.getEntity() instanceof ServerPlayer player)) return;
         OutbreakSession session = session(player.getUUID());
@@ -881,7 +921,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
         session.recentDamage.merge(player.getUUID(), (double)Math.max(0, event.getNewDamage()), Double::sum);
         float remaining=Math.max(0,session.temporaryHealth.getOrDefault(player.getUUID(),0f)-event.getNewDamage());
         session.temporaryHealth.put(player.getUUID(),Math.min(remaining,Math.max(0,player.getHealth()-1)));
-        if(player.isUsingItem()&&player.getUseItem().getItem() instanceof CampaignItems.MedicalItem)player.stopUsingItem();
+        if(player.isUsingItem()&&player.getUseItem().getItem() instanceof net.muxigame.minigames.equipment.SharedItems.MedicalItem)player.stopUsingItem();
     }
 
     private void drops(LivingDropsEvent event) {
@@ -1077,9 +1117,10 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
         if(id.isBlank())return false;
         OutbreakSession s=session(player.getUUID());
         if(s==null||!s.id.toString().equals(target.getPersistentData().getString(CampaignSupplies.SESSION)))return true;
-        String message=s.supplies.take(player,id,player.isCrouching());
-        if(!message.isBlank())tell(player,message);return true;
+        tell(player,"按F拾取或交换地上装备");return true;
     }
+
+    public boolean interact(ServerPlayer player){var s=session(player.getUUID());return s!=null&&inCampaign(player)&&s.supplies.interactLook(player);}
 
     private ServerPlayer medicalTarget(OutbreakSession s,ServerPlayer user,String kind){
         if(kind.equals("defib"))return s.eliminatedAt.entrySet().stream()

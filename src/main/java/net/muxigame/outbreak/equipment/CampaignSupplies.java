@@ -52,6 +52,7 @@ public final class CampaignSupplies {
             Node node=new Node(source.id(),kind,source.section(),source.pos(),source.count(),source.infinite(),CampaignInventory.create(players.getFirst(),kind));
             nodes.put(node.id,node);
         }
+        nodes.entrySet().removeIf(entry->{Node node=entry.getValue();if(node.kind.equals("swapped")&&!node.stock.available()){removeVisuals(node);return true;}return false;});
         for(Node node:nodes.values()){
             if(node.section!=session.section||!node.stock.available()){removeVisuals(node);continue;}
             boolean near=players.stream().anyMatch(p->p.distanceToSqr(node.pos.getCenter())<48*48);
@@ -104,6 +105,16 @@ public final class CampaignSupplies {
             node.kind.equals("upgrade_station")?Component.translatable("item.muxi_outbreak.explosive_ammo_pack"):CampaignInventory.displayName(node.item);
         return Component.empty().append(itemName).append(node.stock.infinite()?" ∞":" ×"+node.stock.remaining());
     }
+    public boolean interactLook(ServerPlayer player){
+        Vec3 start=player.getEyePosition(),end=start.add(player.getLookAngle().scale(3.5));
+        Node closest=null;double distance=Double.MAX_VALUE;
+        for(Node n:nodes.values()){
+            if(n.hitbox==null||n.hitbox.isRemoved()||!n.stock.available()||n.section!=session.section)continue;
+            var hit=n.hitbox.getBoundingBox().inflate(.15).clip(start,end);if(hit.isEmpty())continue;
+            double d=start.distanceToSqr(hit.get());if(d<distance){distance=d;closest=n;}
+        }
+        if(closest==null)return false;String message=take(player,closest.id,true);if(!message.isBlank())player.sendSystemMessage(Component.literal("[Outbreak] "+message));return true;
+    }
     public String take(ServerPlayer player,String id,boolean swap){
         Node node=nodes.get(id);int now=player.server.getTickCount();
         if(node==null||node.section!=session.section||!node.stock.available())return "补给不存在或已被取走";
@@ -127,29 +138,54 @@ public final class CampaignSupplies {
             CampaignInventory.explosiveRounds(player.getInventory().getItem(0),rounds);
             if(!node.stock.available())removeVisuals(node);return "已装备一弹匣高爆弹药："+rounds;
         }
+        if(CampaignInventory.category(node.item)==SupplyRules.Slot.AMMO){
+            int count=Math.min(node.stock.remaining(),CampaignInventory.looseAmmoCapacity(player,node.item));
+            if(count<1)return "需先携带对应枪械，或备用弹药已满";
+            if(!node.stock.take(count))return "补给已被队友取走";
+            CampaignInventory.receiveLooseAmmo(player,node.item,count);if(!node.stock.available())removeVisuals(node);else if(node.hitbox!=null)node.hitbox.setCustomName(label(node));return "已拾取备用弹药："+count;
+        }
         int slot=CampaignInventory.slot(CampaignInventory.category(node.item));
         if(slot<0)return "该物品不能携带";
         ItemStack previous=player.getInventory().getItem(slot);
-        if(!previous.isEmpty()&&!swap)return "同类装备只能携带一个；蹲下右键可交换，旧物品留给队友";
+        if(!previous.isEmpty()&&!swap)return "按F拾取或交换；旧装备留给队友";
         if(node.id.startsWith("campaign_start_")&&node.startClaims.contains(player.getUUID()))return "本轮已从这个起始武器点取过装备";
-        if(!previous.isEmpty()&&ItemStack.isSameItemSameComponents(previous,node.item))return "已持有同款物品";
+        boolean merge=!previous.isEmpty()&&ItemStack.isSameItemSameComponents(previous,node.item)&&CampaignInventory.slotLimit(CampaignInventory.category(node.item),node.item)>1;
+        if(!previous.isEmpty()&&ItemStack.isSameItemSameComponents(previous,node.item)&&!merge)return "已持有同款物品";
+        if(merge&&previous.getCount()>=previous.getMaxStackSize())return "这一类装备已堆叠至上限";
+        if(!merge&&!previous.isEmpty()&&(nodes.size()>=1024||dropPosition(player)==null))return "附近没有可放置交换装备的空位";
+        int capacity=CampaignInventory.slotLimit(CampaignInventory.category(node.item),node.item)-(merge?previous.getCount():0);
+        int quantity=node.kind.equals("swapped")?Math.min(capacity,node.stock.remaining()):1;
         // All operations run on the server thread; quantity is decremented only after all preconditions pass.
-        if(!node.stock.take(true))return "补给已被队友取走";
+        if(!node.stock.take(quantity))return "补给已被队友取走";
         if(slot<=1)com.tacz.guns.api.entity.IGunOperator.fromLivingEntity(player).cancelReload();
-        player.getInventory().setItem(slot,node.item.copyWithCount(1));
+        if(merge)previous.grow(quantity);else player.getInventory().setItem(slot,node.item.copyWithCount(quantity));
         if(node.id.startsWith("campaign_start_")){node.startClaims.add(player.getUUID());if(slot<=1&&!CampaignInventory.gunId(node.item).isEmpty())CampaignInventory.refill(player,false);}
-        if(!previous.isEmpty())drop(player,previous);
+        if(!merge&&!previous.isEmpty())drop(player,previous);
         player.inventoryMenu.broadcastChanges();
         if(!node.stock.available())removeVisuals(node);
         else if(node.hitbox!=null)node.hitbox.setCustomName(label(node));
         player.sendSystemMessage(Component.literal("[Outbreak] 已拾取 ").append(CampaignInventory.displayName(node.item)));
         return "";
     }
-    public void drop(ServerPlayer player,ItemStack item){
-        if(item.isEmpty()||nodes.size()>1024)return;
+    private BlockPos dropPosition(ServerPlayer player){
+        List<BlockPos> candidates=new ArrayList<>();BlockPos origin=player.blockPosition();
+        for(int dy=-1;dy<=1;dy++)for(int dx=-2;dx<=2;dx++)for(int dz=-2;dz<=2;dz++)candidates.add(origin.offset(dx,dy,dz));
+        candidates.sort(Comparator.comparingDouble(at->at.getBottomCenter().distanceToSqr(player.position())));
+        for(BlockPos at:candidates){
+            if(at.getBottomCenter().distanceToSqr(player.position())>9)continue;
+            if(player.level().getBlockState(at.below()).getCollisionShape(player.level(),at.below()).isEmpty())continue;
+            var box=new AABB(at.getX()+.15,at.getY()+.25,at.getZ()+.15,at.getX()+.85,at.getY()+.95,at.getZ()+.85);
+            if(player.level().getBlockCollisions(player,box).iterator().hasNext())continue;
+            if(nodes.values().stream().anyMatch(n->n.section==session.section&&n.stock.available()&&n.pos.equals(at)))continue;
+            return at;
+        }
+        return null;
+    }
+    public boolean drop(ServerPlayer player,ItemStack item){
+        if(item.isEmpty()||nodes.size()>=1024)return false;BlockPos position=dropPosition(player);if(position==null)return false;
         String id="swap_"+(++generated);
-        Node node=new Node(id,"swapped",session.section,player.blockPosition(),1,false,item.copyWithCount(1));
-        nodes.put(id,node);
+        Node node=new Node(id,"swapped",session.section,position,item.getCount(),false,item.copyWithCount(1));
+        nodes.put(id,node);return true;
     }
     public void deployUpgrade(ServerPlayer player){
         String id="upgrade_"+(++generated);

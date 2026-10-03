@@ -41,21 +41,21 @@ public final class InfectedFactory {
         double party = 1.0 + Math.max(0, playerCount - 1) * 0.16;
         double diff = 0.85 + Math.max(0, Math.min(3, difficulty)) * 0.17;
         switch (kind) {
-            case COMMON -> tune(mob, 20 * diff, 4 * diff, 0.31, 48);
-            case HUNTER -> tune(mob, 38 * party * diff, 7 * diff, 0.38, 64);
-            case SMOKER -> tune(mob, 45 * party * diff, 5 * diff, 0.30, 80);
-            case BOOMER -> tune(mob, 32 * party * diff, 3 * diff, 0.28, 64);
+            case COMMON -> tune(mob, 20 * diff, OutbreakCombatRules.melee(kind,difficulty), 0.31, 48);
+            case HUNTER -> tune(mob, 38 * party * diff, OutbreakCombatRules.melee(kind,difficulty), 0.38, 64);
+            case SMOKER -> tune(mob, 45 * party * diff, OutbreakCombatRules.melee(kind,difficulty), 0.30, 80);
+            case BOOMER -> tune(mob, 32 * party * diff, OutbreakCombatRules.melee(kind,difficulty), 0.28, 64);
             case TANK -> {
-                tune(mob, 220 * party * diff, 15 * diff, 0.33, 96);
+                tune(mob, 220 * party * diff, OutbreakCombatRules.melee(kind,difficulty), 0.33, 96);
                 attribute(mob, Attributes.KNOCKBACK_RESISTANCE, 0.85);
             }
-            case WITCH -> tune(mob, 85 * party * diff, 11 * diff, 0.32, 72);
-            case SPITTER -> tune(mob, 48 * party * diff, 4 * diff, 0.31, 80);
+            case WITCH -> tune(mob, 85 * party * diff, OutbreakCombatRules.melee(kind,difficulty), 0.32, 72);
+            case SPITTER -> tune(mob, 48 * party * diff, OutbreakCombatRules.melee(kind,difficulty), 0.31, 80);
             case CHARGER -> {
-                tune(mob, 110 * party * diff, 12 * diff, 0.34, 80);
+                tune(mob, 110 * party * diff, OutbreakCombatRules.melee(kind,difficulty), 0.34, 80);
                 attribute(mob, Attributes.KNOCKBACK_RESISTANCE, 0.55);
             }
-            case JOCKEY -> tune(mob, 36 * party * diff, 5 * diff, 0.41, 64);
+            case JOCKEY -> tune(mob, 36 * party * diff, OutbreakCombatRules.melee(kind,difficulty), 0.41, 64);
         }
         mob.setHealth(mob.getMaxHealth());
         return mob;

@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "networkQA": "C:\\Users\\ranzh\\Documents\\Codex\\release-unified-task14-20261001\\muxi-outbreak\\build\\equipment-network-20261003-v6-latest",
+  "actualClients": 2,
+  "syntheticPlayersInNetworkQA": false,
+  "assistedRouteAndCombat": true,
+  "naturalFinaleClock": true,
+  "nativeNetworkCommands": "F server action; native Q/CtrlQ; actual held item use; doors",
+  "physicalGlobalFBinding": "terminal owner integration remains separate",
+  "networkAssertions": 54,
+  "hiddenUnfocusedClientReceipts": 42,
+  "exactRestoreReceipts": 4,
+  "normalExitCodes": {
+    "server": 0,
+    "host": 0,
+    "guest": 0
+  },
+  "outbreakVersion": "0.4.0-equipment.1",
+  "outbreakSha256": "bafabf983dcc11f3e18218938f4616c9a7764e270018c2dc38e3a33c0a7536e8",
+  "frameworkVersion": "0.2.1-equipment.1",
+  "networkTestedFrameworkSha256": "75aead1ee9f55fafeac46cb394c2e3b759737befc8cee1a6efb7852e114342b7",
+  "latestCombinedFrameworkSha256": "75aead1ee9f55fafeac46cb394c2e3b759737befc8cee1a6efb7852e114342b7",
+  "latestCombinedDifference": [],
+  "latestCombinedMCStatus": "paired network test passed",
+  "damageProbeRows": 144,
+  "damageEngineFixturePlayers": true,
+  "damageFixedChampions": 0,
+  "damageBaselineChampions": 8,
+  "damageMatrixNumericallyVerified": true,
+  "sourceBalanceLimit": "native special attacks are existing MC adaptation, not Source special AI recreation",
+  "mapGeometryPreserved": true,
+  "pythonTests": {
+    "run": 24,
+    "skipped": 1,
+    "skipReason": "private source VPK not installed"
+  },
+  "supplyRuleAssertions": 3110,
+  "production008Operations": false,
+  "newBranchOrWorktree": false,
+  "frameworkCommit": "235c4c1e4acbc9114a1332a8086ca244b498598c",
+  "frameworkOtherOwnerDirty": [
+    "M src/main/java/net/muxigame/minigames/TrustedAccounts.java"
+  ],
+  "sourceBoundary": "Candidate includes preserved other-owner TrustedAccounts dirty code; that owner must finish its source commit before combined release. This owner never staged or committed it."
+}
