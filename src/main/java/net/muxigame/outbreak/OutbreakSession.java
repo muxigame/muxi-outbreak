@@ -27,6 +27,7 @@ public final class OutbreakSession {
     public final Map<UUID, Integer> downedSince = new HashMap<>();
     public final Map<UUID, Integer> incapCount = new HashMap<>();
     public final Map<UUID, Integer> reviveProgress = new HashMap<>();
+    public final Map<UUID, Integer> interactionAt = new HashMap<>();
     public final Map<UUID, GameType> originalModes = new HashMap<>();
     public final Map<UUID, ReturnPoint> returnPoints = new HashMap<>();
     public final Map<UUID, Double> recentDamage = new HashMap<>();

@@ -1116,7 +1116,22 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
         tell(player,"按F拾取或交换地上装备");return true;
     }
 
-    public boolean interact(ServerPlayer player){var s=session(player.getUUID());return s!=null&&inCampaign(player)&&s.supplies.interactLook(player);}
+    /** One server-authoritative target for the contextual F request; never uses the held item. */
+    public boolean interact(ServerPlayer player){
+        var s=session(player.getUUID());
+        if(s==null||!inCampaign(player)||!s.alive.contains(player.getUUID())||s.downed.contains(player.getUUID())
+            ||player.isSpectator()||!player.level().dimension().equals(s.map.dimension())
+            ||s.phase==OutbreakSession.Phase.WAITING||s.phase==OutbreakSession.Phase.PREPARING
+            ||s.phase==OutbreakSession.Phase.COUNTDOWN||s.phase==OutbreakSession.Phase.FINISHED)return false;
+        int now=server.getTickCount();
+        if(now-s.interactionAt.getOrDefault(player.getUUID(),-100)<2)return true;
+        s.interactionAt.put(player.getUUID(),now);
+        Vec3 eye=player.getEyePosition();
+        var hit=player.level().clip(new ClipContext(eye,eye.add(player.getLookAngle().scale(3.5)),ClipContext.Block.OUTLINE,ClipContext.Fluid.NONE,player));
+        double blockDistance=hit.getType()==HitResult.Type.MISS?Double.POSITIVE_INFINITY:eye.distanceToSqr(hit.getLocation());
+        if(s.supplies.interactLook(player,blockDistance))return true;
+        return hit.getType()==HitResult.Type.BLOCK&&CampaignInteractions.interactBlock(player,s,hit);
+    }
 
     private ServerPlayer medicalTarget(OutbreakSession s,ServerPlayer user,String kind){
         if(kind.equals("defib"))return s.eliminatedAt.entrySet().stream()

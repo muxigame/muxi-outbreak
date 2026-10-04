@@ -105,13 +105,15 @@ public final class CampaignSupplies {
             node.kind.equals("upgrade_station")?Component.translatable("item.muxi_outbreak.explosive_ammo_pack"):CampaignInventory.displayName(node.item);
         return Component.empty().append(itemName).append(node.stock.infinite()?" ∞":" ×"+node.stock.remaining());
     }
-    public boolean interactLook(ServerPlayer player){
+    public boolean interactLook(ServerPlayer player){return interactLook(player,Double.POSITIVE_INFINITY);}
+    /** A nearer block wins over supplies behind it, so one F press cannot act through a door. */
+    public boolean interactLook(ServerPlayer player,double blockDistance){
         Vec3 start=player.getEyePosition(),end=start.add(player.getLookAngle().scale(3.5));
         Node closest=null;double distance=Double.MAX_VALUE;
         for(Node n:nodes.values()){
             if(n.hitbox==null||n.hitbox.isRemoved()||!n.stock.available()||n.section!=session.section)continue;
             var hit=n.hitbox.getBoundingBox().inflate(.15).clip(start,end);if(hit.isEmpty())continue;
-            double d=start.distanceToSqr(hit.get());if(d<distance){distance=d;closest=n;}
+            double d=start.distanceToSqr(hit.get());if(d<blockDistance&&d<distance){distance=d;closest=n;}
         }
         if(closest==null)return false;String message=take(player,closest.id,true);if(!message.isBlank())player.sendSystemMessage(Component.literal("[Outbreak] "+message));return true;
     }
