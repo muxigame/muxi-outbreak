@@ -89,6 +89,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
             case "interact"->{require(value.isBlank(),"无效交互参数");interact(p);}
             case "invite"->invite(p,UUID.fromString(value));
             case "start"->startWaiting(p);
+            case "difficulty"->{var room=requireSession(p);require(server.isSameThread()&&p.server==server&&room.host.equals(p.getUUID()),"只有房主可修改难度");require(room.phase==OutbreakSession.Phase.WAITING&&room.lobbyWaiting,"开局后不能修改难度");require(value.matches("[0-3]"),"无效难度");for(var id:room.players){var member=server.getPlayerList().getPlayer(id);require(member!=null,"成员离线");runtime().requireParticipation(member);}room.difficulty=Integer.parseInt(value);}
             case "join"->join(p,value);
             case "leave"->{var room=session(p.getUUID());if(room==null){PlayerSnapshot.restore(p);return;}if(room.host.equals(p.getUUID()))finish(room,false,"房主退出");else leavePlayer(room,p);}
             default->throw new IllegalArgumentException("未知小游戏操作");

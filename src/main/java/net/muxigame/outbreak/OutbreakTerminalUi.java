@@ -20,6 +20,7 @@ final class OutbreakTerminalUi {
             var team=section(lobby,"我的队伍 · "+text(own,"id"),text(own,"title")+" · "+(text(own,"mode").equals("SURVIVAL")?"生存防守":"战役推进")+" · "+names[Math.max(0,Math.min(3,number(own,"difficulty")))]+" · "+status+" · "+number(own,"count")+"/4 · 章节 "+(number(own,"section")+1));team.addProperty("role","room");
             for(JsonElement member:rows(own,"members"))card(team,member.getAsString(),"房间成员");
             if(host&&waiting)action(team,"开始游戏","start","",phase.equals("WAITING")&&flag(own,"mapReady"));
+            if(waiting){var settings=section(lobby,"房间设置","模式与地图创建后固定；等待中可修改难度。");settings.addProperty("role","settings");field(settings,"roomDifficulty","难度",difficulties,Integer.toString(number(own,"difficulty")));action(settings,"保存难度","difficulty","{roomDifficulty}",host&&phase.equals("WAITING"));}
             var leave=action(team,"退出并恢复原状态","leave","",true);leave.addProperty("safe",true);leave.addProperty("confirm","离开当前队伍，恢复原背包与位置；房主退出会关闭房间。");
             if(host&&waiting&&phase.equals("WAITING")){var invite=section(lobby,"邀请队友","每队最多 4 人。队友可从本 APP 的房间列表加入。");invite.addProperty("role","invite");for(JsonElement element:rows(state,"players")){var player=element.getAsJsonObject();action(card(invite,text(player,"name"),"在线队友"),"邀请加入","invite",text(player,"id"),number(own,"count")<4);}}
         }
