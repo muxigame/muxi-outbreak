@@ -64,7 +64,8 @@ public final class CampaignBots {
                 var maid=new CampaignMaid(level,room);
                 maid.setUUID(seat);maid.setOwnerUUID(room.host);maid.setTame(true,false);
                 maid.setPersistenceRequired();maid.setHomeModeEnable(false);maid.setPickup(false);maid.setRideable(false);
-                maid.setSchedule(MaidSchedule.ALL);maid.setHunger(20);maid.setCanClimb(true);
+                // TLM owns its active-climbing state; forcing it true zeros X/Z travel on ordinary ground.
+                maid.setSchedule(MaidSchedule.ALL);maid.setHunger(20);
                 maid.setCustomName(Component.literal("酒狐队友 "+(++index)));maid.setCustomNameVisible(true);
                 maid.setYsmModel(room.aiModelId,room.aiTexture,Component.literal("酒狐女仆"));maid.setIsYsmModel(true);
                 maid.getPersistentData().putString(SESSION,room.id.toString());maid.getPersistentData().putString("muxi_outbreak_ai_seat",seat.toString());maid.addTag("muxi_outbreak_ai");
