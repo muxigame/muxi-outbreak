@@ -51,7 +51,8 @@ public final class CampaignBots {
         return entity instanceof CampaignMaid maid&&maid.room()!=null&&maid.room().bots!=null&&maid.room().bots.entities.get(entity.getUUID())==entity;
     }
     public List<LivingEntity> living() { return entities.values().stream().filter(m->m.isAlive()&&!m.isRemoved()&&!eliminated.contains(m.getUUID())).map(m->(LivingEntity)m).toList(); }
-    public LivingEntity find(UUID id) { return living().stream().filter(m->m.getUUID().equals(id)).findFirst().orElse(null); }
+    /** Identity must survive the zero-health instant so LivingDeathEvent can incapacitate the maid. */
+    public LivingEntity find(UUID id) { return eliminated.contains(id)?null:entities.get(id); }
     public boolean owns(UUID id) { return entities.containsKey(id); }
     public boolean rescuing(UUID helper,UUID target) { return target.equals(rescuing.get(helper)); }
     public void spawn(ServerLevel level) {
