@@ -36,17 +36,19 @@ public final class CampaignSupplies {
     public void tick(ServerLevel level,List<ServerPlayer> players,int now){
         if(players.isEmpty())return;
         ensureStartCache(level,players);
+        List<LivingEntity> nearby=new ArrayList<>(players);
+        if(session.bots!=null)nearby.addAll(session.bots.living());
         if(now%10==0)for(var source:session.map.supplies()){
             if(source.section()!=session.section||decided.contains(source.id()))continue;
-            if(players.stream().noneMatch(p->p.distanceToSqr(source.pos().getCenter())<48*48))continue;
+            if(nearby.stream().noneMatch(p->p.distanceToSqr(source.pos().getCenter())<48*48))continue;
             // Optional Director choices belong to the team's approaching floor/area.
             // Fixed BSP caches remain preplaced; do not choose downstairs loot at upstairs spawn.
-            if(source.directorChoice()&&players.stream().noneMatch(p->Math.abs(p.getY()-source.pos().getY())<=6&&p.distanceToSqr(source.pos().getCenter())<24*24))continue;
+            if(source.directorChoice()&&nearby.stream().noneMatch(p->Math.abs(p.getY()-source.pos().getY())<=6&&p.distanceToSqr(source.pos().getCenter())<24*24))continue;
             if(!level.areEntitiesLoaded(new net.minecraft.world.level.ChunkPos(source.pos()).toLong())||!level.isPositionEntityTicking(source.pos()))continue;
             decided.add(source.id());
-            double health=players.stream().mapToDouble(p->p.getHealth()/p.getMaxHealth()).average().orElse(1);
+            double health=nearby.stream().mapToDouble(p->p.getHealth()/p.getMaxHealth()).average().orElse(1);
             int meds=(int)players.stream().filter(p->!p.getInventory().getItem(3).isEmpty()).count();
-            String kind=SupplyRules.choose(source.choices(),source.mustExist(),source.directorChoice(),health,meds,players.size(),
+            String kind=SupplyRules.choose(source.choices(),source.mustExist(),source.directorChoice(),health,meds,session.teamSize(),
                 new Random(session.id.getMostSignificantBits()^session.id.getLeastSignificantBits()^source.id().hashCode()));
             if(kind.isBlank())continue;
             Node node=new Node(source.id(),kind,source.section(),source.pos(),source.count(),source.infinite(),CampaignInventory.create(players.getFirst(),kind));
@@ -55,7 +57,7 @@ public final class CampaignSupplies {
         nodes.entrySet().removeIf(entry->{Node node=entry.getValue();if(node.kind.equals("swapped")&&!node.stock.available()){removeVisuals(node);return true;}return false;});
         for(Node node:nodes.values()){
             if(node.section!=session.section||!node.stock.available()){removeVisuals(node);continue;}
-            boolean near=players.stream().anyMatch(p->p.distanceToSqr(node.pos.getCenter())<48*48);
+            boolean near=nearby.stream().anyMatch(p->p.distanceToSqr(node.pos.getCenter())<48*48);
             if(!near){removeVisuals(node);continue;}
             if(node.hitbox==null||node.hitbox.isRemoved())show(level,node);
         }
@@ -77,7 +79,7 @@ public final class CampaignSupplies {
         String primary=seeded.nextBoolean()?"gun:tacz:hk_mp5a5":"gun:tacz:m870";
         String[] ids={"campaign_start_primary","campaign_start_pistol","campaign_start_melee"};
         String[] kinds={primary,"gun:tacz:glock_17","melee"};
-        int count=Math.max(1,session.players.size());
+        int count=Math.max(1,session.teamSize());
         for(int i=0;i<3;i++)nodes.put(ids[i],new Node(ids[i],kinds[i],0,positions.get(i),count,false,CampaignInventory.create(players.getFirst(),kinds[i])));
         decided.add("campaign_start_cache");
     }
@@ -168,6 +170,64 @@ public final class CampaignSupplies {
         else if(node.hitbox!=null)node.hitbox.setCustomName(label(node));
         player.sendSystemMessage(Component.literal("[Outbreak] 已拾取 ").append(CampaignInventory.displayName(node.item)));
         return "";
+    }
+    /** AI uses the same stock, range, occlusion, category and reserve limits as human pickups. */
+    public Node botTarget(LivingEntity bot,net.neoforged.neoforge.items.IItemHandler inventory) {
+        return nodes.values().stream().filter(n->n.section==session.section&&n.stock.available())
+            .filter(n->bot.distanceToSqr(n.pos.getCenter())<=16*16).filter(n->botWants(bot,inventory,n))
+            .min(Comparator.comparingDouble(n->bot.distanceToSqr(n.pos.getCenter()))).orElse(null);
+    }
+    private Map<String,Integer> botCaps(LivingEntity bot,net.neoforged.neoforge.items.IItemHandler inventory,boolean pile) {
+        return CampaignInventory.reserveCaps(List.of(bot.getMainHandItem(),inventory.getStackInSlot(0)),pile);
+    }
+    private int botAmmo(net.neoforged.neoforge.items.IItemHandler inventory,String id) {
+        int count=0;for(int i=1;i<inventory.getSlots();i++){var stack=inventory.getStackInSlot(i);var ammo=com.tacz.guns.api.item.IAmmo.getIAmmoOrNull(stack);if(ammo!=null&&ammo.getAmmoId(stack).toString().equals(id))count+=stack.getCount();}return count;
+    }
+    private boolean botWants(LivingEntity bot,net.neoforged.neoforge.items.IItemHandler inventory,Node node) {
+        if(node.id.startsWith("campaign_start_")&&node.startClaims.contains(bot.getUUID()))return false;
+        if(node.kind.equals("ammo"))return botCaps(bot,inventory,true).entrySet().stream().anyMatch(e->botAmmo(inventory,e.getKey())<e.getValue());
+        var category=CampaignInventory.category(node.item);
+        if(category==SupplyRules.Slot.PRIMARY)return CampaignInventory.category(bot.getMainHandItem())!=SupplyRules.Slot.PRIMARY&&CampaignInventory.category(inventory.getStackInSlot(0))!=SupplyRules.Slot.PRIMARY;
+        if(category==SupplyRules.Slot.SECONDARY)return bot.getMainHandItem().isEmpty()||inventory.getStackInSlot(0).isEmpty()&&CampaignInventory.category(bot.getMainHandItem())==SupplyRules.Slot.PRIMARY;
+        if(category==SupplyRules.Slot.AMMO){var ammo=com.tacz.guns.api.item.IAmmo.getIAmmoOrNull(node.item);return ammo!=null&&botAmmo(inventory,ammo.getAmmoId(node.item).toString())<botCaps(bot,inventory,false).getOrDefault(ammo.getAmmoId(node.item).toString(),0);}
+        return false;
+    }
+    private int insertBotAmmo(net.neoforged.neoforge.items.IItemHandler inventory,ItemStack ammo) {
+        int before=ammo.getCount();ItemStack rest=ammo;
+        for(int i=1;i<inventory.getSlots()&&!rest.isEmpty();i++)rest=inventory.insertItem(i,rest,false);
+        return before-rest.getCount();
+    }
+    public boolean takeBot(LivingEntity bot,net.neoforged.neoforge.items.IItemHandler inventory,String id) {
+        Node node=nodes.get(id);
+        if(node==null||!bot.level().dimension().equals(session.map.dimension())||session.bots==null||session.bots.find(bot.getUUID())!=bot||session.downed.contains(bot.getUUID())||!botWants(bot,inventory,node)||!node.stock.available()||node.section!=session.section||bot.distanceToSqr(node.pos.getCenter())>12.25)return false;
+        var hit=bot.level().clip(new ClipContext(bot.getEyePosition(),node.pos.getCenter(),ClipContext.Block.COLLIDER,ClipContext.Fluid.NONE,bot));
+        if(hit.getType()!=HitResult.Type.MISS&&hit.getLocation().distanceTo(node.pos.getCenter())>.8)return false;
+        if(node.kind.equals("ammo")) {
+            boolean changed=false;for(var e:botCaps(bot,inventory,true).entrySet()){
+                int need=e.getValue()-botAmmo(inventory,e.getKey());while(need>0){int count=insertBotAmmo(inventory,CampaignInventory.ammo(e.getKey(),Math.min(60,need)));if(count==0)break;need-=count;changed=true;}
+            }return changed;
+        }
+        if(CampaignInventory.category(node.item)==SupplyRules.Slot.AMMO) {
+            var ammo=com.tacz.guns.api.item.IAmmo.getIAmmoOrNull(node.item);String ammoId=ammo.getAmmoId(node.item).toString();
+            int count=Math.min(node.stock.remaining(),Math.min(60,botCaps(bot,inventory,false).getOrDefault(ammoId,0)-botAmmo(inventory,ammoId)));
+            int room=0;for(int i=1;i<inventory.getSlots();i++)room+=count-inventory.insertItem(i,node.item.copyWithCount(count),true).getCount();count=Math.min(count,room);
+            if(count<=0||!node.stock.take(count))return false;
+            if(insertBotAmmo(inventory,node.item.copyWithCount(count))!=count)throw new IllegalStateException("AI ammo capacity changed");
+        } else {
+            if(node.id.startsWith("campaign_start_")&&node.startClaims.contains(bot.getUUID()))return false;
+            boolean primary=CampaignInventory.category(node.item)==SupplyRules.Slot.PRIMARY;
+            ItemStack previous=bot.getMainHandItem();
+            if(primary&&!previous.isEmpty()&&!inventory.insertItem(0,previous,true).isEmpty())return false;
+            if(!node.stock.take(true))return false;
+            com.tacz.guns.api.entity.IGunOperator.fromLivingEntity(bot).cancelReload();
+            if(primary||previous.isEmpty()){if(!previous.isEmpty())inventory.insertItem(0,previous,false);bot.setItemSlot(EquipmentSlot.MAINHAND,node.item.copyWithCount(1));}
+            else inventory.insertItem(0,node.item.copyWithCount(1),false);
+            if(node.id.startsWith("campaign_start_")) {
+                node.startClaims.add(bot.getUUID());
+                for(var e:botCaps(bot,inventory,false).entrySet()){int need=e.getValue()-botAmmo(inventory,e.getKey());while(need>0){int count=insertBotAmmo(inventory,CampaignInventory.ammo(e.getKey(),Math.min(60,need)));if(count==0)break;need-=count;}}
+            }
+        }
+        if(!node.stock.available())removeVisuals(node);else if(node.hitbox!=null)node.hitbox.setCustomName(label(node));return true;
     }
     private BlockPos dropPosition(ServerPlayer player){
         List<BlockPos> candidates=new ArrayList<>();BlockPos origin=player.blockPosition();

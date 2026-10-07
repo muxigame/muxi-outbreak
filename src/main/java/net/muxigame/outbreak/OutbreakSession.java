@@ -21,6 +21,11 @@ public final class OutbreakSession {
     public final Director director = new Director();
     public final LinkedHashSet<UUID> players;
     public final LinkedHashSet<UUID> alive;
+    public final LinkedHashSet<UUID> aiSeats=new LinkedHashSet<>();
+    public String aiModelId="",aiTexture="";
+    public net.muxigame.outbreak.ai.CampaignBots bots;
+    public int survivorCount() { return alive.size()+(bots==null?0:bots.living().size()); }
+    public int teamSize() { return team.occupiedSeats(); }
     public final Set<UUID> infected = new HashSet<>();
     public final Map<UUID, InfectedKind> infectedKinds = new HashMap<>();
     public final Set<UUID> downed = new HashSet<>();

@@ -8,7 +8,8 @@ public final class OutbreakEntityAdmission {
     public static boolean rejectForeignSession(Function<String,String> tags, Predicate<String> currentSession) {
         String supplySession=tags.apply("muxi_outbreak_supply_session");
         String equipmentSession=tags.apply("muxi_outbreak_equipment_session");
-        return (!supplySession.isBlank()&&!currentSession.test(supplySession)) ||
+        String aiSession=tags.apply("muxi_outbreak_ai_session");
+        return (!aiSession.isBlank()&&!currentSession.test(aiSession))||(!supplySession.isBlank()&&!currentSession.test(supplySession)) ||
             (!equipmentSession.isBlank()&&!currentSession.test(equipmentSession));
     }
     private OutbreakEntityAdmission(){}

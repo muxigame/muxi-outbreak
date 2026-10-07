@@ -88,7 +88,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
             }
             case "interact"->{require(value.isBlank(),"无效交互参数");interact(p);}
             case "invite"->invite(p,UUID.fromString(value));
-            case "start"->startWaiting(p);
+            case "start"->{if(!runtime().roomAi.start(this,p))startWaiting(p);}
             case "difficulty"->{var room=requireSession(p);require(server.isSameThread()&&p.server==server&&room.host.equals(p.getUUID()),"只有房主可修改难度");require(room.phase==OutbreakSession.Phase.WAITING&&room.lobbyWaiting,"开局后不能修改难度");require(value.matches("[0-3]"),"无效难度");for(var id:room.players){var member=server.getPlayerList().getPlayer(id);require(member!=null,"成员离线");runtime().requireParticipation(member);}room.difficulty=Integer.parseInt(value);}
             case "join"->join(p,value);
             case "leave"->{var room=session(p.getUUID());if(room==null){PlayerSnapshot.restore(p);return;}if(room.host.equals(p.getUUID()))finish(room,false,"房主退出");else leavePlayer(room,p);}
@@ -99,7 +99,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
         var room=requireSession(host);require(room.host.equals(host.getUUID()),"只有房主可以邀请队友");
         require(!room.team.socialManaged||!runtime().social.enabled(),"Use terminal room invitations");
         require(room.phase==OutbreakSession.Phase.WAITING&&room.lobbyWaiting,"游戏已经开始");
-        require(room.players.size()<4,"房间已满");var guest=server.getPlayerList().getPlayer(target);
+        require(room.teamSize()<4,"房间已满");var guest=server.getPlayerList().getPlayer(target);
         require(guest!=null&&guest!=host,"请选择在线队友");require(runtime().memberships.owner(target)==null&&!net.muxigame.minigames.PlayerReturns.pending(guest),"队友已在其他房间或正在恢复");
         runtime().requireParticipation(guest);room.team.invites.put(target,(long)server.getTickCount()+6000);
         tell(guest,host.getDisplayName().getString()+" 邀请你加入求援之路房间 "+room.shortId()+"，请在终端小游戏大厅加入");
@@ -113,6 +113,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
             public boolean throwEquipment(ServerPlayer p,String kind,ItemStack stack){var g=OutbreakGame.active(p);return g!=null&&g.throwEquipment(p,kind,stack);}
             public boolean interact(ServerPlayer p){var g=OutbreakGame.active(p);return g!=null&&g.interact(p);}
         });
+        if(net.neoforged.fml.ModList.get().isLoaded("touhou_little_maid"))net.muxigame.outbreak.ai.CampaignBots.registerCombat(bus);
         bus.addListener(this::started);
         bus.addListener(this::stopping);
         bus.addListener(this::tick);
@@ -337,12 +338,40 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
         }
     }
 
+    @Override public boolean supportsAiTeammates() {
+        return server!=null&&net.neoforged.fml.ModList.get().isLoaded("touhou_little_maid")&&net.neoforged.fml.ModList.get().isLoaded("yes_steve_model")
+            &&net.muxigame.outbreak.ai.WineFoxSkin.resolve(server)!=null;
+    }
+    @Override public void startWithAiTeammates(ServerPlayer host,List<net.muxigame.minigames.RoomAiSeat> seats) {
+        var room=requireSession(host);
+        require(server.isSameThread()&&room.host.equals(host.getUUID())&&room.team.aiLocked(),"Invalid frozen AI start plan");
+        require(seats.equals(room.team.aiSeats()),"AI start plan changed");
+        var skin=seats.isEmpty()?null:net.muxigame.outbreak.ai.WineFoxSkin.resolve(server);
+        require(seats.isEmpty()||skin!=null,"YSM wine fox maid is not registered or still loading");
+        configureAi(room.team,seats.stream().map(net.muxigame.minigames.RoomAiSeat::id).toList(),skin==null?"":skin.model(),skin==null?"":skin.texture());
+        startWaiting(host);
+    }
+    private void configureAi(net.muxigame.minigames.RoomTeam team,Collection<UUID> seats,String modelId,String texture) {
+        require(server!=null&&server.isSameThread(),"AI seats require the server thread");
+        var room=sessions.stream().filter(s->s.team==team).findFirst().orElseThrow(()->new IllegalArgumentException("Unknown room"));
+        require(room.phase==OutbreakSession.Phase.WAITING&&room.lobbyWaiting,"AI seats are frozen after start");
+        require(new HashSet<>(seats).size()==seats.size()&&room.players.size()+seats.size()<=4,"Invalid AI seat count");
+        require(seats.stream().noneMatch(id->room.players.contains(id)||server.getPlayerList().getPlayer(id)!=null),"AI seat cannot impersonate a player");
+        require(seats.isEmpty()||net.neoforged.fml.ModList.get().isLoaded("touhou_little_maid")&&net.neoforged.fml.ModList.get().isLoaded("yes_steve_model"),"AI requires installed TLM and YSM");
+        require(seats.isEmpty()||!modelId.isBlank()&&!texture.isBlank(),"A verified YSM model is required");
+        room.aiSeats.clear();room.aiSeats.addAll(seats);room.aiModelId=modelId;room.aiTexture=texture;
+    }
+    private void prepareBots(OutbreakSession room,ServerLevel level) {
+        if(room.aiSeats.isEmpty())return;
+        if(room.bots==null)room.bots=new net.muxigame.outbreak.ai.CampaignBots(room);
+        room.bots.spawn(level);
+    }
     private void startWaiting(ServerPlayer host) {
         OutbreakSession room=requireSession(host);
         require(room.host.equals(host.getUUID()),"Only the host can start this room");
         require(room.lobbyWaiting&&room.phase==OutbreakSession.Phase.WAITING,"Room is not waiting");
         require(geometry.ready(room.map),"Map is still preparing; wait and try again");
-        require(!room.players.isEmpty()&&room.players.size()<=4,"Invalid team size");
+        require(!room.players.isEmpty()&&room.teamSize()<=4,"Invalid team size");
         List<ServerPlayer> members=new ArrayList<>();
         for(UUID id:room.players) {
             ServerPlayer member=server.getPlayerList().getPlayer(id);
@@ -356,6 +385,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
         try {
             room.checkpointDoors.install(server.getLevel(room.map.dimension()),room.map);
             for(ServerPlayer member:members)preparePlayer(room,member);
+            prepareBots(room,server.getLevel(room.map.dimension()));
             room.lobbyWaiting=false;
             room.phase=OutbreakSession.Phase.COUNTDOWN;
             room.timer=server.getTickCount()+200;
@@ -375,7 +405,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
             .findFirst().orElseThrow(() -> new IllegalArgumentException("房间不存在"));
         runtime().social.requireRoomJoin(session.team,player);
         require(session.phase == OutbreakSession.Phase.WAITING || (!session.lobbyWaiting&&(session.phase == OutbreakSession.Phase.COUNTDOWN || session.phase == OutbreakSession.Phase.PREPARING)), "游戏已经开始");
-        require(session.players.size() < 4, "房间已满");
+        require(session.teamSize() < 4, "房间已满");
         require(player.gameMode.getGameModeForPlayer() == GameType.SURVIVAL, "请先切换到生存模式");
         runtime().join(gameId(),session.team,player,4);
         session.alive.add(player.getUUID());session.team.invites.remove(player.getUUID());
@@ -492,6 +522,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
     }
 
     private void tickSession(OutbreakSession session, int now) {
+        if(session.players.isEmpty()){finish(session,false,"No human room members remain");return;}
         ServerLevel level = server.getLevel(session.map.dimension());
         if (level == null) {
             finish(session, false, "地图维度已卸载");
@@ -501,7 +532,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
             ServerPlayer player = server.getPlayerList().getPlayer(id);
             return player == null;
         });
-        if (session.alive.isEmpty()) {
+        if (session.survivorCount()==0) {
             finish(session, false, "队伍全灭");
             return;
         }
@@ -514,13 +545,14 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
             if (geometry.ready(session.map)) {
                 session.checkpointDoors.install(level,session.map);
                 for (ServerPlayer player : alivePlayers(session)) preparePlayer(session,player);
+                prepareBots(session,level);
                 session.phase=OutbreakSession.Phase.COUNTDOWN;
                 session.timer=now+200;
                 notice(session,"真实战役地图已就绪，10秒后开始");
             } else if (ticks%100==0) notice(session,"准备地图："+geometry.progress(session.map));
             return;
         }
-        if (session.alive.stream().allMatch(session.downed::contains)) {
+        if (net.muxigame.outbreak.ai.SurvivorAiRules.allIncapacitated(session.survivorCount(),session.downed.size())) {
             finish(session,false,"所有幸存者已倒地，队伍全灭");
             return;
         }
@@ -541,7 +573,8 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
                 p.setHealth(p.getHealth()-loss);session.temporaryHealth.put(id,Math.max(0,temporary-loss));
             }
         }
-        session.supplies.tick(level,alivePlayers(session),now);
+        session.supplies.tick(level,session.prepared.stream().map(id->server.getPlayerList().getPlayer(id)).filter(Objects::nonNull).toList(),now);
+        if(session.bots!=null)session.bots.tick(level,now);
         session.throwables.tick(level,now);
         if(now%20==0)session.equipmentEntities.removeIf(id->level.getEntity(id)==null||level.getEntity(id).isRemoved());
         if (session.phase == OutbreakSession.Phase.COUNTDOWN) {
@@ -579,6 +612,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
                     player.getFoodData().setFoodLevel(20);
                     teleportToSection(session,player);
                 }
+                if(session.bots!=null)session.bots.nextSection(level);
                 session.downed.clear();session.downedSince.clear();session.reviveProgress.clear();
                 session.phase = session.map.startRoom(session.section)!=null?OutbreakSession.Phase.START_ROOM:OutbreakSession.Phase.RUNNING;
                 session.director.reset();
@@ -633,7 +667,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
         int needed = Math.min(4, Math.max(0, decision.desiredCommon() - commonAlive));
         for (int i = 0; i < needed; i++) spawn(session, InfectedKind.COMMON, false);
         if (decision.hordePulse()) {
-            int count = 6 + session.alive.size() * 4;
+            int count = 6 + session.survivorCount() * 4;
             for (int i = 0; i < count; i++) spawn(session, InfectedKind.COMMON, true);
             if (session.panicWaves > 0 && --session.panicWaves == 0) session.director.forcePanic(false);
         }
@@ -643,7 +677,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
     }
 
     private Director.Sample sample(OutbreakSession session, ServerLevel level) {
-        List<ServerPlayer> players = alivePlayers(session);
+        List<net.minecraft.world.entity.LivingEntity> players = survivors(session);
         double avgHealth = players.stream()
             .mapToDouble(p -> p.getHealth() / Math.max(1.0, p.getMaxHealth()))
             .average().orElse(0);
@@ -686,13 +720,13 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
             : horde ? session.map.hordeFor(session.section) : session.map.commonFor(session.section);
         if (points.isEmpty()) points = session.map.hordeFor(session.section);
         if (points.isEmpty()) return false; // Never invent unvalidated coordinates in a converted map.
-        Mob mob = InfectedFactory.create(level, kind, session.id, session.alive.size(), session.difficulty);
+        Mob mob = InfectedFactory.create(level, kind, session.id, session.survivorCount(), session.difficulty);
         List<OutbreakMap.Spawn> candidates=new ArrayList<>(points);
         Collections.shuffle(candidates,random);
         BlockPos position=null;
         for (var point:candidates) {
-            double distance=alivePlayers(session).stream().mapToDouble(p -> p.distanceToSqr(point.pos().getCenter())).min().orElse(Double.MAX_VALUE);
-            if (distance<36 || distance>40*40 || alivePlayers(session).stream().noneMatch(p->p.distanceToSqr(point.pos().getCenter())<=40*40&&Math.abs(p.getY()-point.pos().getY())<=4)) {session.spawnDistance++;continue;}
+            double distance=survivors(session).stream().mapToDouble(p -> p.distanceToSqr(point.pos().getCenter())).min().orElse(Double.MAX_VALUE);
+            if (distance<36 || distance>40*40 || survivors(session).stream().noneMatch(p->p.distanceToSqr(point.pos().getCenter())<=40*40&&Math.abs(p.getY()-point.pos().getY())<=4)) {session.spawnDistance++;continue;}
             if(!level.isPositionEntityTicking(point.pos())) {session.spawnInactive++;continue;}
             if(session.map.safeRooms().stream().anyMatch(r->r.contains(point.pos().getBottomCenter()))||session.map.startRooms().stream().anyMatch(r->r.contains(point.pos().getBottomCenter())))continue;
             for (int attempt=0;attempt<5;attempt++) {
@@ -707,7 +741,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
             session.spawnCollision++;
         }
         if (position==null) return false;
-        ServerPlayer target = nearest(session, mob.position());
+        net.minecraft.world.entity.LivingEntity target = nearest(session, mob.position());
         if (target != null) mob.setTarget(target);
         session.infected.add(mob.getUUID());session.infectedKinds.put(mob.getUUID(),kind);
         if (level.addFreshEntity(mob)) {
@@ -726,7 +760,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
             if (!(entity instanceof Mob mob) || !mob.isAlive()) continue;
             InfectedKind kind = session.infectedKinds.getOrDefault(id, InfectedKind.COMMON);
             if(kind==InfectedKind.COMMON&&session.throwables.isDistracted(mob,now))continue;
-            ServerPlayer target = nearest(session, mob.position());
+            net.minecraft.world.entity.LivingEntity target = nearest(session, mob.position());
             if (target != null) mob.setTarget(target);
             if (SpecialInfectedController.tick(mob, kind, target, now)) {
                 for (int i = 0; i < 5; i++) spawn(session, InfectedKind.COMMON, true);
@@ -738,7 +772,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
     private void cleanupInfected(OutbreakSession session, ServerLevel level) {
         for (UUID id : Set.copyOf(session.infected)) {
             Entity entity = level.getEntity(id);
-            boolean abandonedCommon=entity!=null&&session.infectedKinds.get(id)==InfectedKind.COMMON&&alivePlayers(session).stream().noneMatch(p->p.distanceToSqr(entity)<=48*48&&Math.abs(p.getY()-entity.getY())<=6);
+            boolean abandonedCommon=entity!=null&&session.infectedKinds.get(id)==InfectedKind.COMMON&&survivors(session).stream().noneMatch(p->p.distanceToSqr(entity)<=48*48&&Math.abs(p.getY()-entity.getY())<=6);
             if (entity == null || !entity.isAlive() || !level.isPositionEntityTicking(entity.blockPosition()) || abandonedCommon) {
                 if(id.equals(session.finaleTankId)&&!session.finaleTankDefeated){session.finaleTankSpawned=false;session.finaleTankId=null;}
                 if(entity!=null)entity.discard();
@@ -802,7 +836,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
         int due=Math.min(finale.waves(),1+elapsed/Math.max(20,finale.holdSeconds()*20/finale.waves()));
         while (session.finaleWaves<due) {
             session.finaleWaves++;
-            for (int i=0;i<8+session.alive.size()*3;i++) spawn(session,InfectedKind.COMMON,true);
+            for (int i=0;i<8+session.survivorCount()*3;i++) spawn(session,InfectedKind.COMMON,true);
             spawn(session,randomSpecial(),true);
             notice(session,"撤离尸潮 "+session.finaleWaves+"/"+finale.waves());
         }
@@ -817,16 +851,16 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
 
     private void reviveTick(OutbreakSession session, int now) {
         for (UUID downedId : Set.copyOf(session.downed)) {
-            ServerPlayer downed = server.getPlayerList().getPlayer(downedId);
+            net.minecraft.world.entity.LivingEntity downed = survivor(session,downedId);
             if (downed == null) continue;
             if (now - session.downedSince.getOrDefault(downedId, now) >= 600) {
-                eliminate(session, downed, "失血过多");
+                eliminateSurvivor(session, downed, "失血过多");
                 continue;
             }
-            ServerPlayer reviver = alivePlayers(session).stream()
+            net.minecraft.world.entity.LivingEntity reviver = survivors(session).stream()
                 .filter(p -> !p.getUUID().equals(downedId))
                 .filter(p -> !session.downed.contains(p.getUUID()))
-                .filter(ServerPlayer::isCrouching)
+                .filter(p->p instanceof ServerPlayer human?human.isCrouching():session.bots!=null&&session.bots.rescuing(p.getUUID(),downedId))
                 .filter(p -> p.distanceToSqr(downed) <= 7.0)
                 .findFirst().orElse(null);
             if (reviver == null) {
@@ -836,7 +870,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
             int progress = session.reviveProgress.merge(downedId, 1, Integer::sum);
             int needed=session.adrenalineUntil.getOrDefault(reviver.getUUID(),0)>now?60:100;
             if (progress % 20 == 0) {
-                reviver.displayClientMessage(Component.literal("救援 " + (progress / 20) + "/"+needed/20), true);
+                if(reviver instanceof ServerPlayer human)human.displayClientMessage(Component.literal("救援 " + (progress / 20) + "/"+needed/20), true);
             }
             if (progress >= needed) {
                 session.downed.remove(downedId);
@@ -852,13 +886,13 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
     }
 
     private void death(LivingDeathEvent event) {
-        if (!(event.getEntity() instanceof ServerPlayer player)) return;
-        OutbreakSession session = session(player.getUUID());
-        if (session == null || !session.prepared.contains(player.getUUID()) || session.phase == OutbreakSession.Phase.FINISHED) return;
+        var player=event.getEntity();
+        OutbreakSession session = survivorRoom(player);
+        if (session == null || !preparedSurvivor(session,player) || session.phase == OutbreakSession.Phase.FINISHED) return;
         event.setCanceled(true);
         player.setHealth(1);
         if (session.downed.contains(player.getUUID()) || session.incapCount.getOrDefault(player.getUUID(), 0) >= 2) {
-            eliminate(session, player, "无法继续战斗");
+            eliminateSurvivor(session, player, "无法继续战斗");
             return;
         }
         session.incapCount.merge(player.getUUID(), 1, Integer::sum);
@@ -872,13 +906,10 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
     }
 
     private void incomingDamage(LivingIncomingDamageEvent event) {
-        if (event.getEntity() instanceof ServerPlayer player) {
-            OutbreakSession session = session(player.getUUID());
-            if (session != null && session.prepared.contains(player.getUUID()) &&
-                (session.downed.contains(player.getUUID()) || session.phase == OutbreakSession.Phase.COUNTDOWN || session.phase == OutbreakSession.Phase.START_ROOM || session.phase == OutbreakSession.Phase.SAFE_ROOM)) {
-                event.setCanceled(true);
-                return;
-            }
+        var target=event.getEntity();var room=survivorRoom(target);
+        if(room!=null&&preparedSurvivor(room,target)&&
+            (room.downed.contains(target.getUUID())||room.phase==OutbreakSession.Phase.COUNTDOWN||room.phase==OutbreakSession.Phase.START_ROOM||room.phase==OutbreakSession.Phase.SAFE_ROOM)) {
+            event.setCanceled(true);return;
         }
         String victimSession = event.getEntity().getPersistentData().getString(InfectedFactory.TAG_SESSION);
         if (!victimSession.isBlank() && event.getSource().getEntity() instanceof Entity attacker) {
@@ -887,10 +918,22 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
         }
     }
 
-    private OutbreakSession combatRoom(ServerPlayer player){
-        var s=session(player.getUUID());return s!=null&&s.prepared.contains(player.getUUID())&&s.alive.contains(player.getUUID())&&s.phase==OutbreakSession.Phase.RUNNING&&player.level().dimension().equals(s.map.dimension())?s:null;
+    private OutbreakSession survivorRoom(net.minecraft.world.entity.LivingEntity entity) {
+        if(entity instanceof ServerPlayer)return session(entity.getUUID());
+        return sessions.stream().filter(r->r.bots!=null&&r.bots.find(entity.getUUID())==entity).findFirst().orElse(null);
     }
-    private double roomDamage(OutbreakSession s,ServerPlayer target,net.minecraft.world.damagesource.DamageSource source,float original){
+    private boolean preparedSurvivor(OutbreakSession room,net.minecraft.world.entity.LivingEntity entity) {
+        return entity instanceof ServerPlayer?room.prepared.contains(entity.getUUID()):room.bots!=null&&room.bots.find(entity.getUUID())==entity;
+    }
+    private OutbreakSession combatRoom(net.minecraft.world.entity.LivingEntity entity){
+        var room=survivorRoom(entity);return room!=null&&preparedSurvivor(room,entity)&&survivor(room,entity.getUUID())==entity&&room.phase==OutbreakSession.Phase.RUNNING&&entity.level().dimension().equals(room.map.dimension())?room:null;
+    }
+    private void eliminateSurvivor(OutbreakSession room,net.minecraft.world.entity.LivingEntity entity,String reason) {
+        if(entity instanceof ServerPlayer player){eliminate(room,player,reason);return;}
+        UUID id=entity.getUUID();room.downed.remove(id);room.downedSince.remove(id);room.reviveProgress.remove(id);room.temporaryHealth.remove(id);room.adrenalineUntil.remove(id);
+        if(room.bots!=null)room.bots.eliminate(id);notice(room,entity.getDisplayName().getString()+"："+reason);
+    }
+    private double roomDamage(OutbreakSession s,net.minecraft.world.entity.LivingEntity target,net.minecraft.world.damagesource.DamageSource source,float original){
         Entity attacker=source.getEntity();
         if(attacker instanceof Mob mob&&mob.getPersistentData().contains(InfectedFactory.TAG_SESSION)){
             if(!s.id.toString().equals(mob.getPersistentData().getString(InfectedFactory.TAG_SESSION)))return 0;
@@ -899,25 +942,25 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
             if(kind==InfectedKind.COMMON&&target.getLookAngle().multiply(1,0,1).dot(mob.position().subtract(target.position()).multiply(1,0,1))<0)amount*=.5;
             return amount;
         }
-        if(attacker instanceof ServerPlayer teammate){
-            if(!s.players.contains(teammate.getUUID()))return 0;
-            if(teammate!=target)return original*net.muxigame.outbreak.infected.OutbreakCombatRules.friendly(s.difficulty);
+        if(attacker instanceof net.minecraft.world.entity.LivingEntity teammate&&teammate!=target){
+            if(survivor(s,teammate.getUUID())==teammate)return original*net.muxigame.outbreak.infected.OutbreakCombatRules.friendly(s.difficulty);
+            if(teammate instanceof ServerPlayer||!teammate.getPersistentData().getString(net.muxigame.outbreak.ai.CampaignBots.SESSION).isBlank())return 0;
         }
         return -1; // environment and self damage retain their existing rules
     }
     private void roomIncomingDamage(LivingIncomingDamageEvent event){
-        if(!(event.getEntity() instanceof ServerPlayer target))return;var s=combatRoom(target);if(s==null)return;
+        var target=event.getEntity();var s=combatRoom(target);if(s==null)return;
         double amount=roomDamage(s,target,event.getSource(),event.getOriginalAmount());if(amount<0)return;
         if(amount==0)event.setCanceled(true);else event.setAmount((float)amount);
     }
     private void roomDamageLimit(LivingDamageEvent.Pre event){
-        if(!(event.getEntity() instanceof ServerPlayer target))return;var s=combatRoom(target);if(s==null)return;
+        var target=event.getEntity();var s=combatRoom(target);if(s==null)return;
         double amount=roomDamage(s,target,event.getSource(),event.getOriginalDamage());if(amount>=0)event.setNewDamage(Math.min(event.getNewDamage(),(float)amount));
     }
 
     private void damageDone(LivingDamageEvent.Post event) {
-        if (!(event.getEntity() instanceof ServerPlayer player)) return;
-        OutbreakSession session = session(player.getUUID());
+        var player=event.getEntity();
+        OutbreakSession session = survivorRoom(player);
         if (session == null) return;
         session.recentDamage.merge(player.getUUID(), (double)Math.max(0, event.getNewDamage()), Double::sum);
         float remaining=Math.max(0,session.temporaryHealth.getOrDefault(player.getUUID(),0f)-event.getNewDamage());
@@ -926,11 +969,11 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
     }
 
     private void drops(LivingDropsEvent event) {
-        if (!event.getEntity().getPersistentData().getString(InfectedFactory.TAG_SESSION).isBlank()) event.setCanceled(true);
+        if (!event.getEntity().getPersistentData().getString(InfectedFactory.TAG_SESSION).isBlank()||!event.getEntity().getPersistentData().getString(net.muxigame.outbreak.ai.CampaignBots.SESSION).isBlank()) event.setCanceled(true);
     }
 
     private void experience(LivingExperienceDropEvent event) {
-        if (!event.getEntity().getPersistentData().getString(InfectedFactory.TAG_SESSION).isBlank()) event.setDroppedExperience(0);
+        if (!event.getEntity().getPersistentData().getString(InfectedFactory.TAG_SESSION).isBlank()||!event.getEntity().getPersistentData().getString(net.muxigame.outbreak.ai.CampaignBots.SESSION).isBlank()) event.setDroppedExperience(0);
     }
 
     private void logout(PlayerEvent.PlayerLoggedOutEvent event) {
@@ -961,6 +1004,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
     private void entityJoin(EntityJoinLevelEvent event) {
         if (!(event.getLevel() instanceof ServerLevel)) return;
         Entity entity=event.getEntity();
+        if(!entity.getPersistentData().getString(net.muxigame.outbreak.ai.CampaignBots.SESSION).isBlank()&&!net.muxigame.outbreak.ai.CampaignBots.isCampaignEntity(entity)){event.setCanceled(true);entity.discard();return;}
         if(OutbreakEntityAdmission.rejectForeignSession(entity.getPersistentData()::getString,
             id->sessions.stream().anyMatch(s->s.id.toString().equals(id)))){
             event.setCanceled(true);entity.discard();return;
@@ -980,8 +1024,8 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
         if(entity instanceof me.xjqsh.lrtactical.entity.GrenadeEntity grenade&&entity.level().dimension().location().toString().equals("muxi_outbreak:campaign"))grenade.setDestroyBlocks(false);
         Entity owner=entity instanceof net.minecraft.world.entity.projectile.Projectile projectile?projectile.getOwner():
             entity instanceof net.minecraft.world.entity.AreaEffectCloud cloud?cloud.getOwner():null;
-        if(owner instanceof ServerPlayer p){
-            OutbreakSession s=session(p.getUUID());
+        if(owner instanceof net.minecraft.world.entity.LivingEntity p){
+            OutbreakSession s=survivorRoom(p);
             if(s!=null&&entity.level().dimension().equals(s.map.dimension())){
                 entity.getPersistentData().putString("muxi_outbreak_equipment_session",s.id.toString());s.equipmentEntities.add(entity.getUUID());
             }
@@ -989,7 +1033,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
         String tag=event.getEntity().getPersistentData().getString(InfectedFactory.TAG_SESSION);
         if (!tag.isBlank() && sessions.stream().noneMatch(s->s.id.toString().equals(tag)&&s.infected.contains(entity.getUUID()))) {
             event.setCanceled(true);event.getEntity().discard();
-        } else if (tag.isBlank() && event.getEntity() instanceof Mob &&
+        } else if (tag.isBlank() && event.getEntity() instanceof Mob && !net.muxigame.outbreak.ai.CampaignBots.isCampaignEntity(event.getEntity()) &&
             event.getLevel().dimension().location().toString().equals("muxi_outbreak:campaign")) {
             event.setCanceled(true);event.getEntity().discard();
         }
@@ -1011,6 +1055,7 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
         if (session.phase == OutbreakSession.Phase.FINISHED) return;
         for(UUID id:session.players){var p=server.getPlayerList().getPlayer(id);if(p!=null&&session.prepared.contains(id))runtime().complete(gameId(),session.team,p,win,0,session.difficulty,session.seconds);}
         session.phase = OutbreakSession.Phase.FINISHED;
+        if(session.bots!=null)session.bots.cleanup();
         session.supplies.cleanup();session.throwables.cleanup();
         MuxiOutbreak.LOG.info("OUTBREAK_RESULT map={} session={} win={} section={} seconds={} reason={}",session.map.id(),session.shortId(),win,session.section,session.seconds,reason);
         ServerLevel mapLevel = server == null ? null : server.getLevel(session.map.dimension());
@@ -1060,27 +1105,34 @@ public final class OutbreakGame implements net.muxigame.minigames.GameModule {
 
     private boolean allAliveInside(OutbreakSession session, OutbreakMap.SafeRoom room) {
         if (!session.downed.isEmpty()) return false;
-        for (ServerPlayer player : alivePlayers(session)) {
+        for (net.minecraft.world.entity.LivingEntity player : survivors(session)) {
             if (!player.level().dimension().equals(session.map.dimension()) || !room.contains(player.position())) return false;
         }
-        return !session.alive.isEmpty();
+        return session.survivorCount()>0;
     }
 
     private boolean allAliveNear(OutbreakSession session, BlockPos position, double radius) {
         if (!session.downed.isEmpty()) return false;
         double max = radius * radius;
-        for (ServerPlayer player : alivePlayers(session)) {
+        for (net.minecraft.world.entity.LivingEntity player : survivors(session)) {
             if (!player.level().dimension().equals(session.map.dimension())) return false;
             if (player.distanceToSqr(position.getCenter()) > max) return false;
         }
-        return !session.alive.isEmpty();
+        return session.survivorCount()>0;
     }
 
-    private ServerPlayer nearest(OutbreakSession session, Vec3 position) {
-        return alivePlayers(session).stream()
-            .filter(p -> !session.downed.contains(p.getUUID()))
-            .min(Comparator.comparingDouble(p -> p.position().distanceToSqr(position)))
-            .orElseGet(() -> alivePlayers(session).stream().findFirst().orElse(null));
+    private net.minecraft.world.entity.LivingEntity survivor(OutbreakSession room,UUID id) {
+        var player=server.getPlayerList().getPlayer(id);if(player!=null&&room.alive.contains(id))return player;
+        return room.bots==null?null:room.bots.find(id);
+    }
+    private List<net.minecraft.world.entity.LivingEntity> survivors(OutbreakSession room) {
+        List<net.minecraft.world.entity.LivingEntity> result=new ArrayList<>(alivePlayers(room));
+        if(room.bots!=null)result.addAll(room.bots.living());return result;
+    }
+    private net.minecraft.world.entity.LivingEntity nearest(OutbreakSession session, Vec3 position) {
+        return survivors(session).stream().filter(p->!session.downed.contains(p.getUUID()))
+            .min(Comparator.comparingDouble(p->p.position().distanceToSqr(position)))
+            .orElseGet(()->survivors(session).stream().findFirst().orElse(null));
     }
 
     private List<ServerPlayer> alivePlayers(OutbreakSession session) {

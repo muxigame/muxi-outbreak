@@ -64,7 +64,7 @@ def server_classpath(server: Path, neo_version: str) -> list[Path]:
     result = [neo_server, mapped[0]]
     result.extend(p for p in all_jars if p not in result and "/net/minecraft/" not in p.as_posix())
     result.append(neo_universal)
-    for pattern in ('tacz-neoforge-*.jar', 'LesRaisins-Tactical-Equipements-*.jar'):
+    for pattern in ('tacz-neoforge-*.jar', 'LesRaisins-Tactical-Equipements-*.jar', '*touhoulittlemaid-*.jar'):
         candidates = sorted((server / 'mods').glob(pattern))
         if not candidates:
             candidates = sorted((ROOT / 'build/equipment-research').glob(pattern))
@@ -157,6 +157,12 @@ def main() -> None:
                 compile_java(javac, [ROOT / "src/main/java/net/muxigame/outbreak/equipment/SupplyRules.java",
                                     ROOT / "tests/java/SupplyRulesTest.java"], test_dir, str(test_dir)+os.pathsep+str(args.framework), test_dir / "supplies.args")
                 subprocess.run([str(java), "-ea", "-cp", str(test_dir)+os.pathsep+str(args.framework), "SupplyRulesTest"], check=True)
+            with tempfile.TemporaryDirectory(prefix="outbreak-ai-tests-") as raw:
+                test_dir=Path(raw)
+                compile_java(javac,[ROOT/"src/main/java/net/muxigame/outbreak/ai/SurvivorAiRules.java",
+                                    ROOT/"src/main/java/net/muxigame/outbreak/equipment/OutbreakEntityAdmission.java",
+                                    ROOT/"tests/java/SurvivorAiRulesTest.java"],test_dir,str(test_dir),test_dir/"ai.args")
+                subprocess.run([str(java),"-ea","-cp",str(test_dir),"SurvivorAiRulesTest"],check=True)
         build(args.server.resolve(), args.java_home, args.framework)
     except (OSError, ValueError, subprocess.SubprocessError) as error:
         raise SystemExit(str(error)) from None

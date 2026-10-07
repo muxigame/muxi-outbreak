@@ -108,10 +108,12 @@ public final class CampaignInventory {
         return type.equals("rpg")||type.equals("launcher")||id.equals("tacz:m249"); // M249 maps source M60.
     }
     public static Map<String,Integer> reserveCaps(ServerPlayer p,boolean ammoPile){
+        return reserveCaps(List.of(p.getInventory().getItem(0),p.getInventory().getItem(1)),ammoPile);
+    }
+    public static Map<String,Integer> reserveCaps(List<ItemStack> weapons,boolean ammoPile){
         Map<String,Integer> caps=new LinkedHashMap<>();Set<String> rockets=new HashSet<>();
-        for(int slot=0;slot<=1;slot++){
-            ItemStack stack=p.getInventory().getItem(slot);if(IGun.getIGunOrNull(stack)==null)continue;
-            if(ammoPile&&excludedFromAmmoPile(stack))continue;
+        for(ItemStack stack:weapons){
+            if(IGun.getIGunOrNull(stack)==null||ammoPile&&excludedFromAmmoPile(stack))continue;
             String id=ammoId(stack);caps.merge(id,capacity(stack),Integer::sum);
             if(gunType(stack).equals("rpg")||gunType(stack).equals("launcher"))rockets.add(id);
         }

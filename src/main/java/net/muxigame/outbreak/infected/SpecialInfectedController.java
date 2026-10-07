@@ -10,7 +10,7 @@ public final class SpecialInfectedController {
     private static final String NEXT_ACTION = "muxi_outbreak_next_action";
     private SpecialInfectedController() {}
 
-    public static boolean tick(Mob mob, InfectedKind kind, ServerPlayer target, int now) {
+    public static boolean tick(Mob mob, InfectedKind kind, net.minecraft.world.entity.LivingEntity target, int now) {
         if (kind == InfectedKind.COMMON || target == null || !target.isAlive()) return false;
         mob.setTarget(target);
         int next = mob.getPersistentData().getInt(NEXT_ACTION);
