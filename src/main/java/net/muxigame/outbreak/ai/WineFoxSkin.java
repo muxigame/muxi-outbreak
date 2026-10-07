@@ -32,13 +32,13 @@ public final class WineFoxSkin {
         try{
             int now=server.getTickCount();
             if(models==null||now-requestedAt>=200){
-                models=suggest(server,"ysm model set @s wine_fox/");textures=null;model=null;skin=null;requestedAt=now;
+                models=suggest(server,"ysm model set @s ");textures=null;model=null;skin=null;requestedAt=now;
             }
             Suggestions registered=models.getNow(null);if(registered==null)return null;
             if(model==null){
                 model=registered.getList().stream().map(s->text(s.getText())).filter(id->id.equals("wine_fox/01_taisho_maid")).findFirst().orElse(null);
                 if(model==null)return null;
-                textures=suggest(server,"ysm model set @s "+model+" ");
+                textures=suggest(server,"ysm model set @s \""+model+"\" ");
             }
             Suggestions variants=textures.getNow(null);if(variants==null)return null;
             if(skin==null){
