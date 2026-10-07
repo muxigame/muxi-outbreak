@@ -10,6 +10,16 @@ import net.muxigame.outbreak.OutbreakSession;
 /** Same registered TLM entity type and client renderer, with campaign-only admission. */
 final class CampaignMaid extends EntityMaid {
     private final OutbreakSession room;
+    private boolean campaignBrainTick;
+    /** TLM's far-owner behavior stops navigation even when teleportToOwner fails.
+     * CampaignBots owns physical follow/rescue; suppress that built-in owner behavior
+     * only while Brain tasks execute. Taming ownership stays available outside this step.
+     */
+    @Override protected void customServerAiStep() {
+        campaignBrainTick=true;
+        try { super.customServerAiStep(); }
+        finally { campaignBrainTick=false; }
+    }
     private com.github.tartaricacid.touhoulittlemaid.api.task.IMaidTask campaignTask;
     @Override public com.github.tartaricacid.touhoulittlemaid.api.task.IMaidTask getTask() {
         return campaignTask==null?super.getTask():campaignTask;
@@ -32,6 +42,7 @@ final class CampaignMaid extends EntityMaid {
         for(int i=1;i<getMaidInv().getSlots();i++){var ammo=getMaidInv().getStackInSlot(i);var type=com.tacz.guns.api.item.IAmmo.getIAmmoOrNull(ammo);if(type!=null&&!ammo.isEmpty()&&type.isAmmoOfGun(stack,ammo))return true;}return false;
     }
     @Override public LivingEntity getOwner() {
+        if(campaignBrainTick)return null;
         if(room==null||getServer()==null)return super.getOwner();
         if(room.phase==OutbreakSession.Phase.RUNNING&&!room.downed.contains(getUUID())){
             LivingEntity nearest=null;double distance=Double.MAX_VALUE;

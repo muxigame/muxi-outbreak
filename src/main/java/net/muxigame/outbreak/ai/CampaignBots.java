@@ -102,7 +102,7 @@ public final class CampaignBots {
             CampaignMaid maid=(CampaignMaid)living;
             if(maid.level()!=level)throw new IllegalStateException("AI left campaign dimension");
             boolean down=room.downed.contains(maid.getUUID());
-            maid.setNoAi(down);maid.setInSittingPose(down);maid.setHunger(20);
+            if(maid.isNoAi()!=down)maid.setNoAi(down);if(maid.isInSittingPose()!=down)maid.setInSittingPose(down);maid.setHunger(20);
             if(down){maid.getNavigation().stop();continue;}
             float temporary=room.temporaryHealth.getOrDefault(maid.getUUID(),0f);
             if(temporary>0){float loss=Math.min(temporary,Math.min(Math.max(0,maid.getHealth()-1),maid.getMaxHealth()*.0027f/20f));maid.setHealth(maid.getHealth()-loss);room.temporaryHealth.put(maid.getUUID(),temporary-loss);}
